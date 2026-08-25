@@ -7,12 +7,16 @@ on:
         default: weekly_refresh
         type: choice
         options: [weekly_refresh, premarket, after_close]
+concurrency:
+  group: heatmap-weekly-refresh
+  cancel-in-progress: false
 permissions:
   contents: write
 jobs:
   refresh:
     if: inputs.run_type == 'weekly_refresh'
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
