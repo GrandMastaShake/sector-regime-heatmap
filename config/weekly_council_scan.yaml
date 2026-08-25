@@ -1,0 +1,41 @@
+version: 1
+source:
+  owner: GrandMastaShake
+  repo: weekly-council-scan
+  branch: main
+  cadence: weekly
+  role: slow_moving_research_prior
+  required_provenance:
+    - source_commit_sha
+    - source_file_sha
+    - source_path
+    - imported_at_utc
+sector_sources:
+  Technology:
+    - wiki/tech.md
+    - wiki/semiconductors.md
+  Communication Services:
+    - wiki/communication-services.md
+  Consumer Discretionary:
+    - wiki/consumer-discretionary.md
+  Consumer Staples:
+    - wiki/consumer-staples.md
+  Energy:
+    - wiki/energy.md
+  Financials:
+    - wiki/financials.md
+  Healthcare:
+    - wiki/healthcare.md
+  Industrials:
+    - wiki/industrials.md
+  Materials:
+    - wiki/materials.md
+  Real Estate:
+    - wiki/real-estate.md
+  Utilities:
+    - wiki/utilities.md
+cross_sector_sources:
+  - wiki/synthesis.md
+  - wiki/canary-watch.md
+  - wiki/earnings-surveillance.md
+  - wiki/economic-calendar.md
