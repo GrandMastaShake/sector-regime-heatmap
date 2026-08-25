@@ -1,1 +1,2 @@
-# Standard-library-only version 1. Add pinned packages only when justified.
+# Runtime dependency for the versioned weekly-council-scan YAML mapping.
+PyYAML==6.0.2
