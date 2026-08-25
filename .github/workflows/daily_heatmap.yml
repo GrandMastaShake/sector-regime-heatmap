@@ -1,39 +1,24 @@
-name: Daily sector heatmap
-
+name: Heatmap
 on:
   workflow_dispatch:
     inputs:
       run_type:
-        description: 'Run mode'
         required: true
-        default: premarket
+        default: weekly_refresh
         type: choice
-        options:
-          - premarket
-          - after_close
-          - weekly_refresh
-  # Cron intentionally disabled until manual validation, source provenance,
-  # data access, and scorecard gates are complete.
-  # schedule:
-  #   - cron: '0 12 * * 1-5' # candidate pre-market time; review before enabling
-
+        options: [weekly_refresh, premarket, after_close]
 permissions:
   contents: write
-
 jobs:
-  heatmap:
+  refresh:
+    if: inputs.run_type == 'weekly_refresh'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Manual validation gate
-        run: |
-          echo "Manual-only workflow."
-          echo "Before enabling cron: complete 10 audited runs, validate source file SHAs, configure approved data providers, and review scorecard calibration."
-      - name: Future pipeline contract
-        run: |
-          echo "${{ inputs.run_type }}: import pinned weekly research -> ingest approved market/macro data -> assemble inputs -> score sectors -> write immutable forecast/evaluation artifact -> commit output"
+        with: {python-version: '3.12'}
+      - run: pip install -r requirements.txt
+      - uses: actions/checkout@v4
+        with: {repository: GrandMastaShake/weekly-council-scan, ref: be90446207590eea46fe482dae1826bbf67a76ff, path: upstream}
+      - run: python src/import_weekly_research.py --source-root upstream --commit be90446207590eea46fe482dae1826bbf67a76ff --file-shas data/weekly_research/2026-08-24/source_file_shas.json --as-of-date 2026-08-24
+      - run: git config user.name github-actions[bot] && git config user.email 41898282+github-actions[bot]@users.noreply.github.com && git add data/weekly_research/2026-08-24 && (git diff --cached --quiet || git commit -m 'Import pinned weekly research snapshot 2026-08-24') && git push
