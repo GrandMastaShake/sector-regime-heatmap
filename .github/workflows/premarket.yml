@@ -1,0 +1,13 @@
+name: Premarket heatmap
+
+on:
+  workflow_dispatch:
+  # Schedule intentionally disabled until market-data credentials, generation code,
+  # and operational review are complete.
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Not enabled
+        run: echo 'Premarket workflow is not enabled yet.'

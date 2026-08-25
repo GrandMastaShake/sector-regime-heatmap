@@ -1,0 +1,8 @@
+version: 1
+source: Seven_Orbs_Watchlist_110.xlsx
+universe_size: 110
+benchmark: SPY
+notes:
+  - This is an internal research watchlist, not an approved portfolio.
+  - SPCX and other newer listings may have incomplete historical data.
+  - Data quality checks must flag impossible closes, zero volume, stale quotes, and missing observations.
