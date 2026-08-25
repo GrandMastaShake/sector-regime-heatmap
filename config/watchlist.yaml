@@ -2,7 +2,17 @@ version: 1
 source: Seven_Orbs_Watchlist_110.xlsx
 universe_size: 110
 benchmark: SPY
+machine_readable: config/watchlist_110.csv
+overrides: config/watchlist_overrides.yaml
 notes:
   - This is an internal research watchlist, not an approved portfolio.
-  - SPCX and other newer listings may have incomplete historical data.
+  - config/watchlist_110.csv is the source of truth for basket membership.
+    config/sector_baskets.yaml is generated from it by scripts/sync_baskets.py.
+  - Newer listings with incomplete history are enumerated in
+    config/watchlist_overrides.yaml, not left as a general caveat. SPCX listed
+    2026-06-12 and cannot supply month-horizon trailing metrics until 2026-09-11.
+  - The CapTier column in the CSV is advisory and is not a valid ordering.
+    Derive tier from the boundaries in config/watchlist_overrides.yaml.
+  - Market caps in the CSV are an undated snapshot used only for basket ordering
+    and tier derivation. They never enter scoring.
   - Data quality checks must flag impossible closes, zero volume, stale quotes, and missing observations.
