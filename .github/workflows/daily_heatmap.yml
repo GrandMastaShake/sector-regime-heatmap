@@ -1,0 +1,39 @@
+name: Daily sector heatmap
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_type:
+        description: 'Run mode'
+        required: true
+        default: premarket
+        type: choice
+        options:
+          - premarket
+          - after_close
+          - weekly_refresh
+  # Cron intentionally disabled until manual validation, source provenance,
+  # data access, and scorecard gates are complete.
+  # schedule:
+  #   - cron: '0 12 * * 1-5' # candidate pre-market time; review before enabling
+
+permissions:
+  contents: write
+
+jobs:
+  heatmap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Manual validation gate
+        run: |
+          echo "Manual-only workflow."
+          echo "Before enabling cron: complete 10 audited runs, validate source file SHAs, configure approved data providers, and review scorecard calibration."
+      - name: Future pipeline contract
+        run: |
+          echo "${{ inputs.run_type }}: import pinned weekly research -> ingest approved market/macro data -> assemble inputs -> score sectors -> write immutable forecast/evaluation artifact -> commit output"
