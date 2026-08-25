@@ -8,6 +8,7 @@ from __future__ import annotations
 import csv
 import datetime
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -28,6 +29,18 @@ errors: list[str] = []
 
 def fail(msg: str) -> None:
     errors.append(msg)
+
+
+def check_generated_files() -> None:
+    """Generated artifacts must not drift from their sources."""
+    for script, label in (("sync_baskets.py", "config/sector_baskets.yaml"),
+                          ("render_dashboard.py", "README.md dashboard block")):
+        r = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / script), "--check"],
+            capture_output=True, text=True, cwd=ROOT,
+        )
+        if r.returncode != 0:
+            fail(label + " is stale: run python scripts/" + script)
 
 
 def check_weights_sum(weights_doc: dict) -> None:
@@ -249,6 +262,7 @@ def main() -> int:
         (ROOT / "config/watchlist_overrides.yaml").read_text(encoding="utf-8"))
     rows = load_watchlist()
 
+    check_generated_files()
     check_weights_sum(weights_doc)
     check_bands(weights_doc)
     check_baskets(baskets, rows)

@@ -64,6 +64,9 @@ jobs:
             --file-shas "data/weekly_research/${{ inputs.as_of_date }}/source_file_shas.json" \
             --as-of-date "${{ inputs.as_of_date }}"
 
+      - name: Refresh the README dashboard
+        run: python scripts/render_dashboard.py
+
       - name: Run tests against the imported snapshot
         run: python -m pytest -q
 
@@ -71,7 +74,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "data/weekly_research/${{ inputs.as_of_date }}"
+          git add "data/weekly_research/${{ inputs.as_of_date }}" README.md
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
