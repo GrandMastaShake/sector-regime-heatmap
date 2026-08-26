@@ -54,22 +54,103 @@ def latest_snapshot() -> dict | None:
     return json.loads((best / "manifest.json").read_text(encoding="utf-8"))
 
 
+# ASCII only, per CLAUDE.md -- preflight fails the build on a non-ASCII byte in
+# README.md, so the dashboard is drawn with plain characters. It also means the
+# chart renders identically in a terminal, a diff and a browser.
+BAR_CELLS = 10
+SHORT_RATING = {"favorable": "fav", "constructive": "con", "neutral": "neu",
+                "unfavorable": "unf", "defensive": "def",
+                "unavailable": "n/a"}
+
+
+def bar(score: float | None) -> str:
+    """A 10-cell gauge. Rounds to nearest cell; 0 shows as empty, not absent."""
+    if score is None:
+        return "[" + "." * BAR_CELLS + "]"
+    filled = int(round(max(0.0, min(100.0, score)) / 100 * BAR_CELLS))
+    return "[" + "#" * filled + "-" * (BAR_CELLS - filled) + "]"
+
+
+def cell(row: dict, horizon: str) -> str:
+    s = row[horizon]["score"]
+    if s is None:
+        return "n/a"
+    return str(s) + " " + row[horizon]["rating"]
+
+
+def sort_key(item: tuple) -> tuple:
+    """Strongest week first; an unscored horizon sorts last, not as zero."""
+    _sector, row = item
+    s = row["week"]["score"]
+    return (0 if s is None else 1, s if s is not None else 0)
+
+
+def render_chart(doc: dict) -> list[str]:
+    rows = sorted(doc["scores"].items(), key=sort_key, reverse=True)
+    width = max(len(s) for s, _ in rows)
+    lines = ["```",
+             "sector".ljust(width) + "   week                    month",
+             "-" * (width + 48)]
+    for sector, row in rows:
+        parts = []
+        for horizon in ("week", "month"):
+            score = row[horizon]["score"]
+            shown = "  n/a" if score is None else ("%5.1f" % score)
+            rating = SHORT_RATING.get(row[horizon]["rating"], "?")
+            parts.append(shown + " " + rating + " " + bar(score))
+        lines.append(sector.ljust(width) + "   " + "   ".join(parts))
+    lines.append("```")
+    return lines
+
+
 def render_heatmap(doc: dict) -> list[str]:
     scores = doc["scores"]
-    lines = [
-        "| Sector | Day | Week | Month | Confidence | Why |",
-        "|---|---:|---:|---:|---|---|",
+    lines = render_chart(doc) + [
+        "",
+        "| Sector | Week | Month | Day | Confidence |",
+        "|---|---:|---:|---:|---|",
     ]
-    for sector in sorted(scores):
-        row = scores[sector]
-        cells = ["n/a" if row[h]["score"] is None
-                 else str(row[h]["score"]) + " " + row[h]["rating"]
-                 for h in HORIZONS]
-        why = "; ".join(row["week"]["why"][:2]) or "No rationale logged"
+    for sector, row in sorted(scores.items(), key=sort_key, reverse=True):
         lines.append(
-            "| " + sector + " | " + " | ".join(cells) + " | "
-            + row["week"]["confidence"] + " | " + why + " |"
+            "| " + sector + " | " + cell(row, "week") + " | "
+            + cell(row, "month") + " | " + cell(row, "day") + " | "
+            + row["week"]["confidence"] + " |"
         )
+
+    # The rationale is the point of the run, but it is long, and pasting two
+    # paragraphs into a table cell made the table unreadable. Collapsed, so the
+    # scores scan and the reasoning is still one click away.
+    lines += ["", "<details>",
+              "<summary>Why each sector reads the way it does</summary>", ""]
+    for sector, row in sorted(scores.items(), key=sort_key, reverse=True):
+        lines.append("**" + sector + "** -- week " + cell(row, "week")
+                     + ", month " + cell(row, "month") + "  ")
+        for entry in row["week"]["why"]:
+            lines.append("- " + entry)
+        for entry in row["week"]["risks"]:
+            lines.append("- RISK: " + entry)
+        lines.append("")
+    lines += ["</details>"]
+    return lines
+
+
+def render_regime(doc: dict) -> list[str]:
+    """Both halves of the regime call, with the disconfirming half kept."""
+    regime = doc["regime"]
+    against = regime.get("disconfirming_evidence") or []
+    lines = [
+        "**Regime:** " + regime["label"] + "  ",
+        "**Confidence:** " + regime["confidence"] + " -- "
+        + str(len(regime.get("evidence") or [])) + " supporting, "
+        + str(len(against)) + " disconfirming",
+        "",
+    ]
+    if against:
+        lines += ["<details>",
+                  "<summary>What would make this regime read wrong ("
+                  + str(len(against)) + ")</summary>", ""]
+        lines += ["- " + a for a in against]
+        lines += ["", "</details>", ""]
     return lines
 
 
@@ -119,19 +200,20 @@ def build() -> str:
             "source-backed input and this table fills in.",
         ]
     else:
-        regime = doc["regime"]
         lines += [
-            "**As of " + doc["as_of_date"] + "** (" + doc["run_type"] + ")  ",
-            "**Regime:** " + regime["label"] + ", confidence " + regime["confidence"] + "  ",
-            "**Artifact:** `" + doc["_path"] + "`",
+            "**As of " + doc["as_of_date"] + "** -- " + doc["run_type"]
+            + " run -- `" + doc["_path"] + "`",
             "",
         ]
+        lines += render_regime(doc)
         lines += render_heatmap(doc)
         lines += [
             "",
-            "Score is out of 100. Confidence is independent of score: a high score",
-            "with thin evidence or a wide component spread reads lower. Bands are in",
-            "`config/score_weights.yaml`.",
+            "Score is out of 100: `fav` 70+, `con` 55+, `neu` 45+, `unf` 30+,",
+            "`def` below 30. Confidence is independent of score -- thin evidence or",
+            "a wide spread between components reads lower however high the score.",
+            "Bands live in `config/score_weights.yaml`. `n/a` is a horizon that was",
+            "not offered, never a zero.",
         ]
 
     runs = forecast_count()

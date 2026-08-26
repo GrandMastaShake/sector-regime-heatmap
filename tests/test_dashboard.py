@@ -46,7 +46,7 @@ def test_empty_state_publishes_no_scores(monkeypatch):
     monkeypatch.setattr(rd, "latest_forecast", lambda: None)
     block = rd.build()
     assert "none published" in block
-    assert "| Sector | Day | Week | Month" not in block
+    assert "| Sector | Week | Month | Day" not in block
 
 
 # The empty state ended with cycle 1 (as_of 2026-08-21), the first published
@@ -59,7 +59,7 @@ def test_published_state_is_the_current_state():
     assert latest is not None, "cycle 1 was published; a forecast must exist"
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "none published" not in readme
-    assert "| Sector | Day | Week | Month" in readme
+    assert "| Sector | Week | Month | Day" in readme
     assert latest["as_of_date"] in readme
 
 
@@ -136,3 +136,33 @@ def test_missing_markers_is_an_error(tmp_path, monkeypatch):
     monkeypatch.setattr(rd, "README", bad)
     monkeypatch.setattr(sys, "argv", ["render_dashboard.py"])
     assert rd.main() == 1
+
+
+# --- The Why column pasted two paragraphs of rationale into a table cell, which
+#     made the table unscannable. The reasoning stays in the block, collapsed.
+def test_rationale_is_collapsed_out_of_the_table(tmp_path, monkeypatch):
+    doc = json.loads((ROOT / "data/forecasts/2026-08-21_manual.json").read_text(encoding="utf-8"))
+    doc["_path"] = "data/forecasts/2026-08-21_manual.json"
+    monkeypatch.setattr(rd, "latest_forecast", lambda: doc)
+    block = rd.build()
+
+    table_rows = [ln for ln in block.splitlines()
+                  if ln.startswith("| ") and "favorable" in ln or "defensive" in ln]
+    a_why = doc["scores"]["Utilities"]["week"]["why"][0]
+    assert all(a_why not in row for row in table_rows), "rationale is back in the table"
+    assert "<details>" in block and a_why in block
+
+
+def test_bar_never_renders_a_missing_score_as_zero():
+    assert rd.bar(None) == "[..........]"     # not offered
+    assert rd.bar(0) == "[----------]"        # scored, and it is a zero
+    assert rd.bar(100) == "[##########]"
+    assert rd.bar(70.7).count("#") == 7
+
+
+def test_strongest_week_sorts_first_and_unscored_sorts_last():
+    doc = json.loads((ROOT / "data/forecasts/2026-08-21_manual.json").read_text(encoding="utf-8"))
+    rows = sorted(doc["scores"].items(), key=rd.sort_key, reverse=True)
+    scores = [r["week"]["score"] for _s, r in rows]
+    assert scores == sorted(scores, reverse=True)
+    assert rows[0][0] == "Financials"
