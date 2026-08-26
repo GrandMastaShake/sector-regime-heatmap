@@ -214,6 +214,12 @@ def main(argv: list[str] | None = None) -> int:
         "regime": payload["regime"],
         "scores": scored,
     }
+    # An explicit per-horizon gradeability declaration, when the input carries
+    # one, rides into the artifact so src/evaluate.py never has to infer it
+    # from prose. Cycle 1 predates this and states it in the regime's
+    # disconfirming evidence instead.
+    if payload.get("grading"):
+        artifact["grading"] = payload["grading"]
 
     stem = payload["as_of_date"] + "_" + payload["run_type"]
     args.output_dir.mkdir(parents=True, exist_ok=True)

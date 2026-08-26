@@ -114,6 +114,19 @@ Any change to weights, thresholds or formulas needs a dated entry in
     python src/heatmap.py data/inputs/<date>_manual.json
     python scripts/render_dashboard.py
 
+Then, once the window has closed -- a week later for the week horizon, four
+for the month:
+
+    python src/evaluate.py data/forecasts/<date>_manual.json \
+        --panel ../weekly-council-scan/data/weekly
+
+It refuses rather than guesses. It will not grade a window that has not closed
+(that is scoring a forecast against itself), it will not grade a horizon the
+forecast declared ungradeable, and it will not assign an `error_label` -- why a
+call missed is judgment, the same kind `regime_fit` is, and it is emitted empty
+for you to fill. Mark a horizon ungradeable with a `grading` block in the input
+payload; cycle 1 predates that and says it in prose instead.
+
 `stage_run.py` attaches per-sector evidence from the pinned research snapshot
 with `source_path` and blob SHA, so a `why` entry can cite verified text. Two
 entries minimum or confidence caps at low, by design.
@@ -124,14 +137,14 @@ snapshot lands.
 
 ## Outstanding
 
-- **Backfill not run.** 9 of 11 sectors below 8 constituents; `stage_run.py`
-  correctly refuses. Dispatch "Backfill weekly panel" in weekly-council-scan.
-- **0 of 10 manual runs.** The runbook wants 10 before any schedule. They are a
-  forward test; do not compress them.
-- **No evaluation loop.** `config/evaluation.schema.json` is unused and
-  `data/evaluations/` is empty. The arithmetic half is disciplined by
-  construction; the judgment half is disciplined only by grading at close. This
-  is the most valuable thing left to build.
+- **1 of 10 manual runs.** Cycle 1 (`2026-08-21`) is published. The runbook
+  wants 10 before any schedule. They are a forward test; do not compress them.
+  Cycle 2 should read the 2026-08-28 close, which is the first fully ex-ante
+  run -- cycle 1 was scored five days late and its week horizon is marked
+  ungradeable because of it.
+- **Nothing graded yet.** `src/evaluate.py` exists and `data/evaluations/` is
+  still empty because no window has closed: cycle 1's week horizon was declared
+  ungradeable by the run itself, and its month horizon closes 2026-09-18.
 - **The rank-based momentum mapping is untested** against outcomes. If cycle 1
   reads wrong, suspect that first.
 - **Market caps in `watchlist_110.csv` are undated.** They drive ordering and
