@@ -209,3 +209,59 @@ def test_corrected_file_supersedes_the_original(tmp_path):
     (d / "2026-08-21.corrected.json").write_text(json.dumps(fixed), encoding="utf-8")
     res = cm.compute(d, BASKETS, None)["sectors"]["Real Estate"]["week"]
     assert res["equal_weight_return_pct"] == pytest.approx(1.0, abs=1e-6)
+
+
+# --- Adjustment anchor. Adjusted closes are back-adjusted to the fetch date,
+#     so splicing files fetched far apart makes every payer's pre-ex history
+#     disagree. A normal backfill spans days; this catches months.
+def test_missing_fetched_at_is_refused(tmp_path):
+    weeks = [week("2026-08-14", flat(ALL)), week("2026-08-21", flat(ALL))]
+    for w in weeks:
+        del w["fetched_at"]
+    p = panel(tmp_path, weeks, pad=False)
+    with pytest.raises(cm.PanelError, match="no fetched_at"):
+        cm.compute(p, BASKETS, None)
+
+
+def test_ongoing_weekly_panel_is_not_refused(tmp_path):
+    """data/weekly is an observation log; fetch dates legitimately span months."""
+    days = ["2026-07-17", "2026-07-24", "2026-07-31", "2026-08-07",
+            "2026-08-14", "2026-08-21"]
+    weeks = [week(d, flat(ALL, 100.0 + i)) for i, d in enumerate(days)]
+    for w in weeks:                       # each Friday scan stamps its own date
+        w["fetched_at"] = w["as_of"] + "T21:00:00Z"
+    res = cm.compute(panel(tmp_path, weeks, pad=False), BASKETS, None)
+    assert res["adjustment_anchor"]["week"]["spread_days"] == 7
+    assert res["adjustment_anchor"]["month"]["spread_days"] == 28
+
+
+def test_wide_window_anchor_warns_without_refusing(tmp_path):
+    days = ["2026-07-17", "2026-07-24", "2026-07-31", "2026-08-07",
+            "2026-08-14", "2026-08-21"]
+    weeks = [week(d, flat(ALL, 100.0 + i)) for i, d in enumerate(days)]
+    for w in weeks:
+        w["fetched_at"] = w["as_of"] + "T21:00:00Z"
+    # weeks[-5] is the start of the month window; stamp it well before the end
+    weeks[-5]["fetched_at"] = "2026-06-01T21:00:00Z"
+    res = cm.compute(panel(tmp_path, weeks, pad=False), BASKETS, None)
+    assert res["adjustment_anchor"]["month"]["warn"] is True
+    assert any("different anchors" in w for w in res["warnings"])
+
+
+def test_stale_splice_is_refused(tmp_path):
+    days = ["2026-07-17", "2026-07-24", "2026-07-31", "2026-08-07",
+            "2026-08-14", "2026-08-21"]
+    weeks = [week(d, flat(ALL, 100.0 + i)) for i, d in enumerate(days)]
+    for w in weeks:
+        w["fetched_at"] = w["as_of"] + "T21:00:00Z"
+    weeks[1]["fetched_at"] = "2024-01-05T21:00:00Z"
+    with pytest.raises(cm.PanelError, match="days apart"):
+        cm.compute(panel(tmp_path, weeks, pad=False), BASKETS, None)
+
+
+def test_anchor_is_recorded_per_horizon(tmp_path):
+    p = panel(tmp_path, [week("2026-08-14", flat(ALL)), week("2026-08-21", flat(ALL))])
+    res = cm.compute(p, BASKETS, None)
+    assert set(res["adjustment_anchor"]) == {"week", "month"}
+    assert set(res["adjustment_anchor"]["week"]) == {
+        "earliest", "latest", "spread_days", "warn"}

@@ -25,6 +25,7 @@ rather than obvious broken ones:
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import statistics
 import sys
@@ -48,6 +49,48 @@ SOURCE_BASIS = {
 }
 
 MIN_CONSTITUENTS = 8
+
+# Adjusted closes are back-adjusted to the date they were fetched. data/weekly
+# is an observation log -- each Friday scan records the closes the council saw
+# that week -- so an ongoing panel legitimately spans months of fetch dates and
+# that is not an error.
+#
+# What matters is the two weeks a horizon actually reads. If those were fetched
+# far apart, a dividend paid in between is baked into one end and not the other.
+# Over a 4-week window that is roughly one quarter's yield on the affected
+# names: worth surfacing, not worth refusing.
+WARN_WINDOW_ANCHOR_DAYS = 35
+
+# Beyond this the divergence compounds across every payer and the panel is not
+# one panel. This is the stale-splice case, not normal operation.
+MAX_WINDOW_ANCHOR_DAYS = 180
+
+MIN_CONSTITUENTS = 8
+
+# Adjusted closes are back-adjusted to the date they were fetched. data/weekly
+# is an observation log -- each Friday scan records the closes the council saw
+# that week -- so an ongoing panel legitimately spans months of fetch dates and
+# that is not an error.
+#
+# What matters is the two weeks a horizon actually reads. If those were fetched
+# far apart, a dividend paid in between is baked into one end and not the other.
+# Over a 4-week window that is roughly one quarter's yield on the affected
+# names: worth surfacing, not worth refusing.
+WARN_WINDOW_ANCHOR_DAYS = 35
+
+# Beyond this the divergence compounds across every payer and the panel is not
+# one panel. This is the stale-splice case, not normal operation.
+MAX_WINDOW_ANCHOR_DAYS = 180
+
+# Adjusted closes are back-adjusted relative to the fetch date, so two fetches
+# taken far apart disagree on the pre-ex history of any name that paid a
+# dividend in between. `fetched_at` is that anchor.
+#
+# A normal backfill spans a few days and a targeted --only run adds a few more;
+# the current panel sits at 10 days and the bias over such a window is one
+# quarter's yield on the affected names, which is tolerable. This bound exists
+# to catch the case that is not tolerable: splicing in files fetched months or
+# years apart, where the divergence compounds across every payer.
 
 # A bar with no volume is not a trade. metric_definitions.md requires flagging
 # zero-volume records; a printed close behind zero volume is a provider
@@ -78,6 +121,32 @@ def load_panel(panel_dir: Path) -> list[dict]:
         weeks.append(doc)
     weeks.sort(key=lambda d: d["as_of"])
     return weeks
+
+
+def anchor_of(week: dict) -> str:
+    got = week.get("fetched_at")
+    if not got:
+        raise PanelError(
+            "Week " + week["as_of"] + " has no fetched_at. That timestamp is the "
+            "adjustment anchor; without it a stale splice cannot be detected."
+        )
+    return got[:10]
+
+
+def window_anchor(start_week: dict, end_week: dict, horizon: str) -> dict:
+    """Anchor spread across the two weeks a horizon actually reads."""
+    a, b = sorted((anchor_of(start_week), anchor_of(end_week)))
+    spread = (datetime.date.fromisoformat(b) - datetime.date.fromisoformat(a)).days
+    if spread > MAX_WINDOW_ANCHOR_DAYS:
+        raise PanelError(
+            "The " + horizon + " window reads weeks fetched " + str(spread)
+            + " days apart (" + a + " to " + b + "). Adjusted closes are "
+            "back-adjusted to the fetch date, so across that gap every dividend "
+            "payer's history disagrees with itself. Re-run the backfill so the "
+            "window shares one anchor."
+        )
+    return {"earliest": a, "latest": b, "spread_days": spread,
+            "warn": spread > WARN_WINDOW_ANCHOR_DAYS}
 
 
 def check_basis(weeks: list[dict]) -> str:
@@ -219,6 +288,7 @@ def compute(panel_dir: Path, baskets: dict, as_of: str | None) -> dict:
         "as_of": weeks[-1]["as_of"],
         "panel_weeks": len(weeks),
         "adjustment_basis": basis,
+        "adjustment_anchor": {},
         "benchmark": BENCHMARK,
         "sectors": {},
         "warnings": [],
@@ -226,6 +296,16 @@ def compute(panel_dir: Path, baskets: dict, as_of: str | None) -> dict:
 
     per_horizon: dict[str, dict[str, dict]] = {}
     for horizon, back in HORIZON_WEEKS.items():
+        if len(weeks) > back:
+            anc = window_anchor(weeks[-1 - back], weeks[-1], horizon)
+            result["adjustment_anchor"][horizon] = anc
+            if anc["warn"]:
+                result["warnings"].append(
+                    "The " + horizon + " window reads weeks fetched "
+                    + str(anc["spread_days"]) + " days apart (" + anc["earliest"]
+                    + " to " + anc["latest"] + "); dividend payers' history is "
+                    "adjusted to different anchors across that gap"
+                )
         bench = horizon_returns(weeks, [BENCHMARK], back)
         bench_return = bench["returns"].get(BENCHMARK, {}).get("return_pct")
         if bench_return is None:
