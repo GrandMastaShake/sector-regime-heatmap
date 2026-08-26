@@ -5,12 +5,24 @@ week and month horizons. Manual, auditable, deliberately slow.
 
 ## Environment
 
-Windows. **ASCII only** in `src/`, `scripts/`, `config/` and `README.md` --
-`scripts/preflight.py` fails the build on a non-ASCII byte. All file I/O is
-explicit `encoding="utf-8", newline="\n"`; all JSON is `ensure_ascii=True`. A
-bare `read_text()` picks up cp1252 on Windows and crashes on the arrow and
-check-mark glyphs in the upstream wiki, and it makes content hashes differ
-between a local run and CI.
+Windows. All file I/O is explicit `encoding="utf-8", newline="\n"`; all JSON is
+`ensure_ascii=True`. A bare `read_text()` picks up cp1252 on Windows and
+crashes on the arrow and check-mark glyphs in the upstream wiki, and it makes
+content hashes differ between a local run and CI.
+
+`scripts/preflight.py` requires `src/`, `scripts/`, `config/` and `README.md`
+to be **valid UTF-8**. It required pure ASCII until 2026-08-26; the hazard it
+was guarding is the implicit-encoding read above, which the explicit
+`encoding="utf-8"` already fixes, so human-facing markdown may use symbols. A
+stray cp1252 byte from an editor still fails the gate.
+
+**Data artifacts are still strictly ASCII** and that has not moved: every JSON
+writer passes `ensure_ascii=True` so a content hash is byte-identical on
+Windows and in CI. `tests/test_import.py` pins it.
+
+The README dashboard chart is aligned by padding, so everything inside its
+fenced block must be single-width. Emoji are double-width and shear the bars;
+they belong in the markdown table, where nothing lines up. A test enforces it.
 
 ## Before anything
 

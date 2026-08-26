@@ -220,15 +220,29 @@ def check_council_config(cfg: dict, baskets: dict) -> None:
             fail("weekly_council_scan.yaml has no upstream source for sector: " + s)
 
 
-def check_ascii(paths: list[Path]) -> None:
+def check_encoding(paths: list[Path]) -> None:
+    """Every source and front-page file must be valid UTF-8.
+
+    This gate used to require pure ASCII. The hazard it was actually guarding
+    is a bare read_text() picking up cp1252 on Windows and dying on a byte it
+    cannot decode -- and that is fixed by the explicit encoding="utf-8" on
+    every read and write, not by banning the byte. Human-facing markdown is
+    free to use symbols; a stray cp1252 byte from an editor still fails here.
+
+    Data artifacts are a different question and are still strictly ASCII:
+    every JSON writer passes ensure_ascii=True so a content hash is identical
+    on Windows and in CI. tests/test_import.py pins that.
+    """
     for p in paths:
         raw = p.read_bytes()
-        bad = [i for i, b in enumerate(raw) if b > 127]
-        if bad:
+        try:
+            raw.decode("utf-8")
+        except UnicodeDecodeError as e:
             fail(
                 str(p.relative_to(ROOT)).replace("\\", "/")
-                + " contains non-ASCII bytes at offset " + str(bad[0])
-                + " (repo is ASCII-only for Windows/CI parity)"
+                + " is not valid UTF-8 at offset " + str(e.start)
+                + " (byte 0x" + format(raw[e.start], "02x") + "). Almost always "
+                "an editor writing cp1252; re-save it as UTF-8."
             )
 
 
@@ -288,7 +302,7 @@ def main() -> int:
         + [p for p in (ROOT / "config").glob("*") if p.suffix != ".csv"]
         + [ROOT / "README.md"]
     )
-    check_ascii([p for p in tracked if p.is_file()])
+    check_encoding([p for p in tracked if p.is_file()])
 
     if errors:
         print("PREFLIGHT FAILED (" + str(len(errors)) + " issue(s)):")
