@@ -166,3 +166,53 @@ def test_payload_without_bands_is_rejected(tmp_path):
     src.write_text(json.dumps(payload), encoding="utf-8")
     with pytest.raises(ValueError, match="no 'bands' block"):
         heatmap.main([str(src), "--output-dir", str(tmp_path / "f")])
+
+
+# --- Bug: stage_run.py marks the day block unavailable (the upstream feed
+#     commits Friday closes only, so there are no daily bars), but the scorer
+#     scored all three horizons unconditionally and died on the nulls. The two
+#     halves of the shipped pipeline disagreed about what an unscored horizon
+#     looks like.
+def _payload(tmp_path, day_block):
+    doc = yaml.safe_load((ROOT / "config/score_weights.yaml").read_text(encoding="utf-8"))
+    payload = {
+        "as_of_date": "2026-08-21", "run_type": "manual",
+        "regime": {"label": "test", "confidence": "low",
+                   "evidence": [], "disconfirming_evidence": []},
+        "weights": {h: dict(doc["horizons"][h]) for h in ("day", "week", "month")},
+        "bands": BANDS,
+        "sectors": {"Technology": {"day": day_block,
+                                   "week": sector(), "month": sector()}},
+    }
+    p = tmp_path / "input.json"
+    p.write_text(json.dumps(payload), encoding="utf-8")
+    return p
+
+
+UNAVAILABLE = "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+
+
+def test_unavailable_horizon_is_recorded_not_scored(tmp_path):
+    block = {"components": {c: None for c in COMPONENTS}, "risk_penalty": 0.0,
+             "unavailable": UNAVAILABLE, "why": [], "risks": []}
+    heatmap.main([str(_payload(tmp_path, block)),
+                  "--output-dir", str(tmp_path / "out"),
+                  "--dashboard-dir", str(tmp_path / "dash")])
+    art = json.loads(next((tmp_path / "out").glob("*.json")).read_text(encoding="utf-8"))
+    day = art["scores"]["Technology"]["day"]
+    assert day["score"] is None
+    assert day["rating"] == "unavailable"
+    assert day["unavailable"] == UNAVAILABLE
+    # the horizons that ARE offered still score normally
+    assert art["scores"]["Technology"]["week"]["score"] == 50.0
+
+
+def test_unavailable_is_not_an_escape_hatch_from_the_null_gate(tmp_path):
+    """A block cannot claim to be unavailable and carry components too."""
+    block = {"components": {c: None for c in COMPONENTS}, "risk_penalty": 0.0,
+             "unavailable": UNAVAILABLE, "why": [], "risks": []}
+    block["components"]["breadth"] = 60
+    with pytest.raises(ValueError, match="marked unavailable but carries"):
+        heatmap.main([str(_payload(tmp_path, block)),
+                      "--output-dir", str(tmp_path / "out"),
+                      "--dashboard-dir", str(tmp_path / "dash")])

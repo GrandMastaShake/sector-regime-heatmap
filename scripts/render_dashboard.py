@@ -62,7 +62,9 @@ def render_heatmap(doc: dict) -> list[str]:
     ]
     for sector in sorted(scores):
         row = scores[sector]
-        cells = [str(row[h]["score"]) + " " + row[h]["rating"] for h in HORIZONS]
+        cells = ["n/a" if row[h]["score"] is None
+                 else str(row[h]["score"]) + " " + row[h]["rating"]
+                 for h in HORIZONS]
         why = "; ".join(row["week"]["why"][:2]) or "No rationale logged"
         lines.append(
             "| " + sector + " | " + " | ".join(cells) + " | "

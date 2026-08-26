@@ -108,3 +108,18 @@ def test_failing_data_quality_blocks_assembly(tmp_path):
 def test_placeholder_date_is_rejected(tmp_path):
     with pytest.raises(ValueError, match="placeholder"):
         build(tmp_path, as_of="YYYY-MM-DD")
+
+
+# --- Bug: stage_run.py writes _cross_sector_evidence.json into the same
+#     directory as the sector files, and the assembler raised on it -- the two
+#     halves of the shipped pipeline disagreed, so a staged run could not be
+#     assembled without deleting a file the stager had just written.
+def test_underscore_prefixed_staged_files_are_not_sectors(tmp_path):
+    def mutate(sd):
+        (sd / "_cross_sector_evidence.json").write_text(
+            json.dumps({"available": True, "snapshot": "2026-08-24",
+                        "extracts": []}), encoding="utf-8")
+
+    payload = build(tmp_path, mutate)
+    assert len(payload["sectors"]) == 11
+    assert not any(k.startswith("_") for k in payload["sectors"])

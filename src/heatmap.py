@@ -179,8 +179,29 @@ def main(argv: list[str] | None = None) -> int:
         for horizon in ("day", "week", "month"):
             if horizon not in data:
                 raise ValueError(sector + " is missing the '" + horizon + "' block")
+            block = data[horizon]
+            # The day horizon needs daily bars and the upstream feed commits
+            # Friday closes only, so stage_run.py marks that block unavailable
+            # rather than fabricating one. Record the reason; never score it.
+            reason = block.get("unavailable")
+            if reason:
+                supplied = [c for c, v in (block.get("components") or {}).items()
+                            if v is not None]
+                if supplied:
+                    raise ValueError(
+                        sector + "/" + horizon + " is marked unavailable but "
+                        "carries component(s) " + ", ".join(sorted(supplied))
+                        + ". A horizon is either scored or it is not; "
+                        "'unavailable' is not a way to skip a gate."
+                    )
+                scored[sector][horizon] = {
+                    "score": None, "rating": "unavailable", "confidence": "none",
+                    "components": block.get("components", {}),
+                    "why": [], "risks": [], "unavailable": reason,
+                }
+                continue
             scored[sector][horizon] = score_sector(
-                data[horizon], payload["weights"][horizon], bands, sector, horizon
+                block, payload["weights"][horizon], bands, sector, horizon
             )
 
     artifact = {
