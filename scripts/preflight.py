@@ -271,6 +271,17 @@ def main() -> int:
     check_council_config(cfg, baskets)
     check_snapshot_dirs()
 
+    # metrics engine must never silently gain a day horizon or lose a gate
+    sys.path.insert(0, str(ROOT / "src"))
+    import compute_metrics as _cm
+    if set(_cm.HORIZON_WEEKS) != {"week", "month"}:
+        fail("compute_metrics.HORIZON_WEEKS changed; the day horizon needs daily bars")
+    if not _cm.REJECT_ZERO_VOLUME:
+        fail("compute_metrics.REJECT_ZERO_VOLUME is off; zero-volume bars would reach returns")
+    if set(_cm.SOURCE_BASIS.values()) != {"total_return"}:
+        fail("compute_metrics.SOURCE_BASIS declares more than one basis; "
+             "confirm before allowing mixed-basis panels")
+
     tracked = sorted(
         list((ROOT / "src").glob("*.py"))
         + list((ROOT / "scripts").glob("*.py"))
