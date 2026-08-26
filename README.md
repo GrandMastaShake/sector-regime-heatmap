@@ -71,6 +71,7 @@ The weights are research defaults, not optimized parameters.
 - `scripts/render_dashboard.py`: regenerates the dashboard block above from committed artifacts
 - `src/compute_metrics.py`: derives breadth, relative momentum and volume confirmation from a weekly price panel
 - `src/make_sector_inputs.py`: writes partial sector files with the arithmetic filled and judgment left null
+- `scripts/stage_run.py`: stages one cycle end to end and refuses when preconditions fail
 - `tests/`: regression tests, one per defect found in audit
 - `dashboards/`: generated Markdown heatmaps (committed alongside forecasts)
 - `.github/workflows/`: CI plus the manual weekly research import
@@ -92,8 +93,7 @@ pip install -r requirements.txt
 python scripts/preflight.py
 python -m pytest -q
 python src/assemble_payload.py examples/base_payload.json inputs/2026-08-25 data/inputs/2026-08-25_manual.json
-python src/compute_metrics.py --panel ../weekly-council-scan/data/weekly --out data/metrics/2026-08-21.json
-python src/make_sector_inputs.py data/metrics/2026-08-21.json inputs/2026-08-21
+python scripts/stage_run.py --panel ../weekly-council-scan/data/weekly
 # supply regime_fit, macro_catalyst, why and risks in each sector file, then:
 python src/assemble_payload.py examples/base_payload.json inputs/2026-08-21 data/inputs/2026-08-21_manual.json
 python src/heatmap.py data/inputs/2026-08-21_manual.json
