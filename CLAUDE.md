@@ -27,7 +27,7 @@ they belong in the markdown table, where nothing lines up. A test enforces it.
 ## Before anything
 
     python scripts/preflight.py     # config-drift gate
-    python -m pytest -q             # 94 tests
+    python -m pytest -q             # the whole suite, and it must be green
 
 Three NOTE lines on preflight are informational, not failures: the CapTier
 divergence count, the CapTier ordering warning, and the SPCX month-horizon
