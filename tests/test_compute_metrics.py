@@ -264,4 +264,62 @@ def test_anchor_is_recorded_per_horizon(tmp_path):
     res = cm.compute(p, BASKETS, None)
     assert set(res["adjustment_anchor"]) == {"week", "month"}
     assert set(res["adjustment_anchor"]["week"]) == {
-        "earliest", "latest", "spread_days", "warn"}
+        "earliest", "latest", "spread_days", "warn",
+        "distinct_anchors", "series_by_anchor"}
+
+
+# --- per-series provenance (DATA_FEED.md sec.1) -----------------------------
+# A week merged by backfill_weekly.py --merge carries series fetched at two
+# different times. Resolving the anchor per file reports one anchor for two.
+
+def _merge_into(w: dict, ticker: str, fetched_at: str,
+                source: str = "yahoo-backfill") -> dict:
+    w.setdefault("provenance", {}).setdefault("series", {})[ticker] = {
+        "source": source, "fetched_at": fetched_at}
+    return w
+
+
+def test_anchor_resolves_per_series_when_provenance_names_it():
+    w = week("2026-08-21", flat(ALL))
+    _merge_into(w, "SPY", "2026-08-26T04:08:06Z")
+    assert cm.anchor_of(w) == "2026-08-21"          # file level, unchanged
+    assert cm.anchor_of(w, "SPY") == "2026-08-26"   # merged name, its own
+    assert cm.anchor_of(w, "XLK") == "2026-08-21"   # untouched name
+
+
+def test_file_without_provenance_is_unchanged():
+    w = week("2026-08-21", flat(ALL))
+    assert cm.anchor_of(w, "SPY") == cm.anchor_of(w) == "2026-08-21"
+
+
+def test_merged_week_widens_the_window_spread(tmp_path):
+    weeks = [week("2026-08-14", flat(ALL)), week("2026-08-21", flat(ALL))]
+    res_before = cm.compute(panel(tmp_path, weeks), BASKETS, None)
+    assert res_before["adjustment_anchor"]["week"]["distinct_anchors"] == 2
+
+    weeks2 = [week("2026-08-14", flat(ALL)), week("2026-08-21", flat(ALL))]
+    _merge_into(weeks2[-1], "SPY", "2026-09-30T04:08:06Z")
+    second = tmp_path / "b"
+    second.mkdir()
+    res = cm.compute(panel(second, weeks2), BASKETS, None)
+    anc = res["adjustment_anchor"]["week"]
+    # The merged name is read by the window, so its anchor counts.
+    assert anc["latest"] == "2026-09-30"
+    assert anc["distinct_anchors"] == 3
+    assert anc["spread_days"] > res_before["adjustment_anchor"]["week"]["spread_days"]
+
+
+def test_merged_series_far_outside_the_window_is_refused(tmp_path):
+    weeks = [week("2026-08-14", flat(ALL)), week("2026-08-21", flat(ALL))]
+    # A name spliced in from a fetch two years later: every dividend payer's
+    # history disagrees with itself across that gap.
+    _merge_into(weeks[-1], "SPY", "2028-08-21T04:08:06Z")
+    with pytest.raises(cm.PanelError, match="days apart"):
+        cm.compute(panel(tmp_path, weeks), BASKETS, None)
+
+
+def test_undeclared_provenance_source_is_refused(tmp_path):
+    weeks = [week("2026-08-14", flat(ALL)), week("2026-08-21", flat(ALL))]
+    _merge_into(weeks[-1], "SPY", "2026-08-26T04:08:06Z", source="stooq-priceonly")
+    with pytest.raises(cm.PanelError, match="adjustment basis is undeclared"):
+        cm.compute(panel(tmp_path, weeks), BASKETS, None)
