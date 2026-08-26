@@ -1,0 +1,125 @@
+{
+  "sector": "Healthcare",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 81.3,
+      "regime_fit": 38,
+      "macro_catalyst": 55
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 6.082,
+      "equal_weight_return_pct": 5.933,
+      "sector_return_vs_spy_pct": 7.301,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 81.3,
+      "top_two_contribution_pct": 42.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Archetype 1 is one of Health Care's weakest regimes: +17.4 pct absolute against SPY's +31.3 pct, -13.9 pts excess. Defensives get left behind in a steady mid-cycle expansion, and their documented edge is in exogenous shocks and transitions, not expansions (The Full Regime-Sector Matrix).",
+      "THIS IS THE RUN'S SHARPEST CONTRADICTION AND IT IS DELIBERATELY LEFT STANDING. The arithmetic says leadership: rank 1 of 11 on the week at +7.30 pts vs SPY, 80.0 breadth, XLV +4.33 pct closing above both its 50D and 200D on strong volume, forward P/E ~18.5x against a five-year ~21x. The regime research says lag. Both are reading the same week (panel metrics, this file; wiki/synthesis.md@cd85b433; The Full Regime-Sector Matrix)."
+    ],
+    "risks": [
+      "If the rotation into Health Care is late-cycle defensive positioning rather than a value re-rate, it is evidence the regime is turning -- the technician read this week was explicitly 'distribution', with breadth collapsing in tech and industrials and concentrating in healthcare and energy (wiki/synthesis.md@cd85b433)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 90.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 86.8,
+      "regime_fit": 38,
+      "macro_catalyst": 55
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 90.0,
+      "median_return_pct": 13.524,
+      "equal_weight_return_pct": 13.706,
+      "sector_return_vs_spy_pct": 10.08,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 86.8,
+      "top_two_contribution_pct": 36.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "The month panel is +10.08 pts vs SPY with 90.0 breadth, the strongest in the run, which widens rather than resolves the disagreement with the archetype-1 prior (panel metrics, this file).",
+      "The valuation case has a fundamental anchor: XLV's yield widened to ~1.65 pct against a 10Y at 4.738 pct, and the sector was marked 'value with a catalyst' rather than a value trap on the back of Mounjaro data and stable JNJ guidance (wiki/synthesis.md@cd85b433)."
+    ],
+    "risks": [
+      "A resolution of this contradiction in the archetype's favour would show up as the rotation reversing once the rate scare passes; grade this sector first at close, because it is the run's cleanest test of whether the regime label or the tape is doing the work."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/healthcare.md",
+        "source_file_sha": "0a4ea27420d210320cb686af9c9934a1ac45aed0",
+        "lead_summary": "Healthcare is the fortress in the storm. Expensive, yes. But when the market panics, the sick still get treated.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLV"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}

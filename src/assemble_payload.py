@@ -45,6 +45,12 @@ def main(argv: list[str] | None = None) -> int:
     payload["sectors"] = {}
     seen_files: dict[str, str] = {}
     for path in sorted(args.sector_dir.glob("*.json")):
+        # stage_run.py writes _cross_sector_evidence.json into this same
+        # directory, so the two halves of the shipped pipeline disagreed: the
+        # stager produced a file the assembler refused. A leading underscore
+        # marks a staged file that is not a sector.
+        if path.name.startswith("_"):
+            continue
         sector = json.loads(path.read_text(encoding="utf-8"))
         if "sector" not in sector:
             raise ValueError(str(path) + " has no 'sector' field")

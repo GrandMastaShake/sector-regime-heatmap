@@ -1,0 +1,24 @@
+{
+  "as_of_date": "2026-08-21",
+  "run_type": "manual",
+  "regime": {
+    "label": "AI-capex recovery -- archetype 1, steady mid-cycle expansion (day ~154)",
+    "confidence": "medium",
+    "evidence": [
+      "Episode pre-registered 2026-03-27 start at SPY 634.09; close of 2026-08-21 is 765.72, +20.8 pct. Running peak 777.88 (2026-08-13), drawdown -1.6 pct. Neither the -5 pct mechanism-review condition nor the -10 pct mechanical trigger (700.09) is near (Forward Test Pre-Registration, registered 2026-08-23).",
+      "Classified as archetype 1 (steady mid-cycle expansion) at roughly 149 days as of 2026-08-23, against a four-occurrence mean of 315 days and a range of 140-574 (The Full Regime-Sector Matrix; How Many Market Regimes Actually Exist).",
+      "Growth is accelerating rather than fading: flash composite PMI 56.0 is a 52-month high, services 56.8 a 20-month high, employment rising at the fastest pace since January 2025, GDPNow tracking Q3 near 4.0 pct against 1.5 pct in Q2 (wiki/economic-calendar.md@63b4d3ba).",
+      "No contraction or shock archetype in the 18-episode sequence has ever transitioned directly into another contraction; the base rate favours the expansion continuing or passing through a transition first (The Full Regime-Sector Matrix)."
+    ],
+    "disconfirming_evidence": [
+      "Archetype 1 is defined by 'none acute -- stable growth, stable-to-easing rates'. This episode has the growth but not the rates: the 10Y closed 2026-08-21 at 4.738 pct, a 52-week-high close, the July FOMC minutes carried three dissents FOR a hike with 'many participants' open to further tightening, and roughly 64 pct of a hike by year-end is priced. The archetype prior is being applied to an atypical rate backdrop (wiki/economic-calendar.md@63b4d3ba).",
+      "The economy is split: manufacturing PMI 53.2 is a 5-month low against services at 56.8, housing starts fell -12.4 pct, and retail sales -0.6 pct with UMich at 51.0. The rate-sensitive economy is already contracting while the surveyed economy accelerates.",
+      "The technician read on the week was distribution -- breadth collapsing in tech and industrials and concentrating in healthcare and energy, which is the late-cycle rotation pattern that often precedes a broader correction (wiki/synthesis.md@cd85b433).",
+      "The long end is now a policy-managed market: Treasury doubled long-end buybacks to at least $4B per operation because 30Y liquidity had turned 'very poor' with debt past $40T. That is regime-adjacent and not captured by any archetype in the taxonomy (wiki/economic-calendar.md@63b4d3ba).",
+      "MID-CYCLE MANUAL RUN: this payload was scored 2026-08-26, five calendar days after the 2026-08-21 close it reads. Two of the five sessions in the week horizon (Mon 08-24, Tue 08-25) had already traded when the judgment components were written. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26) and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is nonetheless NOT a clean ex-ante forecast and must not be graded as one. The month horizon is materially less affected.",
+      "wiki/earnings-surveillance.md@6e61dd22 was 8 days stale at snapshot time (last updated 2026-08-15). No claim in this payload rests on it.",
+      "Healthcare carries a direct contradiction between the archetype prior (-13.9 pts excess, a laggard) and the arithmetic (rank 1 of 11, +7.30 pts vs SPY on the week, +10.08 on the month). It is preserved in that sector's why/risks rather than resolved."
+    ]
+  },
+  "sectors": {}
+}

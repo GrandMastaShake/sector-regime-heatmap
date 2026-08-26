@@ -1,0 +1,125 @@
+{
+  "sector": "Energy",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 84.0,
+      "regime_fit": 35,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 2.398,
+      "equal_weight_return_pct": 2.114,
+      "sector_return_vs_spy_pct": 3.482,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 84.0,
+      "top_two_contribution_pct": 39.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Energy is the single worst sector in archetype 1: +5.8 pct absolute against SPY's +31.3 pct, -25.5 pts excess, the widest negative gap in the entire matrix for an expansion regime (The Full Regime-Sector Matrix).",
+      "Energy is also the most bimodal sector in the matrix -- best in sustained hiking bears (+71.0 pts) and exogenous shocks (+10.9 pts) -- so its behaviour depends on what triggered the regime, not on its direction. The active mechanism here is broad expansion, which is its worst case, but a live geopolitical bid cuts against that (The Full Regime-Sector Matrix; Forward Test Pre-Registration, registered 2026-08-23)."
+    ],
+    "risks": [
+      "Roughly $8-12 of the $87.06 WTI handle is geopolitical premium with the Iran conflict stalled at 'no talks'; any ceasefire headline unwinds the tape fast. XLE was called a 'yield trap dressed in camouflage' on a ~12x forward P/E masking deteriorating FCF yields as capex creeps up (wiki/synthesis.md@cd85b433; wiki/energy.md@479fe2ed)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 90.0,
+      "relative_momentum": 50.0,
+      "volume_confirmation": 86.6,
+      "regime_fit": 35,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 90.0,
+      "median_return_pct": 5.515,
+      "equal_weight_return_pct": 7.479,
+      "sector_return_vs_spy_pct": 3.854,
+      "sector_rank_among_eleven": 6,
+      "up_volume_share_pct": 86.6,
+      "top_two_contribution_pct": 38.5,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "The panel has Energy +3.85 pts vs SPY on the month and rank 3 of 11 on the week, ahead of the archetype-1 prior -- the supply-side bid is currently beating the regime read (panel metrics, this file).",
+      "Energy carries the most positive long-rate beta of the eleven at +0.96, so a 52-week-high 10Y is a tailwind here where it is a headwind for the duration sectors (Sector Macro Sensitivity Matrix; wiki/economic-calendar.md@63b4d3ba)."
+    ],
+    "risks": [
+      "$95 on XLE is the level that invalidates the bounce; it reclaimed its 50D on Wednesday and held, so the bid is technical as much as fundamental (wiki/synthesis.md@cd85b433)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/energy.md",
+        "source_file_sha": "479fe2eda29b3e2f816372256cdb8e055cd2b5a8",
+        "lead_summary": "Energy is a short-term beneficiary of geopolitical chaos, not a long-term friend. The bid is real, but so is the fade.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLE"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}
