@@ -1,0 +1,125 @@
+{
+  "sector": "Utilities",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 0.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 0.0,
+      "regime_fit": 18,
+      "macro_catalyst": 25
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 0.0,
+      "median_return_pct": -3.441,
+      "equal_weight_return_pct": -3.812,
+      "sector_return_vs_spy_pct": -2.444,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 0.0,
+      "top_two_contribution_pct": 35.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Utilities are the worst-positioned sector in this run on both axes: +8.6 pct absolute and -22.7 pts excess in archetype 1, and the most negative long-rate beta of the eleven at -0.50 to the 30Y, into a 10Y closing at a 52-week high (The Full Regime-Sector Matrix; Sector Macro Sensitivity Matrix; wiki/economic-calendar.md@63b4d3ba).",
+      "The rate-to-margin channel is documented for Utilities specifically and it runs the wrong way: industry interest expense rose 34.4 pct in 2023 against only 11 bps of awarded-ROE relief, so higher rates compress the sector through debt service with regulatory lag (Sector Macro Sensitivity Matrix)."
+    ],
+    "risks": [
+      "XLU -3.48 pct crashed through both its 50D and 200D, marked a trend change to bearish with dividend-focused retail likely capitulating; $75 is the level below which the pair trade against XLRE stops being a pair (wiki/synthesis.md@cd85b433)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 20.2,
+      "regime_fit": 18,
+      "macro_catalyst": 28
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -6.452,
+      "equal_weight_return_pct": -3.956,
+      "sector_return_vs_spy_pct": -7.582,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 20.2,
+      "top_two_contribution_pct": 39.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "The panel corroborates hard: -7.58 pts vs SPY on the month, the worst of the eleven, with 0.0 breadth on the week -- not a single constituent posted a positive return (panel metrics, this file).",
+      "The same 10Y move that hurt Utilities left XLRE nearly flat, isolating duration and regulatory lag rather than a general defensive de-rating as the mechanism (wiki/synthesis.md@cd85b433)."
+    ],
+    "risks": [
+      "This is the most one-sided reading in the run, which is itself the risk: a dovish Warsh keynote on 08-28 that hands the market its discount rate back would reverse the duration trade fastest here (wiki/economic-calendar.md@63b4d3ba)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/utilities.md",
+        "source_file_sha": "dd3b0b4e0d32772d6a39cb47774b0dee5368a648",
+        "lead_summary": "Utilities are the bond market's shadow. When the 10-year speaks, the power lines hum \u2014 or go silent.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLU"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}

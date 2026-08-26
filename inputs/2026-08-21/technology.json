@@ -1,0 +1,147 @@
+{
+  "sector": "Technology",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [
+      {
+        "horizon": "month",
+        "ticker": "PLTR",
+        "return_pct": 46.39,
+        "reason": "weekly move beyond 40.0 pct; check for an unhandled corporate action"
+      }
+    ],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 17.0,
+      "regime_fit": 75,
+      "macro_catalyst": 38
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -3.186,
+      "equal_weight_return_pct": -3.633,
+      "sector_return_vs_spy_pct": -2.265,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 17.0,
+      "top_two_contribution_pct": 44.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Technology is the strongest sector in archetype 1, +46.5 pct absolute and +15.2 pts excess over SPY -- the widest lead of the eleven -- and this episode is the AI-capex trade by name (The Full Regime-Sector Matrix; Forward Test Pre-Registration, registered 2026-08-23).",
+      "The week's drawdown is rate-driven, not demand-driven: XLK -3.5 pct to $183.31 as the 30Y hit ~5.27 pct, its highest since 2007. Technology's shock-conditional R2 to the 10Y is 0.00, the weakest pairing in SSGA's study, so this reads as positioning rather than mechanism (wiki/tech.md@a4b6e1f7; Sector Macro Sensitivity Matrix)."
+    ],
+    "risks": [
+      "NVDA reports 2026-08-26 into a 50D MA that is 'two dimes from being lost', and SMH already broke its 50D at -4.66 pct on the week; semis are called the canary for the entire AI trade, with a failure to reclaim $250 by month-end accelerating a growth unwind (wiki/tech.md@a4b6e1f7; wiki/synthesis.md@cd85b433).",
+      "A hawkish Warsh framework speech on 08-28 puts the 10Y through 4.85 pct on the calendar's own trigger, de-rating growth multiples into September (wiki/economic-calendar.md@63b4d3ba)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 93.1,
+      "regime_fit": 75,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 6.287,
+      "equal_weight_return_pct": 11.303,
+      "sector_return_vs_spy_pct": 7.678,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 93.1,
+      "top_two_contribution_pct": 51.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Over the month window the panel has Technology +7.68 pts vs SPY, consistent with the archetype-1 prior even after a poor week -- the regime read and the arithmetic agree here (panel metrics, this file; The Full Regime-Sector Matrix).",
+      "The AI-infrastructure thesis was revalidated inside this window by hyperscaler capex (Alphabet raise) and MU's first $1,000+ print, which is the mechanism the episode is named for (wiki/tech.md@a4b6e1f7)."
+    ],
+    "risks": [
+      "Dispersion inside the sector is widening against the index: INTC broke below its own $95 offering price after a $20B raise (-12.1 pct) and AVGO lost another leg (-6.2 pct) on a Marvell custom-chip win at Google. Sector-level breadth can stay healthy while the leadership narrows (wiki/tech.md@a4b6e1f7).",
+      "~64 pct of a hike by year-end is priced; a September hike (~30 pct) would compress the longest-duration cash flows in the index (wiki/economic-calendar.md@63b4d3ba)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/tech.md",
+        "source_file_sha": "a4b6e1f7125aade6dc81673d1fee5a8ef60403da",
+        "lead_summary": "The bond market, not the chip market, ran this week. XLK fell -3.5% to $183.31 as the 30-year Treasury hit its highest yield since 2007 (~5.27%), July FOMC minutes revealed three hawks ready to hike, and Secretary Bessent doubled Treasury's long-end buybacks to $4B per operation \u2014 a rescue that worked for one session. Underneath, Intel broke below its own $95 offering price after a $20B equity raise (-12.1%), Google handed Marvell a custom-chip win that knocked AVGO down another leg (-6.2%), and MU touched $1,011 Monday \u2014 the first $1,000 print in memory \u2014 before fading. WTI climbed another +5.7% to $87.06 as the Iran war stalled out with 'no talks.' NVDA reports Wednesday into a 50D MA that is now two dimes from being lost.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLK"
+        ]
+      },
+      {
+        "source_path": "wiki/semiconductors.md",
+        "source_file_sha": "0b20667de324b7b29a0a96a6f5b3abc366ec7a5b",
+        "lead_summary": "Semiconductors are the new oil. Every AI model, every data center, every autonomous car runs on silicon. When the chip cycle turns, the world feels it.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving SMH"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}

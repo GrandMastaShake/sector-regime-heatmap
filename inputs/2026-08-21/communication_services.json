@@ -1,0 +1,125 @@
+{
+  "sector": "Communication Services",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 63.4,
+      "regime_fit": 55,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": -0.015,
+      "equal_weight_return_pct": -1.275,
+      "sector_return_vs_spy_pct": 0.093,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 63.4,
+      "top_two_contribution_pct": 51.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Archetype 1 puts Communication Services +32.4 pct absolute, +1.1 pts excess -- modestly ahead of SPY and third among expansion archetypes (The Full Regime-Sector Matrix).",
+      "The sector carries direct AI-capex read-through: Alphabet's capex raise is one of the two earnings events the pre-registered episode thesis rests on (wiki/tech.md@a4b6e1f7; Forward Test Pre-Registration, registered 2026-08-23)."
+    ],
+    "risks": [
+      "Communication Services is the worst excess-return sector in four of the eight archetypes, including every contraction type except credit crisis -- it has the least defensive floor of the eleven if the regime turns (The Full Regime-Sector Matrix)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 69.8,
+      "regime_fit": 55,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 5.624,
+      "equal_weight_return_pct": 5.805,
+      "sector_return_vs_spy_pct": 2.18,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 69.8,
+      "top_two_contribution_pct": 38.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Panel has the sector +2.18 pts vs SPY on the month, in line with the archetype-1 prior (panel metrics, this file).",
+      "XLC's history is short -- it did not list until June 2018 -- so its archetype averages rest on fewer episodes than the other nine sectors, and the prior is held with correspondingly less weight (The Full Regime-Sector Matrix)."
+    ],
+    "risks": [
+      "Ad-cycle sensitivity is the sector's mechanism, and the consumer data in this window is deteriorating (retail sales -0.6 pct, UMich 51.0) (wiki/economic-calendar.md@63b4d3ba; wiki/communication-services.md@8c2ee8eb)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/communication-services.md",
+        "source_file_sha": "8c2ee8eb0e516f00e792394f8e469cda0643c928",
+        "lead_summary": "Communication is the artery of the digital economy. When the ad cycle turns, the sector chokes. When it flows, the sector soars.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLC"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}

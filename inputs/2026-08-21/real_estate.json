@@ -1,0 +1,131 @@
+{
+  "sector": "Real Estate",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "warn",
+    "missing_tickers": [
+      "AVB"
+    ],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": [
+      "week: 9 of 10",
+      "month: 9 of 10"
+    ]
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 55.6,
+      "relative_momentum": 50.0,
+      "volume_confirmation": 75.6,
+      "regime_fit": 35,
+      "macro_catalyst": 30
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 55.6,
+      "median_return_pct": 0.125,
+      "equal_weight_return_pct": -0.07,
+      "sector_return_vs_spy_pct": 1.298,
+      "sector_rank_among_eleven": 6,
+      "up_volume_share_pct": 75.6,
+      "top_two_contribution_pct": 52.1,
+      "constituents_used": 9,
+      "constituents_expected": 10,
+      "coverage_pct": 90.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Archetype 1 leaves Real Estate at +12.3 pct absolute, -19.0 pts excess -- among the weakest in a steady mid-cycle expansion (The Full Regime-Sector Matrix).",
+      "The rate backdrop is the binding constraint: REITs are the worst sector in the 12 months after a first hike, and the 10Y closed 08-21 at a 52-week-high 4.738 pct with ~64 pct of another hike priced by year-end (Sector Macro Sensitivity Matrix; wiki/economic-calendar.md@63b4d3ba)."
+    ],
+    "risks": [
+      "Housing starts fell -12.4 pct to 1.239M, the second-lowest post-pandemic print, with single-family -9.9 pct at 6.65 pct-plus mortgages -- the rate-sensitive economy is cracking first here (wiki/economic-calendar.md@63b4d3ba)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 33.3,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 11.6,
+      "regime_fit": 35,
+      "macro_catalyst": 32
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 33.3,
+      "median_return_pct": -1.739,
+      "equal_weight_return_pct": -0.842,
+      "sector_return_vs_spy_pct": -4.468,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 11.6,
+      "top_two_contribution_pct": 38.8,
+      "constituents_used": 9,
+      "constituents_expected": 10,
+      "coverage_pct": 90.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "The reconciling variable in the research is whether growth accompanies the rate move, and in this window it does: composite PMI 56.0 and GDPNow near 4.0 pct. Nareit's finding is that REITs average better 12-month returns when yields rise than when they fall, precisely in that case (Sector Macro Sensitivity Matrix; wiki/economic-calendar.md@63b4d3ba).",
+      "XLRE fell only -0.42 pct against XLU's -3.48 pct on the same rate move; shorter-duration lease rolls reprice rents faster than regulatory lag allows utilities to, which is why Real Estate was upgraded to neutral while Utilities was cut (wiki/synthesis.md@cd85b433)."
+    ],
+    "risks": [
+      "The panel has Real Estate -4.47 pts vs SPY on the month with 33.3 breadth, the weakest month breadth in the run -- the arithmetic sides with the archetype prior, not with the upgrade (panel metrics, this file).",
+      "This sector reports 9 of 10 constituents: AVB was dropped by the 2026-08-21 correction for a zero-volume bar, so data_quality is warn and the denominator is honest but thinner than the rest of the run."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/real-estate.md",
+        "source_file_sha": "ace3bc82dbaeba93de466f732278acc5e910aedc",
+        "lead_summary": "REITs are the bond market's cousin with a mortgage. When rates rise, they bleed. When rates fall, they heal \u2014 slowly.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLRE"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}

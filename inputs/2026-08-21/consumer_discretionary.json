@@ -1,0 +1,125 @@
+{
+  "sector": "Consumer Discretionary",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 57.0,
+      "regime_fit": 45,
+      "macro_catalyst": 35
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": -0.308,
+      "equal_weight_return_pct": 0.043,
+      "sector_return_vs_spy_pct": 1.411,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 57.0,
+      "top_two_contribution_pct": 56.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Archetype 1 gives Consumer Discretionary +32.6 pct absolute but only +1.3 pts excess -- its standout regime is archetype 2 (easy-money early cycle, +17.1 pts), which this is not (The Full Regime-Sector Matrix).",
+      "The consumer evidence in this window is uniformly negative: retail sales -0.6 pct, UMich 51.0, housing starts -12.4 pct with single-family down three of four months at 6.65 pct mortgages, and a WMT comp miss that dominated the 08-20 tape (wiki/economic-calendar.md@63b4d3ba)."
+    ],
+    "risks": [
+      "Personal income and spending print 08-26; spending below 0.0 pct on top of the fresh retail miss would confirm the consumer crack at the income-statement level (wiki/economic-calendar.md@63b4d3ba)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 90.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 89.4,
+      "regime_fit": 45,
+      "macro_catalyst": 38
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 90.0,
+      "median_return_pct": 13.528,
+      "equal_weight_return_pct": 12.757,
+      "sector_return_vs_spy_pct": 9.131,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 89.4,
+      "top_two_contribution_pct": 42.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "The month arithmetic disagrees with the macro read -- the panel has the sector +9.13 pts vs SPY with 90.0 breadth, among the strongest in the run. The disagreement is preserved rather than resolved: the regime_fit reflects the regime and consumer data, the components reflect the tape (panel metrics, this file; wiki/economic-calendar.md@63b4d3ba).",
+      "Discretionary is the classic canary when the wallet closes, so a high month reading against deteriorating consumer prints is exactly the contradiction worth logging rather than smoothing (wiki/consumer-discretionary.md@fb83ca39)."
+    ],
+    "risks": [
+      "Consumer Confidence on 08-25 plus UMich at 51.0 would harden the consumer flag on a second straight drop; a rebound would say the WMT shock was company-specific (wiki/economic-calendar.md@63b4d3ba)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-discretionary.md",
+        "source_file_sha": "fb83ca39e6034acc7ea1e9b060466a200ee5aa3b",
+        "lead_summary": "The consumer is the canary in the coal mine. When the wallet closes, discretionary dies first.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLY"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}

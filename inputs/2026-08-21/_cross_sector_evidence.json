@@ -1,0 +1,58 @@
+{
+  "available": true,
+  "snapshot": "2026-08-24",
+  "extracts": [
+    {
+      "source_path": "wiki/synthesis.md",
+      "source_file_sha": "cd85b433fa328303af428dd6c7200cb5ea98432e",
+      "lead_summary": "",
+      "sections": [
+        "1. CECIL'S SYNTHESIS \u2014 Fundamentalist Lens",
+        "2. MARKY'S SYNTHESIS \u2014 Technician Lens",
+        "3. OPHELIA'S SYNTHESIS \u2014 Macro Lens",
+        "4. CONSENSUS SYNTHESIS \u2014 Where All Three Agree, Where They Disagree, the Single Biggest Risk, the Single Biggest Opportunity",
+        "5. MONDAY WATCHLIST \u2014 Specific Tickers, Levels, Triggers, Stops",
+        "6. CROSS-SECTOR CONNECTIONS \u2014 Hidden Wires"
+      ]
+    },
+    {
+      "source_path": "wiki/canary-watch.md",
+      "source_file_sha": "d49b6fca8990d7f8acbe8c93b4317831941e54b0",
+      "lead_summary": "The canary does not predict the mine collapse. It simply dies first. Watch the canary.",
+      "sections": [
+        "VIX REGIME",
+        "YIELD CURVE",
+        "CREDIT SPREADS",
+        "MARKET BREADTH",
+        "SECTOR CORRELATION MATRIX",
+        "SECTOR ROTATION FLOW"
+      ]
+    },
+    {
+      "source_path": "wiki/earnings-surveillance.md",
+      "source_file_sha": "6e61dd223ce892154a44c5f2736691139b49b177",
+      "lead_summary": "Earnings are the moment of truth. Everything else is just opinion.",
+      "sections": [
+        "THIS WEEK'S EARNINGS GAUNTLET (Aug 23 \u2013 Aug 29)",
+        "NEXT WEEK'S EARNINGS PREVIEW (Aug 30 \u2013 Sep 5)",
+        "THE BIG 7: STATUS AND FORWARD LOOK",
+        "SECTOR EARNINGS DENSITY",
+        "CONSENSUS VS WHISPER \u2014 THE RETAIL GAUNTLET PRINTS (Aug 17\u201321)",
+        "HISTORICAL BEAT RATES"
+      ]
+    },
+    {
+      "source_path": "wiki/economic-calendar.md",
+      "source_file_sha": "63b4d3ba931a9a4dbb420218bc16a14b09b6623a",
+      "lead_summary": "The Fed doesn't care about your P/E ratios. The CPI does.",
+      "sections": [
+        "THIS WEEK IN REVIEW",
+        "NEXT WEEK'S GAUNTLET",
+        "REGIME RISK FLAGS",
+        "HISTORICAL SURPRISE LOG",
+        "THE MACRO CALENDAR (Full Year Reference)",
+        "COUNCIL READ"
+      ]
+    }
+  ]
+}

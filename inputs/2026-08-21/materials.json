@@ -1,0 +1,138 @@
+{
+  "sector": "Materials",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [
+      {
+        "horizon": "month",
+        "ticker": "NEM",
+        "return_pct": 41.2,
+        "reason": "weekly move beyond 40.0 pct; check for an unhandled corporate action"
+      },
+      {
+        "horizon": "month",
+        "ticker": "MP",
+        "return_pct": 45.4,
+        "reason": "weekly move beyond 40.0 pct; check for an unhandled corporate action"
+      }
+    ],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 91.5,
+      "regime_fit": 35,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 1.5,
+      "equal_weight_return_pct": 1.963,
+      "sector_return_vs_spy_pct": 3.331,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 91.5,
+      "top_two_contribution_pct": 48.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Archetype 1 has Materials at +19.4 pct absolute, -11.9 pts excess -- a structural laggard in steady mid-cycle expansions (The Full Regime-Sector Matrix).",
+      "The bid is a narrative without demand data behind it: copper ~$4.20/lb with the gold/copper ratio at historic extremes, boosted by Chinese stimulus chatter rather than orders. Called 'speculative value' -- cheap on book, requiring a China story that may not arrive (wiki/synthesis.md@cd85b433; wiki/materials.md@4b81bf6f)."
+    ],
+    "risks": [
+      "Two of the three extreme-move flags in this run are Materials names: NEM +41.2 pct and MP +45.4 pct over four weeks. Both are retained, not dropped, per the extreme-move gate, but a basket carrying two 40-plus pct moves is being driven by idiosyncratic stories (panel metrics, this file)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 90.9,
+      "regime_fit": 35,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 6.976,
+      "equal_weight_return_pct": 13.428,
+      "sector_return_vs_spy_pct": 9.802,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 90.9,
+      "top_two_contribution_pct": 53.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "The panel has Materials +9.80 pts vs SPY on the month, well ahead of the archetype-1 prior, but 60.0 breadth on both horizons says the move is not broad (panel metrics, this file).",
+      "The XLE/XLB correlation spiked to ~0.80 this week as commodity beta became the dominant factor, so a large part of the Materials signal is the same trade as the Energy signal rather than an independent one (wiki/synthesis.md@cd85b433)."
+    ],
+    "risks": [
+      "If the geopolitical premium in crude unwinds, the commodity-beta correlation that is currently lifting Materials reverses with it (wiki/synthesis.md@cd85b433)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/materials.md",
+        "source_file_sha": "4b81bf6f263afcc5afc4209b361bcb5fef32a708",
+        "lead_summary": "Materials are the raw nerve of the global economy. When copper speaks, every sector listens.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLB"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}

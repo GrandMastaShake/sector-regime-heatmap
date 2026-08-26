@@ -1,0 +1,125 @@
+{
+  "sector": "Industrials",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 12.6,
+      "regime_fit": 48,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -5.537,
+      "equal_weight_return_pct": -3.925,
+      "sector_return_vs_spy_pct": -2.557,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 12.6,
+      "top_two_contribution_pct": 30.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Archetype 1 has Industrials at +29.4 pct absolute, -1.9 pts excess -- essentially in line with SPY, neither a leader nor a laggard in a steady mid-cycle expansion (The Full Regime-Sector Matrix).",
+      "The growth signal underneath is genuinely strong: Empire State manufacturing hit 20.6, a four-year high, with new orders 17.3, and composite PMI backlogs are at 2022 highs (wiki/economic-calendar.md@63b4d3ba)."
+    ],
+    "risks": [
+      "The panel ranks Industrials 11th of 11 on the week at -2.56 pts vs SPY and -4.08 on the month, which contradicts the in-line archetype prior. Manufacturing PMI at 53.2 is a 5-month low even as services hit 56.8, and Schwab places Industrials among underperformers in the 12 months after a first hike (panel metrics, this file; wiki/economic-calendar.md@63b4d3ba; Sector Macro Sensitivity Matrix)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 40.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 78.9,
+      "regime_fit": 48,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 40.0,
+      "median_return_pct": -2.298,
+      "equal_weight_return_pct": -0.45,
+      "sector_return_vs_spy_pct": -4.076,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 78.9,
+      "top_two_contribution_pct": 44.5,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Breadth is the weakest of the eleven on the week (20.0) and only 40.0 on the month, so the sector is being carried by few names -- the arithmetic is the binding evidence here, not the archetype prior (panel metrics, this file).",
+      "SSGA classifies Industrials only a Tier 2 positive responder to the 10Y (R2 0.05, below the 0.08 strong threshold), so the rate backdrop is close to neutral for the sector either way (Sector Macro Sensitivity Matrix)."
+    ],
+    "risks": [
+      "Durable goods orders on 08-26 are the swing print: deeply negative would show capex caution spreading beyond housing (wiki/economic-calendar.md@63b4d3ba)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/industrials.md",
+        "source_file_sha": "0cafdf6c19c94ffc67f69904c599e2e89e3e0f7f",
+        "lead_summary": "Industrials are the pulse of the economy. When the factories hum, the market sings. When they go silent, everything else follows.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLI"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}
