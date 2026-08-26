@@ -1,0 +1,58 @@
+version: 1
+
+# config/watchlist_110.csv is a faithful transcription of
+# Seven_Orbs_Watchlist_110.xlsx and must never be hand-edited. Anything derived
+# from it, or any correction to it, lives here with a rationale so the source
+# stays auditable.
+
+# --- Cap tier ---------------------------------------------------------------
+# The CapTier column in the source spreadsheet is not internally consistent:
+# 26 of 110 names carry a tier label smaller than a name with a lower market
+# cap. LIN at 225.91B is labelled Mega while AMD at 771.68B is labelled Large;
+# COST at 420.30B is Large while CAT at 381.36B is Mega. The spreadsheet column
+# is therefore treated as advisory only. Tier is derived from these boundaries.
+#
+# Nothing in the scoring path reads cap tier today. This exists so that if it
+# ever feeds the concentration risk penalty, it feeds something monotonic.
+cap_tier_boundaries_usd_billions:
+  Mega: 300
+  Large: 100
+  Mid: 20
+  Micro: 0
+
+# --- History constraints ----------------------------------------------------
+# watchlist.yaml notes that "SPCX and other newer listings may have incomplete
+# historical data." That is now specific and datable.
+#
+# SPCX listed on Nasdaq on 2026-06-12. As of the 2026-08-24 research snapshot it
+# has roughly 50 trading sessions. Consequences for docs/metric_definitions.md:
+#
+#   - three_month_relative_return_pct (month block) cannot be computed for SPCX
+#     until on or after 2026-09-14.
+#   - relative_volume_ratio is unreliable while the rolling baseline still
+#     contains IPO-week volume from a 75B USD offering.
+#   - trend_participation_pct depends on the logged trend threshold; a 50-day
+#     threshold is only just satisfied and a 200-day one is not.
+#
+# SPCX is the largest name in the Industrials basket, so this is not a rounding
+# issue: one of ten equal-weight constituents cannot supply the month-horizon
+# inputs. Industrials month-horizon breadth must either exclude SPCX and record
+# a denominator of 9, or be marked data_quality.status = warn. It must not
+# silently compute over 9 names while reporting as if over 10.
+listings:
+  SPCX:
+    first_trade_date: 2026-06-12
+    exchange: Nasdaq
+    note: Largest IPO on record; folded xAI in Feb 2026, so the AI segment has
+      no standalone listed history either.
+    insufficient_history_for:
+      - three_month_relative_return_pct
+      - relative_volume_ratio
+      - trend_participation_pct
+
+# Minimum sessions a constituent needs before a horizon's trailing metrics are
+# considered computable. Used by scripts/preflight.py to date the constraint.
+minimum_sessions:
+  day: 1
+  week: 5
+  month: 63

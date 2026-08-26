@@ -1,0 +1,111 @@
+Sector,Ticker,Company,CapTier,SubIndustry,MarketCap_USD_Billions
+Communication Services,META,Meta Platforms,Mega,Social media/digital ads,1400.86
+Communication Services,NFLX,Netflix,Large,Streaming video,331.41
+Communication Services,TMUS,T-Mobile US,Large,Telecom,196.34
+Communication Services,DIS,Walt Disney,Large,Diversified media/parks/streaming,187.13
+Communication Services,SPOT,Spotify,Large,Audio streaming,109.72
+Communication Services,TTWO,Take-Two Interactive,Mid,Video game publisher,44.8
+Communication Services,LYV,Live Nation Entertainment,Mid,Live entertainment/ticketing,42.31
+Communication Services,RDDT,Reddit,Mid,Social platform + AI data licensing,29.5
+Communication Services,MTCH,Match Group,Micro,Online dating,9.53
+Communication Services,IMAX,IMAX Corporation,Micro,Cinema technology,2.89
+Consumer Discretionary,AMZN,Amazon,Mega,E-commerce/cloud,2782.11
+Consumer Discretionary,TSLA,Tesla,Mega,EV/auto,1433.13
+Consumer Discretionary,HD,Home Depot,Large,Home improvement retail,334.64
+Consumer Discretionary,MCD,McDonalds,Large,Quick-service restaurants,192.51
+Consumer Discretionary,BKNG,Booking Holdings,Large,Online travel agency,162.43
+Consumer Discretionary,ABNB,Airbnb,Large,Alternative lodging platform,111.17
+Consumer Discretionary,CVNA,Carvana,Mid,Used-car e-commerce,76.65
+Consumer Discretionary,NKE,Nike,Mid,Athletic apparel/footwear,60.32
+Consumer Discretionary,ULTA,Ulta Beauty,Mid,Beauty retail,22.42
+Consumer Discretionary,FIVE,Five Below,Micro,Discount variety retail,13.84
+Consumer Staples,WMT,Walmart,Mega,Mass retail,825.25
+Consumer Staples,COST,Costco,Large,Membership wholesale retail,420.3
+Consumer Staples,KO,Coca-Cola,Large,Soft drinks,391.96
+Consumer Staples,PG,Procter and Gamble,Large,Household/personal care,343.93
+Consumer Staples,PM,Philip Morris International,Large,Tobacco,293.38
+Consumer Staples,PEP,PepsiCo,Large,Beverages + snacks,195.99
+Consumer Staples,MDLZ,Mondelez International,Mid,Packaged snacks/confectionery,82.26
+Consumer Staples,STZ,Constellation Brands,Mid,Alcohol beverages,23.17
+Consumer Staples,CALM,Cal-Maine Foods,Micro,Eggs/agri-food,3.88
+Consumer Staples,FIZZ,National Beverage,Micro,Sparkling water/beverage,3.03
+Energy,XOM,ExxonMobil,Mega,Integrated major,684.29
+Energy,CVX,Chevron,Mega,Integrated major,408.76
+Energy,COP,ConocoPhillips,Large,E&P,164.31
+Energy,VLO,Valero Energy,Large,Refining,100.45
+Energy,WMB,Williams Companies,Large,Midstream/pipelines,86.22
+Energy,SLB,SLB,Large,Oilfield services,79.95
+Energy,LNG,Cheniere Energy,Large,LNG export,58.15
+Energy,CCJ,Cameco,Mid,Uranium/nuclear fuel,44.65
+Energy,FSLR,First Solar,Mid,Solar manufacturing,23.03
+Energy,SM,SM Energy,Micro,Small-cap E&P,8.92
+Financials,JPM,JPMorgan Chase,Mega,Money-center bank,942.06
+Financials,V,Visa,Mega,Payments network,692.75
+Financials,MA,Mastercard,Mega,Payments network,509.23
+Financials,GS,Goldman Sachs,Large,Investment bank,306.59
+Financials,SCHW,Charles Schwab,Large,Brokerage,195.31
+Financials,BLK,BlackRock,Large,Asset management,179.26
+Financials,PGR,Progressive,Large,Insurance,127.49
+Financials,COIN,Coinbase,Mid,Crypto exchange/infrastructure,49.2
+Financials,SOFI,SoFi Technologies,Mid,Neobank/fintech,24.26
+Financials,UPST,Upstart Holdings,Micro,AI-driven lending,2.9
+Healthcare,LLY,Eli Lilly,Mega,Pharma (GLP-1),1181.67
+Healthcare,JNJ,Johnson and Johnson,Mega,Diversified pharma/devices,651.25
+Healthcare,UNH,UnitedHealth,Large,Managed care/health insurance,354.28
+Healthcare,TMO,Thermo Fisher Scientific,Large,Life sciences tools,233.85
+Healthcare,VRTX,Vertex Pharmaceuticals,Large,Biotech (cystic fibrosis),139.1
+Healthcare,ISRG,Intuitive Surgical,Large,Robotic surgery devices,133.83
+Healthcare,REGN,Regeneron,Mid,Biotech (immunology/eye),85.92
+Healthcare,HIMS,Hims and Hers Health,Micro,Digital health/telehealth,7.54
+Healthcare,CRSP,CRISPR Therapeutics,Micro,Gene editing,5.74
+Healthcare,BLFS,BioLife Solutions,Micro,Biopreservation tools,1.81
+Industrials,SPCX,SpaceX,Mega,Space launch/satellites,1791
+Industrials,CAT,Caterpillar,Mega,Construction/mining machinery,381.36
+Industrials,GE,GE Aerospace,Mega,Aircraft engines,361.46
+Industrials,DE,Deere and Company,Large,Agricultural machinery,174.78
+Industrials,ETN,Eaton Corporation,Large,Electrical equipment,162.78
+Industrials,LMT,Lockheed Martin,Large,Defense prime,130.07
+Industrials,CSX,CSX Corporation,Mid,Freight rail,95.57
+Industrials,HON,Honeywell,Mid,Industrial conglomerate,68.43
+Industrials,RKLB,Rocket Lab USA,Mid,Launch vehicles/satellites,42.01
+Industrials,MOD,Modine Manufacturing,Micro,Thermal management/HVAC,10.5
+Materials,LIN,Linde,Mega,Industrial gases,225.91
+Materials,NEM,Newmont,Large,Gold mining,138
+Materials,FCX,Freeport-McMoRan,Large,Copper mining,110.92
+Materials,SHW,Sherwin-Williams,Mid,Paint/specialty chemicals,84.21
+Materials,ECL,Ecolab,Mid,Water treatment chemicals,80.67
+Materials,NUE,Nucor,Mid,Steel,56.61
+Materials,MLM,Martin Marietta Materials,Mid,Aggregates/construction materials,32
+Materials,ALB,Albemarle,Micro,Lithium,16.78
+Materials,MP,MP Materials,Micro,Rare earths,10.09
+Materials,SSD,Simpson Manufacturing,Micro,Structural building connectors,7.79
+Real Estate,WELL,Welltower,Large,Healthcare/senior living,172.55
+Real Estate,PLD,Prologis,Large,Industrial/logistics,132.59
+Real Estate,EQIX,Equinix,Large,Data centers,103.24
+Real Estate,AMT,American Tower,Mid,Cell towers,82.87
+Real Estate,SPG,Simon Property Group,Mid,Retail malls,71.03
+Real Estate,PSA,Public Storage,Mid,Self-storage,59.73
+Real Estate,O,Realty Income,Mid,Net lease/diversified,58.6
+Real Estate,VICI,VICI Properties,Mid,Gaming/experiential,29.45
+Real Estate,AVB,AvalonBay Communities,Mid,Residential apartments,26.28
+Real Estate,UMH,UMH Properties,Micro,Manufactured housing,1.41
+Technology,NVDA,NVIDIA,Mega,AI/GPU silicon,5200.73
+Technology,GOOGL,Alphabet,Mega,Cloud/search/AI platform,4173.05
+Technology,TSM,Taiwan Semiconductor,Mega,Foundry,2172.88
+Technology,AMD,Advanced Micro Devices,Large,AI/GPU silicon challenger,771.68
+Technology,PLTR,Palantir Technologies,Large,Government/enterprise AI-data analytics,413.15
+Technology,CRWD,CrowdStrike,Large,Cybersecurity,195.45
+Technology,DDOG,Datadog,Mid,Cloud observability/monitoring,83.87
+Technology,RGTI,Rigetti Computing,Micro,Quantum computing,5.95
+Technology,SOUN,SoundHound AI,Micro,Speculative AI voice,3.19
+Technology,INOD,Innodata,Micro,AI data engineering,2.1
+Utilities,NEE,NextEra Energy,Large,Diversified regulated + renewables,174.17
+Utilities,CEG,Constellation Energy,Mid,Nuclear pure-play,97.32
+Utilities,D,Dominion Energy,Mid,Regulated utility (data-center corridor),58.46
+Utilities,SRE,Sempra,Mid,LNG export + regulated utility,54.55
+Utilities,XEL,Xcel Energy,Mid,Regulated utility (wind-heavy),47.71
+Utilities,VST,Vistra,Mid,Independent power producer,45.81
+Utilities,ATO,Atmos Energy,Mid,Natural gas distribution,27.7
+Utilities,AWK,American Water Works,Mid,Water utility,27.5
+Utilities,OKLO,Oklo Inc.,Micro,SMR nuclear (speculative),6.93
+Utilities,ORA,Ormat Technologies,Micro,Geothermal renewable,6.44

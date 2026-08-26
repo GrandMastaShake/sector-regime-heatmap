@@ -1,2 +1,6 @@
 # Runtime dependency for the versioned weekly-council-scan YAML mapping.
 PyYAML==6.0.2
+# Schema validation of forecast and evaluation artifacts.
+jsonschema==4.23.0
+# Test harness.
+pytest==8.3.3

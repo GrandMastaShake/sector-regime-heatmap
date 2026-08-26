@@ -1,1 +1,84 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"Weekly research import manifest","type":"object","required":["as_of_date","imported_at_utc","source","source_commit_sha","files"],"properties":{"as_of_date":{"type":"string","format":"date"},"imported_at_utc":{"type":"string"},"source":{"type":"object"},"source_commit_sha":{"type":"string"},"files":{"type":"array"},"cross_sector_sources":{"type":"array"}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Weekly research import manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "as_of_date",
+    "imported_at_utc",
+    "source",
+    "source_commit_sha",
+    "provenance_verified",
+    "files"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "as_of_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "imported_at_utc": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object"
+    },
+    "source_commit_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "provenance_verified": {
+      "const": true
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_path",
+          "source_file_sha",
+          "content_sha256",
+          "snapshot_path",
+          "role"
+        ],
+        "properties": {
+          "source_path": {
+            "type": "string"
+          },
+          "source_file_sha": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "content_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "snapshot_path": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "sector",
+              "cross_sector"
+            ]
+          },
+          "sector": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "sectors": {
+      "type": "array"
+    },
+    "cross_sector_sources": {
+      "type": "array"
+    }
+  }
+}

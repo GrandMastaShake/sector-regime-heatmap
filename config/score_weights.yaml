@@ -1,21 +1,26 @@
-version: 1
+version: 2
+# v2 (2026-08-25): each horizon's component weights now sum to exactly 1.00.
+# In v1 every horizon summed to 0.95 because risk_penalty_max was mistakenly
+# counted inside the 1.00 budget; risk_penalty is subtracted after the weighted
+# sum, not part of it. The missing 0.05 is restored to regime_fit, which makes
+# the week row match the formula published in README.md.
 horizons:
   day:
-    regime_fit: 0.15
+    regime_fit: 0.20
     breadth: 0.25
     relative_momentum: 0.25
     volume_confirmation: 0.20
     macro_catalyst: 0.10
     risk_penalty_max: 0.05
   week:
-    regime_fit: 0.30
+    regime_fit: 0.35
     breadth: 0.20
     relative_momentum: 0.20
     volume_confirmation: 0.15
     macro_catalyst: 0.10
     risk_penalty_max: 0.05
   month:
-    regime_fit: 0.40
+    regime_fit: 0.45
     breadth: 0.15
     relative_momentum: 0.15
     volume_confirmation: 0.10
@@ -26,3 +31,4 @@ bands:
   constructive: 55
   neutral: 45
   unfavorable: 30
+  defensive: 0

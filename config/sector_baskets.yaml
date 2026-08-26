@@ -1,13 +1,16 @@
-version: 1
-note: Initial 110-stock sector membership. Validate and update against the approved watchlist before enabling production jobs.
-Technology: [NVDA, GOOGL, TSM, PLTR, AMD, CRWD, DDOG, RGTI, SOUN, INOD]
-Financials: [JPM, V, MA, GS, BLK, SCHW, PGR, COIN, SOFI, UPST]
-Healthcare: [LLY, JNJ, UNH, TMO, ISRG, VRTX, REGN, HIMS, CRSP, BLFS]
-Energy: [XOM, CVX, COP, VLO, WMB, SLB, LNG, CCJ, FSLR, SM]
-Industrials: [SPCX, CAT, GE, DE, ETN, LMT, CSX, HON, RKLB, MOD]
-Communication Services: [META, NFLX, DIS, TMUS, SPOT, TTWO, LYV, RDDT, MTCH, IMAX]
+version: 2
+# GENERATED from config/watchlist_110.csv by scripts/sync_baskets.py. Do not hand-edit.
+# Order is descending market cap as of the watchlist snapshot, so index 0-1 are
+# the two largest names and top_two_contribution has a defined referent.
+# scripts/preflight.py fails if this file and the CSV disagree.
+Communication Services: [META, NFLX, TMUS, DIS, SPOT, TTWO, LYV, RDDT, MTCH, IMAX]
 Consumer Discretionary: [AMZN, TSLA, HD, MCD, BKNG, ABNB, CVNA, NKE, ULTA, FIVE]
 Consumer Staples: [WMT, COST, KO, PG, PM, PEP, MDLZ, STZ, CALM, FIZZ]
-Utilities: [NEE, CEG, SRE, D, VST, XEL, ATO, AWK, OKLO, ORA]
-Materials: [LIN, NEM, FCX, SHW, ECL, NUE, MLM, SSD, ALB, MP]
+Energy: [XOM, CVX, COP, VLO, WMB, SLB, LNG, CCJ, FSLR, SM]
+Financials: [JPM, V, MA, GS, SCHW, BLK, PGR, COIN, SOFI, UPST]
+Healthcare: [LLY, JNJ, UNH, TMO, VRTX, ISRG, REGN, HIMS, CRSP, BLFS]
+Industrials: [SPCX, CAT, GE, DE, ETN, LMT, CSX, HON, RKLB, MOD]
+Materials: [LIN, NEM, FCX, SHW, ECL, NUE, MLM, ALB, MP, SSD]
 Real Estate: [WELL, PLD, EQIX, AMT, SPG, PSA, O, VICI, AVB, UMH]
+Technology: [NVDA, GOOGL, TSM, AMD, PLTR, CRWD, DDOG, RGTI, SOUN, INOD]
+Utilities: [NEE, CEG, D, SRE, XEL, VST, ATO, AWK, OKLO, ORA]
