@@ -123,7 +123,22 @@ def load_panel(panel_dir: Path) -> list[dict]:
     return weeks
 
 
-def anchor_of(week: dict) -> str:
+def anchor_of(week: dict, ticker: str | None = None) -> str:
+    """The adjustment anchor for one series, or for the file as a whole.
+
+    A week merged by weekly-council-scan's `backfill_weekly.py --merge`
+    carries series fetched at two different times: the names added later
+    are listed in `provenance.series` with their own `fetched_at`, and the
+    file-level stamp still describes everything else. Resolving the anchor
+    per file in that case reports one anchor for two, which is the error
+    the block exists to prevent (DATA_FEED.md sec.1).
+    """
+    if ticker is not None:
+        prov = week.get("provenance")
+        if isinstance(prov, dict):
+            entry = (prov.get("series") or {}).get(ticker)
+            if isinstance(entry, dict) and entry.get("fetched_at"):
+                return str(entry["fetched_at"])[:10]
     got = week.get("fetched_at")
     if not got:
         raise PanelError(
@@ -133,9 +148,34 @@ def anchor_of(week: dict) -> str:
     return got[:10]
 
 
-def window_anchor(start_week: dict, end_week: dict, horizon: str) -> dict:
-    """Anchor spread across the two weeks a horizon actually reads."""
-    a, b = sorted((anchor_of(start_week), anchor_of(end_week)))
+def anchors_in_window(weeks: list[dict], tickers) -> dict[str, set]:
+    """Map anchor date -> the tickers reading that anchor across the weeks."""
+    found: dict[str, set] = {}
+    for w in weeks:
+        series = w.get("series") or {}
+        for t in tickers:
+            if t in series:
+                found.setdefault(anchor_of(w, t), set()).add(t)
+    if not found:
+        for w in weeks:
+            found.setdefault(anchor_of(w), set())
+    return found
+
+
+def window_anchor(start_week: dict, end_week: dict, horizon: str,
+                  tickers=None) -> dict:
+    """Anchor spread across the two weeks a horizon actually reads.
+
+    With `tickers`, the spread covers every anchor those series actually
+    carry -- including two anchors inside a single merged week, which is a
+    real mixed basis in one cross-section, not just across time.
+    """
+    if tickers:
+        found = anchors_in_window([start_week, end_week], tickers)
+    else:
+        found = {anchor_of(start_week): set(), anchor_of(end_week): set()}
+    dates = sorted(found)
+    a, b = dates[0], dates[-1]
     spread = (datetime.date.fromisoformat(b) - datetime.date.fromisoformat(a)).days
     if spread > MAX_WINDOW_ANCHOR_DAYS:
         raise PanelError(
@@ -146,13 +186,30 @@ def window_anchor(start_week: dict, end_week: dict, horizon: str) -> dict:
             "window shares one anchor."
         )
     return {"earliest": a, "latest": b, "spread_days": spread,
-            "warn": spread > WARN_WINDOW_ANCHOR_DAYS}
+            "warn": spread > WARN_WINDOW_ANCHOR_DAYS,
+            "distinct_anchors": len(dates),
+            "series_by_anchor": {d: len(found[d]) for d in dates
+                                 if found[d]} or None}
 
 
 def check_basis(weeks: list[dict]) -> str:
     """Every week in the panel must share one declared adjustment basis."""
     seen: dict[str, set[str]] = {}
     for w in weeks:
+        # A merged week declares the source of each added series separately;
+        # those closes are on that source's basis, not the file's.
+        prov = w.get("provenance")
+        prov_series = (prov or {}).get("series") or {}
+        for ticker, entry in sorted(prov_series.items()):
+            psrc = (entry or {}).get("source")
+            if psrc not in SOURCE_BASIS:
+                raise PanelError(
+                    "Week " + w["as_of"] + " declares source " + repr(psrc)
+                    + " for " + ticker + ", whose adjustment basis is "
+                    "undeclared. Add it to SOURCE_BASIS only after confirming "
+                    "whether its closes are total-return or price-only."
+                )
+            seen.setdefault(SOURCE_BASIS[psrc], set()).add(w["as_of"])
         src = w.get("source")
         if src not in SOURCE_BASIS:
             raise PanelError(
@@ -294,17 +351,31 @@ def compute(panel_dir: Path, baskets: dict, as_of: str | None) -> dict:
         "warnings": [],
     }
 
+    # The anchor question is about the series actually scored, so ask it of
+    # exactly those: every basket constituent plus the benchmark. A merged
+    # name outside every basket must not widen a spread nobody reads.
+    scored_tickers = {BENCHMARK}
+    for _tickers in sectors.values():
+        scored_tickers.update(_tickers)
+
     per_horizon: dict[str, dict[str, dict]] = {}
     for horizon, back in HORIZON_WEEKS.items():
         if len(weeks) > back:
-            anc = window_anchor(weeks[-1 - back], weeks[-1], horizon)
+            anc = window_anchor(weeks[-1 - back], weeks[-1], horizon,
+                                scored_tickers)
             result["adjustment_anchor"][horizon] = anc
             if anc["warn"]:
+                detail = ""
+                if anc.get("distinct_anchors", 1) > 2:
+                    detail = (" across " + str(anc["distinct_anchors"])
+                              + " distinct anchors -- some series in these "
+                              "weeks were merged in later")
                 result["warnings"].append(
                     "The " + horizon + " window reads weeks fetched "
                     + str(anc["spread_days"]) + " days apart (" + anc["earliest"]
-                    + " to " + anc["latest"] + "); dividend payers' history is "
-                    "adjusted to different anchors across that gap"
+                    + " to " + anc["latest"] + ")" + detail + "; dividend "
+                    "payers' history is adjusted to different anchors across "
+                    "that gap"
                 )
         bench = horizon_returns(weeks, [BENCHMARK], back)
         bench_return = bench["returns"].get(BENCHMARK, {}).get("return_pct")
