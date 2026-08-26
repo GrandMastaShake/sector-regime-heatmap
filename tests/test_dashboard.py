@@ -37,8 +37,11 @@ def test_readme_dashboard_is_current():
     assert r.returncode == 0, r.stdout + r.stderr
 
 
-def test_dashboard_block_is_ascii():
-    rd.build().encode("ascii")
+# The README was ASCII-only until 2026-08-26. It is now UTF-8, but the fenced
+# chart still has to stay single-width or its columns shear -- see
+# test_chart_stays_single_width_so_columns_align.
+def test_dashboard_block_is_valid_utf8():
+    rd.build().encode("utf-8").decode("utf-8")
 
 
 # --- The whole point: no forecast means no numbers, not placeholder numbers.
@@ -46,7 +49,7 @@ def test_empty_state_publishes_no_scores(monkeypatch):
     monkeypatch.setattr(rd, "latest_forecast", lambda: None)
     block = rd.build()
     assert "none published" in block
-    assert "| Sector | Week | Month | Day" not in block
+    assert "| Sector | Week | Month | Trend | Confidence |" not in block
 
 
 # The empty state ended with cycle 1 (as_of 2026-08-21), the first published
@@ -59,7 +62,7 @@ def test_published_state_is_the_current_state():
     assert latest is not None, "cycle 1 was published; a forecast must exist"
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "none published" not in readme
-    assert "| Sector | Week | Month | Day" in readme
+    assert "| Sector | Week | Month | Trend | Confidence |" in readme
     assert latest["as_of_date"] in readme
 
 
@@ -104,10 +107,10 @@ def test_populated_state_renders_all_eleven_sectors(tmp_path, monkeypatch):
     monkeypatch.setattr(rd, "forecast_count", lambda: 1)
     block = rd.build()
     for s in SECTORS:
-        assert "| " + s + " |" in block
+        assert "**" + s + "**" in block
     assert "2026-08-25" in block
     assert "none published" not in block
-    block.encode("ascii")
+    block.encode("utf-8")
 
 
 # --- Multiple artifacts: the dashboard must show the newest, not the first.
@@ -153,16 +156,47 @@ def test_rationale_is_collapsed_out_of_the_table(tmp_path, monkeypatch):
     assert "<details>" in block and a_why in block
 
 
-def test_bar_never_renders_a_missing_score_as_zero():
-    assert rd.bar(None) == "[..........]"     # not offered
-    assert rd.bar(0) == "[----------]"        # scored, and it is a zero
-    assert rd.bar(100) == "[##########]"
-    assert rd.bar(70.7).count("#") == 7
-
-
 def test_strongest_week_sorts_first_and_unscored_sorts_last():
     doc = json.loads((ROOT / "data/forecasts/2026-08-21_manual.json").read_text(encoding="utf-8"))
     rows = sorted(doc["scores"].items(), key=rd.sort_key, reverse=True)
     scores = [r["week"]["score"] for _s, r in rows]
     assert scores == sorted(scores, reverse=True)
     assert rows[0][0] == "Financials"
+
+
+# --- The chart is aligned by padding sector names, so every glyph inside the
+#     fenced block must occupy one column. Emoji are double-width and would
+#     shear the bars out of line; they belong in the markdown table, where
+#     nothing has to line up. This is the invariant that would break silently.
+def test_chart_stays_single_width_so_columns_align(monkeypatch):
+    doc = json.loads((ROOT / "data/forecasts/2026-08-21_manual.json").read_text(encoding="utf-8"))
+    doc["_path"] = "x.json"
+    monkeypatch.setattr(rd, "latest_forecast", lambda: doc)
+    block = rd.build()
+
+    fenced, inside = [], False
+    for line in block.splitlines():
+        if line.strip() == "```":
+            inside = not inside
+            continue
+        if inside:
+            fenced.append(line)
+    assert fenced, "no fenced chart rendered"
+
+    import unicodedata
+    for line in fenced:
+        for ch in line:
+            assert unicodedata.east_asian_width(ch) not in ("W", "F"), (
+                "double-width " + repr(ch) + " inside the aligned chart: " + line)
+
+    # and the bars really do line up
+    bar_lines = [ln for ln in fenced if rd.FULL in ln or rd.EMPTY in ln]
+    assert len(bar_lines) == 11
+    starts = {ln.find(rd.FULL) if rd.FULL in ln else ln.find(rd.EMPTY) for ln in bar_lines}
+    assert len(starts) == 1, "week bars start at different columns: " + str(starts)
+
+
+def test_bar_never_renders_a_missing_horizon_as_zero():
+    assert rd.bar(None) == rd.MISSING * rd.BAR_CELLS   # not offered
+    assert rd.bar(0) == rd.EMPTY * rd.BAR_CELLS        # scored, and it is zero
+    assert rd.bar(None) != rd.bar(0)

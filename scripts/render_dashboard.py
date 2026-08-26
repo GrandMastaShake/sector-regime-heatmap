@@ -54,21 +54,31 @@ def latest_snapshot() -> dict | None:
     return json.loads((best / "manifest.json").read_text(encoding="utf-8"))
 
 
-# ASCII only, per CLAUDE.md -- preflight fails the build on a non-ASCII byte in
-# README.md, so the dashboard is drawn with plain characters. It also means the
-# chart renders identically in a terminal, a diff and a browser.
+# Two rendering surfaces with different rules. The fenced chart uses block
+# characters only -- they are single-width in a monospace font, so the columns
+# stay aligned. Emoji are double-width and would shear the chart, so they live
+# in the markdown table instead, where nothing has to line up.
 BAR_CELLS = 10
+FULL = "█"      # full block
+EMPTY = "░"     # light shade
+MISSING = "·"   # middle dot -- a horizon that was not offered
+
 SHORT_RATING = {"favorable": "fav", "constructive": "con", "neutral": "neu",
                 "unfavorable": "unf", "defensive": "def",
                 "unavailable": "n/a"}
+BADGE = {"favorable": "🟢", "constructive": "🔵",
+         "neutral": "⚪", "unfavorable": "🟠",
+         "defensive": "🔴", "unavailable": "⬛"}
+DOTS = {"high": "●●●", "medium": "●●○",
+        "low": "●○○", "none": "○○○"}
 
 
-def bar(score: float | None) -> str:
-    """A 10-cell gauge. Rounds to nearest cell; 0 shows as empty, not absent."""
+def bar(score) -> str:
+    """A 10-cell gauge. Not-offered is dots; a real zero is an empty bar."""
     if score is None:
-        return "[" + "." * BAR_CELLS + "]"
-    filled = int(round(max(0.0, min(100.0, score)) / 100 * BAR_CELLS))
-    return "[" + "#" * filled + "-" * (BAR_CELLS - filled) + "]"
+        return MISSING * BAR_CELLS
+    filled = int(round(max(0.0, min(100.0, float(score))) / 100 * BAR_CELLS))
+    return FULL * filled + EMPTY * (BAR_CELLS - filled)
 
 
 def cell(row: dict, horizon: str) -> str:
@@ -76,6 +86,18 @@ def cell(row: dict, horizon: str) -> str:
     if s is None:
         return "n/a"
     return str(s) + " " + row[horizon]["rating"]
+
+
+def trend(row: dict) -> str:
+    """Where the month sits relative to the week, at a glance."""
+    w, m = row["week"]["score"], row["month"]["score"]
+    if w is None or m is None:
+        return "—"
+    if m - w >= 5:
+        return "▲ " + ("+%.1f" % (m - w))
+    if w - m >= 5:
+        return "▼ " + ("%.1f" % (m - w))
+    return "▬ flat"
 
 
 def sort_key(item: tuple) -> tuple:
@@ -89,8 +111,8 @@ def render_chart(doc: dict) -> list[str]:
     rows = sorted(doc["scores"].items(), key=sort_key, reverse=True)
     width = max(len(s) for s, _ in rows)
     lines = ["```",
-             "sector".ljust(width) + "   week                    month",
-             "-" * (width + 48)]
+             "SECTOR".ljust(width) + "   WEEK                     MONTH",
+             "─" * (width + 50)]
     for sector, row in rows:
         parts = []
         for horizon in ("week", "month"):
@@ -98,37 +120,53 @@ def render_chart(doc: dict) -> list[str]:
             shown = "  n/a" if score is None else ("%5.1f" % score)
             rating = SHORT_RATING.get(row[horizon]["rating"], "?")
             parts.append(shown + " " + rating + " " + bar(score))
-        lines.append(sector.ljust(width) + "   " + "   ".join(parts))
+        lines.append(sector.ljust(width) + "   " + "    ".join(parts))
     lines.append("```")
     return lines
 
 
+def render_leaders(doc: dict) -> list[str]:
+    rows = [(s, r) for s, r in doc["scores"].items()
+            if r["week"]["score"] is not None]
+    if len(rows) < 2:
+        return []
+    rows.sort(key=lambda x: x[1]["week"]["score"], reverse=True)
+    top, bottom = rows[0], rows[-1]
+    return ["🥇 **" + top[0] + "** " + str(top[1]["week"]["score"])
+            + " leads the week &nbsp;&nbsp;•&nbsp;&nbsp; 🔻 **"
+            + bottom[0] + "** " + str(bottom[1]["week"]["score"]) + " trails it", ""]
+
+
 def render_heatmap(doc: dict) -> list[str]:
     scores = doc["scores"]
-    lines = render_chart(doc) + [
+    lines = render_leaders(doc) + render_chart(doc) + [
         "",
-        "| Sector | Week | Month | Day | Confidence |",
-        "|---|---:|---:|---:|---|",
+        "| | Sector | Week | Month | Trend | Confidence |",
+        "|---|---|---:|---:|:---:|:---:|",
     ]
     for sector, row in sorted(scores.items(), key=sort_key, reverse=True):
+        badge = BADGE.get(row["week"]["rating"], "")
+        conf = row["week"]["confidence"]
         lines.append(
-            "| " + sector + " | " + cell(row, "week") + " | "
-            + cell(row, "month") + " | " + cell(row, "day") + " | "
-            + row["week"]["confidence"] + " |"
+            "| " + badge + " | **" + sector + "** | " + cell(row, "week")
+            + " | " + cell(row, "month") + " | " + trend(row) + " | "
+            + DOTS.get(conf, "") + " " + conf + " |"
         )
 
     # The rationale is the point of the run, but it is long, and pasting two
     # paragraphs into a table cell made the table unreadable. Collapsed, so the
     # scores scan and the reasoning is still one click away.
     lines += ["", "<details>",
-              "<summary>Why each sector reads the way it does</summary>", ""]
+              "<summary><b>Why each sector reads the way it does</b></summary>", ""]
     for sector, row in sorted(scores.items(), key=sort_key, reverse=True):
-        lines.append("**" + sector + "** -- week " + cell(row, "week")
-                     + ", month " + cell(row, "month") + "  ")
+        lines.append("#### " + BADGE.get(row["week"]["rating"], "") + " " + sector
+                     + " — week " + cell(row, "week")
+                     + ", month " + cell(row, "month"))
+        lines.append("")
         for entry in row["week"]["why"]:
             lines.append("- " + entry)
         for entry in row["week"]["risks"]:
-            lines.append("- RISK: " + entry)
+            lines.append("- ⚠️ **Risk:** " + entry)
         lines.append("")
     lines += ["</details>"]
     return lines
@@ -139,16 +177,19 @@ def render_regime(doc: dict) -> list[str]:
     regime = doc["regime"]
     against = regime.get("disconfirming_evidence") or []
     lines = [
-        "**Regime:** " + regime["label"] + "  ",
-        "**Confidence:** " + regime["confidence"] + " -- "
-        + str(len(regime.get("evidence") or [])) + " supporting, "
+        "> 🧭 &nbsp;**Regime** &nbsp; " + regime["label"],
+        "> ",
+        "> **Confidence** &nbsp; " + DOTS.get(regime["confidence"], "") + " "
+        + regime["confidence"] + " &nbsp;&nbsp;•&nbsp;&nbsp; ✅ "
+        + str(len(regime.get("evidence") or [])) + " supporting "
+        + "&nbsp;&nbsp;•&nbsp;&nbsp; ⚠️ "
         + str(len(against)) + " disconfirming",
         "",
     ]
     if against:
         lines += ["<details>",
-                  "<summary>What would make this regime read wrong ("
-                  + str(len(against)) + ")</summary>", ""]
+                  "<summary><b>⚠️ What would make this regime read "
+                  "wrong (" + str(len(against)) + ")</b></summary>", ""]
         lines += ["- " + a for a in against]
         lines += ["", "</details>", ""]
     return lines
@@ -187,7 +228,7 @@ def render_constraints() -> list[str]:
 
 
 def build() -> str:
-    lines = [START, "", "## Dashboard", ""]
+    lines = [START, "", "## 📊 Dashboard", ""]
 
     doc = latest_forecast()
     if doc is None:
