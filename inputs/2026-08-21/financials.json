@@ -1,0 +1,126 @@
+{
+  "sector": "Financials",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 86.6,
+      "regime_fit": 62,
+      "macro_catalyst": 60
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 1.491,
+      "equal_weight_return_pct": 3.358,
+      "sector_return_vs_spy_pct": 4.726,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 86.6,
+      "top_two_contribution_pct": 69.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Financials run +38.0 pct absolute and +6.7 pts excess in archetype 1, second only to Technology among expansion leaders (The Full Regime-Sector Matrix).",
+      "This is the one sector the atypical rate backdrop helps mechanically: banks expanded median NIM to 3.38 pct from 3.27 pct in the 2022 cycle with more than 65 pct reporting higher NIM, and SSGA places Banks in Tier 1 positive responders to the 10Y (R2 0.228) (Sector Macro Sensitivity Matrix)."
+    ],
+    "risks": [
+      "Credit stress is migrating rather than disappearing: KRE underperformed KBE by 180 bps on the week and loan-loss provisions are rising at the regionals while money-center banks still guide to stable credit. A break below $48 on XLF forces a re-evaluation of the whole sector thesis (wiki/synthesis.md@cd85b433)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 90.9,
+      "regime_fit": 62,
+      "macro_catalyst": 58
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 8.574,
+      "equal_weight_return_pct": 7.733,
+      "sector_return_vs_spy_pct": 4.107,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 90.9,
+      "top_two_contribution_pct": 39.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Panel has Financials +4.11 pts vs SPY on the month and rank 2 of 11 on the week, so the arithmetic and the archetype-1 prior point the same way (panel metrics, this file; The Full Regime-Sector Matrix).",
+      "The curve shape is the driver, not the level: SSGA measures Banks at +1.85 pct average monthly relative return in bear-steepening regimes versus -1.91 pct in bull-flattening, and the 8/21 week was a bear move with the 10Y at a 52-week-high close (Sector Macro Sensitivity Matrix; wiki/economic-calendar.md@63b4d3ba)."
+    ],
+    "risks": [
+      "Financials are rated double-negative in recession and post the worst excess return of any sector in any archetype during a systemic credit crisis (-15.7 pts). The NIM tailwind does not survive a credit event (The Full Regime-Sector Matrix; Sector Macro Sensitivity Matrix).",
+      "The curve remains historically flat despite the steepening; book value at ~1.1x is cheap but not a catalyst (wiki/synthesis.md@cd85b433)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/financials.md",
+        "source_file_sha": "ffa53c7db8200d8ffc936484367df32b522b4f90",
+        "lead_summary": "Financials are the bond market's shadow. When the yield curve speaks, the banks listen.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLF"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}

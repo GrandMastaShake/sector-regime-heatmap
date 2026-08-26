@@ -49,10 +49,18 @@ def test_empty_state_publishes_no_scores(monkeypatch):
     assert "| Sector | Day | Week | Month" not in block
 
 
-def test_empty_state_is_the_current_state():
-    # If this fails, a forecast was committed and the README should show it.
-    assert rd.latest_forecast() is None
-    assert "none published" in (ROOT / "README.md").read_text(encoding="utf-8")
+# The empty state ended with cycle 1 (as_of 2026-08-21), the first published
+# forecast. The tripwire above did its job -- it fired the moment a forecast
+# was committed -- and is replaced by its inverse: the README must now SHOW
+# that forecast rather than claim none exists. The behavioural gate above
+# (no forecast means no numbers, not placeholder numbers) is unchanged.
+def test_published_state_is_the_current_state():
+    latest = rd.latest_forecast()
+    assert latest is not None, "cycle 1 was published; a forecast must exist"
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "none published" not in readme
+    assert "| Sector | Day | Week | Month" in readme
+    assert latest["as_of_date"] in readme
 
 
 def make_forecast(tmp_path: Path, as_of: str) -> Path:

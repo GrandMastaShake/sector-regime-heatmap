@@ -1,0 +1,125 @@
+{
+  "sector": "Consumer Staples",
+  "as_of_date": "2026-08-21",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 107,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components were supplied 2026-08-26 with sourced reasoning. MID-CYCLE MANUAL RUN: judgment written 2026-08-26, five calendar days after the 2026-08-21 close this file reads. Two of the five sessions in the week window (Mon 08-24, Tue 08-25) had already traded. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26), and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is still not a clean ex-ante forecast and must not be graded as one."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 43.4,
+      "regime_fit": 28,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 0.705,
+      "equal_weight_return_pct": -0.241,
+      "sector_return_vs_spy_pct": 1.127,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 43.4,
+      "top_two_contribution_pct": 50.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Staples are near the bottom of archetype 1: +10.8 pct absolute, -20.5 pts excess, and they are the worst excess-return sector in policy-relief expansions (-19.6 pts). Their documented edge is in exogenous shocks and policy-pivot transitions, neither of which is the active mechanism (The Full Regime-Sector Matrix; Forward Test Pre-Registration, registered 2026-08-23).",
+      "The panel agrees on the month at -2.01 pts vs SPY, so the archetype prior and the arithmetic point the same way over the longer horizon (panel metrics, this file)."
+    ],
+    "risks": [
+      "The week reading is the opposite of the month: +1.13 pts vs SPY, rank 7 of 11. A defensive bid appearing in the same week the technician read is 'distribution' is worth watching as a regime signal rather than dismissing as noise (panel metrics, this file; wiki/synthesis.md@cd85b433)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 35.1,
+      "regime_fit": 28,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 3.183,
+      "equal_weight_return_pct": 1.619,
+      "sector_return_vs_spy_pct": -2.007,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 35.1,
+      "top_two_contribution_pct": 36.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-07-24",
+      "window_to": "2026-08-21"
+    },
+    "why": [
+      "Staples' weakness in expansions is a being-left-behind effect, not a fundamental impairment -- the sector posts positive excess return in archetypes 7 and 8, so this is a positioning call tied to the regime label holding (The Full Regime-Sector Matrix).",
+      "The consumer prints that would help Staples relatively (retail -0.6 pct, WMT comp miss, UMich 51.0) are the same ones that hurt Discretionary, so the pair is the cleaner expression than either leg alone (wiki/economic-calendar.md@63b4d3ba; wiki/synthesis.md@cd85b433)."
+    ],
+    "risks": [
+      "If the regime label is wrong and this is a late-cycle turn, the archetype-1 prior is exactly backwards for this sector -- Staples is the best relative performer in the recession case (The Full Regime-Sector Matrix)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-08-24",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-staples.md",
+        "source_file_sha": "91b717c9fac7c85bce79f00bafa91001844ebfd2",
+        "lead_summary": "This is my garden. The roots are deep. The dividends are honest. The weeds are the ones trading at 40x P/E and calling themselves staples.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLP"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-08-24",
+    "source_commit_sha": "be90446207590eea46fe482dae1826bbf67a76ff",
+    "provenance_verified": true
+  }
+}
