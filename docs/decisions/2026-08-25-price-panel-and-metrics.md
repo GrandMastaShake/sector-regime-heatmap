@@ -73,3 +73,24 @@ computed over survivors while reporting as though it ran over ten.
 Until the 44-name backfill lands upstream, coverage is thin for most sectors --
 Communication Services has two of ten. The engine says so on every run rather
 than producing numbers that look complete.
+
+## The spreadsheets earn a job
+
+Neither uploaded workbook can feed the panel, but both are useful.
+
+`Seven_Orbs_Watchlist_110_Enhanced.xlsx` is committed as
+`data/fundamentals/2026-08-21_fundamentals.csv` -- price, P/E, EPS, 52-week
+range, volume and relative volume for all 110. `DivYield_%` is dropped; it is
+populated for 69 of 110 and a half-filled column invites exactly the kind of
+silent zero that this repo keeps finding.
+
+`scripts/crosscheck_prices.py` compares the snapshot against the panel. Two
+sources disagreeing in a predictable way is a validator. On 2026-08-21 it
+separates cleanly: nine names drift 2.0 to 6.9 percent, which is ordinary for
+a screener pull on a different session, and AVB sits at 179.3 percent with a
+volume-zero flag. That is a third independent confirmation of the bad bar,
+arrived at without looking for it.
+
+The check is advisory and does not fail the build, because the snapshot is
+price-only and the panel is total-return adjusted; on older dates the two
+legitimately diverge by accumulated yield. It is a smoke detector, not a gate.
