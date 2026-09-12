@@ -1,0 +1,48 @@
+version: 1
+
+# The 10-archetype taxonomy, 24 episodes, 1998-2026, and the observed
+# transitions between them.
+#
+# Read the n column before reading anything else. Five archetypes have n=1.
+# A duration "range" over one observation is not a range, and a sector excess
+# return from a single episode is one episode, not a base rate. The published
+# research is explicit that 3-4 observations per archetype is not enough for a
+# forecasting model; this file exists so the dashboard can show a prior next
+# to the arithmetic, not so anything can be predicted from it.
+
+archetypes:
+  1:  {name: Steady mid-cycle expansion,        direction: expansion,   n: 4, mean_duration_days: 315, duration_range: [140, 574],  sector_spread_points: 40.7}
+  2:  {name: Easy-money early-cycle expansion,  direction: expansion,   n: 3, mean_duration_days: 834, duration_range: [315, 1547], sector_spread_points: 40.8}
+  3:  {name: Policy-relief expansion,           direction: expansion,   n: 3, mean_duration_days: 230, duration_range: [112, 315],  sector_spread_points: 32.4}
+  4:  {name: Hawkish rate-shock selloff,        direction: contraction, n: 4, mean_duration_days: 127, duration_range: [84, 244],   sector_spread_points: 11.8}
+  5:  {name: Sustained hiking bear market,      direction: contraction, n: 1, mean_duration_days: 283, duration_range: null,        sector_spread_points: 84.7}
+  6:  {name: Systemic credit crisis,            direction: contraction, n: 3, mean_duration_days: 202, duration_range: [39, 517],   sector_spread_points: 40.5}
+  7:  {name: Exogenous non-financial shock,     direction: contraction, n: 3, mean_duration_days: 82,  duration_range: [33, 123],   sector_spread_points: 15.2}
+  8:  {name: Policy-pivot transition,           direction: transition,  n: 1, mean_duration_days: 45,  duration_range: null,        sector_spread_points: 10.8}
+  9:  {name: Tech-bubble melt-up,               direction: expansion,   n: 1, mean_duration_days: 161, duration_range: null,        sector_spread_points: 70.1}
+  10: {name: Tech-bubble unwind,                direction: contraction, n: 1, mean_duration_days: 924, duration_range: null,        sector_spread_points: 78.6}
+
+# Observed archetype-to-archetype handoffs. 16 transitions, counted only
+# inside genuinely continuous (gap-free) chains -- 1998-2006 and 2021-2026.
+# Episode N followed by episode N+1 in the chronology is NOT a transition when
+# a multi-month unlabelled stretch sits between them; the prior count of 17
+# silently included one such cross-gap pseudo-transition.
+#
+# The pattern this supports: no contraction archetype has ever handed off
+# directly to another contraction archetype. Every contraction-origin row
+# below lands in an expansion column. The single arrow into a contraction
+# comes from archetype 8, which is a transition, not a contraction.
+#
+# n=16. This is a described regularity, not a law, and it says nothing about
+# WHICH expansion follows or when.
+transitions:
+  1:  {4: 1, 7: 1}
+  2:  {8: 1}
+  3:  {4: 1, 5: 1, 6: 1}
+  4:  {1: 1, 9: 1}
+  5:  {3: 1}
+  6:  {1: 1, 3: 1}
+  7:  {1: 1, 3: 1}
+  8:  {5: 1}
+  9:  {10: 1}
+  10: {2: 1}
