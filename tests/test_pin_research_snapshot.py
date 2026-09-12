@@ -8,6 +8,7 @@ thing is worse than no manifest, since the importer will happily verify it.
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -179,3 +180,86 @@ def test_reproduces_the_committed_manifest_exactly():
         pytest.skip("pinned upstream commit not fetched locally")
     for rel, sha in committed["files"].items():
         assert pin.blob_sha(upstream_repo, commit, rel) == sha, rel
+
+
+# -- mid-scan detection ------------------------------------------------------
+
+def commit_at(repo, date_iso, message):
+    """Commit with both author and committer dates pinned."""
+    env = {"GIT_AUTHOR_DATE": date_iso + "T12:00:00", 
+           "GIT_COMMITTER_DATE": date_iso + "T12:00:00"}
+    subprocess.run(["git", "-C", str(repo), "add", "-A"], check=True,
+                   capture_output=True)
+    subprocess.run(["git", "-C", str(repo), "commit", "-q", "-m", message],
+                   check=True, capture_output=True,
+                   env={**os.environ, **env})
+
+
+def test_completed_scan_records_a_small_spread(tmp_path, upstream):
+    """One commit for every source: the shape of a finished weekly scan."""
+    out = tmp_path / "out"
+    run(["--upstream", str(upstream), "--commit", head(upstream),
+         "--as-of-date", "2026-09-14", "--output-root", str(out)])
+    doc = json.loads((out / "2026-09-14" / "source_file_shas.json")
+                     .read_text(encoding="utf-8"))
+    assert doc["source_age_spread"]["days"] == 0
+    assert doc["source_age_spread"]["days"] <= pin.MAX_SOURCE_SPREAD_DAYS
+
+
+def test_midscan_snapshot_is_detected(tmp_path, upstream, capsys):
+    """The case no age threshold catches: a snapshot pinned while the
+    upstream scan is still running mixes two weeks of research, and every
+    individual age can sit inside the staleness bound."""
+    # Re-date the whole set to last week, then refresh one sector this week --
+    # the shape of a scan caught part-way through.
+    for rel in pin.sources(CONFIG):
+        (upstream / rel).write_text("week 1 content of " + rel + "\n",
+                                    encoding="utf-8", newline="\n")
+    commit_at(upstream, "2026-09-05", "last week's scan")
+
+    late = upstream / "wiki" / "tech.md"
+    late.write_text("refreshed later\n", encoding="utf-8", newline="\n")
+    commit_at(upstream, "2026-09-12", "tech refreshed")
+
+    out = tmp_path / "out"
+    run(["--upstream", str(upstream), "--commit", head(upstream),
+         "--as-of-date", "2026-09-14", "--output-root", str(out)])
+
+    doc = json.loads((out / "2026-09-14" / "source_file_shas.json")
+                     .read_text(encoding="utf-8"))
+    spread = doc["source_age_spread"]
+    assert spread["days"] > pin.MAX_SOURCE_SPREAD_DAYS
+    assert spread["newest"]["path"] == "wiki/tech.md"
+
+    printed = capsys.readouterr().out
+    assert "MID-SCAN SNAPSHOT" in printed
+    assert "two different weeks" in printed
+
+
+def test_stale_bound_matches_the_binding_gate():
+    """stage_run refuses a snapshot more than 7 days after its close. A
+    looser bound here would pass sources that gate will reject anyway."""
+    import stage_run
+    assert pin.STALE_WARN_DAYS == stage_run.MAX_RESEARCH_LAG_DAYS
+
+
+def test_the_committed_snapshot_was_not_pinned_mid_scan():
+    """The one real snapshot in the repo should pass its own check."""
+    upstream_repo = ROOT.parent / "weekly-council-scan"
+    if not (upstream_repo / ".git").is_dir():
+        pytest.skip("weekly-council-scan checkout not present")
+    committed = json.loads(
+        (ROOT / "data/weekly_research/2026-08-24/source_file_shas.json")
+        .read_text(encoding="utf-8"))
+    commit = committed["source_commit_sha"]
+    if subprocess.run(["git", "-C", str(upstream_repo), "cat-file", "-t", commit],
+                      capture_output=True).returncode != 0:
+        pytest.skip("pinned upstream commit not fetched locally")
+    dates = [pin.last_touched(upstream_repo, commit, rel)
+             for rel in committed["files"]]
+    dates = [d for d in dates if d]
+    import datetime as _dt
+    spread = (_dt.date.fromisoformat(max(dates))
+              - _dt.date.fromisoformat(min(dates))).days
+    assert spread <= pin.MAX_SOURCE_SPREAD_DAYS, (
+        "the committed snapshot spans " + str(spread) + " days")

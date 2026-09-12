@@ -46,7 +46,22 @@ SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 # A wiki older than this against the as-of date is not describing the week
 # being scored. Warned, not refused -- the upstream scan legitimately skips a
 # sector some weeks, and the snapshot records that rather than hiding it.
-STALE_WARN_DAYS = 10
+#
+# Aligned with stage_run.MAX_RESEARCH_LAG_DAYS, which is the binding gate: it
+# refuses a snapshot more than 7 days after the close it reads. A source older
+# than that against the snapshot date cannot be describing the same week.
+STALE_WARN_DAYS = 7
+
+# The more dangerous case, and the one no age threshold catches: a snapshot
+# pinned while the upstream scan is MID-RUN. On 2026-09-12 four wikis were two
+# days old and twelve were six to nine days old -- pinning then would have
+# mixed one week's tech, financials, healthcare and industrials with the
+# previous week's everything else, and every individual age was inside any
+# reasonable staleness bound.
+#
+# The signal is the SPREAD between oldest and newest source, not any single
+# age. A completed weekly scan writes its sources within a couple of days.
+MAX_SOURCE_SPREAD_DAYS = 3
 
 
 def sources(config_path: Path) -> list[str]:
@@ -135,6 +150,7 @@ def main(argv: list | None = None) -> int:
     files: dict = {}
     missing: list = []
     stale: list = []
+    touched_dates: list = []
     for rel in paths:
         sha = blob_sha(a.upstream, a.commit, rel)
         if sha is None:
@@ -145,6 +161,8 @@ def main(argv: list | None = None) -> int:
         touched = last_touched(a.upstream, a.commit, rel)
         age = ((as_of - datetime.date.fromisoformat(touched)).days
                if touched else None)
+        if touched:
+            touched_dates.append((touched, rel))
         flag = ""
         if age is not None and age > STALE_WARN_DAYS:
             stale.append({"path": rel, "last_updated": touched,
@@ -152,6 +170,17 @@ def main(argv: list | None = None) -> int:
             flag = "  STALE"
         print("  " + sha[:12] + "  " + rel.ljust(38)
               + (touched or "unknown") + " (" + str(age) + "d)" + flag)
+
+    # Was the scan mid-run when this commit was made? See MAX_SOURCE_SPREAD_DAYS.
+    spread = None
+    if touched_dates:
+        oldest, newest = min(touched_dates), max(touched_dates)
+        spread = {
+            "days": (datetime.date.fromisoformat(newest[0])
+                     - datetime.date.fromisoformat(oldest[0])).days,
+            "oldest": {"path": oldest[1], "last_updated": oldest[0]},
+            "newest": {"path": newest[1], "last_updated": newest[0]},
+        }
 
     if missing:
         raise SystemExit(
@@ -170,6 +199,8 @@ def main(argv: list | None = None) -> int:
         # Recorded in the manifest, not just printed, so the staleness travels
         # with the snapshot instead of living in one terminal session.
         doc["stale_sources"] = sorted(stale, key=lambda e: -e["age_days"])
+    if spread is not None:
+        doc["source_age_spread"] = spread
 
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(json.dumps(doc, indent=2, ensure_ascii=True) + "\n",
@@ -184,6 +215,23 @@ def main(argv: list | None = None) -> int:
                   + " (" + str(e["age_days"]) + "d)")
         print("\nThis is a warning, not a refusal. Decide whether research "
               "that old describes the week you are about to score.")
+
+    if spread is not None and spread["days"] > MAX_SOURCE_SPREAD_DAYS:
+        print("\nMID-SCAN SNAPSHOT: the sources span " + str(spread["days"])
+              + " days, past the " + str(MAX_SOURCE_SPREAD_DAYS)
+              + "-day bound.")
+        print("  newest  " + spread["newest"]["last_updated"] + "  "
+              + spread["newest"]["path"])
+        print("  oldest  " + spread["oldest"]["last_updated"] + "  "
+              + spread["oldest"]["path"])
+        print("\nThat usually means the upstream weekly scan was still "
+              "running at this commit, so the snapshot mixes one week's "
+              "research for some sectors with the previous week's for "
+              "others. Every individual age can look fine while the snapshot "
+              "as a whole describes two different weeks. Wait for the scan to "
+              "finish and pin a later commit, unless you know why a sector "
+              "was skipped.")
+
     print("\nNext: python src/import_weekly_research.py --source-root "
           + str(a.upstream) + " \\\n        --commit " + a.commit
           + " --as-of-date " + a.as_of_date
