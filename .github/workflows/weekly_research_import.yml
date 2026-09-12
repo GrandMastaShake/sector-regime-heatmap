@@ -57,23 +57,38 @@ jobs:
           persist-credentials: false
 
       - name: Import verified snapshot
+        id: import
         run: |
+          set +e
           python src/import_weekly_research.py \
             --source-root upstream \
             --commit "${{ inputs.upstream_commit }}" \
             --file-shas "data/weekly_research/${{ inputs.as_of_date }}/source_file_shas.json" \
             --as-of-date "${{ inputs.as_of_date }}"
+          code=$?
+          set -e
+          # 2 is Gate 0 declining to re-import an existing snapshot. That is
+          # the correct outcome, not a failure -- the reason is printed above.
+          if [ "$code" = "2" ]; then
+            echo "refused=true" >> "$GITHUB_OUTPUT"
+            echo "Declined to import (reason above). Exiting clean."
+            exit 0
+          fi
+          exit $code
 
       - name: Refresh the README dashboard
+        if: steps.import.outputs.refused != 'true'
         run: python scripts/render_dashboard.py
 
       - name: Run tests against the imported snapshot
+        if: steps.import.outputs.refused != 'true'
         # Scoped by pytest.ini (testpaths = tests). This job checks
         # another repo out into upstream/, and a bare collection walks
         # into its tests.
         run: python -m pytest -q
 
       - name: Commit snapshot
+        if: steps.import.outputs.refused != 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

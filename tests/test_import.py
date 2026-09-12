@@ -145,3 +145,42 @@ def test_snapshot_output_is_ascii_and_hash_is_platform_stable(tmp_path):
     body = json.loads(tech.decode("ascii"))
     assert body["extracts"][0]["content_sha256"]
     assert body["extracts"][0]["content_bytes"] > 0
+
+
+# -- Gate 0: a snapshot is imported once -------------------------------------
+
+def test_reimport_is_refused_rather_than_overwriting(tmp_path, monkeypatch):
+    """A re-import is byte-identical except for imported_at_utc, so its only
+    effect is to destroy the record of when the research first landed. A run
+    on 2026-09-12 silently restamped the 2026-08-24 snapshot as imported that
+    day; the diff was one line and looked like nothing."""
+    import subprocess
+    import sys as _sys
+    out = tmp_path / "weekly_research"
+    (out / "2026-08-24").mkdir(parents=True)
+    (out / "2026-08-24" / "manifest.json").write_text(
+        '{"as_of_date": "2026-08-24"}', encoding="utf-8", newline="\n")
+    before = (out / "2026-08-24" / "manifest.json").read_bytes()
+
+    r = subprocess.run(
+        [_sys.executable, "src/import_weekly_research.py",
+         "--source-root", "../weekly-council-scan",
+         "--commit", "be90446207590eea46fe482dae1826bbf67a76ff",
+         "--file-shas", "data/weekly_research/2026-08-24/source_file_shas.json",
+         "--as-of-date", "2026-08-24",
+         "--output-root", str(out)],
+        capture_output=True, text=True, cwd=str(ROOT))
+
+    assert r.returncode == 2, r.stdout + r.stderr
+    assert "REFUSED" in r.stdout
+    assert "imported once" in r.stdout
+    assert (out / "2026-08-24" / "manifest.json").read_bytes() == before, (
+        "the existing manifest was modified despite the refusal")
+
+
+def test_force_is_available_for_a_deliberate_repair():
+    """The escape hatch exists and is spelled out, so a real repair does not
+    require editing the guard."""
+    src = (ROOT / "src" / "import_weekly_research.py").read_text(encoding="utf-8")
+    assert '"--force"' in src
+    assert "deliberately repairing a bad import" in src

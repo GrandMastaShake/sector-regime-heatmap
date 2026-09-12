@@ -70,6 +70,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--file-shas", type=Path, required=True)
     p.add_argument("--as-of-date", required=True)
     p.add_argument("--output-root", type=Path, default=Path("data/weekly_research"))
+    p.add_argument("--force", action="store_true",
+                   help="re-import over an existing snapshot (see Gate 0)")
     a = p.parse_args(argv)
 
     cfg = yaml.safe_load(a.config.read_text(encoding="utf-8"))
@@ -95,7 +97,29 @@ def main(argv: list[str] | None = None) -> int:
     # BUG FIX: the blob SHAs live under the "files" key, not at the top level.
     pinned = pinned_doc["files"]
 
+    # --- Gate 0: a snapshot is imported once. ---------------------------------
+    # Re-importing is not harmless. The verified content is byte-identical --
+    # that is what the pinned SHAs guarantee -- so the only thing that changes
+    # is `imported_at_utc`, and rewriting it destroys the record of when the
+    # research actually entered the repo while leaving everything else
+    # untouched. A run on 2026-09-12 silently restamped the 2026-08-24
+    # snapshot as imported that day; the diff was one line and looked like
+    # nothing.
+    #
+    # Same rule the forecast artifacts already follow: dated artifacts refuse
+    # to overwrite, and a correction is a new dated file.
     out = a.output_root / a.as_of_date
+    manifest = out / "manifest.json"
+    if manifest.exists() and not a.force:
+        print(
+            "REFUSED: " + str(manifest) + " already exists. A research "
+            "snapshot is imported once -- the pinned SHAs make a re-import "
+            "byte-identical except for imported_at_utc, so the only effect is "
+            "to destroy the record of when this research first landed. "
+            "Import a different as-of date, or pass --force if you are "
+            "deliberately repairing a bad import."
+        )
+        return 2
     out.mkdir(parents=True, exist_ok=True)
 
     files: list[dict] = []
