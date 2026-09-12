@@ -56,8 +56,45 @@ Three are arithmetic and are computed from the price panel. Two are judgment.
 the handoff, not a bug. Never fill a judgment component to make the pipeline
 run; never default one to 50.
 
-The day horizon is not offered. It needs daily bars and the upstream feed
-commits Friday closes only.
+The day horizon is not offered *in the scored forecast*. It needs daily bars,
+and for the forecast that is still the binding constraint -- but see the daily
+tape below: the upstream feed now commits daily sessions too, and the three
+arithmetic components are computed over them. The two judgment components are
+what keep the day horizon out of a *score*, not the bars.
+
+## The daily tape
+
+    python src/daily_tape.py --panel ../weekly-council-scan/data/daily
+    python scripts/render_tape.py
+
+An observation, not a forecast. It computes the three arithmetic components
+per basket over 1 and 5 sessions and writes `data/tape/<as_of>.json`. It
+scores nothing: `is_forecast: false` is in the artifact, and a test asserts the
+sector blocks carry no judgment component, score, band or rating.
+`src/evaluate.py` must never grade a tape -- a tape is not a call.
+
+This does NOT advance the 10-cycle count and was not built to. A tape is not a
+cycle, and `premarket.yml` / `after-close.yml` stay disabled.
+
+- **The daily panel is read alone.** `check_cadence` refuses a panel that is
+  not uniformly `cadence: daily`. Daily and weekly files carry different
+  adjustment anchors: on 2026-08-28 they agree on SPY to the penny and disagree
+  ~1% across 57 dividend payers, and 50% on APH, which split 2:1 on
+  2026-09-03. The anchor-spread gate would not have caught it -- those two
+  files are 7 days apart and the warn threshold is 35. A corporate action needs
+  no 35 days.
+- **The archetype prior sits beside the arithmetic and never inside it.**
+  `config/regime_sector_matrix.yaml` is the published 11x10 matrix;
+  `src/regime_prior.py` ranks it against the tape and flags any sector 6 or
+  more rank positions apart. It names disagreements and does not resolve them
+  -- that is `regime_fit`, and it is judgment on purpose.
+- **The prior never infers its own archetype.** It parses `archetype N` from
+  the latest forecast's `regime.label`, where a human declared it. No parse, no
+  prior, and the block says so. Its age renders with it.
+- Null matrix cells (Real Estate and Communication Services before their ETFs
+  listed) are not ranked and never flagged. A null is not a zero.
+
+`docs/decisions/2026-09-11-daily-observation-tape.md` has the reasoning.
 
 ## The gates, and what each one caught
 
@@ -137,6 +174,9 @@ snapshot lands.
 
 ## Outstanding
 
+- **Cycles 2 and 3 are unrun and their data is already in the panel.** The
+  weekly feed carries 2026-08-28 and 2026-09-04; neither has been staged. The
+  daily tape does not substitute for them.
 - **1 of 10 manual runs.** Cycle 1 (`2026-08-21`) is published. The runbook
   wants 10 before any schedule. They are a forward test; do not compress them.
   Cycle 2 should read the 2026-08-28 close, which is the first fully ex-ante

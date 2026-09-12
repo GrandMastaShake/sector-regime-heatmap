@@ -1,0 +1,188 @@
+version: 1
+
+# Sector excess return by regime archetype, in percentage points against SPY
+# over the full episode. Transcribed from the published regime-sector matrix
+# (24 episodes, 1998-2026, 10 archetypes).
+#
+# THIS IS A PRIOR, NOT A FORECAST. It records what a sector did in past
+# episodes of the same archetype. It is displayed beside the live arithmetic
+# and never mixed into a score: src/heatmap.py scores five components and this
+# is none of them. `regime_fit` is the judgment component where a human decides
+# how much weight this prior deserves this time, and that decision is exactly
+# what must not be automated away.
+#
+# Precision: whole points, as the published matrix reports them. A handful of
+# episodes are cited to one decimal in prose elsewhere (Technology in the
+# bubble unwind is -34.0, Consumer Staples +44.6, Financials in a credit
+# crisis -19.9); those round to the values here and the extra digit is not
+# carried, because the n per cell is 1-4 and a tenth of a point implies a
+# precision the sample cannot support.
+#
+# n/a: the sector ETF did not exist for that episode. XLRE listed October 2015
+# and XLC June 2018, so neither has a dot-com-era observation. Absent, not zero
+# -- a null here must never be read as "no excess return".
+#
+# Sample sizes per archetype are in config/regime_archetypes.yaml. Several are
+# n=1. Read accordingly.
+
+archetypes:
+
+  1:
+    name: Steady mid-cycle expansion
+    direction: expansion
+    sectors:
+      Technology: 15
+      Consumer Discretionary: 1
+      Industrials: -2
+      Financials: 7
+      Energy: -26
+      Utilities: -23
+      Healthcare: -14
+      Consumer Staples: -21
+      Materials: -12
+      Real Estate: -19
+      Communication Services: 1
+
+  2:
+    name: Easy-money early-cycle expansion
+    direction: expansion
+    sectors:
+      Technology: 11
+      Consumer Discretionary: 10
+      Industrials: 10
+      Financials: 13
+      Energy: 36
+      Utilities: -4
+      Healthcare: -26
+      Consumer Staples: -26
+      Materials: 10
+      Real Estate: -16
+      Communication Services: -33
+
+  3:
+    name: Policy-relief expansion
+    direction: expansion
+    sectors:
+      Technology: 6
+      Consumer Discretionary: -12
+      Industrials: -5
+      Financials: -10
+      Energy: -19
+      Utilities: -20
+      Healthcare: -19
+      Consumer Staples: -27
+      Materials: -12
+      Real Estate: -21
+      Communication Services: -7
+
+  4:
+    name: Hawkish rate-shock selloff
+    direction: contraction
+    sectors:
+      Technology: 0
+      Consumer Discretionary: 0
+      Industrials: 2
+      Financials: -2
+      Energy: 0
+      Utilities: -1
+      Healthcare: 1
+      Consumer Staples: -1
+      Materials: 1
+      Real Estate: -4
+      Communication Services: -8
+
+  5:
+    name: Sustained hiking bear market
+    direction: contraction
+    sectors:
+      Technology: -7
+      Consumer Discretionary: -8
+      Industrials: 4
+      Financials: 3
+      Energy: 71
+      Utilities: 13
+      Healthcare: 11
+      Consumer Staples: 10
+      Materials: 0
+      Real Estate: -10
+      Communication Services: -14
+
+  6:
+    name: Systemic credit crisis
+    direction: contraction
+    sectors:
+      Technology: 1
+      Consumer Discretionary: -6
+      Industrials: -6
+      Financials: -20
+      Energy: -3
+      Utilities: 1
+      Healthcare: 4
+      Consumer Staples: 10
+      Materials: -6
+      Real Estate: 16
+      Communication Services: 21
+
+  7:
+    name: Exogenous non-financial shock
+    direction: contraction
+    sectors:
+      Technology: -3
+      Consumer Discretionary: -4
+      Industrials: 1
+      Financials: -3
+      Energy: 11
+      Utilities: 8
+      Healthcare: 6
+      Consumer Staples: 12
+      Materials: 5
+      Real Estate: 3
+      Communication Services: 2
+
+  8:
+    name: Policy-pivot transition
+    direction: transition
+    sectors:
+      Technology: 0
+      Consumer Discretionary: -5
+      Industrials: -1
+      Financials: -1
+      Energy: 0
+      Utilities: 5
+      Healthcare: 5
+      Consumer Staples: 6
+      Materials: 1
+      Real Estate: 6
+      Communication Services: -4
+
+  9:
+    name: Tech-bubble melt-up
+    direction: expansion
+    sectors:
+      Technology: 38
+      Consumer Discretionary: -15
+      Industrials: -17
+      Financials: -4
+      Energy: -17
+      Utilities: -32
+      Healthcare: -2
+      Consumer Staples: -33
+      Materials: -27
+      Real Estate: null
+      Communication Services: null
+
+  10:
+    name: Tech-bubble unwind
+    direction: contraction
+    sectors:
+      Technology: -34
+      Consumer Discretionary: 26
+      Industrials: 13
+      Financials: 25
+      Energy: 24
+      Utilities: 15
+      Healthcare: 28
+      Consumer Staples: 45
+      Materials: 25
+      Real Estate: null
+      Communication Services: null

@@ -1,0 +1,88 @@
+name: Daily tape
+
+# Recomputes the daily tape from the upstream daily panel and refreshes the
+# README block.
+#
+# This is the OBSERVATION job. It is not the forecast schedule -- premarket.yml
+# and after-close.yml stay disabled until the runbook's 10 manual cycles are
+# done. Nothing here scores a sector, and nothing here advances that count.
+#
+# 22:20 UTC is ~35 minutes after weekly-council-scan's daily-observe job, which
+# leaves it time to commit the session. If the upstream session is not there
+# yet the tape simply renders the previous one and the run is a no-op.
+
+on:
+  schedule:
+    - cron: '20 22 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      upstream_ref:
+        description: weekly-council-scan ref to read the daily panel from
+        required: false
+        default: main
+        type: string
+
+concurrency:
+  group: daily-tape
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  tape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -r requirements.txt
+
+      - name: Preflight
+        run: python scripts/preflight.py
+
+      - name: Check out the upstream daily panel
+        uses: actions/checkout@v4
+        with:
+          repository: GrandMastaShake/weekly-council-scan
+          ref: ${{ inputs.upstream_ref || 'main' }}
+          path: upstream
+          persist-credentials: false
+
+      - name: Record which upstream commit the tape read
+        id: upstream
+        run: |
+          sha=$(git -C upstream rev-parse HEAD)
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "Upstream weekly-council-scan at $sha"
+
+      - name: Compute the tape
+        run: python src/daily_tape.py --panel upstream/data/daily
+
+      - name: Refresh the README daily-tape block
+        run: python scripts/render_tape.py
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Commit the tape
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tape README.md
+          if git diff --cached --quiet; then
+            echo "No change -- upstream has no new session."
+            exit 0
+          fi
+          git commit -m "data: daily tape, upstream ${{ steps.upstream.outputs.sha }}"
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+            echo "Push attempt $i failed; retrying."
+            sleep 5
+          done
+          echo "Could not push after 3 attempts."
+          exit 1

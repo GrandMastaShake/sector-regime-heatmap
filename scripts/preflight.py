@@ -34,7 +34,8 @@ def fail(msg: str) -> None:
 def check_generated_files() -> None:
     """Generated artifacts must not drift from their sources."""
     for script, label in (("sync_baskets.py", "config/sector_baskets.yaml"),
-                          ("render_dashboard.py", "README.md dashboard block")):
+                          ("render_dashboard.py", "README.md dashboard block"),
+                          ("render_tape.py", "README.md daily-tape block")):
         r = subprocess.run(
             [sys.executable, str(ROOT / "scripts" / script), "--check"],
             capture_output=True, text=True, cwd=ROOT,
