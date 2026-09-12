@@ -174,9 +174,28 @@ snapshot lands.
 
 ## Outstanding
 
-- **Cycles 2 and 3 are unrun and their data is already in the panel.** The
-  weekly feed carries 2026-08-28 and 2026-09-04; neither has been staged. The
-  daily tape does not substitute for them.
+- **The 2026-08-28 and 2026-09-04 closes cannot be scored now, and should not
+  be.** Their week-horizon windows have fully elapsed. Cycle 1 was written five
+  days late and had to mark its week horizon ungradeable; these are eight and
+  fifteen days late, so there is no partial version worth writing. They are
+  lost as forward tests. Do not "catch up" the count with them -- ten backdated
+  runs would trip the automation gate on false evidence, which is exactly what
+  the no-look-ahead rule is protecting.
+- **Cycle 2 is the next Friday close whose research has landed, scored before
+  the following Monday opens.** `stage_run.py` requires a research snapshot
+  dated 0-7 days AFTER the close it reads. Only one snapshot exists
+  (2026-08-24), which predates every close in the panel, so every attempt
+  refuses -- correctly. The upstream wikis through 2026-09-08 describe the week
+  ending 09-04, not 09-11.
+
+      python scripts/pin_research_snapshot.py --upstream ../weekly-council-scan           --commit <sha> --as-of-date <council session date>
+      # then Actions -> "Weekly research import", or the local command it prints
+      python scripts/stage_run.py --panel ../weekly-council-scan/data/weekly
+
+  `pin_research_snapshot.py` exists because pinning used to mean transcribing
+  sixteen blob SHAs by hand, which is why the repo has one snapshot against a
+  plan for weekly ones. It reproduces the hand-built 2026-08-24 manifest
+  exactly; a test checks that.
 - **1 of 10 manual runs.** Cycle 1 (`2026-08-21`) is published. The runbook
   wants 10 before any schedule. They are a forward test; do not compress them.
   Cycle 2 should read the 2026-08-28 close, which is the first fully ex-ante
