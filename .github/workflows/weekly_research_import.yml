@@ -68,6 +68,9 @@ jobs:
         run: python scripts/render_dashboard.py
 
       - name: Run tests against the imported snapshot
+        # Scoped by pytest.ini (testpaths = tests). This job checks
+        # another repo out into upstream/, and a bare collection walks
+        # into its tests.
         run: python -m pytest -q
 
       - name: Commit snapshot
