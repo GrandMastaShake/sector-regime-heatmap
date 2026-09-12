@@ -83,3 +83,16 @@ def test_the_forecast_schedules_stay_disabled():
         assert "schedule" not in trig, (
             name + " has acquired a schedule. The runbook wants 10 manual "
             "cycles first; see docs/manual_runbook.md.")
+
+
+def test_pytest_is_scoped_to_this_repo():
+    """Two workflows check weekly-council-scan out into upstream/ and then
+    run pytest from the root. Without testpaths, collection walks into that
+    repo's suite -- wrong deps, wrong fixtures, meaningless signal -- and the
+    daily-tape job failed its first real run on exactly that."""
+    import configparser
+    cfg = configparser.ConfigParser()
+    cfg.read(ROOT / "pytest.ini", encoding="utf-8")
+    assert cfg.has_section("pytest"), "pytest.ini has no [pytest] section"
+    assert cfg.get("pytest", "testpaths").split() == ["tests"]
+    assert "upstream" in cfg.get("pytest", "norecursedirs").split()

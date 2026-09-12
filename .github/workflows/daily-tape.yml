@@ -67,6 +67,9 @@ jobs:
         run: python scripts/render_tape.py
 
       - name: Tests
+        # Scoped by pytest.ini (testpaths = tests). This job checks
+        # another repo out into upstream/, and a bare collection walks
+        # into its tests.
         run: python -m pytest -q
 
       - name: Commit the tape
