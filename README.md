@@ -164,37 +164,36 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-09-10** -- observation, not a forecast -- `data/tape/2026-09-10.json`
+**As of 2026-09-11** -- observation, not a forecast -- `data/tape/2026-09-11.json`
 
-> 📏 &nbsp;**13 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**14 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
-> 🧭 &nbsp;**Regime prior** &nbsp; archetype 1, Steady mid-cycle expansion &nbsp;&nbsp;•&nbsp;&nbsp; declared 20 days ago (2026-08-21) &nbsp;&nbsp;•&nbsp;&nbsp; n=4 episodes
+> 🧭 &nbsp;**Regime prior** &nbsp; archetype 1, Steady mid-cycle expansion &nbsp;&nbsp;•&nbsp;&nbsp; declared 21 days ago (2026-08-21) &nbsp;&nbsp;•&nbsp;&nbsp; n=4 episodes
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL   PRIOR         RANK
 ──────────────────────────────────────────────────────────────────────────────────────
-Technology              ·······│████···     +1.78     50%     22%     +15       1 -> 1
-Industrials             ·······│███····     +1.33     40%     83%      -2       5 -> 2
-Energy                  ·······│█······     +0.67     60%     57%     -26    11 -> 3 *
-Utilities               ·······│·······     +0.12     40%     38%     -23    10 -> 4 *
-Real Estate             ·····██│·······     -0.81     22%     10%     -19       8 -> 5
-Consumer Staples        ····███│·······     -1.24     20%     18%     -21       9 -> 6
-Communication Services  ····███│·······     -1.27     20%     35%      +1       4 -> 7
-Financials              ···████│·······     -1.92     10%      3%      +7     2 -> 8 *
-Consumer Discretionary  ·██████│·······     -3.04     10%     26%      +1     3 -> 9 *
-Materials               ███████│·······     -3.17     10%     14%     -12      6 -> 10
-Healthcare              ███████│·······     -3.34      0%      0%     -14      7 -> 11
+Energy                  ·······│███····     +1.29     60%     61%     -26    11 -> 1 *
+Industrials             ·······│███····     +1.21     40%     74%      -2       5 -> 2
+Technology              ·······│█······     +0.40     40%     23%     +15       1 -> 3
+Communication Services  ·······│·······     -0.06     40%     37%      +1       4 -> 4
+Consumer Staples        ·······│·······     -0.22     20%     17%     -21       9 -> 5
+Real Estate             ·····██│·······     -0.98     11%      7%     -19       8 -> 6
+Utilities               ···████│·······     -1.68     10%      6%     -23      10 -> 7
+Materials               ··█████│·······     -2.07     10%      2%     -12       6 -> 8
+Consumer Discretionary  ·██████│·······     -2.75     10%      1%      +1     3 -> 9 *
+Healthcare              ███████│·······     -3.01      0%      0%     -14      7 -> 10
+Financials              ███████│·······     -3.10      0%      0%      +7    2 -> 11 *
 ```
 
 <details>
-<summary><b>⚠️ Where the tape contradicts the prior (4)</b></summary>
+<summary><b>⚠️ Where the tape contradicts the prior (3)</b></summary>
 
-- **Consumer Discretionary** — the prior ranks it a leader and the tape has it lagging: prior +1 points (rank 3 of 11), tape -3.04% vs SPY (rank 9 of 11), 6 positions apart.
-- **Energy** — the prior ranks it a laggard and the tape has it leading: prior -26 points (rank 11 of 11), tape +0.67% vs SPY (rank 3 of 11), 8 positions apart.
-- **Financials** — the prior ranks it a leader and the tape has it lagging: prior +7 points (rank 2 of 11), tape -1.92% vs SPY (rank 8 of 11), 6 positions apart.
-- **Utilities** — the prior ranks it a laggard and the tape has it leading: prior -23 points (rank 10 of 11), tape +0.12% vs SPY (rank 4 of 11), 6 positions apart.
+- **Consumer Discretionary** — the prior ranks it a leader and the tape has it lagging: prior +1 points (rank 3 of 11), tape -2.75% vs SPY (rank 9 of 11), 6 positions apart.
+- **Energy** — the prior ranks it a laggard and the tape has it leading: prior -26 points (rank 11 of 11), tape +1.29% vs SPY (rank 1 of 11), 10 positions apart.
+- **Financials** — the prior ranks it a leader and the tape has it lagging: prior +7 points (rank 2 of 11), tape -3.10% vs SPY (rank 11 of 11), 9 positions apart.
 
-A prior built on 4 episodes against 13 sessions of arithmetic. Disagreement is the input to regime_fit, not evidence that either side is wrong.
+A prior built on 4 episodes against 14 sessions of arithmetic. Disagreement is the input to regime_fit, not evidence that either side is wrong.
 
 </details>
 
