@@ -15,126 +15,151 @@ regime's historical sector priors. It scores nothing, and it is not a forecast.
 
 ## 📊 Dashboard
 
-**As of 2026-08-21** -- manual run -- `data/forecasts/2026-08-21_manual.json`
+**As of 2026-09-11** -- manual run -- `data/forecasts/2026-09-11_manual.json`
 
-> 🧭 &nbsp;**Regime** &nbsp; AI-capex recovery -- archetype 1, steady mid-cycle expansion (day ~154)
+> 🧭 &nbsp;**Regime** &nbsp; AI-capex recovery -- archetype 1, steady mid-cycle expansion (day ~168), rate and energy stress rising
 > 
-> **Confidence** &nbsp; ●●○ medium &nbsp;&nbsp;•&nbsp;&nbsp; ✅ 4 supporting &nbsp;&nbsp;•&nbsp;&nbsp; ⚠️ 7 disconfirming
+> **Confidence** &nbsp; ●○○ low &nbsp;&nbsp;•&nbsp;&nbsp; ✅ 4 supporting &nbsp;&nbsp;•&nbsp;&nbsp; ⚠️ 9 disconfirming
 
 <details>
-<summary><b>⚠️ What would make this regime read wrong (7)</b></summary>
+<summary><b>⚠️ What would make this regime read wrong (9)</b></summary>
 
-- Archetype 1 is defined by 'none acute -- stable growth, stable-to-easing rates'. This episode has the growth but not the rates: the 10Y closed 2026-08-21 at 4.738 pct, a 52-week-high close, the July FOMC minutes carried three dissents FOR a hike with 'many participants' open to further tightening, and roughly 64 pct of a hike by year-end is priced. The archetype prior is being applied to an atypical rate backdrop (wiki/economic-calendar.md@63b4d3ba).
-- The economy is split: manufacturing PMI 53.2 is a 5-month low against services at 56.8, housing starts fell -12.4 pct, and retail sales -0.6 pct with UMich at 51.0. The rate-sensitive economy is already contracting while the surveyed economy accelerates.
-- The technician read on the week was distribution -- breadth collapsing in tech and industrials and concentrating in healthcare and energy, which is the late-cycle rotation pattern that often precedes a broader correction (wiki/synthesis.md@cd85b433).
-- The long end is now a policy-managed market: Treasury doubled long-end buybacks to at least $4B per operation because 30Y liquidity had turned 'very poor' with debt past $40T. That is regime-adjacent and not captured by any archetype in the taxonomy (wiki/economic-calendar.md@63b4d3ba).
-- MID-CYCLE MANUAL RUN: this payload was scored 2026-08-26, five calendar days after the 2026-08-21 close it reads. Two of the five sessions in the week horizon (Mon 08-24, Tue 08-25) had already traded when the judgment components were written. The three catalysts that dominate the window -- July core PCE and NVDA earnings (both 08-26) and the Warsh Jackson Hole keynote (08-28) -- were all still ahead, and the pinned research snapshot (2026-08-24) carries no post-08-21 outcomes. The week horizon is nonetheless NOT a clean ex-ante forecast and must not be graded as one. The month horizon is materially less affected.
-- wiki/earnings-surveillance.md@6e61dd22 was 8 days stale at snapshot time (last updated 2026-08-15). No claim in this payload rests on it.
-- Healthcare carries a direct contradiction between the archetype prior (-13.9 pts excess, a laggard) and the arithmetic (rank 1 of 11, +7.30 pts vs SPY on the week, +10.08 on the month). It is preserved in that sector's why/risks rather than resolved.
+- THE RATES OBJECTION HAS STRENGTHENED DECISIVELY. Archetype 1 is defined by 'none acute -- stable growth, stable-to-easing rates'. At 2026-08-21 the 10Y closed 4.738 pct with roughly 64 pct of a hike priced by year-end. At 2026-09-11 the 10Y closed 4.975 pct, a fresh 52-week high and its fourth straight 52-week-high close, 2.5bp from the 5.00 pct line, with Sep 16 hike odds at roughly 87-90 pct and August core CPI hot at +0.3 pct M/M. The 'stable-to-easing rates' condition is now decisively violated, not merely atypical (wiki/economic-calendar.md, wiki/canary-watch.md).
+- A COST-PUSH SHOCK HAS BEEN ADDED. WTI settled 100.05, the first-ever $100 settle, +9.4 pct on the week, with OPEC+ holding quota and a second front at Bab el-Mandeb. No archetype-1 occurrence in the taxonomy carries a concurrent energy shock of this size (wiki/energy.md).
+- THE CONSUMER IS DETERIORATING, NOT STABILISING. UMich September preliminary sentiment printed 47.8, the second-lowest reading on record, against 51.0 at the 2026-08-21 run. Consumer Discretionary computes week breadth 10 of 100 (wiki/economic-calendar.md, wiki/consumer-discretionary.md).
+- THE LABEL'S OWN CORE SECTOR DISCONFIRMS IT. Technology computes month relative momentum 0 of 100 at -6.10 pct versus SPY, the worst of the eleven, and SMH 568.53 is pinned on its 50D at 569.10. An AI-capex regime whose capex sector is the month's worst relative performer is a label under direct arithmetic strain (wiki/tech.md, wiki/semiconductors.md).
+- The long end remains a policy-managed market: Treasury doubled long-end buybacks to at least $4B per operation because 30Y liquidity had turned 'very poor' with debt past $40T. That is regime-adjacent and not captured by any archetype in the taxonomy (carried forward from the 2026-08-21 run; unchanged).
+- The economy remains split between a contracting rate-sensitive side and a surveyed side that had been accelerating. Real Estate (-2.82 pct vs SPY on the month, third week under the 50D) and Utilities (all three week components computed to zero) are both in the rate-sensitive contraction (carried forward and strengthened).
+- CONFIDENCE CUT medium -> low on the four items above. The archetype label is retained because re-classification is a research call against the 44-episode taxonomy and not a weekly judgment; it is not retained because the evidence is comfortable. If the Sep 16 FOMC delivers the priced hike and the 10Y closes above 5.00 pct, the archetype-1 prior should be formally re-examined before the next cycle.
+- DATA QUALITY: Real Estate carries a warn at 9 of 10 basket constituents in both the week and month horizons. Its scores are reported but are thinner than the other ten.
+- TRUTH-LAYER DEFECTS OPEN UPSTREAM: macro/facts.json carries DXY stale at 59 days and the 2Y unsourced, and wiki/synthesis.md issue #103 flags four conflicting curve values across the wiki set. No claim in this payload rests on DXY or on the 2Y.
 
 </details>
 
-🥇 **Financials** 70.7 leads the week &nbsp;&nbsp;•&nbsp;&nbsp; 🔻 **Utilities** 10.8 trails it
+🥇 **Energy** 78.5 leads the week &nbsp;&nbsp;•&nbsp;&nbsp; 🔻 **Utilities** 7.8 trails it
 
 ```
 SECTOR                   WEEK                     MONTH
 ────────────────────────────────────────────────────────────────────────
-Financials                70.7 fav ███████░░░     66.7 con ███████░░░
-Healthcare                67.0 con ███████░░░     62.5 con ██████░░░░
-Energy                    61.9 con ██████░░░░     52.2 neu █████░░░░░
-Materials                 56.5 con ██████░░░░     54.1 neu █████░░░░░
-Consumer Discretionary    49.8 neu █████░░░░░     60.4 con ██████░░░░
-Communication Services    49.3 neu █████░░░░░     56.9 con ██████░░░░
-Real Estate               47.7 neu █████░░░░░     28.2 def ███░░░░░░░
-Consumer Staples          41.3 unf ████░░░░░░     37.1 unf ████░░░░░░
-Technology                40.6 unf ████░░░░░░     72.3 fav ███████░░░
-Industrials               27.7 def ███░░░░░░░     45.7 neu █████░░░░░
-Utilities                 10.8 def █░░░░░░░░░     18.8 def ██░░░░░░░░
+Energy                    78.5 fav ████████░░     73.7 fav ███████░░░
+Communication Services    70.6 fav ███████░░░     52.1 neu █████░░░░░
+Consumer Staples          57.8 con ██████░░░░     49.4 neu █████░░░░░
+Industrials               52.2 neu █████░░░░░     34.1 unf ███░░░░░░░
+Technology                51.2 neu █████░░░░░     28.5 def ███░░░░░░░
+Financials                33.8 unf ███░░░░░░░     62.4 con ██████░░░░
+Healthcare                29.5 def ███░░░░░░░     51.8 neu █████░░░░░
+Real Estate               25.4 def ███░░░░░░░     25.1 def ███░░░░░░░
+Materials                 22.2 def ██░░░░░░░░     40.3 unf ████░░░░░░
+Consumer Discretionary    21.8 def ██░░░░░░░░     28.7 def ███░░░░░░░
+Utilities                  7.8 def █░░░░░░░░░     21.4 def ██░░░░░░░░
 ```
 
 | | Sector | Week | Month | Trend | Confidence |
 |---|---|---:|---:|:---:|:---:|
-| 🟢 | **Financials** | 70.7 favorable | 66.7 constructive | ▬ flat | ●●○ medium |
-| 🔵 | **Healthcare** | 67.0 constructive | 62.5 constructive | ▬ flat | ●○○ low |
-| 🔵 | **Energy** | 61.9 constructive | 52.2 neutral | ▼ -9.7 | ●○○ low |
-| 🔵 | **Materials** | 56.5 constructive | 54.1 neutral | ▬ flat | ●○○ low |
-| ⚪ | **Consumer Discretionary** | 49.8 neutral | 60.4 constructive | ▲ +10.6 | ●●○ medium |
-| ⚪ | **Communication Services** | 49.3 neutral | 56.9 constructive | ▲ +7.6 | ●●○ medium |
-| ⚪ | **Real Estate** | 47.7 neutral | 28.2 defensive | ▼ -19.5 | ●○○ low |
-| 🟠 | **Consumer Staples** | 41.3 unfavorable | 37.1 unfavorable | ▬ flat | ●●○ medium |
-| 🟠 | **Technology** | 40.6 unfavorable | 72.3 favorable | ▲ +31.7 | ●○○ low |
-| 🔴 | **Industrials** | 27.7 defensive | 45.7 neutral | ▲ +18.0 | ●○○ low |
-| 🔴 | **Utilities** | 10.8 defensive | 18.8 defensive | ▲ +8.0 | ●●○ medium |
+| 🟢 | **Energy** | 78.5 favorable | 73.7 favorable | ▬ flat | ●○○ low |
+| 🟢 | **Communication Services** | 70.6 favorable | 52.1 neutral | ▼ -18.5 | ●●○ medium |
+| 🔵 | **Consumer Staples** | 57.8 constructive | 49.4 neutral | ▼ -8.4 | ●○○ low |
+| ⚪ | **Industrials** | 52.2 neutral | 34.1 unfavorable | ▼ -18.1 | ●○○ low |
+| ⚪ | **Technology** | 51.2 neutral | 28.5 defensive | ▼ -22.7 | ●●○ medium |
+| 🟠 | **Financials** | 33.8 unfavorable | 62.4 constructive | ▲ +28.6 | ●○○ low |
+| 🔴 | **Healthcare** | 29.5 defensive | 51.8 neutral | ▲ +22.3 | ●○○ low |
+| 🔴 | **Real Estate** | 25.4 defensive | 25.1 defensive | ▬ flat | ●○○ low |
+| 🔴 | **Materials** | 22.2 defensive | 40.3 unfavorable | ▲ +18.1 | ●○○ low |
+| 🔴 | **Consumer Discretionary** | 21.8 defensive | 28.7 defensive | ▲ +6.9 | ●○○ low |
+| 🔴 | **Utilities** | 7.8 defensive | 21.4 defensive | ▲ +13.6 | ●●○ medium |
 
 <details>
 <summary><b>Why each sector reads the way it does</b></summary>
 
-#### 🟢 Financials — week 70.7 favorable, month 66.7 constructive
+#### 🟢 Energy — week 78.5 favorable, month 73.7 favorable
 
-- Financials run +38.0 pct absolute and +6.7 pts excess in archetype 1, second only to Technology among expansion leaders (The Full Regime-Sector Matrix).
-- This is the one sector the atypical rate backdrop helps mechanically: banks expanded median NIM to 3.38 pct from 3.27 pct in the 2022 cycle with more than 65 pct reporting higher NIM, and SSGA places Banks in Tier 1 positive responders to the 10Y (R2 0.228) (Sector Macro Sensitivity Matrix).
-- ⚠️ **Risk:** Credit stress is migrating rather than disappearing: KRE underperformed KBE by 180 bps on the week and loan-loss provisions are rising at the regionals while money-center banks still guide to stable credit. A break below $48 on XLF forces a re-evaluation of the whole sector thesis (wiki/synthesis.md@cd85b433).
+- wiki/energy.md: WTI settled 100.05 (+9.4% W/W), the first-ever $100 settle, with XLE 65.14 (+1.69%) completing a breakout-retest-hold and 5 of 10 top holdings at fresh 52W highs.
+- wiki/canary-watch.md: XLE deepened its inverse correlation to SPY to -0.426, so the sector carries diversification value as well as return.
+- wiki/energy.md: OPEC+ held quota and a second front at Bab el-Mandeb keeps the supply-risk premium live.
+- ⚠️ **Risk:** A negotiated de-escalation at Bab el-Mandeb removes the supply-risk premium and the $100 print fades as fast as it arrived.
+- ⚠️ **Risk:** Demand destruction: a hawkish FOMC plus UMich 47.8 is a demand-side signal a cost-push oil rally cannot survive for long.
+- ⚠️ **Risk:** wiki/energy.md's own read is that energy is a short-term beneficiary of geopolitical chaos, not a long-term friend.
 
-#### 🔵 Healthcare — week 67.0 constructive, month 62.5 constructive
+#### 🟢 Communication Services — week 70.6 favorable, month 52.1 neutral
 
-- Archetype 1 is one of Health Care's weakest regimes: +17.4 pct absolute against SPY's +31.3 pct, -13.9 pts excess. Defensives get left behind in a steady mid-cycle expansion, and their documented edge is in exogenous shocks and transitions, not expansions (The Full Regime-Sector Matrix).
-- THIS IS THE RUN'S SHARPEST CONTRADICTION AND IT IS DELIBERATELY LEFT STANDING. The arithmetic says leadership: rank 1 of 11 on the week at +7.30 pts vs SPY, 80.0 breadth, XLV +4.33 pct closing above both its 50D and 200D on strong volume, forward P/E ~18.5x against a five-year ~21x. The regime research says lag. Both are reading the same week (panel metrics, this file; wiki/synthesis.md@cd85b433; The Full Regime-Sector Matrix).
-- ⚠️ **Risk:** If the rotation into Health Care is late-cycle defensive positioning rather than a value re-rate, it is evidence the regime is turning -- the technician read this week was explicitly 'distribution', with breadth collapsing in tech and industrials and concentrating in healthcare and energy (wiki/synthesis.md@cd85b433).
+- wiki/communication-services.md: XLC 112.60 (+0.51%) with META +5.07% leading on Brinkema relief and the Muse launch.
+- wiki/communication-services.md: the Brinkema unsealing lands around Sep 16, the same session as the FOMC decision, making it a stacked binary.
+- wiki/communication-services.md: META at RSI 84 says a large share of the good news is already in the price.
+- ⚠️ **Risk:** The Brinkema unsealing around Sep 16 is a genuine binary and could resolve against the sector.
+- ⚠️ **Risk:** META at RSI 84 is the single largest weight carrying the sector; a mean reversion there takes XLC with it.
 
-#### 🔵 Energy — week 61.9 constructive, month 52.2 neutral
+#### 🔵 Consumer Staples — week 57.8 constructive, month 49.4 neutral
 
-- Energy is the single worst sector in archetype 1: +5.8 pct absolute against SPY's +31.3 pct, -25.5 pts excess, the widest negative gap in the entire matrix for an expansion regime (The Full Regime-Sector Matrix).
-- Energy is also the most bimodal sector in the matrix -- best in sustained hiking bears (+71.0 pts) and exogenous shocks (+10.9 pts) -- so its behaviour depends on what triggered the regime, not on its direction. The active mechanism here is broad expansion, which is its worst case, but a live geopolitical bid cuts against that (The Full Regime-Sector Matrix; Forward Test Pre-Registration, registered 2026-08-23).
-- ⚠️ **Risk:** Roughly $8-12 of the $87.06 WTI handle is geopolitical premium with the Iran conflict stalled at 'no talks'; any ceasefire headline unwinds the tape fast. XLE was called a 'yield trap dressed in camouflage' on a ~12x forward P/E masking deteriorating FCF yields as capex creeps up (wiki/synthesis.md@cd85b433; wiki/energy.md@479fe2ed).
+- wiki/canary-watch.md: XLP 30-day correlation to SPY flipped from -0.109 to +0.173, one of two defensive sign flips this week.
+- wiki/economic-calendar.md: UMich September preliminary sentiment at 47.8, the second-lowest on record, is the classic setup for a defensive rotation.
+- wiki/canary-watch.md: with the 10Y at 4.975% the staple dividend yield competes against a near-5% risk-free alternative, which caps the upside.
+- ⚠️ **Risk:** If the 10Y breaks 5.00% the yield competition overwhelms the defensive bid.
+- ⚠️ **Risk:** The defensive rotation is two weeks old; a single risk-on session would unwind the correlation flip.
 
-#### 🔵 Materials — week 56.5 constructive, month 54.1 neutral
+#### ⚪ Industrials — week 52.2 neutral, month 34.1 unfavorable
 
-- Archetype 1 has Materials at +19.4 pct absolute, -11.9 pts excess -- a structural laggard in steady mid-cycle expansions (The Full Regime-Sector Matrix).
-- The bid is a narrative without demand data behind it: copper ~$4.20/lb with the gold/copper ratio at historic extremes, boosted by Chinese stimulus chatter rather than orders. Called 'speculative value' -- cheap on book, requiring a China story that may not arrive (wiki/synthesis.md@cd85b433; wiki/materials.md@4b81bf6f).
-- ⚠️ **Risk:** Two of the three extreme-move flags in this run are Materials names: NEM +41.2 pct and MP +45.4 pct over four weeks. Both are retained, not dropped, per the extreme-move gate, but a basket carrying two 40-plus pct moves is being driven by idiosyncratic stories (panel metrics, this file).
+- wiki/industrials.md: XLI 172.37 with month relative momentum at 10 of 100, a decisive laggard against the expansion thesis.
+- wiki/economic-calendar.md: Industrial Production and Retail Sales both print Wed Sep 16 alongside the FOMC, a triple-stacked gate.
+- wiki/canary-watch.md: industrials sit on the outflow side of this week's rotation.
+- ⚠️ **Risk:** A strong Industrial Production print on Sep 16 would falsify the laggard read quickly.
+- ⚠️ **Risk:** LMT and ETN carry Council exposure here, so sector weakness and book weakness are correlated.
 
-#### ⚪ Consumer Discretionary — week 49.8 neutral, month 60.4 constructive
+#### ⚪ Technology — week 51.2 neutral, month 28.5 defensive
 
-- Archetype 1 gives Consumer Discretionary +32.6 pct absolute but only +1.3 pts excess -- its standout regime is archetype 2 (easy-money early cycle, +17.1 pts), which this is not (The Full Regime-Sector Matrix).
-- The consumer evidence in this window is uniformly negative: retail sales -0.6 pct, UMich 51.0, housing starts -12.4 pct with single-family down three of four months at 6.65 pct mortgages, and a WMT comp miss that dominated the 08-20 tape (wiki/economic-calendar.md@63b4d3ba).
-- ⚠️ **Risk:** Personal income and spending print 08-26; spending below 0.0 pct on top of the fresh retail miss would confirm the consumer crack at the income-statement level (wiki/economic-calendar.md@63b4d3ba).
+- wiki/tech.md: XLK 187.67 (+0.21% W/W) but the AI-compute trade split for the first time in months, AMD +8.07% against NVDA -5.13% and MU -4.07%.
+- wiki/semiconductors.md: SMH 568.53 is pinned on its 50D at 569.10, a coin-flip technical position for the regime's core sector.
+- wiki/canary-watch.md: XLK 30-day correlation to SPY fell 0.795 to 0.646 and SMH 0.682 to 0.422, so leadership is decoupling rather than broadening.
+- ⚠️ **Risk:** If SMH loses its 50D at 569.10 the regime's core sector confirms a downtrend and the AI-capex label itself is in question.
+- ⚠️ **Risk:** A hawkish FOMC compresses long-duration equity multiples directly.
+- ⚠️ **Risk:** The AMD/NVDA split may be rotation within AI rather than a sector call; if so this read is noise.
 
-#### ⚪ Communication Services — week 49.3 neutral, month 56.9 constructive
+#### 🟠 Financials — week 33.8 unfavorable, month 62.4 constructive
 
-- Archetype 1 puts Communication Services +32.4 pct absolute, +1.1 pts excess -- modestly ahead of SPY and third among expansion archetypes (The Full Regime-Sector Matrix).
-- The sector carries direct AI-capex read-through: Alphabet's capex raise is one of the two earnings events the pre-registered episode thesis rests on (wiki/tech.md@a4b6e1f7; Forward Test Pre-Registration, registered 2026-08-23).
-- ⚠️ **Risk:** Communication Services is the worst excess-return sector in four of the eight archetypes, including every contraction type except credit crisis -- it has the least defensive floor of the eleven if the regime turns (The Full Regime-Sector Matrix).
+- wiki/canary-watch.md: the 10Y-3M curve stands at +106bp and the bear-flattening streak paused on a parallel bear shift, which is the shape that pays bank NIM.
+- wiki/financials.md: money centers closed green in a red tape (C +0.80%, WFC +0.36%, BAC +0.02%) while XLF 57.25 held its 50D at 57.11.
+- wiki/economic-calendar.md: a Sep 16 hike at roughly 87-90% odds is a NIM tailwind that is already largely priced.
+- ⚠️ **Risk:** A dovish surprise on Sep 16, or a re-inversion of the 10Y-3M spread from +106bp, removes the NIM thesis.
+- ⚠️ **Risk:** Credit is the tell: HYG 78.60 and LQD 104.32 have both posted two straight red weeks.
 
-#### ⚪ Real Estate — week 47.7 neutral, month 28.2 defensive
+#### 🔴 Healthcare — week 29.5 defensive, month 51.8 neutral
 
-- Archetype 1 leaves Real Estate at +12.3 pct absolute, -19.0 pts excess -- among the weakest in a steady mid-cycle expansion (The Full Regime-Sector Matrix).
-- The rate backdrop is the binding constraint: REITs are the worst sector in the 12 months after a first hike, and the 10Y closed 08-21 at a 52-week-high 4.738 pct with ~64 pct of another hike priced by year-end (Sector Macro Sensitivity Matrix; wiki/economic-calendar.md@63b4d3ba).
-- ⚠️ **Risk:** Housing starts fell -12.4 pct to 1.239M, the second-lowest post-pandemic print, with single-family -9.9 pct at 6.65 pct-plus mortgages -- the rate-sensitive economy is cracking first here (wiki/economic-calendar.md@63b4d3ba).
+- wiki/healthcare.md: XLV 165.36 (-3.55% W/W) lost both the 169.71 old-ATH line and the 50D at 166.24 on a weekly close, with RSI at 21.1.
+- wiki/healthcare.md: the damage is idiosyncratic rather than macro. A pelacarsen Ph3 primary-endpoint miss repriced the class (NVS -15.9%, AMGN -13.7%), and COO -23.7% and SYK -9.10% were company-specific.
+- wiki/canary-watch.md: XLV correlation to SPY flipped -0.028 to +0.250 and month relative momentum still reads 70, so the defensive bid has not been withdrawn. This is an oversold fortress, not a broken one.
+- ⚠️ **Risk:** Olpasiran OCEAN(a)-Outcomes is the next high-stakes binary and is not yet scheduled; a second failure turns a class repricing into a sector repricing.
+- ⚠️ **Risk:** RSI 21.1 can stay oversold: XBI -4.98% lost its 50D at 158.20, so the rate-biotech truce is already broken.
+- ⚠️ **Risk:** If the defensive bid is really a dead-cat bounce, the month relative momentum of 70 decays fast.
 
-#### 🟠 Consumer Staples — week 41.3 unfavorable, month 37.1 unfavorable
+#### 🔴 Real Estate — week 25.4 defensive, month 25.1 defensive
 
-- Staples are near the bottom of archetype 1: +10.8 pct absolute, -20.5 pts excess, and they are the worst excess-return sector in policy-relief expansions (-19.6 pts). Their documented edge is in exogenous shocks and policy-pivot transitions, neither of which is the active mechanism (The Full Regime-Sector Matrix; Forward Test Pre-Registration, registered 2026-08-23).
-- The panel agrees on the month at -2.01 pts vs SPY, so the archetype prior and the arithmetic point the same way over the longer horizon (panel metrics, this file).
-- ⚠️ **Risk:** The week reading is the opposite of the month: +1.13 pts vs SPY, rank 7 of 11. A defensive bid appearing in the same week the technician read is 'distribution' is worth watching as a regime signal rather than dismissing as noise (panel metrics, this file; wiki/synthesis.md@cd85b433).
+- wiki/real-estate.md: XLRE 43.42 (-1.16% W/W), a third straight week under the 50D, with PLD and O both losing their 200Ds.
+- wiki/canary-watch.md: the 10Y closed 4.975%, a fresh 52W high and its fourth straight 52W-high close, 2.5bp from the 5.00% line.
+- wiki/real-estate.md: the 200D held its first test by 23 cents, so the structural line is intact but barely.
+- ⚠️ **Risk:** A dovish FOMC surprise or a 10Y retreat from 4.975% would produce a violent rate-proxy rally from oversold.
+- ⚠️ **Risk:** The 200D held by 23 cents; if it holds again the downtrend read is premature.
 
-#### 🟠 Technology — week 40.6 unfavorable, month 72.3 favorable
+#### 🔴 Materials — week 22.2 defensive, month 40.3 unfavorable
 
-- Technology is the strongest sector in archetype 1, +46.5 pct absolute and +15.2 pts excess over SPY -- the widest lead of the eleven -- and this episode is the AI-capex trade by name (The Full Regime-Sector Matrix; Forward Test Pre-Registration, registered 2026-08-23).
-- The week's drawdown is rate-driven, not demand-driven: XLK -3.5 pct to $183.31 as the 30Y hit ~5.27 pct, its highest since 2007. Technology's shock-conditional R2 to the 10Y is 0.00, the weakest pairing in SSGA's study, so this reads as positioning rather than mechanism (wiki/tech.md@a4b6e1f7; Sector Macro Sensitivity Matrix).
-- ⚠️ **Risk:** NVDA reports 2026-08-26 into a 50D MA that is 'two dimes from being lost', and SMH already broke its 50D at -4.66 pct on the week; semis are called the canary for the entire AI trade, with a failure to reclaim $250 by month-end accelerating a growth unwind (wiki/tech.md@a4b6e1f7; wiki/synthesis.md@cd85b433).
-- ⚠️ **Risk:** A hawkish Warsh framework speech on 08-28 puts the 10Y through 4.85 pct on the calendar's own trigger, de-rating growth multiples into September (wiki/economic-calendar.md@63b4d3ba).
+- wiki/materials.md: XLB 50.95 with copper at 6.548 holding, but the sector is -3.19% against SPY on the month.
+- wiki/canary-watch.md: materials sit on the outflow side of this week's rotation, and the demand read into a hawkish FOMC is unclear.
+- ⚠️ **Risk:** Copper at 6.548 is the whole thesis; a break there removes the only support.
+- ⚠️ **Risk:** A hawkish FOMC and a weak consumer are both adverse to the demand read.
 
-#### 🔴 Industrials — week 27.7 defensive, month 45.7 neutral
+#### 🔴 Consumer Discretionary — week 21.8 defensive, month 28.7 defensive
 
-- Archetype 1 has Industrials at +29.4 pct absolute, -1.9 pts excess -- essentially in line with SPY, neither a leader nor a laggard in a steady mid-cycle expansion (The Full Regime-Sector Matrix).
-- The growth signal underneath is genuinely strong: Empire State manufacturing hit 20.6, a four-year high, with new orders 17.3, and composite PMI backlogs are at 2022 highs (wiki/economic-calendar.md@63b4d3ba).
-- ⚠️ **Risk:** The panel ranks Industrials 11th of 11 on the week at -2.56 pts vs SPY and -4.08 on the month, which contradicts the in-line archetype prior. Manufacturing PMI at 53.2 is a 5-month low even as services hit 56.8, and Schwab places Industrials among underperformers in the 12 months after a first hike (panel metrics, this file; wiki/economic-calendar.md@63b4d3ba; Sector Macro Sensitivity Matrix).
+- wiki/economic-calendar.md: UMich September preliminary sentiment printed 47.8, the second-lowest reading on record.
+- wiki/consumer-discretionary.md: XLY 112.96 is -3.29% against SPY on the month with week breadth at 10 of 100.
+- wiki/economic-calendar.md: Retail Sales on Wed Sep 16 is a direct, scheduled test of the thesis with adverse skew.
+- ⚠️ **Risk:** A Retail Sales beat on Sep 16 would contradict the UMich signal directly, and this call with it.
+- ⚠️ **Risk:** Sentiment surveys have repeatedly diverged from actual spending; 47.8 may not translate to receipts.
 
-#### 🔴 Utilities — week 10.8 defensive, month 18.8 defensive
+#### 🔴 Utilities — week 7.8 defensive, month 21.4 defensive
 
-- Utilities are the worst-positioned sector in this run on both axes: +8.6 pct absolute and -22.7 pts excess in archetype 1, and the most negative long-rate beta of the eleven at -0.50 to the 30Y, into a 10Y closing at a 52-week high (The Full Regime-Sector Matrix; Sector Macro Sensitivity Matrix; wiki/economic-calendar.md@63b4d3ba).
-- The rate-to-margin channel is documented for Utilities specifically and it runs the wrong way: industry interest expense rose 34.4 pct in 2023 against only 11 bps of awarded-ROE relief, so higher rates compress the sector through debt service with regulatory lag (Sector Macro Sensitivity Matrix).
-- ⚠️ **Risk:** XLU -3.48 pct crashed through both its 50D and 200D, marked a trend change to bearish with dividend-focused retail likely capitulating; $75 is the level below which the pair trade against XLRE stops being a pair (wiki/synthesis.md@cd85b433).
+- wiki/utilities.md: XLU 42.39 (-1.60% W/W) lost the 43.00 floor, with CEG -4.75%.
+- wiki/canary-watch.md: with the 10Y at 4.975% into a roughly 87-90% probable Sep 16 hike, the bond-proxy trade faces its worst configuration.
+- wiki/utilities.md: week breadth, relative momentum and volume confirmation all computed to zero, so there is no internal support at all.
+- ⚠️ **Risk:** Any dovish repricing of the Sep 16 decision reverses the bond-proxy trade fastest here.
+- ⚠️ **Risk:** All-zero week components are an extreme reading, and extremes mean-revert.
 
 </details>
 
@@ -148,11 +173,11 @@ not offered, never a zero.
 
 | | |
 |---|---|
-| Forecast artifacts | 1 |
+| Forecast artifacts | 2 |
 | After-close evaluations | 0 |
-| Manual runs before automation | 1 of 10 |
+| Manual runs before automation | 2 of 10 |
 | Scheduled jobs | none enabled |
-| Weekly research snapshot | 2026-08-24, upstream `be90446`, 16 files, provenance verified |
+| Weekly research snapshot | 2026-09-14, upstream `082062d`, 16 files, provenance verified |
 
 ### Standing data-quality constraints
 
@@ -168,7 +193,7 @@ not offered, never a zero.
 
 > 📏 &nbsp;**14 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
-> 🧭 &nbsp;**Regime prior** &nbsp; archetype 1, Steady mid-cycle expansion &nbsp;&nbsp;•&nbsp;&nbsp; declared 21 days ago (2026-08-21) &nbsp;&nbsp;•&nbsp;&nbsp; n=4 episodes
+> 🧭 &nbsp;**Regime prior** &nbsp; archetype 1, Steady mid-cycle expansion &nbsp;&nbsp;•&nbsp;&nbsp; declared 0 days ago (2026-09-11) &nbsp;&nbsp;•&nbsp;&nbsp; n=4 episodes
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL   PRIOR         RANK

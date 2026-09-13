@@ -1,0 +1,25 @@
+{
+  "as_of_date": "2026-09-11",
+  "run_type": "manual",
+  "regime": {
+    "label": "AI-capex recovery -- archetype 1, steady mid-cycle expansion (day ~168), rate and energy stress rising",
+    "confidence": "low",
+    "evidence": [
+      "Episode pre-registered 2026-03-27 start at SPY 634.09; close of 2026-09-11 is 764.29, +20.5 pct. Running peak 777.88 (2026-08-13), drawdown -1.75 pct. Neither the -5 pct mechanism-review condition nor the -10 pct mechanical trigger (700.09) is near (Forward Test Pre-Registration, registered 2026-08-23).",
+      "Classified as archetype 1 (steady mid-cycle expansion) at roughly day 168, against a four-occurrence mean of 315 days and a range of 140-574. The episode remains well inside the observed distribution (The Full Regime-Sector Matrix; How Many Market Regimes Actually Exist).",
+      "The expansion is rotating rather than ending: Energy computes month relative momentum 100 of 100 (+5.76 pct vs SPY) and Financials 90 of 100 (+0.36 pct vs SPY), with the 10Y-3M curve positive at +106bp (wiki/energy.md, wiki/financials.md, wiki/canary-watch.md).",
+      "CLEAN EX-ANTE RUN: this payload was scored Sunday 2026-09-13 on the Friday 2026-09-11 close. Zero sessions of the week horizon had traded at judgment time, and every dominant catalyst in the window (FOMC Sep 15-16, Retail Sales and Industrial Production Sep 16, BOJ Sep 17-18) was still ahead. This is the first cycle that may be graded as a clean ex-ante forecast; contrast the 2026-08-21 run, which was scored five days late and carries an explicit exclusion."
+    ],
+    "disconfirming_evidence": [
+      "THE RATES OBJECTION HAS STRENGTHENED DECISIVELY. Archetype 1 is defined by 'none acute -- stable growth, stable-to-easing rates'. At 2026-08-21 the 10Y closed 4.738 pct with roughly 64 pct of a hike priced by year-end. At 2026-09-11 the 10Y closed 4.975 pct, a fresh 52-week high and its fourth straight 52-week-high close, 2.5bp from the 5.00 pct line, with Sep 16 hike odds at roughly 87-90 pct and August core CPI hot at +0.3 pct M/M. The 'stable-to-easing rates' condition is now decisively violated, not merely atypical (wiki/economic-calendar.md, wiki/canary-watch.md).",
+      "A COST-PUSH SHOCK HAS BEEN ADDED. WTI settled 100.05, the first-ever $100 settle, +9.4 pct on the week, with OPEC+ holding quota and a second front at Bab el-Mandeb. No archetype-1 occurrence in the taxonomy carries a concurrent energy shock of this size (wiki/energy.md).",
+      "THE CONSUMER IS DETERIORATING, NOT STABILISING. UMich September preliminary sentiment printed 47.8, the second-lowest reading on record, against 51.0 at the 2026-08-21 run. Consumer Discretionary computes week breadth 10 of 100 (wiki/economic-calendar.md, wiki/consumer-discretionary.md).",
+      "THE LABEL'S OWN CORE SECTOR DISCONFIRMS IT. Technology computes month relative momentum 0 of 100 at -6.10 pct versus SPY, the worst of the eleven, and SMH 568.53 is pinned on its 50D at 569.10. An AI-capex regime whose capex sector is the month's worst relative performer is a label under direct arithmetic strain (wiki/tech.md, wiki/semiconductors.md).",
+      "The long end remains a policy-managed market: Treasury doubled long-end buybacks to at least $4B per operation because 30Y liquidity had turned 'very poor' with debt past $40T. That is regime-adjacent and not captured by any archetype in the taxonomy (carried forward from the 2026-08-21 run; unchanged).",
+      "The economy remains split between a contracting rate-sensitive side and a surveyed side that had been accelerating. Real Estate (-2.82 pct vs SPY on the month, third week under the 50D) and Utilities (all three week components computed to zero) are both in the rate-sensitive contraction (carried forward and strengthened).",
+      "CONFIDENCE CUT medium -> low on the four items above. The archetype label is retained because re-classification is a research call against the 44-episode taxonomy and not a weekly judgment; it is not retained because the evidence is comfortable. If the Sep 16 FOMC delivers the priced hike and the 10Y closes above 5.00 pct, the archetype-1 prior should be formally re-examined before the next cycle.",
+      "DATA QUALITY: Real Estate carries a warn at 9 of 10 basket constituents in both the week and month horizons. Its scores are reported but are thinner than the other ten.",
+      "TRUTH-LAYER DEFECTS OPEN UPSTREAM: macro/facts.json carries DXY stale at 59 days and the 2Y unsourced, and wiki/synthesis.md issue #103 flags four conflicting curve values across the wiki set. No claim in this payload rests on DXY or on the 2Y."
+    ]
+  }
+}

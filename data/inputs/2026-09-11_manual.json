@@ -1,0 +1,1491 @@
+{
+  "as_of_date": "2026-09-11",
+  "run_type": "manual",
+  "regime": {
+    "label": "AI-capex recovery -- archetype 1, steady mid-cycle expansion (day ~168), rate and energy stress rising",
+    "confidence": "low",
+    "evidence": [
+      "Episode pre-registered 2026-03-27 start at SPY 634.09; close of 2026-09-11 is 764.29, +20.5 pct. Running peak 777.88 (2026-08-13), drawdown -1.75 pct. Neither the -5 pct mechanism-review condition nor the -10 pct mechanical trigger (700.09) is near (Forward Test Pre-Registration, registered 2026-08-23).",
+      "Classified as archetype 1 (steady mid-cycle expansion) at roughly day 168, against a four-occurrence mean of 315 days and a range of 140-574. The episode remains well inside the observed distribution (The Full Regime-Sector Matrix; How Many Market Regimes Actually Exist).",
+      "The expansion is rotating rather than ending: Energy computes month relative momentum 100 of 100 (+5.76 pct vs SPY) and Financials 90 of 100 (+0.36 pct vs SPY), with the 10Y-3M curve positive at +106bp (wiki/energy.md, wiki/financials.md, wiki/canary-watch.md).",
+      "CLEAN EX-ANTE RUN: this payload was scored Sunday 2026-09-13 on the Friday 2026-09-11 close. Zero sessions of the week horizon had traded at judgment time, and every dominant catalyst in the window (FOMC Sep 15-16, Retail Sales and Industrial Production Sep 16, BOJ Sep 17-18) was still ahead. This is the first cycle that may be graded as a clean ex-ante forecast; contrast the 2026-08-21 run, which was scored five days late and carries an explicit exclusion."
+    ],
+    "disconfirming_evidence": [
+      "THE RATES OBJECTION HAS STRENGTHENED DECISIVELY. Archetype 1 is defined by 'none acute -- stable growth, stable-to-easing rates'. At 2026-08-21 the 10Y closed 4.738 pct with roughly 64 pct of a hike priced by year-end. At 2026-09-11 the 10Y closed 4.975 pct, a fresh 52-week high and its fourth straight 52-week-high close, 2.5bp from the 5.00 pct line, with Sep 16 hike odds at roughly 87-90 pct and August core CPI hot at +0.3 pct M/M. The 'stable-to-easing rates' condition is now decisively violated, not merely atypical (wiki/economic-calendar.md, wiki/canary-watch.md).",
+      "A COST-PUSH SHOCK HAS BEEN ADDED. WTI settled 100.05, the first-ever $100 settle, +9.4 pct on the week, with OPEC+ holding quota and a second front at Bab el-Mandeb. No archetype-1 occurrence in the taxonomy carries a concurrent energy shock of this size (wiki/energy.md).",
+      "THE CONSUMER IS DETERIORATING, NOT STABILISING. UMich September preliminary sentiment printed 47.8, the second-lowest reading on record, against 51.0 at the 2026-08-21 run. Consumer Discretionary computes week breadth 10 of 100 (wiki/economic-calendar.md, wiki/consumer-discretionary.md).",
+      "THE LABEL'S OWN CORE SECTOR DISCONFIRMS IT. Technology computes month relative momentum 0 of 100 at -6.10 pct versus SPY, the worst of the eleven, and SMH 568.53 is pinned on its 50D at 569.10. An AI-capex regime whose capex sector is the month's worst relative performer is a label under direct arithmetic strain (wiki/tech.md, wiki/semiconductors.md).",
+      "The long end remains a policy-managed market: Treasury doubled long-end buybacks to at least $4B per operation because 30Y liquidity had turned 'very poor' with debt past $40T. That is regime-adjacent and not captured by any archetype in the taxonomy (carried forward from the 2026-08-21 run; unchanged).",
+      "The economy remains split between a contracting rate-sensitive side and a surveyed side that had been accelerating. Real Estate (-2.82 pct vs SPY on the month, third week under the 50D) and Utilities (all three week components computed to zero) are both in the rate-sensitive contraction (carried forward and strengthened).",
+      "CONFIDENCE CUT medium -> low on the four items above. The archetype label is retained because re-classification is a research call against the 44-episode taxonomy and not a weekly judgment; it is not retained because the evidence is comfortable. If the Sep 16 FOMC delivers the priced hike and the 10Y closes above 5.00 pct, the archetype-1 prior should be formally re-examined before the next cycle.",
+      "DATA QUALITY: Real Estate carries a warn at 9 of 10 basket constituents in both the week and month horizons. Its scores are reported but are thinner than the other ten.",
+      "TRUTH-LAYER DEFECTS OPEN UPSTREAM: macro/facts.json carries DXY stale at 59 days and the 2Y unsourced, and wiki/synthesis.md issue #103 flags four conflicting curve values across the wiki set. No claim in this payload rests on DXY or on the 2Y."
+    ]
+  },
+  "weights_config_version": 2,
+  "weights": {
+    "day": {
+      "regime_fit": 0.2,
+      "breadth": 0.25,
+      "relative_momentum": 0.25,
+      "volume_confirmation": 0.2,
+      "macro_catalyst": 0.1,
+      "risk_penalty_max": 0.05
+    },
+    "week": {
+      "regime_fit": 0.35,
+      "breadth": 0.2,
+      "relative_momentum": 0.2,
+      "volume_confirmation": 0.15,
+      "macro_catalyst": 0.1,
+      "risk_penalty_max": 0.05
+    },
+    "month": {
+      "regime_fit": 0.45,
+      "breadth": 0.15,
+      "relative_momentum": 0.15,
+      "volume_confirmation": 0.1,
+      "macro_catalyst": 0.15,
+      "risk_penalty_max": 0.05
+    }
+  },
+  "bands": {
+    "favorable": 70,
+    "constructive": 55,
+    "neutral": 45,
+    "unfavorable": 30,
+    "defensive": 0
+  },
+  "sectors": {
+    "Communication Services": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 70.0,
+          "relative_momentum": 90.0,
+          "volume_confirmation": 58.7,
+          "regime_fit": 65,
+          "macro_catalyst": 70
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 70.0,
+          "median_return_pct": 0.659,
+          "equal_weight_return_pct": 0.524,
+          "sector_return_vs_spy_pct": 1.29,
+          "sector_rank_among_eleven": 2,
+          "up_volume_share_pct": 58.7,
+          "top_two_contribution_pct": 46.7,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/communication-services.md: XLC 112.60 (+0.51%) with META +5.07% leading on Brinkema relief and the Muse launch.",
+          "wiki/communication-services.md: the Brinkema unsealing lands around Sep 16, the same session as the FOMC decision, making it a stacked binary.",
+          "wiki/communication-services.md: META at RSI 84 says a large share of the good news is already in the price."
+        ],
+        "risks": [
+          "The Brinkema unsealing around Sep 16 is a genuine binary and could resolve against the sector.",
+          "META at RSI 84 is the single largest weight carrying the sector; a mean reversion there takes XLC with it."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 30.0,
+          "relative_momentum": 80.0,
+          "volume_confirmation": 33.4,
+          "regime_fit": 55,
+          "macro_catalyst": 50
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 30.0,
+          "median_return_pct": -0.627,
+          "equal_weight_return_pct": -1.269,
+          "sector_return_vs_spy_pct": 0.283,
+          "sector_rank_among_eleven": 3,
+          "up_volume_share_pct": 33.4,
+          "top_two_contribution_pct": 40.2,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/communication-services.md: XLC 112.60 (+0.51%) with META +5.07% leading on Brinkema relief and the Muse launch.",
+          "wiki/communication-services.md: the Brinkema unsealing lands around Sep 16, the same session as the FOMC decision, making it a stacked binary.",
+          "wiki/communication-services.md: META at RSI 84 says a large share of the good news is already in the price."
+        ],
+        "risks": [
+          "The Brinkema unsealing around Sep 16 is a genuine binary and could resolve against the sector.",
+          "META at RSI 84 is the single largest weight carrying the sector; a mean reversion there takes XLC with it."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/communication-services.md",
+            "source_file_sha": "e8eb671eecb7ae880e98111ed677a1bb9dbc3f7d",
+            "lead_summary": "Communication is the artery of the digital economy. When the ad cycle turns, the sector chokes. When it flows, the sector soars.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLC"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Consumer Discretionary": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 10.0,
+          "relative_momentum": 10.0,
+          "volume_confirmation": 30.4,
+          "regime_fit": 25,
+          "macro_catalyst": 45
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 10.0,
+          "median_return_pct": -3.454,
+          "equal_weight_return_pct": -3.654,
+          "sector_return_vs_spy_pct": -2.888,
+          "sector_rank_among_eleven": 10,
+          "up_volume_share_pct": 30.4,
+          "top_two_contribution_pct": 40.3,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/economic-calendar.md: UMich September preliminary sentiment printed 47.8, the second-lowest reading on record.",
+          "wiki/consumer-discretionary.md: XLY 112.96 is -3.29% against SPY on the month with week breadth at 10 of 100.",
+          "wiki/economic-calendar.md: Retail Sales on Wed Sep 16 is a direct, scheduled test of the thesis with adverse skew."
+        ],
+        "risks": [
+          "A Retail Sales beat on Sep 16 would contradict the UMich signal directly, and this call with it.",
+          "Sentiment surveys have repeatedly diverged from actual spending; 47.8 may not translate to receipts."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 30.0,
+          "relative_momentum": 30.0,
+          "volume_confirmation": 31.7,
+          "regime_fit": 25,
+          "macro_catalyst": 35
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 30.0,
+          "median_return_pct": -7.488,
+          "equal_weight_return_pct": -4.839,
+          "sector_return_vs_spy_pct": -3.287,
+          "sector_rank_among_eleven": 8,
+          "up_volume_share_pct": 31.7,
+          "top_two_contribution_pct": 36.3,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/economic-calendar.md: UMich September preliminary sentiment printed 47.8, the second-lowest reading on record.",
+          "wiki/consumer-discretionary.md: XLY 112.96 is -3.29% against SPY on the month with week breadth at 10 of 100.",
+          "wiki/economic-calendar.md: Retail Sales on Wed Sep 16 is a direct, scheduled test of the thesis with adverse skew."
+        ],
+        "risks": [
+          "A Retail Sales beat on Sep 16 would contradict the UMich signal directly, and this call with it.",
+          "Sentiment surveys have repeatedly diverged from actual spending; 47.8 may not translate to receipts."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/consumer-discretionary.md",
+            "source_file_sha": "5786e43d2a8ef1689fcc7dcfb674e369458a5fc2",
+            "lead_summary": "The consumer is the canary in the coal mine. When the wallet closes, discretionary dies first.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLY"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Consumer Staples": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 40.0,
+          "relative_momentum": 80.0,
+          "volume_confirmation": 60.5,
+          "regime_fit": 55,
+          "macro_catalyst": 55
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 40.0,
+          "median_return_pct": -0.835,
+          "equal_weight_return_pct": -0.416,
+          "sector_return_vs_spy_pct": 0.35,
+          "sector_rank_among_eleven": 3,
+          "up_volume_share_pct": 60.5,
+          "top_two_contribution_pct": 51.3,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/canary-watch.md: XLP 30-day correlation to SPY flipped from -0.109 to +0.173, one of two defensive sign flips this week.",
+          "wiki/economic-calendar.md: UMich September preliminary sentiment at 47.8, the second-lowest on record, is the classic setup for a defensive rotation.",
+          "wiki/canary-watch.md: with the 10Y at 4.975% the staple dividend yield competes against a near-5% risk-free alternative, which caps the upside."
+        ],
+        "risks": [
+          "If the 10Y breaks 5.00% the yield competition overwhelms the defensive bid.",
+          "The defensive rotation is two weeks old; a single risk-on session would unwind the correlation flip."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 40.0,
+          "relative_momentum": 60.0,
+          "volume_confirmation": 43.9,
+          "regime_fit": 50,
+          "macro_catalyst": 50
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 40.0,
+          "median_return_pct": -2.507,
+          "equal_weight_return_pct": -3.701,
+          "sector_return_vs_spy_pct": -2.148,
+          "sector_rank_among_eleven": 5,
+          "up_volume_share_pct": 43.9,
+          "top_two_contribution_pct": 51.4,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/canary-watch.md: XLP 30-day correlation to SPY flipped from -0.109 to +0.173, one of two defensive sign flips this week.",
+          "wiki/economic-calendar.md: UMich September preliminary sentiment at 47.8, the second-lowest on record, is the classic setup for a defensive rotation.",
+          "wiki/canary-watch.md: with the 10Y at 4.975% the staple dividend yield competes against a near-5% risk-free alternative, which caps the upside."
+        ],
+        "risks": [
+          "If the 10Y breaks 5.00% the yield competition overwhelms the defensive bid.",
+          "The defensive rotation is two weeks old; a single risk-on session would unwind the correlation flip."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/consumer-staples.md",
+            "source_file_sha": "9b37939f7e7f15d2cf07c5d5bbe84a01ba3cd5d3",
+            "lead_summary": "This is my garden. The roots are deep. The dividends are honest. The weeds are the ones trading at 40x P/E and calling themselves staples.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLP (week ending 2026-09-11)"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Energy": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 60.0,
+          "relative_momentum": 100.0,
+          "volume_confirmation": 61.5,
+          "regime_fit": 85,
+          "macro_catalyst": 75
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 60.0,
+          "median_return_pct": 2.271,
+          "equal_weight_return_pct": 0.813,
+          "sector_return_vs_spy_pct": 1.579,
+          "sector_rank_among_eleven": 1,
+          "up_volume_share_pct": 61.5,
+          "top_two_contribution_pct": 29.3,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/energy.md: WTI settled 100.05 (+9.4% W/W), the first-ever $100 settle, with XLE 65.14 (+1.69%) completing a breakout-retest-hold and 5 of 10 top holdings at fresh 52W highs.",
+          "wiki/canary-watch.md: XLE deepened its inverse correlation to SPY to -0.426, so the sector carries diversification value as well as return.",
+          "wiki/energy.md: OPEC+ held quota and a second front at Bab el-Mandeb keeps the supply-risk premium live."
+        ],
+        "risks": [
+          "A negotiated de-escalation at Bab el-Mandeb removes the supply-risk premium and the $100 print fades as fast as it arrived.",
+          "Demand destruction: a hawkish FOMC plus UMich 47.8 is a demand-side signal a cost-push oil rally cannot survive for long.",
+          "wiki/energy.md's own read is that energy is a short-term beneficiary of geopolitical chaos, not a long-term friend."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 70.0,
+          "relative_momentum": 100.0,
+          "volume_confirmation": 77.3,
+          "regime_fit": 70,
+          "macro_catalyst": 60
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 70.0,
+          "median_return_pct": 3.969,
+          "equal_weight_return_pct": 4.211,
+          "sector_return_vs_spy_pct": 5.763,
+          "sector_rank_among_eleven": 1,
+          "up_volume_share_pct": 77.3,
+          "top_two_contribution_pct": 41.7,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/energy.md: WTI settled 100.05 (+9.4% W/W), the first-ever $100 settle, with XLE 65.14 (+1.69%) completing a breakout-retest-hold and 5 of 10 top holdings at fresh 52W highs.",
+          "wiki/canary-watch.md: XLE deepened its inverse correlation to SPY to -0.426, so the sector carries diversification value as well as return.",
+          "wiki/energy.md: OPEC+ held quota and a second front at Bab el-Mandeb keeps the supply-risk premium live."
+        ],
+        "risks": [
+          "A negotiated de-escalation at Bab el-Mandeb removes the supply-risk premium and the $100 print fades as fast as it arrived.",
+          "Demand destruction: a hawkish FOMC plus UMich 47.8 is a demand-side signal a cost-push oil rally cannot survive for long.",
+          "wiki/energy.md's own read is that energy is a short-term beneficiary of geopolitical chaos, not a long-term friend."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/energy.md",
+            "source_file_sha": "f71f7977fd79740196ad9a110271ba75279676ea",
+            "lead_summary": "Energy is a short-term beneficiary of geopolitical chaos, not a long-term friend. The bid is real, but so is the fade.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLE"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Financials": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 0.0,
+          "relative_momentum": 40.0,
+          "volume_confirmation": 0.0,
+          "regime_fit": 55,
+          "macro_catalyst": 65
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 0.0,
+          "median_return_pct": -1.798,
+          "equal_weight_return_pct": -2.96,
+          "sector_return_vs_spy_pct": -2.194,
+          "sector_rank_among_eleven": 7,
+          "up_volume_share_pct": 0.0,
+          "top_two_contribution_pct": 46.8,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/canary-watch.md: the 10Y-3M curve stands at +106bp and the bear-flattening streak paused on a parallel bear shift, which is the shape that pays bank NIM.",
+          "wiki/financials.md: money centers closed green in a red tape (C +0.80%, WFC +0.36%, BAC +0.02%) while XLF 57.25 held its 50D at 57.11.",
+          "wiki/economic-calendar.md: a Sep 16 hike at roughly 87-90% odds is a NIM tailwind that is already largely priced."
+        ],
+        "risks": [
+          "A dovish surprise on Sep 16, or a re-inversion of the 10Y-3M spread from +106bp, removes the NIM thesis.",
+          "Credit is the tell: HYG 78.60 and LQD 104.32 have both posted two straight red weeks."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 30.0,
+          "relative_momentum": 90.0,
+          "volume_confirmation": 23.7,
+          "regime_fit": 70,
+          "macro_catalyst": 70
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 30.0,
+          "median_return_pct": -1.403,
+          "equal_weight_return_pct": -1.19,
+          "sector_return_vs_spy_pct": 0.362,
+          "sector_rank_among_eleven": 2,
+          "up_volume_share_pct": 23.7,
+          "top_two_contribution_pct": 57.4,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/canary-watch.md: the 10Y-3M curve stands at +106bp and the bear-flattening streak paused on a parallel bear shift, which is the shape that pays bank NIM.",
+          "wiki/financials.md: money centers closed green in a red tape (C +0.80%, WFC +0.36%, BAC +0.02%) while XLF 57.25 held its 50D at 57.11.",
+          "wiki/economic-calendar.md: a Sep 16 hike at roughly 87-90% odds is a NIM tailwind that is already largely priced."
+        ],
+        "risks": [
+          "A dovish surprise on Sep 16, or a re-inversion of the 10Y-3M spread from +106bp, removes the NIM thesis.",
+          "Credit is the tell: HYG 78.60 and LQD 104.32 have both posted two straight red weeks."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/financials.md",
+            "source_file_sha": "c4671229f5c3e38acca7c6b237924e470773980a",
+            "lead_summary": "Financials are the bond market's shadow. When the yield curve speaks, the banks listen.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLF"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Healthcare": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 10.0,
+          "relative_momentum": 20.0,
+          "volume_confirmation": 11.6,
+          "regime_fit": 48,
+          "macro_catalyst": 50
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 10.0,
+          "median_return_pct": -3.217,
+          "equal_weight_return_pct": -3.103,
+          "sector_return_vs_spy_pct": -2.337,
+          "sector_rank_among_eleven": 9,
+          "up_volume_share_pct": 11.6,
+          "top_two_contribution_pct": 39.9,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/healthcare.md: XLV 165.36 (-3.55% W/W) lost both the 169.71 old-ATH line and the 50D at 166.24 on a weekly close, with RSI at 21.1.",
+          "wiki/healthcare.md: the damage is idiosyncratic rather than macro. A pelacarsen Ph3 primary-endpoint miss repriced the class (NVS -15.9%, AMGN -13.7%), and COO -23.7% and SYK -9.10% were company-specific.",
+          "wiki/canary-watch.md: XLV correlation to SPY flipped -0.028 to +0.250 and month relative momentum still reads 70, so the defensive bid has not been withdrawn. This is an oversold fortress, not a broken one."
+        ],
+        "risks": [
+          "Olpasiran OCEAN(a)-Outcomes is the next high-stakes binary and is not yet scheduled; a second failure turns a class repricing into a sector repricing.",
+          "RSI 21.1 can stay oversold: XBI -4.98% lost its 50D at 158.20, so the rate-biotech truce is already broken.",
+          "If the defensive bid is really a dead-cat bounce, the month relative momentum of 70 decays fast."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 30.0,
+          "relative_momentum": 70.0,
+          "volume_confirmation": 24.3,
+          "regime_fit": 58,
+          "macro_catalyst": 55
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 30.0,
+          "median_return_pct": -2.505,
+          "equal_weight_return_pct": -1.871,
+          "sector_return_vs_spy_pct": -0.319,
+          "sector_rank_among_eleven": 4,
+          "up_volume_share_pct": 24.3,
+          "top_two_contribution_pct": 35.6,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/healthcare.md: XLV 165.36 (-3.55% W/W) lost both the 169.71 old-ATH line and the 50D at 166.24 on a weekly close, with RSI at 21.1.",
+          "wiki/healthcare.md: the damage is idiosyncratic rather than macro. A pelacarsen Ph3 primary-endpoint miss repriced the class (NVS -15.9%, AMGN -13.7%), and COO -23.7% and SYK -9.10% were company-specific.",
+          "wiki/canary-watch.md: XLV correlation to SPY flipped -0.028 to +0.250 and month relative momentum still reads 70, so the defensive bid has not been withdrawn. This is an oversold fortress, not a broken one."
+        ],
+        "risks": [
+          "Olpasiran OCEAN(a)-Outcomes is the next high-stakes binary and is not yet scheduled; a second failure turns a class repricing into a sector repricing.",
+          "RSI 21.1 can stay oversold: XBI -4.98% lost its 50D at 158.20, so the rate-biotech truce is already broken.",
+          "If the defensive bid is really a dead-cat bounce, the month relative momentum of 70 decays fast."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/healthcare.md",
+            "source_file_sha": "82bd72ea6cf9a29e56c2f3e29fb3a43fe4e5d18c",
+            "lead_summary": "Healthcare is the fortress in the storm. Expensive, yes. But when the market panics, the sick still get treated.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLV"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Industrials": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 30.0,
+          "relative_momentum": 70.0,
+          "volume_confirmation": 73.0,
+          "regime_fit": 45,
+          "macro_catalyst": 55
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 30.0,
+          "median_return_pct": -1.485,
+          "equal_weight_return_pct": -0.964,
+          "sector_return_vs_spy_pct": -0.198,
+          "sector_rank_among_eleven": 4,
+          "up_volume_share_pct": 73.0,
+          "top_two_contribution_pct": 33.8,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/industrials.md: XLI 172.37 with month relative momentum at 10 of 100, a decisive laggard against the expansion thesis.",
+          "wiki/economic-calendar.md: Industrial Production and Retail Sales both print Wed Sep 16 alongside the FOMC, a triple-stacked gate.",
+          "wiki/canary-watch.md: industrials sit on the outflow side of this week's rotation."
+        ],
+        "risks": [
+          "A strong Industrial Production print on Sep 16 would falsify the laggard read quickly.",
+          "LMT and ETN carry Council exposure here, so sector weakness and book weakness are correlated."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 20.0,
+          "relative_momentum": 10.0,
+          "volume_confirmation": 71.1,
+          "regime_fit": 35,
+          "macro_catalyst": 45
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 20.0,
+          "median_return_pct": -7.716,
+          "equal_weight_return_pct": -6.437,
+          "sector_return_vs_spy_pct": -4.885,
+          "sector_rank_among_eleven": 10,
+          "up_volume_share_pct": 71.1,
+          "top_two_contribution_pct": 34.6,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/industrials.md: XLI 172.37 with month relative momentum at 10 of 100, a decisive laggard against the expansion thesis.",
+          "wiki/economic-calendar.md: Industrial Production and Retail Sales both print Wed Sep 16 alongside the FOMC, a triple-stacked gate.",
+          "wiki/canary-watch.md: industrials sit on the outflow side of this week's rotation."
+        ],
+        "risks": [
+          "A strong Industrial Production print on Sep 16 would falsify the laggard read quickly.",
+          "LMT and ETN carry Council exposure here, so sector weakness and book weakness are correlated."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/industrials.md",
+            "source_file_sha": "bdffe9a49e6085fea118f49418b086ed481f2412",
+            "lead_summary": "Industrials are the pulse of the economy. When the factories hum, the market sings. When they go silent, everything else follows.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH (Sub-$5B)",
+              "MACRO OVERLAY",
+              "WEEKLY NARRATIVE \u2014 The Week the Trend Line Held",
+              "EARNINGS CALENDAR & EVENT WATCH"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Materials": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 0.0,
+          "relative_momentum": 30.0,
+          "volume_confirmation": 0.0,
+          "regime_fit": 35,
+          "macro_catalyst": 40
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 0.0,
+          "median_return_pct": -2.33,
+          "equal_weight_return_pct": -2.989,
+          "sector_return_vs_spy_pct": -2.223,
+          "sector_rank_among_eleven": 8,
+          "up_volume_share_pct": 0.0,
+          "top_two_contribution_pct": 47.9,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/materials.md: XLB 50.95 with copper at 6.548 holding, but the sector is -3.19% against SPY on the month.",
+          "wiki/canary-watch.md: materials sit on the outflow side of this week's rotation, and the demand read into a hawkish FOMC is unclear."
+        ],
+        "risks": [
+          "Copper at 6.548 is the whole thesis; a break there removes the only support.",
+          "A hawkish FOMC and a weak consumer are both adverse to the demand read."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 30.0,
+          "relative_momentum": 40.0,
+          "volume_confirmation": 58.0,
+          "regime_fit": 40,
+          "macro_catalyst": 40
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 30.0,
+          "median_return_pct": -5.228,
+          "equal_weight_return_pct": -4.741,
+          "sector_return_vs_spy_pct": -3.189,
+          "sector_rank_among_eleven": 7,
+          "up_volume_share_pct": 58.0,
+          "top_two_contribution_pct": 36.2,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/materials.md: XLB 50.95 with copper at 6.548 holding, but the sector is -3.19% against SPY on the month.",
+          "wiki/canary-watch.md: materials sit on the outflow side of this week's rotation, and the demand read into a hawkish FOMC is unclear."
+        ],
+        "risks": [
+          "Copper at 6.548 is the whole thesis; a break there removes the only support.",
+          "A hawkish FOMC and a weak consumer are both adverse to the demand read."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/materials.md",
+            "source_file_sha": "d426e823446a96c978d3a6feffeaaa40466b492b",
+            "lead_summary": "Materials are the raw nerve of the global economy. When copper speaks, every sector listens.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLB"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Real Estate": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "warn",
+        "missing_tickers": [
+          "AVB"
+        ],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": [
+          "week: 9 of 10",
+          "month: 9 of 10"
+        ]
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 22.2,
+          "relative_momentum": 50.0,
+          "volume_confirmation": 9.7,
+          "regime_fit": 20,
+          "macro_catalyst": 25
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 22.2,
+          "median_return_pct": -1.824,
+          "equal_weight_return_pct": -1.339,
+          "sector_return_vs_spy_pct": -0.573,
+          "sector_rank_among_eleven": 6,
+          "up_volume_share_pct": 9.7,
+          "top_two_contribution_pct": 38.3,
+          "constituents_used": 9,
+          "constituents_expected": 10,
+          "coverage_pct": 90.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/real-estate.md: XLRE 43.42 (-1.16% W/W), a third straight week under the 50D, with PLD and O both losing their 200Ds.",
+          "wiki/canary-watch.md: the 10Y closed 4.975%, a fresh 52W high and its fourth straight 52W-high close, 2.5bp from the 5.00% line.",
+          "wiki/real-estate.md: the 200D held its first test by 23 cents, so the structural line is intact but barely."
+        ],
+        "risks": [
+          "A dovish FOMC surprise or a 10Y retreat from 4.975% would produce a violent rate-proxy rally from oversold.",
+          "The 200D held by 23 cents; if it holds again the downtrend read is premature."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 22.2,
+          "relative_momentum": 50.0,
+          "volume_confirmation": 14.8,
+          "regime_fit": 20,
+          "macro_catalyst": 25
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 22.2,
+          "median_return_pct": -5.164,
+          "equal_weight_return_pct": -4.375,
+          "sector_return_vs_spy_pct": -2.823,
+          "sector_rank_among_eleven": 6,
+          "up_volume_share_pct": 14.8,
+          "top_two_contribution_pct": 37.5,
+          "constituents_used": 9,
+          "constituents_expected": 10,
+          "coverage_pct": 90.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/real-estate.md: XLRE 43.42 (-1.16% W/W), a third straight week under the 50D, with PLD and O both losing their 200Ds.",
+          "wiki/canary-watch.md: the 10Y closed 4.975%, a fresh 52W high and its fourth straight 52W-high close, 2.5bp from the 5.00% line.",
+          "wiki/real-estate.md: the 200D held its first test by 23 cents, so the structural line is intact but barely."
+        ],
+        "risks": [
+          "A dovish FOMC surprise or a 10Y retreat from 4.975% would produce a violent rate-proxy rally from oversold.",
+          "The 200D held by 23 cents; if it holds again the downtrend read is premature."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/real-estate.md",
+            "source_file_sha": "d8fe168bb5a1bbae883d8cef9b96635155b98471",
+            "lead_summary": "REITs are the bond market's cousin with a mortgage. When rates rise, they bleed. When rates fall, they heal \u2014 slowly.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLRE"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Technology": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 50.0,
+          "relative_momentum": 60.0,
+          "volume_confirmation": 36.2,
+          "regime_fit": 55,
+          "macro_catalyst": 45
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 50.0,
+          "median_return_pct": -1.486,
+          "equal_weight_return_pct": -1.038,
+          "sector_return_vs_spy_pct": -0.272,
+          "sector_rank_among_eleven": 5,
+          "up_volume_share_pct": 36.2,
+          "top_two_contribution_pct": 40.8,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/tech.md: XLK 187.67 (+0.21% W/W) but the AI-compute trade split for the first time in months, AMD +8.07% against NVDA -5.13% and MU -4.07%.",
+          "wiki/semiconductors.md: SMH 568.53 is pinned on its 50D at 569.10, a coin-flip technical position for the regime's core sector.",
+          "wiki/canary-watch.md: XLK 30-day correlation to SPY fell 0.795 to 0.646 and SMH 0.682 to 0.422, so leadership is decoupling rather than broadening."
+        ],
+        "risks": [
+          "If SMH loses its 50D at 569.10 the regime's core sector confirms a downtrend and the AI-capex label itself is in question.",
+          "A hawkish FOMC compresses long-duration equity multiples directly.",
+          "The AMD/NVDA split may be rotation within AI rather than a sector call; if so this read is noise."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 20.0,
+          "relative_momentum": 0.0,
+          "volume_confirmation": 15.2,
+          "regime_fit": 40,
+          "macro_catalyst": 40
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 20.0,
+          "median_return_pct": -4.31,
+          "equal_weight_return_pct": -7.654,
+          "sector_return_vs_spy_pct": -6.101,
+          "sector_rank_among_eleven": 11,
+          "up_volume_share_pct": 15.2,
+          "top_two_contribution_pct": 44.2,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/tech.md: XLK 187.67 (+0.21% W/W) but the AI-compute trade split for the first time in months, AMD +8.07% against NVDA -5.13% and MU -4.07%.",
+          "wiki/semiconductors.md: SMH 568.53 is pinned on its 50D at 569.10, a coin-flip technical position for the regime's core sector.",
+          "wiki/canary-watch.md: XLK 30-day correlation to SPY fell 0.795 to 0.646 and SMH 0.682 to 0.422, so leadership is decoupling rather than broadening."
+        ],
+        "risks": [
+          "If SMH loses its 50D at 569.10 the regime's core sector confirms a downtrend and the AI-capex label itself is in question.",
+          "A hawkish FOMC compresses long-duration equity multiples directly.",
+          "The AMD/NVDA split may be rotation within AI rather than a sector call; if so this read is noise."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/tech.md",
+            "source_file_sha": "4cf6b94d7fe95e27e6655eecc288cf2e2ec911d1",
+            "lead_summary": "The CPI that was supposed to settle September did both jobs at once: core ran hot at +0.3% M/M versus +0.2% expected, September hike odds finished Friday at ~87\u201390%, and the 10Y closed at 4.97% \u2014 yet stocks rallied because the worst case never showed. The sector's real action was idiosyncratic: AAPL +3.8% on John Ternus's debut keynote (iPhone 18 Pro +$100, the $2,000+ iPhone Duo foldable, pre-orders live Sep 12), ORCL's blowout Q1 (OCI +121%, RPO $664B, FY27 raised to >=$90B / $8.10 EPS) that gapped +7\u20138% and still closed red \u2014 sell-the-news on a beat-and-raise \u2014 while AMD +8.1% and INTC +7.4% answered NVDA's Vera CPU shot across the server-CPU bow and NVDA itself -5.1%, MU -4.1% gave back pieces of the memory trade into a near-5% 10Y. XLK finished $187.67 (+0.2% W/W): a flat tape stretched over the year's biggest Fed repricing.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLK"
+            ]
+          },
+          {
+            "source_path": "wiki/semiconductors.md",
+            "source_file_sha": "c46eb1144ae5463bfe7f0dc50de39ddd74a7a8d7",
+            "lead_summary": "Semiconductors are the new oil. Every AI model, every data center, every autonomous car runs on silicon. When the chip cycle turns, the world feels it.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving SMH"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    },
+    "Utilities": {
+      "as_of_date": "2026-09-11",
+      "data_quality": {
+        "status": "pass",
+        "missing_tickers": [],
+        "stale_tickers": [],
+        "anomalies": [],
+        "coverage_notes": []
+      },
+      "provenance": {
+        "price_panel_weeks": 110,
+        "adjustment_basis": "total_return",
+        "computed_components": [
+          "breadth",
+          "relative_momentum",
+          "volume_confirmation"
+        ],
+        "judgment_components": [
+          "regime_fit",
+          "macro_catalyst"
+        ],
+        "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+      },
+      "day": {
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "risk_penalty": 0.0,
+        "metrics": {},
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+        "why": [],
+        "risks": []
+      },
+      "week": {
+        "components": {
+          "breadth": 0.0,
+          "relative_momentum": 0.0,
+          "volume_confirmation": 0.0,
+          "regime_fit": 15,
+          "macro_catalyst": 25
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 0.0,
+          "median_return_pct": -2.194,
+          "equal_weight_return_pct": -3.708,
+          "sector_return_vs_spy_pct": -2.942,
+          "sector_rank_among_eleven": 11,
+          "up_volume_share_pct": 0.0,
+          "top_two_contribution_pct": 60.0,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-09-04",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/utilities.md: XLU 42.39 (-1.60% W/W) lost the 43.00 floor, with CEG -4.75%.",
+          "wiki/canary-watch.md: with the 10Y at 4.975% into a roughly 87-90% probable Sep 16 hike, the bond-proxy trade faces its worst configuration.",
+          "wiki/utilities.md: week breadth, relative momentum and volume confirmation all computed to zero, so there is no internal support at all."
+        ],
+        "risks": [
+          "Any dovish repricing of the Sep 16 decision reverses the bond-proxy trade fastest here.",
+          "All-zero week components are an extreme reading, and extremes mean-revert."
+        ]
+      },
+      "month": {
+        "components": {
+          "breadth": 30.0,
+          "relative_momentum": 20.0,
+          "volume_confirmation": 11.7,
+          "regime_fit": 20,
+          "macro_catalyst": 25
+        },
+        "risk_penalty": 0.0,
+        "metrics": {
+          "positive_return_breadth_pct": 30.0,
+          "median_return_pct": -4.231,
+          "equal_weight_return_pct": -5.646,
+          "sector_return_vs_spy_pct": -4.094,
+          "sector_rank_among_eleven": 9,
+          "up_volume_share_pct": 11.7,
+          "top_two_contribution_pct": 58.5,
+          "constituents_used": 10,
+          "constituents_expected": 10,
+          "coverage_pct": 100.0,
+          "window_from": "2026-08-14",
+          "window_to": "2026-09-11"
+        },
+        "why": [
+          "wiki/utilities.md: XLU 42.39 (-1.60% W/W) lost the 43.00 floor, with CEG -4.75%.",
+          "wiki/canary-watch.md: with the 10Y at 4.975% into a roughly 87-90% probable Sep 16 hike, the bond-proxy trade faces its worst configuration.",
+          "wiki/utilities.md: week breadth, relative momentum and volume confirmation all computed to zero, so there is no internal support at all."
+        ],
+        "risks": [
+          "Any dovish repricing of the Sep 16 decision reverses the bond-proxy trade fastest here.",
+          "All-zero week components are an extreme reading, and extremes mean-revert."
+        ]
+      },
+      "evidence": {
+        "available": true,
+        "snapshot": "2026-09-14",
+        "extracts": [
+          {
+            "source_path": "wiki/utilities.md",
+            "source_file_sha": "ac49bd99c84ac9c5acbfaf25a333186fd798cecb",
+            "lead_summary": "Utilities are the bond market's shadow. When the 10-year speaks, the power lines hum \u2014 or go silent.",
+            "sections": [
+              "ETF SNAPSHOT",
+              "TOP HOLDINGS & MOMENTUM",
+              "SMALL/MID-CAP WATCH",
+              "TECHNICAL LEVELS",
+              "MACRO OVERLAY",
+              "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLU"
+            ]
+          }
+        ]
+      },
+      "research_snapshot": {
+        "as_of": "2026-09-14",
+        "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+        "provenance_verified": true
+      }
+    }
+  }
+}

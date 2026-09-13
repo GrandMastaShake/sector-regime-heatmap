@@ -1,0 +1,129 @@
+{
+  "sector": "Utilities",
+  "as_of_date": "2026-09-11",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 110,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 0.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 0.0,
+      "regime_fit": 15,
+      "macro_catalyst": 25
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 0.0,
+      "median_return_pct": -2.194,
+      "equal_weight_return_pct": -3.708,
+      "sector_return_vs_spy_pct": -2.942,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 0.0,
+      "top_two_contribution_pct": 60.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/utilities.md: XLU 42.39 (-1.60% W/W) lost the 43.00 floor, with CEG -4.75%.",
+      "wiki/canary-watch.md: with the 10Y at 4.975% into a roughly 87-90% probable Sep 16 hike, the bond-proxy trade faces its worst configuration.",
+      "wiki/utilities.md: week breadth, relative momentum and volume confirmation all computed to zero, so there is no internal support at all."
+    ],
+    "risks": [
+      "Any dovish repricing of the Sep 16 decision reverses the bond-proxy trade fastest here.",
+      "All-zero week components are an extreme reading, and extremes mean-revert."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 11.7,
+      "regime_fit": 20,
+      "macro_catalyst": 25
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -4.231,
+      "equal_weight_return_pct": -5.646,
+      "sector_return_vs_spy_pct": -4.094,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 11.7,
+      "top_two_contribution_pct": 58.5,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/utilities.md: XLU 42.39 (-1.60% W/W) lost the 43.00 floor, with CEG -4.75%.",
+      "wiki/canary-watch.md: with the 10Y at 4.975% into a roughly 87-90% probable Sep 16 hike, the bond-proxy trade faces its worst configuration.",
+      "wiki/utilities.md: week breadth, relative momentum and volume confirmation all computed to zero, so there is no internal support at all."
+    ],
+    "risks": [
+      "Any dovish repricing of the Sep 16 decision reverses the bond-proxy trade fastest here.",
+      "All-zero week components are an extreme reading, and extremes mean-revert."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-14",
+    "extracts": [
+      {
+        "source_path": "wiki/utilities.md",
+        "source_file_sha": "ac49bd99c84ac9c5acbfaf25a333186fd798cecb",
+        "lead_summary": "Utilities are the bond market's shadow. When the 10-year speaks, the power lines hum \u2014 or go silent.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLU"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-14",
+    "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+    "provenance_verified": true
+  }
+}

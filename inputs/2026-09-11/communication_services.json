@@ -1,0 +1,129 @@
+{
+  "sector": "Communication Services",
+  "as_of_date": "2026-09-11",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 110,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 70.0,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 58.7,
+      "regime_fit": 65,
+      "macro_catalyst": 70
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 70.0,
+      "median_return_pct": 0.659,
+      "equal_weight_return_pct": 0.524,
+      "sector_return_vs_spy_pct": 1.29,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 58.7,
+      "top_two_contribution_pct": 46.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/communication-services.md: XLC 112.60 (+0.51%) with META +5.07% leading on Brinkema relief and the Muse launch.",
+      "wiki/communication-services.md: the Brinkema unsealing lands around Sep 16, the same session as the FOMC decision, making it a stacked binary.",
+      "wiki/communication-services.md: META at RSI 84 says a large share of the good news is already in the price."
+    ],
+    "risks": [
+      "The Brinkema unsealing around Sep 16 is a genuine binary and could resolve against the sector.",
+      "META at RSI 84 is the single largest weight carrying the sector; a mean reversion there takes XLC with it."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 33.4,
+      "regime_fit": 55,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -0.627,
+      "equal_weight_return_pct": -1.269,
+      "sector_return_vs_spy_pct": 0.283,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 33.4,
+      "top_two_contribution_pct": 40.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/communication-services.md: XLC 112.60 (+0.51%) with META +5.07% leading on Brinkema relief and the Muse launch.",
+      "wiki/communication-services.md: the Brinkema unsealing lands around Sep 16, the same session as the FOMC decision, making it a stacked binary.",
+      "wiki/communication-services.md: META at RSI 84 says a large share of the good news is already in the price."
+    ],
+    "risks": [
+      "The Brinkema unsealing around Sep 16 is a genuine binary and could resolve against the sector.",
+      "META at RSI 84 is the single largest weight carrying the sector; a mean reversion there takes XLC with it."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-14",
+    "extracts": [
+      {
+        "source_path": "wiki/communication-services.md",
+        "source_file_sha": "e8eb671eecb7ae880e98111ed677a1bb9dbc3f7d",
+        "lead_summary": "Communication is the artery of the digital economy. When the ad cycle turns, the sector chokes. When it flows, the sector soars.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLC"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-14",
+    "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+    "provenance_verified": true
+  }
+}

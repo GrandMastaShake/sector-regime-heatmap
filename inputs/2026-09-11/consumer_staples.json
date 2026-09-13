@@ -1,0 +1,129 @@
+{
+  "sector": "Consumer Staples",
+  "as_of_date": "2026-09-11",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 110,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 40.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 60.5,
+      "regime_fit": 55,
+      "macro_catalyst": 55
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 40.0,
+      "median_return_pct": -0.835,
+      "equal_weight_return_pct": -0.416,
+      "sector_return_vs_spy_pct": 0.35,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 60.5,
+      "top_two_contribution_pct": 51.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/canary-watch.md: XLP 30-day correlation to SPY flipped from -0.109 to +0.173, one of two defensive sign flips this week.",
+      "wiki/economic-calendar.md: UMich September preliminary sentiment at 47.8, the second-lowest on record, is the classic setup for a defensive rotation.",
+      "wiki/canary-watch.md: with the 10Y at 4.975% the staple dividend yield competes against a near-5% risk-free alternative, which caps the upside."
+    ],
+    "risks": [
+      "If the 10Y breaks 5.00% the yield competition overwhelms the defensive bid.",
+      "The defensive rotation is two weeks old; a single risk-on session would unwind the correlation flip."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 40.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 43.9,
+      "regime_fit": 50,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 40.0,
+      "median_return_pct": -2.507,
+      "equal_weight_return_pct": -3.701,
+      "sector_return_vs_spy_pct": -2.148,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 43.9,
+      "top_two_contribution_pct": 51.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/canary-watch.md: XLP 30-day correlation to SPY flipped from -0.109 to +0.173, one of two defensive sign flips this week.",
+      "wiki/economic-calendar.md: UMich September preliminary sentiment at 47.8, the second-lowest on record, is the classic setup for a defensive rotation.",
+      "wiki/canary-watch.md: with the 10Y at 4.975% the staple dividend yield competes against a near-5% risk-free alternative, which caps the upside."
+    ],
+    "risks": [
+      "If the 10Y breaks 5.00% the yield competition overwhelms the defensive bid.",
+      "The defensive rotation is two weeks old; a single risk-on session would unwind the correlation flip."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-14",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-staples.md",
+        "source_file_sha": "9b37939f7e7f15d2cf07c5d5bbe84a01ba3cd5d3",
+        "lead_summary": "This is my garden. The roots are deep. The dividends are honest. The weeds are the ones trading at 40x P/E and calling themselves staples.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLP (week ending 2026-09-11)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-14",
+    "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+    "provenance_verified": true
+  }
+}

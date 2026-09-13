@@ -1,0 +1,127 @@
+{
+  "sector": "Materials",
+  "as_of_date": "2026-09-11",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 110,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 0.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 0.0,
+      "regime_fit": 35,
+      "macro_catalyst": 40
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 0.0,
+      "median_return_pct": -2.33,
+      "equal_weight_return_pct": -2.989,
+      "sector_return_vs_spy_pct": -2.223,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 0.0,
+      "top_two_contribution_pct": 47.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/materials.md: XLB 50.95 with copper at 6.548 holding, but the sector is -3.19% against SPY on the month.",
+      "wiki/canary-watch.md: materials sit on the outflow side of this week's rotation, and the demand read into a hawkish FOMC is unclear."
+    ],
+    "risks": [
+      "Copper at 6.548 is the whole thesis; a break there removes the only support.",
+      "A hawkish FOMC and a weak consumer are both adverse to the demand read."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 58.0,
+      "regime_fit": 40,
+      "macro_catalyst": 40
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -5.228,
+      "equal_weight_return_pct": -4.741,
+      "sector_return_vs_spy_pct": -3.189,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 58.0,
+      "top_two_contribution_pct": 36.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/materials.md: XLB 50.95 with copper at 6.548 holding, but the sector is -3.19% against SPY on the month.",
+      "wiki/canary-watch.md: materials sit on the outflow side of this week's rotation, and the demand read into a hawkish FOMC is unclear."
+    ],
+    "risks": [
+      "Copper at 6.548 is the whole thesis; a break there removes the only support.",
+      "A hawkish FOMC and a weak consumer are both adverse to the demand read."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-14",
+    "extracts": [
+      {
+        "source_path": "wiki/materials.md",
+        "source_file_sha": "d426e823446a96c978d3a6feffeaaa40466b492b",
+        "lead_summary": "Materials are the raw nerve of the global economy. When copper speaks, every sector listens.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLB"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-14",
+    "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+    "provenance_verified": true
+  }
+}

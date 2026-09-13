@@ -1,0 +1,144 @@
+{
+  "sector": "Technology",
+  "as_of_date": "2026-09-11",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 110,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 36.2,
+      "regime_fit": 55,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": -1.486,
+      "equal_weight_return_pct": -1.038,
+      "sector_return_vs_spy_pct": -0.272,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 36.2,
+      "top_two_contribution_pct": 40.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/tech.md: XLK 187.67 (+0.21% W/W) but the AI-compute trade split for the first time in months, AMD +8.07% against NVDA -5.13% and MU -4.07%.",
+      "wiki/semiconductors.md: SMH 568.53 is pinned on its 50D at 569.10, a coin-flip technical position for the regime's core sector.",
+      "wiki/canary-watch.md: XLK 30-day correlation to SPY fell 0.795 to 0.646 and SMH 0.682 to 0.422, so leadership is decoupling rather than broadening."
+    ],
+    "risks": [
+      "If SMH loses its 50D at 569.10 the regime's core sector confirms a downtrend and the AI-capex label itself is in question.",
+      "A hawkish FOMC compresses long-duration equity multiples directly.",
+      "The AMD/NVDA split may be rotation within AI rather than a sector call; if so this read is noise."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 15.2,
+      "regime_fit": 40,
+      "macro_catalyst": 40
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -4.31,
+      "equal_weight_return_pct": -7.654,
+      "sector_return_vs_spy_pct": -6.101,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 15.2,
+      "top_two_contribution_pct": 44.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/tech.md: XLK 187.67 (+0.21% W/W) but the AI-compute trade split for the first time in months, AMD +8.07% against NVDA -5.13% and MU -4.07%.",
+      "wiki/semiconductors.md: SMH 568.53 is pinned on its 50D at 569.10, a coin-flip technical position for the regime's core sector.",
+      "wiki/canary-watch.md: XLK 30-day correlation to SPY fell 0.795 to 0.646 and SMH 0.682 to 0.422, so leadership is decoupling rather than broadening."
+    ],
+    "risks": [
+      "If SMH loses its 50D at 569.10 the regime's core sector confirms a downtrend and the AI-capex label itself is in question.",
+      "A hawkish FOMC compresses long-duration equity multiples directly.",
+      "The AMD/NVDA split may be rotation within AI rather than a sector call; if so this read is noise."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-14",
+    "extracts": [
+      {
+        "source_path": "wiki/tech.md",
+        "source_file_sha": "4cf6b94d7fe95e27e6655eecc288cf2e2ec911d1",
+        "lead_summary": "The CPI that was supposed to settle September did both jobs at once: core ran hot at +0.3% M/M versus +0.2% expected, September hike odds finished Friday at ~87\u201390%, and the 10Y closed at 4.97% \u2014 yet stocks rallied because the worst case never showed. The sector's real action was idiosyncratic: AAPL +3.8% on John Ternus's debut keynote (iPhone 18 Pro +$100, the $2,000+ iPhone Duo foldable, pre-orders live Sep 12), ORCL's blowout Q1 (OCI +121%, RPO $664B, FY27 raised to >=$90B / $8.10 EPS) that gapped +7\u20138% and still closed red \u2014 sell-the-news on a beat-and-raise \u2014 while AMD +8.1% and INTC +7.4% answered NVDA's Vera CPU shot across the server-CPU bow and NVDA itself -5.1%, MU -4.1% gave back pieces of the memory trade into a near-5% 10Y. XLK finished $187.67 (+0.2% W/W): a flat tape stretched over the year's biggest Fed repricing.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLK"
+        ]
+      },
+      {
+        "source_path": "wiki/semiconductors.md",
+        "source_file_sha": "c46eb1144ae5463bfe7f0dc50de39ddd74a7a8d7",
+        "lead_summary": "Semiconductors are the new oil. Every AI model, every data center, every autonomous car runs on silicon. When the chip cycle turns, the world feels it.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving SMH"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-14",
+    "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+    "provenance_verified": true
+  }
+}

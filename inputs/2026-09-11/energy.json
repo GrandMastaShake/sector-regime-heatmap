@@ -1,0 +1,131 @@
+{
+  "sector": "Energy",
+  "as_of_date": "2026-09-11",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 110,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 61.5,
+      "regime_fit": 85,
+      "macro_catalyst": 75
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 2.271,
+      "equal_weight_return_pct": 0.813,
+      "sector_return_vs_spy_pct": 1.579,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 61.5,
+      "top_two_contribution_pct": 29.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/energy.md: WTI settled 100.05 (+9.4% W/W), the first-ever $100 settle, with XLE 65.14 (+1.69%) completing a breakout-retest-hold and 5 of 10 top holdings at fresh 52W highs.",
+      "wiki/canary-watch.md: XLE deepened its inverse correlation to SPY to -0.426, so the sector carries diversification value as well as return.",
+      "wiki/energy.md: OPEC+ held quota and a second front at Bab el-Mandeb keeps the supply-risk premium live."
+    ],
+    "risks": [
+      "A negotiated de-escalation at Bab el-Mandeb removes the supply-risk premium and the $100 print fades as fast as it arrived.",
+      "Demand destruction: a hawkish FOMC plus UMich 47.8 is a demand-side signal a cost-push oil rally cannot survive for long.",
+      "wiki/energy.md's own read is that energy is a short-term beneficiary of geopolitical chaos, not a long-term friend."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 70.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 77.3,
+      "regime_fit": 70,
+      "macro_catalyst": 60
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 70.0,
+      "median_return_pct": 3.969,
+      "equal_weight_return_pct": 4.211,
+      "sector_return_vs_spy_pct": 5.763,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 77.3,
+      "top_two_contribution_pct": 41.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/energy.md: WTI settled 100.05 (+9.4% W/W), the first-ever $100 settle, with XLE 65.14 (+1.69%) completing a breakout-retest-hold and 5 of 10 top holdings at fresh 52W highs.",
+      "wiki/canary-watch.md: XLE deepened its inverse correlation to SPY to -0.426, so the sector carries diversification value as well as return.",
+      "wiki/energy.md: OPEC+ held quota and a second front at Bab el-Mandeb keeps the supply-risk premium live."
+    ],
+    "risks": [
+      "A negotiated de-escalation at Bab el-Mandeb removes the supply-risk premium and the $100 print fades as fast as it arrived.",
+      "Demand destruction: a hawkish FOMC plus UMich 47.8 is a demand-side signal a cost-push oil rally cannot survive for long.",
+      "wiki/energy.md's own read is that energy is a short-term beneficiary of geopolitical chaos, not a long-term friend."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-14",
+    "extracts": [
+      {
+        "source_path": "wiki/energy.md",
+        "source_file_sha": "f71f7977fd79740196ad9a110271ba75279676ea",
+        "lead_summary": "Energy is a short-term beneficiary of geopolitical chaos, not a long-term friend. The bid is real, but so is the fade.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLE"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-14",
+    "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+    "provenance_verified": true
+  }
+}

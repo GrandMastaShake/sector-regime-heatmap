@@ -1,0 +1,33 @@
+{
+  "source_repository": "GrandMastaShake/weekly-council-scan",
+  "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+  "files": {
+    "wiki/tech.md": "4cf6b94d7fe95e27e6655eecc288cf2e2ec911d1",
+    "wiki/semiconductors.md": "c46eb1144ae5463bfe7f0dc50de39ddd74a7a8d7",
+    "wiki/communication-services.md": "e8eb671eecb7ae880e98111ed677a1bb9dbc3f7d",
+    "wiki/consumer-discretionary.md": "5786e43d2a8ef1689fcc7dcfb674e369458a5fc2",
+    "wiki/consumer-staples.md": "9b37939f7e7f15d2cf07c5d5bbe84a01ba3cd5d3",
+    "wiki/energy.md": "f71f7977fd79740196ad9a110271ba75279676ea",
+    "wiki/financials.md": "c4671229f5c3e38acca7c6b237924e470773980a",
+    "wiki/healthcare.md": "82bd72ea6cf9a29e56c2f3e29fb3a43fe4e5d18c",
+    "wiki/industrials.md": "bdffe9a49e6085fea118f49418b086ed481f2412",
+    "wiki/materials.md": "d426e823446a96c978d3a6feffeaaa40466b492b",
+    "wiki/real-estate.md": "d8fe168bb5a1bbae883d8cef9b96635155b98471",
+    "wiki/utilities.md": "ac49bd99c84ac9c5acbfaf25a333186fd798cecb",
+    "wiki/synthesis.md": "772b48d274cdc49ff41f88851cbe8e4534fc4a24",
+    "wiki/canary-watch.md": "9e53bdf2bea9715a106c795368b5a99cf7add195",
+    "wiki/earnings-surveillance.md": "59f5ddeebbe92628127e02407821e0440c30a097",
+    "wiki/economic-calendar.md": "29dce5f85aae090f65871bb8954948eb04473386"
+  },
+  "source_age_spread": {
+    "days": 1,
+    "oldest": {
+      "path": "wiki/communication-services.md",
+      "last_updated": "2026-09-12"
+    },
+    "newest": {
+      "path": "wiki/synthesis.md",
+      "last_updated": "2026-09-13"
+    }
+  }
+}

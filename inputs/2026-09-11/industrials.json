@@ -1,0 +1,129 @@
+{
+  "sector": "Industrials",
+  "as_of_date": "2026-09-11",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 110,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 73.0,
+      "regime_fit": 45,
+      "macro_catalyst": 55
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -1.485,
+      "equal_weight_return_pct": -0.964,
+      "sector_return_vs_spy_pct": -0.198,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 73.0,
+      "top_two_contribution_pct": 33.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/industrials.md: XLI 172.37 with month relative momentum at 10 of 100, a decisive laggard against the expansion thesis.",
+      "wiki/economic-calendar.md: Industrial Production and Retail Sales both print Wed Sep 16 alongside the FOMC, a triple-stacked gate.",
+      "wiki/canary-watch.md: industrials sit on the outflow side of this week's rotation."
+    ],
+    "risks": [
+      "A strong Industrial Production print on Sep 16 would falsify the laggard read quickly.",
+      "LMT and ETN carry Council exposure here, so sector weakness and book weakness are correlated."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 71.1,
+      "regime_fit": 35,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -7.716,
+      "equal_weight_return_pct": -6.437,
+      "sector_return_vs_spy_pct": -4.885,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 71.1,
+      "top_two_contribution_pct": 34.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/industrials.md: XLI 172.37 with month relative momentum at 10 of 100, a decisive laggard against the expansion thesis.",
+      "wiki/economic-calendar.md: Industrial Production and Retail Sales both print Wed Sep 16 alongside the FOMC, a triple-stacked gate.",
+      "wiki/canary-watch.md: industrials sit on the outflow side of this week's rotation."
+    ],
+    "risks": [
+      "A strong Industrial Production print on Sep 16 would falsify the laggard read quickly.",
+      "LMT and ETN carry Council exposure here, so sector weakness and book weakness are correlated."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-14",
+    "extracts": [
+      {
+        "source_path": "wiki/industrials.md",
+        "source_file_sha": "bdffe9a49e6085fea118f49418b086ed481f2412",
+        "lead_summary": "Industrials are the pulse of the economy. When the factories hum, the market sings. When they go silent, everything else follows.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH (Sub-$5B)",
+          "MACRO OVERLAY",
+          "WEEKLY NARRATIVE \u2014 The Week the Trend Line Held",
+          "EARNINGS CALENDAR & EVENT WATCH"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-14",
+    "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+    "provenance_verified": true
+  }
+}

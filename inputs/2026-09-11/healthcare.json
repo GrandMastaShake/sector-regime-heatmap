@@ -1,0 +1,131 @@
+{
+  "sector": "Healthcare",
+  "as_of_date": "2026-09-11",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 110,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 11.6,
+      "regime_fit": 48,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -3.217,
+      "equal_weight_return_pct": -3.103,
+      "sector_return_vs_spy_pct": -2.337,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 11.6,
+      "top_two_contribution_pct": 39.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/healthcare.md: XLV 165.36 (-3.55% W/W) lost both the 169.71 old-ATH line and the 50D at 166.24 on a weekly close, with RSI at 21.1.",
+      "wiki/healthcare.md: the damage is idiosyncratic rather than macro. A pelacarsen Ph3 primary-endpoint miss repriced the class (NVS -15.9%, AMGN -13.7%), and COO -23.7% and SYK -9.10% were company-specific.",
+      "wiki/canary-watch.md: XLV correlation to SPY flipped -0.028 to +0.250 and month relative momentum still reads 70, so the defensive bid has not been withdrawn. This is an oversold fortress, not a broken one."
+    ],
+    "risks": [
+      "Olpasiran OCEAN(a)-Outcomes is the next high-stakes binary and is not yet scheduled; a second failure turns a class repricing into a sector repricing.",
+      "RSI 21.1 can stay oversold: XBI -4.98% lost its 50D at 158.20, so the rate-biotech truce is already broken.",
+      "If the defensive bid is really a dead-cat bounce, the month relative momentum of 70 decays fast."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 24.3,
+      "regime_fit": 58,
+      "macro_catalyst": 55
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -2.505,
+      "equal_weight_return_pct": -1.871,
+      "sector_return_vs_spy_pct": -0.319,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 24.3,
+      "top_two_contribution_pct": 35.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-14",
+      "window_to": "2026-09-11"
+    },
+    "why": [
+      "wiki/healthcare.md: XLV 165.36 (-3.55% W/W) lost both the 169.71 old-ATH line and the 50D at 166.24 on a weekly close, with RSI at 21.1.",
+      "wiki/healthcare.md: the damage is idiosyncratic rather than macro. A pelacarsen Ph3 primary-endpoint miss repriced the class (NVS -15.9%, AMGN -13.7%), and COO -23.7% and SYK -9.10% were company-specific.",
+      "wiki/canary-watch.md: XLV correlation to SPY flipped -0.028 to +0.250 and month relative momentum still reads 70, so the defensive bid has not been withdrawn. This is an oversold fortress, not a broken one."
+    ],
+    "risks": [
+      "Olpasiran OCEAN(a)-Outcomes is the next high-stakes binary and is not yet scheduled; a second failure turns a class repricing into a sector repricing.",
+      "RSI 21.1 can stay oversold: XBI -4.98% lost its 50D at 158.20, so the rate-biotech truce is already broken.",
+      "If the defensive bid is really a dead-cat bounce, the month relative momentum of 70 decays fast."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-14",
+    "extracts": [
+      {
+        "source_path": "wiki/healthcare.md",
+        "source_file_sha": "82bd72ea6cf9a29e56c2f3e29fb3a43fe4e5d18c",
+        "lead_summary": "Healthcare is the fortress in the storm. Expensive, yes. But when the market panics, the sick still get treated.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLV"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-14",
+    "source_commit_sha": "082062db28c94d011f905f53eaae6b5e32c51df7",
+    "provenance_verified": true
+  }
+}
