@@ -189,36 +189,35 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-09-15** -- observation, not a forecast -- `data/tape/2026-09-15.json`
+**As of 2026-09-16** -- observation, not a forecast -- `data/tape/2026-09-16.json`
 
-> 📏 &nbsp;**16 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**17 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
-> 🧭 &nbsp;**Regime prior** &nbsp; archetype 1, Steady mid-cycle expansion &nbsp;&nbsp;•&nbsp;&nbsp; declared 4 days ago (2026-09-11) &nbsp;&nbsp;•&nbsp;&nbsp; n=4 episodes
+> 🧭 &nbsp;**Regime prior** &nbsp; archetype 1, Steady mid-cycle expansion &nbsp;&nbsp;•&nbsp;&nbsp; declared 5 days ago (2026-09-11) &nbsp;&nbsp;•&nbsp;&nbsp; n=4 episodes
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL   PRIOR         RANK
 ──────────────────────────────────────────────────────────────────────────────────────
-Communication Services  ·······│█████··     +4.23     70%     90%      +1       4 -> 1
-Consumer Staples        ·······│██·····     +1.95     70%     83%     -21     9 -> 2 *
-Technology              ·······│█······     +1.34     40%     34%     +15       1 -> 3
-Energy                  ·······│█······     +1.06     50%     60%     -26    11 -> 4 *
-Healthcare              ·······│█······     +0.86     40%     27%     -14       7 -> 5
-Financials              ······█│·······     -0.74     40%     17%      +7       2 -> 6
-Real Estate             ······█│·······     -0.87     11%      7%     -19       8 -> 7
-Industrials             ····███│·······     -2.90     10%      1%      -2       5 -> 8
-Materials               ····███│·······     -3.05     10%      3%     -12       6 -> 9
-Consumer Discretionary  ····███│·······     -3.08      0%      0%      +1    3 -> 10 *
-Utilities               ███████│·······     -6.39      0%      0%     -23     10 -> 11
+Communication Services  ·······│█████··     +3.59     90%     92%      +1       4 -> 1
+Consumer Staples        ·······│███····     +2.44     70%     75%     -21     9 -> 2 *
+Healthcare              ·······│███····     +1.88     60%     70%     -14       7 -> 3
+Technology              ·······│██·····     +1.61     50%     24%     +15       1 -> 4
+Industrials             ·······│·······     +0.12     40%     86%      -2       5 -> 5
+Real Estate             ·······│·······     -0.34     22%     10%     -19       8 -> 6
+Financials              ·····██│·······     -1.50     30%     11%      +7       2 -> 7
+Energy                  ····███│·······     -2.11     20%     12%     -26      11 -> 8
+Consumer Discretionary  ····███│·······     -2.20      0%      0%      +1     3 -> 9 *
+Materials               ···████│·······     -2.89     30%     13%     -12      6 -> 10
+Utilities               ███████│·······     -4.94      0%      0%     -23     10 -> 11
 ```
 
 <details>
-<summary><b>⚠️ Where the tape contradicts the prior (3)</b></summary>
+<summary><b>⚠️ Where the tape contradicts the prior (2)</b></summary>
 
-- **Consumer Discretionary** — the prior ranks it a leader and the tape has it lagging: prior +1 points (rank 3 of 11), tape -3.08% vs SPY (rank 10 of 11), 7 positions apart.
-- **Consumer Staples** — the prior ranks it a laggard and the tape has it leading: prior -21 points (rank 9 of 11), tape +1.95% vs SPY (rank 2 of 11), 7 positions apart.
-- **Energy** — the prior ranks it a laggard and the tape has it leading: prior -26 points (rank 11 of 11), tape +1.06% vs SPY (rank 4 of 11), 7 positions apart.
+- **Consumer Discretionary** — the prior ranks it a leader and the tape has it lagging: prior +1 points (rank 3 of 11), tape -2.20% vs SPY (rank 9 of 11), 6 positions apart.
+- **Consumer Staples** — the prior ranks it a laggard and the tape has it leading: prior -21 points (rank 9 of 11), tape +2.44% vs SPY (rank 2 of 11), 7 positions apart.
 
-A prior built on 4 episodes against 16 sessions of arithmetic. Disagreement is the input to regime_fit, not evidence that either side is wrong.
+A prior built on 4 episodes against 17 sessions of arithmetic. Disagreement is the input to regime_fit, not evidence that either side is wrong.
 
 </details>
 
