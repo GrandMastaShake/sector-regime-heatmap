@@ -189,36 +189,29 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-09-17** -- observation, not a forecast -- `data/tape/2026-09-17.json`
+**As of 2026-09-18** -- observation, not a forecast -- `data/tape/2026-09-18.json`
 
-> 📏 &nbsp;**18 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**19 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
-> 🧭 &nbsp;**Regime prior** &nbsp; archetype 1, Steady mid-cycle expansion &nbsp;&nbsp;•&nbsp;&nbsp; declared 6 days ago (2026-09-11) &nbsp;&nbsp;•&nbsp;&nbsp; n=4 episodes
+> 🧭 &nbsp;**Regime prior** &nbsp; archetype 1, Steady mid-cycle expansion &nbsp;&nbsp;•&nbsp;&nbsp; declared 7 days ago (2026-09-11) &nbsp;&nbsp;•&nbsp;&nbsp; n=4 episodes
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL   PRIOR         RANK
 ──────────────────────────────────────────────────────────────────────────────────────
-Technology              ·······│███████     +4.60     90%     93%     +15       1 -> 1
-Healthcare              ·······│████···     +2.67     80%     84%     -14       7 -> 2
-Industrials             ·······│█······     +0.92     70%     87%      -2       5 -> 3
-Consumer Staples        ······█│·······     -0.34     60%     68%     -21       9 -> 4
-Communication Services  ······█│·······     -0.64     40%     29%      +1       4 -> 5
-Real Estate             ······█│·······     -0.78     56%     28%     -19       8 -> 6
-Materials               ·····██│·······     -1.48     40%     12%     -12       6 -> 7
-Consumer Discretionary  ····███│·······     -1.90     20%     28%      +1       3 -> 8
-Financials              ····███│·······     -1.98     40%     24%      +7     2 -> 9 *
-Energy                  ···████│·······     -2.52     10%      6%     -26     11 -> 10
-Utilities               ···████│·······     -2.65     10%      2%     -23     10 -> 11
+Technology              ·······│███████     +4.77     90%     95%     +15       1 -> 1
+Healthcare              ·······│█████··     +3.63     80%     81%     -14       7 -> 2
+Industrials             ·······│█······     +0.37     50%     89%      -2       5 -> 3
+Financials              ······█│·······     -0.64     10%     15%      +7       2 -> 4
+Consumer Staples        ······█│·······     -0.95     20%      9%     -21       9 -> 5
+Real Estate             ·····██│·······     -1.35     22%      8%     -19       8 -> 6
+Utilities               ····███│·······     -1.80     20%     20%     -23      10 -> 7
+Consumer Discretionary  ····███│·······     -2.31      0%      0%      +1       3 -> 8
+Communication Services  ····███│·······     -2.32     30%     17%      +1       4 -> 9
+Materials               ···████│·······     -2.45     10%     23%     -12      6 -> 10
+Energy                  ···████│·······     -2.63     10%      5%     -26     11 -> 11
 ```
 
-<details>
-<summary><b>⚠️ Where the tape contradicts the prior (1)</b></summary>
-
-- **Financials** — the prior ranks it a leader and the tape has it lagging: prior +7 points (rank 2 of 11), tape -1.98% vs SPY (rank 9 of 11), 7 positions apart.
-
-A prior built on 4 episodes against 18 sessions of arithmetic. Disagreement is the input to regime_fit, not evidence that either side is wrong.
-
-</details>
+No sector diverges from the archetype prior by 6 rank positions or more.
 
 **Observed handoffs from this archetype:** Hawkish rate-shock selloff (1), Exogenous non-financial shock (1) — 2 transitions in the gap-free record. Too few to forecast from; recorded so the prior is not read as permanent.
 
