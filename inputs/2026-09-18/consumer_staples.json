@@ -41,8 +41,8 @@
       "breadth": 20.0,
       "relative_momentum": 60.0,
       "volume_confirmation": 9.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 38,
+      "macro_catalyst": 62
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Regime fit is poor and measurable: the carry gap is -241bp, the widest of the cycle, with the sector's ~2.59 pct yield against a 4.998 pct ten-year, and Friday's $82.80 close is the first weekly close below the 200D ($82.97) since February (wiki/consumer-staples.md; wiki/synthesis.md Section 1).",
+      "The dollar removed the prop: DXY +1.11 pct taxed the translation-exposed row -- PEP -4.8 pct to a fresh 52-week low on no company news at RSI 12.1, SYY -5.0 pct, EL -3.8 pct, MDLZ -2.6 pct -- while domestic MO +2.4 pct was the only real green (wiki/consumer-staples.md; wiki/synthesis.md Wire 5).",
+      "macro_catalyst 62 is the week's named binary gate: GIS Wed Sep 23 BMO (consensus $0.72) and COST Thu Sep 24 AMC (consensus $6.53, RSI 21, ~45x). The desk's own framing: 'two beats and the 200D break is a head-fake; two misses and the defensive-bid thesis goes under review' (wiki/consumer-staples.md; wiki/earnings-surveillance.md). COST is also the board's consumer bellwether after the +1.2 pct retail-sales beat (wiki/economic-calendar.md).",
+      "Partially offsetting on fit, and the reason this is 38 rather than lower: XLP's SPY correlation is 0.105, the lowest on the board and the only one that could flip negative (wiki/canary-watch.md), so it retains genuine diversifier value the other defensives have lost."
+    ],
+    "risks": [
+      "Density is Medium and both prints are downside-skewed by multiple -- COST at ~45x cannot miss. Falsifier: any daily close under $82.00 opens $81.00 (wiki/consumer-staples.md).",
+      "Dating discrepancy to carry: staples dates GIS 'Tuesday Sep 23', but Sep 23 2026 is a Wednesday; Earnings Surveillance has Wed BMO and is the resolution (wiki/synthesis.md Contradiction 10)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 30.0,
       "relative_momentum": 40.0,
       "volume_confirmation": 44.3,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 40,
+      "macro_catalyst": 52
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Volume confirmation improves to 44.3 of 100 on the month against 9.2 on the week, so the distribution is recent rather than structural (staged metrics).",
+      "Post-gate the calendar empties -- next week is CAG/CALM/MKC, none tracked (wiki/earnings-surveillance.md) -- so the month reverts to the carry gap, which the dots say widens further (macro/facts.json policy; wiki/consumer-staples.md)."
+    ],
+    "risks": [
+      "Trade-down without demand destruction feeds WMT traffic and starves branded pricing power (wiki/consumer-staples.md), so a retail-sales beat is not automatically good for this basket.",
+      "August PCE on Sep 30 is the input-cost read (wiki/economic-calendar.md)."
+    ]
   },
   "evidence": {
     "available": true,

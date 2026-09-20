@@ -41,8 +41,8 @@
       "breadth": 90.0,
       "relative_momentum": 100.0,
       "volume_confirmation": 94.9,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 65,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,23 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Tech is the regime's paying trade, not merely its strongest tape: leadership is memory and CPU scarcity -- Micron guided ~$50B revenue at an 86 pct gross margin with HBM4 ramping twice as fast as HBM3, Intel's CEO said it can meet only about half of CPU demand, and Apple put a $100 memory surcharge on the iPhone 18 Pro (wiki/synthesis.md Section 1, Wire 2). That is the scarcity-over-duration rule expressed inside the sector.",
+      "The technical hinge held before the macro did: XLK held its 50D ($183.12) by 62 cents on Tuesday, the day the 10Y first tagged 5.00 pct (wiki/tech.md Catalyst 1; wiki/synthesis.md Section 2), then closed +1.0 pct at $189.60 through a 12-0 hike.",
+      "Discount applied: the desk's own Catalyst 3/4 rest on 'Brent -5.7 pct to $98.87' and 'WTI -6.3 pct to $95.47', neither of which reproduces (wiki/synthesis.md Contradiction 1). regime_fit 65 rather than tracking the 90/100/94.9 arithmetic is that discount."
+    ],
+    "risks": [
+      "A weekly close above 5.05 pct on the 10Y, most plausibly delivered by a 5Y or 7Y tail of 2bp or more in the $192B auction block Sep 22-24, prices the longest-duration sector first (wiki/economic-calendar.md NEXT WEEK'S GAUNTLET).",
+      "$190-191.75 is a double top and the desk's break level is a close under the 50D $183.12; falsifier is XLK losing $183.12 on a close (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 50.0,
       "relative_momentum": 100.0,
       "volume_confirmation": 77.9,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 60,
+      "macro_catalyst": 62
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +92,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Month relative momentum computes 100 of 100 at +1.03 pct vs SPY, the only positive month figure on the board, and this is a full reversal of the prior cycle's 0 of 100 -- the arithmetic objection that most strained the regime label has flipped in tech's favour (staged metrics; 2026-09-11 payload).",
+      "The month window contains the board's single biggest dateable catalyst: MU FQ4 Wed Sep 30 AMC, consensus $31.35 on revenue $50.97B, an event sized at a +/-9.1 pct average reaction (wiki/earnings-surveillance.md; wiki/synthesis.md Section 5 -- this also resolves the tech desk's recurring 'Sep 22' error for the second week running, Contradiction 8)."
+    ],
+    "risks": [
+      "MU is also the concentration risk: it is described as the only thing holding up the leadership trade, and index strength rests on two sectors (wiki/synthesis.md Section 4). A MU miss, or any sign customers changed ordering after the Amodei essay, takes the sector and the index together.",
+      "FOMC Oct 27-28 sits at the window's edge with 16 of 18 dots seeing another 2026 hike (macro/facts.json next_macro_gate)."
+    ]
   },
   "evidence": {
     "available": true,

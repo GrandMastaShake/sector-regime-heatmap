@@ -41,8 +41,8 @@
       "breadth": 10.0,
       "relative_momentum": 70.0,
       "volume_confirmation": 15.1,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 45,
+      "macro_catalyst": 52
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,22 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The sector that should have won the hike lost five straight sessions, and the mechanism is the curve shape rather than the level: the hike bear-flattened the curve, 'the exact shape that squeezes deposit-heavy lenders', and XLF broke its 50D ($57.18) on hike day, closing at the week's low $55.86 with RSI 37 (wiki/financials.md Catalyst 2; wiki/synthesis.md Section 2). macro/facts.json puts 10Y-2Y at +33bp, which is the number of record (wiki/synthesis.md Contradiction 4).",
+      "The bear case the equity market priced is directly contradicted by the credit market: Thursday's flush took GS, USB, PNC, TFC and AXP down 3.7-4 pct on 'credit-cycle anxiety' (wiki/financials.md Catalyst 3) in the same week HY OAS was 270bp, IG tightened 2bp to 78bp and LQD rose +0.36 pct, with the SMID regionals refusing to follow (wiki/canary-watch.md CREDIT SPREADS; wiki/synthesis.md Wire 6). regime_fit 45 rather than lower is that contradiction: the selloff was trading revenue and duration, not defaults."
+    ],
+    "risks": [
+      "If the credit fear is not phantom this is early-cycle: energy and banks fell together Thursday, which financials reads as a recession signature (wiki/synthesis.md Section 4). The named tail is a mark-to-market event in insurer-held private credit with the curve flat at 5 pct, flagged by UBS's chair and priced by nobody (wiki/synthesis.md Wire 6).",
+      "Earnings density is Low -- nothing until Oct 13-14 (wiki/earnings-surveillance.md). Falsifier: a close below $55.00 opens the 200D at $53.45."
+    ]
   },
   "month": {
     "components": {
       "breadth": 10.0,
       "relative_momentum": 30.0,
       "volume_confirmation": 15.1,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 50,
+      "macro_catalyst": 60
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +91,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The month window contains the sector's own verdict: Q3 season opens Tue Oct 13 with JPM, WFC and GS, followed by BAC/MS/BLK Oct 14 and SCHW Oct 15 (wiki/earnings-surveillance.md). Those prints grade the Moynihan trading-revenue warning and the credit-loss question at once.",
+      "Valuation gives the prints something to work against: GS at ~11x with 21 pct to target and BAC at 8.4x Street 2026 earnings with a 19 pct gap, described as the best entry of the year if the credit fear is phantom (wiki/synthesis.md Section 1, Section 5)."
+    ],
+    "risks": [
+      "Month breadth computes 10 of 100 and volume confirmation 15.1 -- the internals do not support the valuation case yet (staged metrics).",
+      "FOMC Oct 27-28 can flatten the curve further (macro/facts.json next_macro_gate). Falsifier: XLF fails to reclaim the 50D $57.18 before the Oct 13 prints."
+    ]
   },
   "evidence": {
     "available": true,

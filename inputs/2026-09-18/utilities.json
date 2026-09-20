@@ -41,8 +41,8 @@
       "breadth": 20.0,
       "relative_momentum": 40.0,
       "volume_confirmation": 20.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 22,
+      "macro_catalyst": 35
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,23 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The structural penalty is the widest of the three income sectors: a 2.83 pct SEC yield sits about 217bp under a 4.998 pct ten-year, and the dots say the discount rate is not finished rising (wiki/synthesis.md Section 1; wiki/utilities.md).",
+      "The breakdown was distribution, not capitulation: XLU closed $41.10, a 52-week closing low, through the entire $41.15-41.31 support band, on the correction's first above-average volume at 22.3M shares (wiki/utilities.md; wiki/synthesis.md Section 2).",
+      "The sector's own decoupling thesis took its decisive loss, and it is the cleanest single statement of the regime on the board: CEG -10.55 pct to $254.71 and VST -5.20 pct, because 'at a 5.00 pct risk-free rate, 25x scarcity is duration by another name' (wiki/utilities.md). Scarcity beat duration in six sectors; here it lost to it. Confirming the loss of defensiveness, XLU re-coupled to SPY from 0.070 to 0.198 as a pure rate-beta trade and was the week's worst rotation line at -2.70 pct vs SPY (wiki/canary-watch.md)."
+    ],
+    "risks": [
+      "Density is Low -- nothing scheduled at all (wiki/earnings-surveillance.md) -- which is why macro_catalyst is 35: there is no sector-specific event in the window and the only driver is the 10Y.",
+      "The exhaustion asymmetry is real and is the falsifier: the 10Y's own RSI is 78.3 while XLU is at RSI 33, so the relief trade, when it comes, will be fast. Relief needs a weekly close back inside $41.15-41.31, or a 10Y under 4.80 pct (wiki/utilities.md; wiki/synthesis.md Section 2)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 50.0,
       "volume_confirmation": 11.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 25,
+      "macro_catalyst": 42
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +92,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Month relative momentum computes 50 of 100 but the 1M rotation column is -5.68 pct vs SPY, the worst of the twelve lines, and month volume confirmation is 11.2 of 100 (wiki/canary-watch.md SECTOR ROTATION FLOW; staged metrics).",
+      "Regulated proxies are making lows in formation -- EXC and WEC both closed at 52-week lows, XEL -4.24 pct, DTE -3.06 pct at RSI 22.2 (wiki/utilities.md) -- so the weakness is sector-wide rather than concentrated in the nuclear half."
+    ],
+    "risks": [
+      "The desk's own bottom line is that the -217bp penalty is 'structural until proven otherwise', with FOMC Oct 27-28 in the window as the proving event (wiki/utilities.md; macro/facts.json next_macro_gate). Falsifier: a 10Y weekly close under 4.80 pct.",
+      "California litigation is an unpriced wildcard: EIX awaits the finalized Eaton ruling and PCG sits a nickel above its 52-week low (wiki/utilities.md)."
+    ]
   },
   "evidence": {
     "available": true,

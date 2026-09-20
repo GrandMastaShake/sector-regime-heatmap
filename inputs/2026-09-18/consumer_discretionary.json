@@ -41,8 +41,8 @@
       "breadth": 0.0,
       "relative_momentum": 30.0,
       "volume_confirmation": 0.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 30,
+      "macro_catalyst": 55
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The sector is high beta into a hiking cycle, and getting more so: XLY's SPY correlation rose to 0.696, second only to XLK (wiki/canary-watch.md SECTOR CORRELATION MATRIX), which is the wrong exposure when the policy rate is rising by design. Week breadth and volume confirmation both compute zero -- not one basket name closed up, and not one share of advancing volume (staged metrics).",
+      "The housing channel now has receipts rather than surveys: PMMS 6.95 pct, +19bp, the year's largest weekly jump, and hours after the hike Lennar filed orders -9 pct with the CEO's 'deteriorated' on the record; HD, LOW, MCD and NKE all printed 52-week lows, and SHAK fell -13.8 pct on no news at all (wiki/consumer-discretionary.md; wiki/real-estate.md; wiki/synthesis.md Wire 4).",
+      "Partially offsetting, and why this is 30 rather than 20: August retail sales beat at +1.2 pct with control +1.4 pct, the strongest since September 2024, and claims printed 196K (wiki/consumer-discretionary.md; wiki/economic-calendar.md). The register contradicts the 47.8 survey, and XLY printed RSI 28.5, its first ETF-level oversold in a five-week losing streak, stopping 22 cents above the $109.41 gap support.",
+      "macro_catalyst 55 is density: 'the busiest sector both weeks', with AZO Sep 22, KBH, CBRL, SFIX and DRI Thu Sep 24 BMO -- the read-across from PLAY's -244 pct miss and ~9 pct games-revenue decline (wiki/earnings-surveillance.md; wiki/synthesis.md Wire 4). Two macro prints land on the sector directly: New Home Sales (August) Thu Sep 24, where below 580K confirms mortgage-rate damage against NAHB's 32, and UMich September final Fri Sep 25, where 1-year inflation expectations at or above 4.8 pct is de-anchoring (wiki/economic-calendar.md)."
+    ],
+    "risks": [
+      "The density is real but the skew is downward -- Thursday Sep 24 adjudicates the consumer via DRI before the open and COST after the close (wiki/synthesis.md Wire 4), and a PLAY-style DRI print would confirm experience spending is rolling first. Falsifier: a weekly close below $109.41 opens $105.45-105.66.",
+      "This is the call most likely to be wrong on a violent mean reversion: the springs are extreme at SBUX RSI 10.8, BKNG RSI 12.7 and TJX bouncing off RSI 18 (wiki/consumer-discretionary.md; wiki/synthesis.md Section 2)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 10.0,
       "volume_confirmation": 24.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 32,
+      "macro_catalyst": 58
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Month arithmetic is worse than the week's rank suggests: -6.88 pct vs SPY, rank 10 of 11, with breadth 20 of 100 (staged metrics; wiki/canary-watch.md shows -5.42 pct vs SPY on the 1M column).",
+      "The month window adds NKE Oct 1 AMC (consensus $0.45) at a fresh 52-week low, plus CCL, KMX and LEVI (wiki/earnings-surveillance.md), into the weakest sentiment backdrop of the year."
+    ],
+    "risks": [
+      "If the register keeps beating the survey this is the most oversold sector on the board and the reversion would be violent (wiki/consumer-discretionary.md).",
+      "August PCE Sep 30, ISM Oct 1 and September NFP Oct 2 are all in-window and all feed the discount rate this sector is most exposed to (wiki/economic-calendar.md)."
+    ]
   },
   "evidence": {
     "available": true,

@@ -41,8 +41,8 @@
       "breadth": 80.0,
       "relative_momentum": 90.0,
       "volume_confirmation": 80.9,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 62,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,23 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The repair is independent of the disputed oil number: XLV reclaimed its 50D ($166.75) on Monday, before the Fed said a word, and never surrendered it, voiding the prior week's trap call (wiki/healthcare.md Catalyst 1; wiki/synthesis.md Section 2). This is the one confirmation in the healthcare file that does not route through 'oil broke'.",
+      "The oversold-spring trade paid on schedule -- TMO +6.9 pct to a new 52-week high, ISRG +6.6 pct, DHR +5.8 pct, GILD +5.0 pct (wiki/healthcare.md Catalyst 3) -- and the sector's SPY correlation is only 0.324 (wiki/canary-watch.md SECTOR CORRELATION MATRIX), so it is still supplying diversification in a week when seven of twelve sectors were in outflow.",
+      "Discount applied: the desk's Catalyst 2 attributes the +1.8 pct week to 'oil collapsed -4.6 pct to $95.47', which does not reproduce (wiki/synthesis.md Contradiction 1). regime_fit 62 rather than matching the 80/90/80.9 arithmetic is that discount."
+    ],
+    "risks": [
+      "Earnings density is Low -- nothing reports until UNH/JNJ on Oct 13 (wiki/earnings-surveillance.md) -- so the week has no sector-specific catalyst and trades purely on rates.",
+      "DXY +1.11 pct is a flagged Q3 translation drag on big pharma (wiki/synthesis.md Wire 5); falsifier is a close under $164-165."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 60.0,
       "volume_confirmation": 16.5,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 55,
+      "macro_catalyst": 48
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +92,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The month column says the damage is not repaired -- -3.19 pct vs SPY on the month, breadth 20 of 100 and volume confirmation 16.5 of 100 -- so the week was a mean-reversion bounce off a trial-failure week, not a trend (wiki/canary-watch.md SECTOR ROTATION FLOW; staged metrics).",
+      "Healthcare's correlation has risen for two straight weeks (0.250 -> 0.324) after a sign flip (wiki/canary-watch.md SECTOR CORRELATION MATRIX), which erodes exactly the defensive property the week's score rests on."
+    ],
+    "risks": [
+      "XBI lost its 50D ($157.57) again on Friday and needs a weekly close above $158-160 to restore the truce (wiki/synthesis.md Section 5); LLY at all-time highs is a hold, not an add.",
+      "Q3 prints land Oct 13-14, at the far edge of the window (wiki/earnings-surveillance.md)."
+    ]
   },
   "evidence": {
     "available": true,

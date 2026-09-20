@@ -41,8 +41,8 @@
       "breadth": 10.0,
       "relative_momentum": 10.0,
       "volume_confirmation": 22.6,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 35,
+      "macro_catalyst": 40
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,23 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The sector pays both sides of the regime -- it buys the input and borrows at the rate. XLB closed $49.99, eighteen cents below the 200D, at the week's low on the week's highest volume, the first weekly close below the line this cycle, and the long-duration capex-financed names broke: VMC -4.7 pct into fresh 52-week lows, MLM -3.8 pct, NUE -4.3 pct (wiki/materials.md; wiki/synthesis.md Section 2).",
+      "The dollar reconnected after seven silent weeks: DXY +1.11 pct back above its own 50D, and the desk put a hard 101 trip wire on its commodity-long restriction (wiki/materials.md; wiki/synthesis.md Wire 5).",
+      "Partially offsetting, and the reason this is 35 rather than lower: copper rose all five sessions, $6.33 to $6.615, +2.25 pct, into the teeth of that dollar rally -- the deficit story outmuscling FX math on EV and data-centre demand, with CLF +3.65 pct and FCX reclaiming $71 (wiki/materials.md; macro/facts.json copper). That is the scarcity rule surviving inside the worst-ranked month sector."
+    ],
+    "risks": [
+      "The break came at RSI 25.5, the most oversold XLB print of 2026 (wiki/synthesis.md Section 2), which is the highest false-break risk there is; a reclaim of $50.17 kills it and is the falsifier.",
+      "Density is Low -- only FUL and WOR, neither tracked (wiki/earnings-surveillance.md)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 10.0,
       "relative_momentum": 0.0,
       "volume_confirmation": 4.8,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 38,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +92,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Month relative momentum computes 0 of 100 at -8.45 pct vs SPY, the worst of the eleven, with breadth 10 and volume confirmation 4.8 -- there is no internal support anywhere in the month column (staged metrics).",
+      "One dated, in-window item cuts the other way: the US trade-war widening to motorcycles, dairy and alcohol takes effect September 29, which is the escalation CLF caught a bid on (wiki/materials.md), and ISM Manufacturing lands Oct 1 (wiki/economic-calendar.md)."
+    ],
+    "risks": [
+      "A DXY weekly close above 101 snaps the commodity-long restriction back on (wiki/synthesis.md Section 5), which would remove the copper offset this judgment rests on.",
+      "Aluminium's Friday sweep (CENX -11.4 pct on the week on no company news) suggests the de-rating is still indiscriminate; density is Low with nothing next week at all (wiki/materials.md; wiki/earnings-surveillance.md)."
+    ]
   },
   "evidence": {
     "available": true,

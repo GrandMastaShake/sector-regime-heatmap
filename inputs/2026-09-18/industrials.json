@@ -41,8 +41,8 @@
       "breadth": 50.0,
       "relative_momentum": 80.0,
       "volume_confirmation": 89.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 50,
+      "macro_catalyst": 55
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,23 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The sector splits cleanly along the regime's own rule, which is why this sits at the midpoint. The scarcity half led: Generac +30 pct on a $2.4B Amazon backup-power deal for AI data centres, ETN +3.74 pct Friday on the read-through, Crusoe raising $3.9B for factory-built data centres -- 'the power/grid pocket is no longer a theme inside the sector, it IS the sector's leadership' (wiki/industrials.md; wiki/synthesis.md Wire 2).",
+      "The real economy underneath printed hot even as the tape broke: Philly Fed 37.8 and Empire 7.6, the goods cycle re-accelerating into 5 pct money (wiki/industrials.md), which is consistent with volume confirmation computing 89.0 of 100 in a week the ETF lost its trend line.",
+      "Offsetting: XLI lost its 200D on a weekly close, $169.75 against $171.14, which the desk's own rulebook converts from correction to break (wiki/industrials.md; wiki/synthesis.md Section 2)."
+    ],
+    "risks": [
+      "The break came at the week's low at RSI 34.4 and the burden of proof has flipped to the bulls; DXY +1.11 pct is an export tax on CAT and DE (wiki/synthesis.md Wire 5). Falsifier: a close below $167.49.",
+      "The desk carries the unsupported $95.47 oil (wiki/synthesis.md Contradiction 1), and its FDX print claim is unverified against Earnings Surveillance, which lists the next report as Oct 28 (wiki/synthesis.md Contradiction 9)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 30.0,
       "relative_momentum": 70.0,
       "volume_confirmation": 80.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 48,
+      "macro_catalyst": 58
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +92,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The month catalyst is the one that adjudicates the break rather than merely reacting to it: durable goods Sep 25 (core capital-goods orders) and ISM Manufacturing Oct 1 are named by the desk as the pair that decides 'whether this break is a regime change or a bear trap' (wiki/industrials.md; wiki/economic-calendar.md NEXT WEEK'S GAUNTLET).",
+      "Month volume confirmation computes 80.2 of 100 against breadth of only 30.0, i.e. advancing volume is concentrated in the power pocket rather than broad -- the same dispersion the regime rule predicts, which supports a mid-range fit rather than a low one (staged metrics; wiki/synthesis.md Wire 2)."
+    ],
+    "risks": [
+      "A second weekly close below the 200D confirms the break; earnings density is Low-Medium with no tracked-universe name until AIR/AYI (wiki/earnings-surveillance.md).",
+      "Core capital-goods orders turning negative would carry the AI-slowdown scare into the capex data (wiki/economic-calendar.md). Falsifier: a weekly close back above $171-172 is a bear trap."
+    ]
   },
   "evidence": {
     "available": true,

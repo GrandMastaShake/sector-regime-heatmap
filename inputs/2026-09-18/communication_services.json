@@ -41,8 +41,8 @@
       "breadth": 30.0,
       "relative_momentum": 20.0,
       "volume_confirmation": 16.9,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 42,
+      "macro_catalyst": 42
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,22 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The sector resolved its own double gate and the rate half won: Judge Brinkema's remedies opinion unsealed benign -- no divestiture -- with GOOGL +3.26 pct reclaiming its 50D and MGNI +5.81 pct, yet XLC faded from Monday's $115.07 bull-trap close above the 200D to $110.81 at the week's low on the heaviest volume of the week, losing the 50D ($111.19) on Friday (wiki/communication-services.md items 1-2; wiki/synthesis.md Section 2).",
+      "The income leg is being repriced in real time: VZ's 5.88 pct yield cushion over the ten-year narrowed from about 140bp to about 90bp in a week, and T at 4.37 pct is now below the ten-year (wiki/synthesis.md Section 1). The telecom yield bid only works while the 10Y stays under the yield."
+    ],
+    "risks": [
+      "The broadband rout went to freefall on no new filings -- CHTR -12.07 pct, CMCSA -9.76 pct, TMUS -7.76 pct -- and the desk itself calls 'late-stage repricing' a guess rather than a signal (wiki/communication-services.md item 3).",
+      "Density is Low: NFLX/VZ do not open the sector until Oct 20 and the only dated item in the week is CCOI's lead-plaintiff deadline Mon Sep 21 (wiki/earnings-surveillance.md; wiki/synthesis.md Section 5). Falsifier: a weekly close below $110.00 opens $105.38."
+    ]
   },
   "month": {
     "components": {
       "breadth": 30.0,
       "relative_momentum": 80.0,
       "volume_confirmation": 16.9,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 50,
+      "macro_catalyst": 58
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +91,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Month relative momentum computes 80 of 100, third of eleven, and the 1M rotation column is +0.50 pct vs SPY -- the only outflow-listed sector with a positive month (wiki/canary-watch.md SECTOR ROTATION FLOW; staged metrics).",
+      "The month window holds the litigation endpoint: Google's joint final judgment is due October 2, with GOOGL at ~17.5x called 'the cleanest megacap value in the sector' now that the divestiture tail is removed (wiki/communication-services.md item 1; wiki/synthesis.md Section 1)."
+    ],
+    "risks": [
+      "XLC's SPY correlation collapsed from 0.522 to 0.224 (wiki/canary-watch.md), so the sector is trading on idiosyncratic news and will not be rescued by an index rally. Google appeals regardless.",
+      "NFLX carries a fresh Wells Fargo Underweight (PT $80 -> $57) into a mid-October print at RSI 27.8 (wiki/communication-services.md item 4), and month volume confirmation is 16.9 of 100."
+    ]
   },
   "evidence": {
     "available": true,

@@ -41,8 +41,8 @@
       "breadth": 10.0,
       "relative_momentum": 0.0,
       "volume_confirmation": 5.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 60,
+      "macro_catalyst": 48
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,23 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The escalation became contractual rather than rhetorical: Aramco cancelled all October crude allocations to European buyers, Petroline lost three pumping stations, Saudi August output printed 6.24 mb/d, the lowest since 1990, and WTI still closed $100.30, +0.25 pct (wiki/energy.md; macro/facts.json). On the canonical price the Oil > $100 flag is still raised, which the economic calendar wrongly marks resolved (wiki/synthesis.md Contradiction 1).",
+      "The breakout line held to the penny: Thursday's intraday low printed $63.46, the breakout level, and held (wiki/energy.md), so the -1.27 pct week is a test rather than a failure. This judgment deliberately does not follow the rank-11 week arithmetic down.",
+      "Offsetting, and the reason this is 60 and not higher: leadership narrowed to three refiners at RSI 90.0 / 86.7 / 83.0, trading 8-16 pct above targets that were raised again this week (wiki/energy.md; wiki/synthesis.md Section 1)."
+    ],
+    "risks": [
+      "XLE's inverse correlation to SPY collapsed from -0.426 to -0.095, so the sector has stopped paying as a hedge and now moves roughly independently (wiki/canary-watch.md SECTOR CORRELATION MATRIX); RSI shows a three-week bearish divergence and both heavy-volume days were red (wiki/synthesis.md Section 2).",
+      "Falsifier: a weekly close below $63.46 is failed breakout #2. UNGA-week diplomacy that verifies a corridor takes crude to the low $90s (wiki/energy.md)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 30.0,
       "relative_momentum": 90.0,
       "volume_confirmation": 42.5,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 68,
+      "macro_catalyst": 62
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +92,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Month relative momentum computes 90 of 100 at -0.34 pct vs SPY, second of eleven, and the 1M rotation column is still +2.11 pct vs SPY -- energy is the only outflow-adjacent sector with a positive month (wiki/canary-watch.md SECTOR ROTATION FLOW; staged metrics).",
+      "The month window contains OPEC+ on October 4 plus the UNGA track (Trump-Gulf meetings, Iran's delegation in New York, Beijing pressing the Houthis), the weekly EIA prints and Hormuz transit counts, which ran to four vessels Thursday (wiki/energy.md). That is the densest non-earnings catalyst set on the board."
+    ],
+    "risks": [
+      "The desk's own framing is that every escalation now gets an engineering answer within days and each answer is thinner than the last (wiki/synthesis.md Section 3), which cuts both ways and makes the month path jumpy rather than trending.",
+      "Tracked-universe earnings are Low -- XOM/CVX not until Oct 30 (wiki/earnings-surveillance.md). A weekly close above $105.83 changes the math upward; a verified corridor changes it downward (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

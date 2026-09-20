@@ -46,8 +46,8 @@
       "breadth": 22.2,
       "relative_momentum": 50.0,
       "volume_confirmation": 7.7,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 25,
+      "macro_catalyst": 42
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -64,16 +64,22 @@
       "window_from": "2026-09-11",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The last unbroken line broke: XLRE closed $42.53 against a $42.78 200-day, at the week's low, the first weekly close below it in 2026, and the fund's contracted-growth sleeve cracked with it -- AMT lost the 200D back after one week above, EQIX and DLR bent on duration math with no demand news (wiki/real-estate.md; wiki/synthesis.md Section 2).",
+      "The damage moved to the part of the curve that cannot be bought back: the 30Y eased post-FOMC while the 2Y jumped 13bp on the dots, so the pain now comes from the Fed's own projections -- 'dots don't get bought back' -- and the mortgage channel priced it instantly at PMMS 6.95 pct with daily locks at 7.19 pct (wiki/real-estate.md; wiki/synthesis.md Wire 1). The carry gap is -181bp on a ~3.19 pct sector yield against the 4.998 pct ten-year (wiki/synthesis.md Section 1)."
+    ],
+    "risks": [
+      "This is the most oversold reading of the year -- XLRE RSI 25.6 and O at RSI 10.0, the most oversold major on any Council board this year at a 5.68 pct yield -- and the desk describes the relief rally with the word 'violent' (wiki/real-estate.md; wiki/synthesis.md Section 2). Falsifier: a reclaim of $42.78, or a 10Y weekly close under 4.90 pct.",
+      "The one dated item is New Home Sales Thu Sep 24; density is otherwise Low (wiki/economic-calendar.md; wiki/earnings-surveillance.md). DATA QUALITY: this sector carries a coverage warn at 9 of 10 constituents."
+    ]
   },
   "month": {
     "components": {
       "breadth": 0.0,
       "relative_momentum": 20.0,
       "volume_confirmation": 0.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 25,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -90,8 +96,14 @@
       "window_from": "2026-08-21",
       "window_to": "2026-09-18"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Month breadth and volume confirmation both compute zero -- not one constituent positive, not one share of advancing volume across the month window -- against -5.41 pct vs SPY (staged metrics).",
+      "The small-cap liquidation is indiscriminate and news-free: GTY -8.15 pct and SAFE -6.34 pct on no company news, a 6.5 pct yield repriced against 5.00 pct risk-free (wiki/real-estate.md; wiki/synthesis.md Wire 1)."
+    ],
+    "risks": [
+      "The month is binary on one number: the desk's stated relief line is a 10Y weekly close under 4.90 pct, and FOMC Oct 27-28 is in the window (wiki/synthesis.md Section 4; macro/facts.json next_macro_gate).",
+      "Falsifier: a second weekly close below the 200D, or any close under $42.50, opens $40.00. Carry the 9-of-10 coverage warn forward into any scored output (wiki/real-estate.md)."
+    ]
   },
   "evidence": {
     "available": true,
