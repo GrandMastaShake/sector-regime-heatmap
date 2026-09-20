@@ -1,0 +1,115 @@
+{
+  "sector": "Energy",
+  "as_of_date": "2026-09-18",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 111,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 5.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -3.279,
+      "equal_weight_return_pct": -2.972,
+      "sector_return_vs_spy_pct": -2.632,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 5.2,
+      "top_two_contribution_pct": 36.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-09-18"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 42.5,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -1.602,
+      "equal_weight_return_pct": -0.866,
+      "sector_return_vs_spy_pct": -0.34,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 42.5,
+      "top_two_contribution_pct": 53.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-21",
+      "window_to": "2026-09-18"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-21",
+    "extracts": [
+      {
+        "source_path": "wiki/energy.md",
+        "source_file_sha": "d593aefab3a2bdf578aace8ac79c84c2a3c9c5f0",
+        "lead_summary": "Energy is a short-term beneficiary of geopolitical chaos, not a long-term friend. The bid is real, but so is the fade.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLE"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-21",
+    "source_commit_sha": "bcd000e170604462094afdadd35d14ff5c743e62",
+    "provenance_verified": true
+  }
+}

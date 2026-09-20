@@ -1,0 +1,115 @@
+{
+  "sector": "Consumer Staples",
+  "as_of_date": "2026-09-18",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 111,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 9.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -1.161,
+      "equal_weight_return_pct": -1.294,
+      "sector_return_vs_spy_pct": -0.954,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 9.2,
+      "top_two_contribution_pct": 48.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-09-18"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 44.3,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -4.33,
+      "equal_weight_return_pct": -4.615,
+      "sector_return_vs_spy_pct": -4.089,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 44.3,
+      "top_two_contribution_pct": 44.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-21",
+      "window_to": "2026-09-18"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-21",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-staples.md",
+        "source_file_sha": "f57caff82e1d86275506b971ed78b03a91613916",
+        "lead_summary": "This is my garden. The roots are deep. The dividends are honest. The weeds are the ones trading at 40x P/E and calling themselves staples.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLP (week ending 2026-09-18)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-21",
+    "source_commit_sha": "bcd000e170604462094afdadd35d14ff5c743e62",
+    "provenance_verified": true
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "sector": "Financials",
+  "as_of_date": "2026-09-18",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 111,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 15.1,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -1.853,
+      "equal_weight_return_pct": -0.982,
+      "sector_return_vs_spy_pct": -0.642,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 15.1,
+      "top_two_contribution_pct": 61.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-09-18"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 15.1,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -4.464,
+      "equal_weight_return_pct": -5.336,
+      "sector_return_vs_spy_pct": -4.81,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 15.1,
+      "top_two_contribution_pct": 45.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-21",
+      "window_to": "2026-09-18"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-21",
+    "extracts": [
+      {
+        "source_path": "wiki/financials.md",
+        "source_file_sha": "501227a8f839924784544480edea83967f017a68",
+        "lead_summary": "Banks don't sell off on lower oil; they sell off when loan losses are coming. Monday it was Moynihan's own mouth \u2014 a double-digit Q3 trading-revenue warning that took BAC down and every broker with it. Wednesday the Fed hiked 12-0. Thursday the whole complex fell 3.7\u20134% on credit-cycle anxiety as oil's collapse stopped reading as relief and started reading as demand destruction. XLF fell all five sessions to $55.86 (-2.4% W/W), through the 50D, through the $57.48 pivot, to close at the week's low. The curve bear-flattened to +26bp. The sector that was supposed to WIN the hike just priced the recession the hike might cause.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLF"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-21",
+    "source_commit_sha": "bcd000e170604462094afdadd35d14ff5c743e62",
+    "provenance_verified": true
+  }
+}

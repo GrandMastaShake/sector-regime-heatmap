@@ -177,7 +177,7 @@ not offered, never a zero.
 | After-close evaluations | 0 |
 | Manual runs before automation | 2 of 10 |
 | Scheduled jobs | none enabled |
-| Weekly research snapshot | 2026-09-14, upstream `082062d`, 16 files, provenance verified |
+| Weekly research snapshot | 2026-09-21, upstream `bcd000e`, 16 files, provenance verified |
 
 ### Standing data-quality constraints
 

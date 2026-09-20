@@ -1,0 +1,115 @@
+{
+  "sector": "Materials",
+  "as_of_date": "2026-09-18",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 111,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 22.6,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -2.557,
+      "equal_weight_return_pct": -2.791,
+      "sector_return_vs_spy_pct": -2.451,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 22.6,
+      "top_two_contribution_pct": 41.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-09-18"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 4.8,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -7.07,
+      "equal_weight_return_pct": -8.974,
+      "sector_return_vs_spy_pct": -8.447,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 4.8,
+      "top_two_contribution_pct": 46.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-21",
+      "window_to": "2026-09-18"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-21",
+    "extracts": [
+      {
+        "source_path": "wiki/materials.md",
+        "source_file_sha": "e80283fb0e6373a789463d3d49cdbe4c2cefc089",
+        "lead_summary": "Materials are the raw nerve of the global economy. When copper speaks, every sector listens.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLB (week ending 2026-09-18)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-21",
+    "source_commit_sha": "bcd000e170604462094afdadd35d14ff5c743e62",
+    "provenance_verified": true
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "available": true,
+  "snapshot": "2026-09-21",
+  "extracts": [
+    {
+      "source_path": "wiki/synthesis.md",
+      "source_file_sha": "cb0ae752ba8667994a87774399438afdbb24c4f8",
+      "lead_summary": "",
+      "sections": [
+        "1. CECIL'S SYNTHESIS \u2014 Fundamentalist Lens",
+        "2. MARKY'S SYNTHESIS \u2014 Technician Lens",
+        "3. OPHELIA'S SYNTHESIS \u2014 Macro Lens",
+        "4. CONSENSUS SYNTHESIS",
+        "5. MONDAY WATCHLIST",
+        "6. CROSS-SECTOR CONNECTIONS \u2014 The Hidden Wires"
+      ]
+    },
+    {
+      "source_path": "wiki/canary-watch.md",
+      "source_file_sha": "699806878aa0d12393d5c62613cf63ae600efdf4",
+      "lead_summary": "The canary does not predict the mine collapse. It simply dies first. Watch the canary.",
+      "sections": [
+        "VOLATILITY REGIME",
+        "YIELD CURVE",
+        "CREDIT SPREADS",
+        "MARKET BREADTH",
+        "SECTOR CORRELATION MATRIX",
+        "SECTOR ROTATION FLOW"
+      ]
+    },
+    {
+      "source_path": "wiki/earnings-surveillance.md",
+      "source_file_sha": "b8a0c538b08866cce46b1cc95400cb71a524ff2e",
+      "lead_summary": "Earnings are the moment of truth. Everything else is just opinion.",
+      "sections": [
+        "THIS WEEK'S EARNINGS GAUNTLET (Sep 21 \u2013 Sep 25)",
+        "NEXT WEEK'S EARNINGS PREVIEW (Sep 28 \u2013 Oct 2)",
+        "THE BIG 3 (+4): STATUS AND FORWARD LOOK",
+        "SECTOR EARNINGS DENSITY",
+        "CONSENSUS VS WHISPER \u2014 THE FOMC-WEEK PRINTS (Sep 14 \u2013 Sep 18)",
+        "HISTORICAL BEAT RATES"
+      ]
+    },
+    {
+      "source_path": "wiki/economic-calendar.md",
+      "source_file_sha": "3220b64616495846c1b0fbedce88f8dd96a793dd",
+      "lead_summary": "The Fed doesn't care about your P/E ratios. The CPI does.",
+      "sections": [
+        "THIS WEEK IN REVIEW",
+        "NEXT WEEK'S GAUNTLET",
+        "REGIME RISK FLAGS",
+        "HISTORICAL SURPRISE LOG",
+        "FULL YEAR REFERENCE",
+        "COUNCIL READ"
+      ]
+    }
+  ]
+}
