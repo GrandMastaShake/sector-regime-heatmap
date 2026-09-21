@@ -216,13 +216,16 @@ def render_constraints() -> list[str]:
         rank = baskets.get(sector, [])
         position = (" largest constituent" if rank and rank[0] == ticker
                     else " constituent")
+        # The basket's own size less this name -- not an assumed ten.
+        denominator = ("a denominator of " + str(len(rank) - 1) if rank
+                       else "its true denominator")
         out.append(
             "- **" + ticker + "** (" + sector + position + ") listed "
             + first.isoformat() + ". Month-horizon metrics "
             + ", ".join("`" + b + "`" for b in blocked)
             + " are not computable until " + clears.isoformat() + ". "
-            + sector + " must exclude it at that horizon and record a denominator "
-            "of 9, or set `data_quality.status` to `warn`."
+            + sector + " must exclude it at that horizon and record "
+            + denominator + ", or set `data_quality.status` to `warn`."
         )
     return out
 

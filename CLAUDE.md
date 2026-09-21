@@ -93,8 +93,25 @@ cycle, and `premarket.yml` / `after-close.yml` stay disabled.
   prior, and the block says so. Its age renders with it.
 - Null matrix cells (Real Estate and Communication Services before their ETFs
   listed) are not ranked and never flagged. A null is not a zero.
+- **Comparison rows sit beside the sectors, never among them.** Gold (GLD,
+  from `series`), the US dollar index (DXY, from the panel's `fx` block) and
+  bitcoin (BTC, from `series`): each row is its own return over the tape's
+  windows and that return minus SPY's. They live in a separate
+  `macro_comparisons` block marked `is_sector: false` and render as their own
+  README table under the chart. No breadth, no volume confirmation, no rank, no
+  score -- and never in a forecast, an input payload or an evaluation; nothing
+  on that path imports `src/macro_comparisons.py`, and a test checks it. A
+  value the panel does not carry reads `missing`, with the reason. The GOLD
+  future in `commodities` is a different instrument and is never substituted
+  for GLD.
+- **A published tape is never rewritten.** `daily_tape.py` is a no-op when a
+  recompute is identical (the scheduled job does that when upstream has no new
+  session) and refuses, exit 2, when it differs. A tape that predates the
+  comparison rows shows every row as missing; nothing is backfilled.
 
-`docs/decisions/2026-09-11-daily-observation-tape.md` has the reasoning.
+`docs/decisions/2026-09-11-daily-observation-tape.md` has the reasoning;
+`docs/decisions/2026-09-21-owner-watchlist-and-comparison-rows.md` adds the
+comparison rows.
 
 ## The gates, and what each one caught
 
@@ -112,14 +129,17 @@ cycle, and `premarket.yml` / `after-close.yml` stay disabled.
   shipped one: close 65.9005 on 2026-08-21 against a real 184.06. Left in it
   computes -64.2% and moved Real Estate from rank 6 to rank 11 of 11. The
   median was untouched at -0.05%, which is why `metric_definitions.md` prefers
-  the median.
+  the median. (AVB has since left the watchlist; the gate stays.)
 - **Extreme moves** are flagged and **retained**, never dropped. NEM ran +41.2%
   over four weeks on healthy volume. Dropping real crashes is worse than
   reporting them.
 - **Denominator honesty**. Every basket reports `constituents_used` against
-  `constituents_expected`. Under 8 of 10 sets `data_quality.status: fail` and
+  `constituents_expected`, which is that basket's own size -- ten names, nine
+  for Real Estate since 2026-09-21. Under 8 usable names sets
+  `data_quality.status: fail` whatever the basket holds, and
   `assemble_payload.py` refuses. Never compute over survivors while reporting
-  as though it ran over ten.
+  as though it ran over the full basket. No gate or test assumes a basket
+  size; each reads it from the watchlist.
 - **Immutability**. Forecast artifacts refuse to overwrite. Corrections are new
   dated files.
 - **No look-ahead**. Do not backdate forecasts. The panel contains what
@@ -128,17 +148,22 @@ cycle, and `premarket.yml` / `after-close.yml` stay disabled.
 
 ## Single sources of truth
 
-- `config/watchlist_110.csv` -- basket membership. Never hand-edit; it is a
-  transcription of `Seven_Orbs_Watchlist_110.xlsx`.
+- `config/watchlist_110.csv` -- basket membership. Its master is **the
+  owner's own Finviz watchlist** (since 2026-09-21; the rows were first
+  transcribed from `Seven_Orbs_Watchlist_110.xlsx`). The owner's list is these
+  109 stocks plus BTC and GLD, which are tape comparison rows and in no basket.
+  The filename keeps "110" for continuity; the count is `universe_size` in
+  `config/watchlist.yaml`. Never hand-edit a row: membership changes when the
+  owner's list does, with a dated decision record.
 - `config/sector_baskets.yaml` -- **generated** by `scripts/sync_baskets.py`,
   cap-descending so `top_two_contribution_pct` has a referent. Do not edit.
 - `config/score_weights.yaml` -- the only copy of weights and bands.
   `assemble_payload.py` stamps them into each dated input so artifacts stay
   replayable. Component weights must sum to 1.00 per horizon.
 - `config/watchlist_overrides.yaml` -- derived corrections. The spreadsheet's
-  `CapTier` column is **not an ordering**: 26 of 110 names carry a smaller tier
-  than a name with a lower market cap. `DivYield_%` is populated for 69 of 110
-  and must not be used.
+  `CapTier` column is **not an ordering**: 26 of the 109 names carry a smaller
+  tier than a name with a lower market cap. The original spreadsheet's
+  `DivYield_%` (populated for 69 of its 110 rows) must not be used.
 
 Any change to weights, thresholds or formulas needs a dated entry in
 `docs/decisions/`. That is `docs/decision_log_policy.md`, not a preference.
@@ -207,4 +232,12 @@ snapshot lands.
 - **The rank-based momentum mapping is untested** against outcomes. If cycle 1
   reads wrong, suspect that first.
 - **Market caps in `watchlist_110.csv` are undated.** They drive ordering and
-  tier derivation only, never scoring, but the ordering will go stale.
+  tier derivation only, never scoring, but the ordering will go stale. They
+  were not refreshed from the 2026-09-21 Finviz export: the owner kept every
+  row but AVB's unchanged.
+- **The gold and bitcoin comparison rows read missing until the feed carries
+  GLD and BTC.** The owner expects them in the panel's `series` from the
+  2026-09-25 build. A 1-session value needs a bar on two sessions and a
+  5-session value on six, so they fill in over the following week on their
+  own. Do not backfill a published tape and do not fill the gap from any other
+  instrument. The dollar row reads DXY from `fx`, present since 2026-09-11.

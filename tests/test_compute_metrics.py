@@ -84,24 +84,30 @@ def test_single_basis_panel_is_accepted(tmp_path):
 # --- Gate 2: a zero-volume bar is a provider artifact, not a trade.
 #     AVB shipped one on 2026-08-21: close 65.9005 behind volume 0, a -64.2%
 #     weekly "return" that moved Real Estate from rank 6 to rank 11 of 11.
+#     AVB has since left the watchlist (2026-09-21), so the fixture plants the
+#     same bad bar on a live Real Estate name; the gate is what is under test.
+REAL_ESTATE = SECTORS["Real Estate"]
+BAD_BAR = REAL_ESTATE[0]
+
+
 def test_zero_volume_bar_is_excluded(tmp_path):
     prev, cur = flat(ALL, 100.0), flat(ALL, 101.0)
-    cur["AVB"] = 35.0
+    cur[BAD_BAR] = 35.0
     p = panel(tmp_path, [week("2026-08-14", prev),
-                         week("2026-08-21", cur, volumes={"AVB": 0})])
+                         week("2026-08-21", cur, volumes={BAD_BAR: 0})])
     res = cm.compute(p, BASKETS, None)
     re_week = res["sectors"]["Real Estate"]["week"]
-    assert "AVB" in [m["ticker"] for m in re_week["missing"]]
-    assert re_week["constituents_used"] == 9
-    assert re_week["constituents_expected"] == 10
+    assert BAD_BAR in [m["ticker"] for m in re_week["missing"]]
+    assert re_week["constituents_used"] == len(REAL_ESTATE) - 1
+    assert re_week["constituents_expected"] == len(REAL_ESTATE)
     assert any("zero-volume" in w for w in res["warnings"])
 
 
 def test_zero_volume_bar_does_not_reach_the_return(tmp_path):
     prev, cur = flat(ALL, 100.0), flat(ALL, 101.0)
-    cur["AVB"] = 35.0
+    cur[BAD_BAR] = 35.0
     clean = panel(tmp_path, [week("2026-08-14", prev),
-                             week("2026-08-21", cur, volumes={"AVB": 0})])
+                             week("2026-08-21", cur, volumes={BAD_BAR: 0})])
     res = cm.compute(clean, BASKETS, None)["sectors"]["Real Estate"]["week"]
     # Every surviving name rose 1%, so the basket must read exactly 1%.
     assert res["equal_weight_return_pct"] == pytest.approx(1.0, abs=1e-6)
@@ -110,10 +116,10 @@ def test_zero_volume_bar_does_not_reach_the_return(tmp_path):
 
 def test_null_or_zero_close_is_excluded(tmp_path):
     prev, cur = flat(ALL, 100.0), flat(ALL, 101.0)
-    cur["AVB"] = 0
+    cur[BAD_BAR] = 0
     p = panel(tmp_path, [week("2026-08-14", prev), week("2026-08-21", cur)])
     res = cm.compute(p, BASKETS, None)["sectors"]["Real Estate"]["week"]
-    assert "AVB" in [m["ticker"] for m in res["missing"]]
+    assert BAD_BAR in [m["ticker"] for m in res["missing"]]
 
 
 # --- Gate 3: extreme moves are flagged but NOT dropped. Real crashes happen,
@@ -124,7 +130,7 @@ def test_extreme_move_is_warned_but_retained(tmp_path):
     p = panel(tmp_path, [week("2026-08-14", prev), week("2026-08-21", cur)])
     res = cm.compute(p, BASKETS, None)
     mat = res["sectors"]["Materials"]["week"]
-    assert mat["constituents_used"] == 10
+    assert mat["constituents_used"] == len(SECTORS["Materials"])
     assert "NEM" in [a["ticker"] for a in mat["anomalies"]]
     assert any("NEM moved" in w for w in res["warnings"])
 
@@ -137,20 +143,62 @@ def test_thin_basket_is_warned_with_true_denominator(tmp_path):
     p = panel(tmp_path, [week("2026-08-14", prev), week("2026-08-21", cur)])
     res = cm.compute(p, BASKETS, None)
     tech = res["sectors"]["Technology"]["week"]
-    assert tech["constituents_used"] == 3
-    assert tech["constituents_expected"] == 10
-    assert tech["coverage_pct"] == 30.0
-    assert any("only 3 of 10" in w for w in res["warnings"])
+    n = len(SECTORS["Technology"])
+    assert tech["constituents_used"] == n - 7
+    assert tech["constituents_expected"] == n
+    assert tech["coverage_pct"] == round((n - 7) / n * 100, 1)
+    assert any("only " + str(n - 7) + " of " + str(n) in w for w in res["warnings"])
+
+
+def test_every_basket_is_measured_against_its_own_size(tmp_path):
+    """The denominator is the basket, not an assumed ten. Real Estate holds
+    nine names since 2026-09-21 and a full panel covers all nine."""
+    p = panel(tmp_path, [week("2026-08-14", flat(ALL)), week("2026-08-21", flat(ALL, 101.0))])
+    res = cm.compute(p, BASKETS, None)
+    for sector, tickers in SECTORS.items():
+        for horizon in cm.HORIZON_WEEKS:
+            m = res["sectors"][sector][horizon]
+            assert m["constituents_expected"] == len(tickers), (sector, horizon)
+            assert m["constituents_used"] == len(tickers), (sector, horizon)
+            assert m["coverage_pct"] == 100.0, (sector, horizon)
+    assert not any("too thin" in w for w in res["warnings"])
+
+
+def test_the_thin_floor_does_not_move_with_basket_size(tmp_path):
+    """MIN_CONSTITUENTS names, whatever the basket holds: Real Estate at the
+    floor is not thin, one name under it is -- and says so against its own
+    size, not against ten."""
+    n, floor = len(REAL_ESTATE), cm.MIN_CONSTITUENTS
+    at_floor, under = flat(ALL, 101.0), flat(ALL, 101.0)
+    for t in REAL_ESTATE[: n - floor]:
+        del at_floor[t]
+    for t in REAL_ESTATE[: n - floor + 1]:
+        del under[t]
+    (tmp_path / "a").mkdir()
+    (tmp_path / "b").mkdir()
+
+    ok = cm.compute(panel(tmp_path / "a", [week("2026-08-14", flat(ALL)),
+                                           week("2026-08-21", at_floor)]), BASKETS, None)
+    assert ok["sectors"]["Real Estate"]["week"]["constituents_used"] == floor
+    assert not any(w.startswith("Real Estate/") and "too thin" in w for w in ok["warnings"])
+
+    thin = cm.compute(panel(tmp_path / "b", [week("2026-08-14", flat(ALL)),
+                                             week("2026-08-21", under)]), BASKETS, None)
+    assert any(w.startswith("Real Estate/week has only " + str(floor - 1)
+                            + " of " + str(n)) for w in thin["warnings"])
 
 
 # --- Arithmetic correctness.
 def test_breadth_and_median_are_exact(tmp_path):
     prev, cur = flat(ALL, 100.0), flat(ALL, 100.0)
-    for i, t in enumerate(SECTORS["Energy"]):
-        cur[t] = 100.0 + (i - 4.5)  # five down, five up, symmetric
+    energy = SECTORS["Energy"]
+    mid = (len(energy) - 1) / 2
+    for i, t in enumerate(energy):
+        cur[t] = 100.0 + (i - mid)  # symmetric about zero, whatever the size
     p = panel(tmp_path, [week("2026-08-14", prev), week("2026-08-21", cur)])
     e = cm.compute(p, BASKETS, None)["sectors"]["Energy"]["week"]
-    assert e["positive_return_breadth_pct"] == 50.0
+    up = sum(1 for i in range(len(energy)) if i > mid)
+    assert e["positive_return_breadth_pct"] == round(up / len(energy) * 100, 1)
     assert e["median_return_pct"] == pytest.approx(0.0, abs=1e-9)
 
 
@@ -166,14 +214,18 @@ def test_relative_return_subtracts_the_benchmark(tmp_path):
 def test_up_volume_share_uses_advancing_volume(tmp_path):
     prev, cur = flat(ALL, 100.0), flat(ALL, 100.0)
     vols = {}
-    for i, t in enumerate(SECTORS["Utilities"]):
+    utes = SECTORS["Utilities"]
+    for i, t in enumerate(utes):
         up = i < 3
         cur[t] = 101.0 if up else 99.0
         vols[t] = 300 if up else 100
     p = panel(tmp_path, [week("2026-08-14", prev), week("2026-08-21", cur, volumes=vols)])
     e = cm.compute(p, BASKETS, None)["sectors"]["Utilities"]["week"]
-    # 3 advancers at 300 = 900; 7 decliners at 100 = 700; 900/1600 = 56.25
-    assert e["up_volume_share_pct"] == pytest.approx(56.2, abs=0.1)
+    # 3 advancers at 300 against the rest at 100: with ten names that is
+    # 900 / (900 + 700) = 56.25.
+    advancing, declining = 3 * 300, (len(utes) - 3) * 100
+    assert e["up_volume_share_pct"] == pytest.approx(
+        advancing / (advancing + declining) * 100, abs=0.1)
 
 
 def test_missing_benchmark_warns_and_nulls_relative_momentum(tmp_path):
@@ -201,13 +253,14 @@ def test_short_panel_is_refused_for_the_month_horizon(tmp_path):
 # --- Corrections supersede originals, per the upstream DATA_FEED contract.
 def test_corrected_file_supersedes_the_original(tmp_path):
     prev, cur = flat(ALL, 100.0), flat(ALL, 101.0)
-    cur["AVB"] = 35.0
+    cur[BAD_BAR] = 35.0
     d = panel(tmp_path, [week("2026-08-14", prev), week("2026-08-21", cur)])
-    fixed = week("2026-08-21", {k: v for k, v in cur.items() if k != "AVB"})
+    fixed = week("2026-08-21", {k: v for k, v in cur.items() if k != BAD_BAR})
     fixed["corrects"] = "2026-08-21.json"
-    fixed["missing"] = [{"ticker": "AVB", "reason": "zero-volume bar dropped"}]
+    fixed["missing"] = [{"ticker": BAD_BAR, "reason": "zero-volume bar dropped"}]
     (d / "2026-08-21.corrected.json").write_text(json.dumps(fixed), encoding="utf-8")
     res = cm.compute(d, BASKETS, None)["sectors"]["Real Estate"]["week"]
+    # Only the correction reads exactly 1%: the original carries the -65% bar.
     assert res["equal_weight_return_pct"] == pytest.approx(1.0, abs=1e-6)
 
 

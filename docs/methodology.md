@@ -2,7 +2,7 @@
 
 ## Objective
 
-Generate an explainable sector heatmap for the 11-sector, 110-stock internal watchlist. The output describes relative opportunity and uncertainty for daily, weekly, and monthly horizons.
+Generate an explainable sector heatmap for the owner's internal watchlist: 109 stocks across the 11 sectors -- ten names per sector, nine in Real Estate since 2026-09-21. The output describes relative opportunity and uncertainty for daily, weekly, and monthly horizons.
 
 ## Regime-first framework
 

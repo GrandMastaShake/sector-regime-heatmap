@@ -1,15 +1,17 @@
 version: 1
 
-# config/watchlist_110.csv is a faithful transcription of
-# Seven_Orbs_Watchlist_110.xlsx and must never be hand-edited. Anything derived
-# from it, or any correction to it, lives here with a rationale so the source
-# stays auditable.
+# config/watchlist_110.csv carries the owner's watchlist. Since 2026-09-21 its
+# master is the owner's own Finviz list; its rows were first transcribed from
+# Seven_Orbs_Watchlist_110.xlsx. It is never hand-edited: membership follows the
+# owner's list, with a dated decision record. Anything derived from it, or any
+# correction to it, lives here with a rationale so the source stays auditable.
 
 # --- Cap tier ---------------------------------------------------------------
 # The CapTier column in the source spreadsheet is not internally consistent:
-# 26 of 110 names carry a tier label smaller than a name with a lower market
-# cap. LIN at 225.91B is labelled Mega while AMD at 771.68B is labelled Large;
-# COST at 420.30B is Large while CAT at 381.36B is Mega. The spreadsheet column
+# 26 of the 109 names carry a tier label smaller than a name with a lower
+# market cap (26 of 110 before AVB left the list on 2026-09-21; AVB was not
+# one of them). LIN at 225.91B is labelled Mega while AMD at 771.68B is
+# labelled Large; COST at 420.30B is Large while CAT at 381.36B is Mega. The spreadsheet column
 # is therefore treated as advisory only. Tier is derived from these boundaries.
 #
 # Nothing in the scoring path reads cap tier today. This exists so that if it

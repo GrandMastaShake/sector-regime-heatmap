@@ -129,6 +129,46 @@ def check_baskets(baskets: dict, rows: list[dict]) -> None:
             )
 
 
+def check_basket_floor(baskets: dict, floor: int) -> None:
+    """A basket that starts under the data-quality floor could never pass.
+
+    Basket sizes come from the watchlist, never from an assumed ten -- Real
+    Estate holds nine since 2026-09-21. What does not move is the floor itself,
+    compute_metrics.MIN_CONSTITUENTS: under it a sector is data_quality fail
+    and assemble_payload refuses. A basket listed below it would fail every
+    run before a single name went missing.
+    """
+    for sector in [k for k in baskets if k not in ("version", "note")]:
+        n = len(baskets[sector])
+        if n < floor:
+            fail(
+                "config/sector_baskets.yaml: " + sector + " holds " + str(n)
+                + " names, under the data-quality floor of " + str(floor)
+                + "; it would fail every run"
+            )
+
+
+def check_comparisons_are_not_sectors(baskets: dict, rows: list[dict],
+                                      instruments) -> None:
+    """Gold, the dollar and bitcoin are comparison rows, never basket members.
+
+    The owner's list carries BTC and GLD beside the stocks. Copying that list
+    in wholesale would put two ETFs into a basket and change a sector's
+    breadth, momentum and denominator without anyone deciding it.
+    """
+    placed = {t: s for s, ts in baskets.items() if s not in ("version", "note")
+              for t in ts}
+    listed = {r["Ticker"] for r in rows}
+    for inst in instruments:
+        t = inst["ticker"]
+        if t in placed:
+            fail(t + " is a comparison row, not a sector member, but "
+                 "config/sector_baskets.yaml puts it in " + placed[t])
+        if t in listed:
+            fail(t + " is a comparison row, not a sector member, but "
+                 "config/watchlist_110.csv lists it")
+
+
 def check_cap_tiers(rows: list[dict], overrides: dict) -> None:
     """Validate the derived boundaries, and report the source column's inversions."""
     b = overrides["cap_tier_boundaries_usd_billions"]
@@ -289,6 +329,9 @@ def main() -> int:
     # metrics engine must never silently gain a day horizon or lose a gate
     sys.path.insert(0, str(ROOT / "src"))
     import compute_metrics as _cm
+    import macro_comparisons as _mc
+    check_basket_floor(baskets, _cm.MIN_CONSTITUENTS)
+    check_comparisons_are_not_sectors(baskets, rows, _mc.INSTRUMENTS)
     if set(_cm.HORIZON_WEEKS) != {"week", "month"}:
         fail("compute_metrics.HORIZON_WEEKS changed; the day horizon needs daily bars")
     if not _cm.REJECT_ZERO_VOLUME:

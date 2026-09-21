@@ -12,6 +12,13 @@ Two surfaces, two rules, inherited from the dashboard renderer:
 
 The block is explicit that it is an observation. The dashboard block above it
 renders a forecast; these two sit on the same page and must never be confusable.
+
+The comparison rows -- gold, the US dollar, bitcoin -- render as their own
+markdown table under the sector chart, headed as not sectors. They are kept
+out of the chart on purpose: sharing its bar scale would let one volatile row
+flatten eleven sector bars, and sharing its columns would put them where a
+breadth and an up-volume figure are expected. A value the tape does not carry
+renders as `missing`, including every row of a tape that predates them.
 """
 from __future__ import annotations
 
@@ -24,6 +31,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+import daily_tape as dt  # noqa: E402
+import macro_comparisons as mc  # noqa: E402
 import regime_prior as rp  # noqa: E402
 
 README = ROOT / "README.md"
@@ -107,6 +116,63 @@ def render_chart(tape: dict, cmp_block: dict | None) -> list[str]:
                     rank += " *"
             line += "  " + rank.rjust(11)
         lines.append(line)
+    return lines
+
+
+def render_comparisons(tape: dict) -> list[str]:
+    """Gold, the dollar and bitcoin: their own table, never rows of the chart."""
+    block = tape.get(mc.BLOCK_KEY)
+    horizons = list(dt.HORIZON_SESSIONS.items())
+    known = {i["ticker"]: i for i in mc.INSTRUMENTS}
+    rows = (block or {}).get("rows") or {}
+    # The artifact's own rows when it has the block; a tape that predates the
+    # block still gets every row, each saying missing.
+    order = list(rows) if block else list(known)
+
+    head, rule = "| Comparison | Reads |", "|---|---|"
+    for _, n in horizons:
+        head += " " + str(n) + "d | " + str(n) + "d vs SPY |"
+        rule += "---:|---:|"
+    lines = [
+        "",
+        "**Comparison rows -- not sectors.** Each instrument over the tape's own "
+        "windows, and against SPY. No breadth, no volume confirmation, no score; "
+        "never an input to a forecast, a payload or an evaluation.",
+        "",
+        head,
+        rule,
+    ]
+    notes: list[str] = []
+    for ticker in order:
+        row = rows.get(ticker) or {}
+        inst = known.get(ticker, {})
+        label = row.get("label") or inst.get("label") or ticker
+        name = row.get("name") or inst.get("name") or ""
+        source = row.get("source") or (str(inst.get("block")) + "." + ticker)
+        cells, reasons = [], []
+        for h, _ in horizons:
+            w = row.get(h) or {}
+            ret, rel = w.get("return_pct"), w.get("return_vs_spy_pct")
+            cells.append(format(ret, "+.2f") + "%" if ret is not None else "missing")
+            cells.append(signed(rel) if rel is not None else "missing")
+            for m in w.get("missing") or []:
+                if m.get("reason") and m["reason"] not in reasons:
+                    reasons.append(m["reason"])
+        lines.append("| " + label + " | `" + source + "` " + name + " | "
+                     + " | ".join(cells) + " |")
+        if reasons:
+            notes.append("- **" + label + "**: " + "; ".join(reasons) + ".")
+
+    lines += ["", "Returns in percent. *vs SPY* is in percentage points, the same "
+                  "subtraction as a sector's EXCESS."]
+    if block is None:
+        lines += ["", "- `" + tape["_path"] + "` predates the comparison rows, so "
+                  "every row reads missing. Nothing is backfilled into a "
+                  "published tape."]
+    elif notes:
+        lines += [""] + notes
+    for w in (block or {}).get("warnings") or []:
+        lines.append("- ⚠️ " + w)
     return lines
 
 
@@ -206,6 +272,8 @@ def build() -> str:
     if cmp_block:
         lines += render_contradictions(cmp_block)
         lines += render_successors(regime["archetype"])
+
+    lines += render_comparisons(tape)
 
     warn = tape.get("warnings") or []
     if warn:

@@ -12,8 +12,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "src"))
 
+import compute_metrics as cm  # noqa: E402
+import make_sector_inputs as msi  # noqa: E402
 import stage_run  # noqa: E402
-from test_compute_metrics import ALL, flat, panel, week  # noqa: E402
+from test_compute_metrics import ALL, SECTORS, flat, panel, week  # noqa: E402
 
 
 def snap(tmp_path: Path, as_of: str, verified: bool = True) -> Path:
@@ -114,3 +116,78 @@ def test_evidence_carries_provenance(monkeypatch, tmp_path):
     assert e["source_file_sha"] == "a" * 40
     assert "Bonds ran the week" in e["lead_summary"]
     assert "MACRO OVERLAY" in e["sections"]
+
+
+# --- Denominators come from each basket; the floor of 8 does not move.
+#     Real Estate holds nine names since 2026-09-21 (AVB left the list).
+
+def _panel_missing(tmp_path, sector: str, drop: int) -> Path:
+    """A full panel whose last week lacks the first `drop` names of `sector`."""
+    days = ["2026-07-17", "2026-07-24", "2026-07-31", "2026-08-07",
+            "2026-08-14", "2026-08-21"]
+    weeks = []
+    for i, d in enumerate(days):
+        closes = flat(ALL, 100.0 + i)
+        if d == days[-1]:
+            for t in SECTORS[sector][:drop]:
+                del closes[t]
+        weeks.append(week(d, closes))
+    return panel(tmp_path, weeks, pad=False)
+
+
+def test_the_data_quality_floor_is_eight_everywhere():
+    """Three places enforce the same floor. None of them moved when Real
+    Estate went to nine names: loosening it is a decision, not a side effect."""
+    assert cm.MIN_CONSTITUENTS == 8
+    assert stage_run.MIN_COVERAGE == 8
+
+    def block(used, expected):
+        return {"week": {"constituents_used": used, "constituents_expected": expected,
+                         "missing": [], "anomalies": []}}
+
+    assert msi.data_quality(block(9, 9))["status"] == "pass"
+    assert msi.data_quality(block(8, 9))["status"] == "warn"
+    assert msi.data_quality(block(7, 9))["status"] == "fail"
+    assert msi.data_quality(block(8, 10))["status"] == "warn"
+    assert msi.data_quality(block(7, 10))["status"] == "fail"
+
+
+def test_coverage_notes_name_the_baskets_own_size():
+    note = msi.data_quality({"week": {"constituents_used": 8, "constituents_expected": 9,
+                                      "missing": [], "anomalies": []}})
+    assert note["coverage_notes"] == ["week: 8 of 9"]
+
+
+def test_refusal_reports_each_basket_against_its_own_size(monkeypatch, tmp_path, capsys):
+    root = snap(tmp_path, "2026-08-24")
+    n = len(SECTORS["Real Estate"])
+    drop = n - stage_run.MIN_COVERAGE + 1          # one name under the floor
+    rc = run(monkeypatch, tmp_path, root, _panel_missing(tmp_path, "Real Estate", drop))
+    assert rc == 2
+    out = capsys.readouterr().out
+    # The old message read "7/10" whatever the basket held.
+    assert "Real Estate: " + str(n - drop) + "/" + str(n) in out
+
+
+def test_a_basket_at_the_floor_stages_with_a_warn(monkeypatch, tmp_path):
+    root = snap(tmp_path, "2026-08-24")
+    n = len(SECTORS["Real Estate"])
+    drop = n - stage_run.MIN_COVERAGE              # exactly at the floor
+    rc = run(monkeypatch, tmp_path, root, _panel_missing(tmp_path, "Real Estate", drop))
+    assert rc == 0
+    doc = json.loads((tmp_path / "out/real_estate.json").read_text(encoding="utf-8"))
+    expected_status = "warn" if drop else "pass"
+    assert doc["data_quality"]["status"] == expected_status
+    assert doc["week"]["metrics"]["constituents_expected"] == n
+
+
+def test_a_full_nine_name_basket_is_a_pass_not_a_warn(monkeypatch, tmp_path):
+    """Under the old list Real Estate carried a permanent warn at 9 of 10,
+    because AVB had no bar. Its own nine, all present, is a pass."""
+    root = snap(tmp_path, "2026-08-24")
+    assert run(monkeypatch, tmp_path, root, full_panel(tmp_path)) == 0
+    doc = json.loads((tmp_path / "out/real_estate.json").read_text(encoding="utf-8"))
+    n = len(SECTORS["Real Estate"])
+    assert doc["data_quality"]["status"] == "pass"
+    assert doc["week"]["metrics"]["constituents_used"] == n
+    assert doc["week"]["metrics"]["constituents_expected"] == n

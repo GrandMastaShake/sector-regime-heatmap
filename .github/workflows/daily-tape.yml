@@ -10,6 +10,11 @@ name: Daily tape
 # 22:20 UTC is ~35 minutes after weekly-council-scan's daily-observe job, which
 # leaves it time to commit the session. If the upstream session is not there
 # yet the tape simply renders the previous one and the run is a no-op.
+#
+# A published tape is never rewritten. If recomputing the previous session
+# gives different bytes -- the code or the upstream panel changed underneath
+# it -- src/daily_tape.py refuses (exit 2), this run fails and nothing is
+# committed. The next session writes a new tape as usual.
 
 on:
   schedule:

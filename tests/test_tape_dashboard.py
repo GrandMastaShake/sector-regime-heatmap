@@ -125,3 +125,81 @@ def test_contradictions_report_both_ranks_and_the_gap():
         assert sector in lines
     assert "positions apart" in lines
     assert "regime_fit" in lines
+
+
+# -- the comparison rows: their own table, never the chart ---------------------
+
+def _tape_with_rows(tmp_path, gld=True):
+    """A real tape computed by src/daily_tape.py from a small synthetic panel."""
+    from test_macro_comparisons import BASKETS, full_sessions, write_panel
+    docs = full_sessions() if gld else full_sessions(gld=True)
+    tape = rt.dt.compute_tape(write_panel(tmp_path, docs), BASKETS)
+    tape["_path"] = "data/tape/" + tape["as_of"] + ".json"
+    return tape
+
+
+def _no_regime(monkeypatch):
+    monkeypatch.setattr(rt.rp, "active_regime",
+                        lambda *a, **k: {"archetype": None, "label": None,
+                                         "declared_as_of": None, "age_days": None,
+                                         "reason": "none declared;"})
+
+
+def _row(lines, label):
+    return next(line for line in lines if line.startswith("| " + label + " |"))
+
+
+def test_comparison_rows_render_as_their_own_table(tmp_path):
+    lines = rt.render_comparisons(_tape_with_rows(tmp_path))
+    text = "\n".join(lines)
+    assert "not sectors" in text
+    assert "| Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |" in lines
+    # GLD 200 -> 210 is +5.00%; SPY 100 -> 102 is +2.00%; so +3.00 against it.
+    gold = _row(lines, "Gold")
+    assert "`series.GLD`" in gold
+    assert "+5.00%" in gold and "+3.00" in gold
+    assert "`fx.DXY`" in _row(lines, "US dollar")
+    assert "`series.BTC`" in _row(lines, "Bitcoin")
+    assert "missing" not in gold
+
+
+def test_comparison_rows_never_enter_the_chart(monkeypatch, tmp_path):
+    """Sharing the chart would share its bar scale and its BRDTH/UPVOL
+    columns, neither of which a comparison row has."""
+    monkeypatch.setattr(rt, "latest_tape", lambda: _tape_with_rows(tmp_path))
+    _no_regime(monkeypatch)
+    block = rt.build()
+    inside, chart = False, []
+    for line in block.splitlines():
+        if line.strip() == "```":
+            inside = not inside
+            continue
+        if inside:
+            chart.append(line)
+    assert chart, "no chart rendered"
+    for word in ("Gold", "dollar", "Bitcoin", "GLD", "DXY", "BTC"):
+        assert not any(word in line for line in chart), word
+    assert "| Gold |" in block
+
+
+def test_a_missing_comparison_value_renders_as_missing(tmp_path):
+    lines = rt.render_comparisons(_tape_with_rows(tmp_path, gld=False))
+    gold = _row(lines, "Gold")
+    assert gold.count("missing") == 4
+    assert not any(ch.isdigit() for ch in gold.split("|", 3)[3])
+    assert any(line.startswith("- **Gold**: absent from series at") for line in lines)
+
+
+def test_a_tape_that_predates_the_rows_renders_every_row_missing():
+    """The committed tapes up to 2026-09-18 predate the rows. They are
+    immutable, so nothing is backfilled -- every row says missing."""
+    first = sorted((ROOT / "data/tape").glob("*.json"))[0]
+    tape = json.loads(first.read_text(encoding="utf-8"))
+    assert "macro_comparisons" not in tape
+    tape["_path"] = "data/tape/" + first.name
+    lines = rt.render_comparisons(tape)
+    for label in ("Gold", "US dollar", "Bitcoin"):
+        row = _row(lines, label)
+        assert row.count("missing") == 4
+        assert not any(ch.isdigit() for ch in row.split("|", 3)[3])
+    assert any("predates the comparison rows" in line for line in lines)

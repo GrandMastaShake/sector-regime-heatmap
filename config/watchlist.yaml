@@ -1,6 +1,10 @@
-version: 1
-source: Seven_Orbs_Watchlist_110.xlsx
-universe_size: 110
+version: 2
+# v2 (2026-09-21): the owner's own Finviz watchlist is the master. AVB is
+# removed - it was never on the owner's list, it was added to give Real Estate a
+# tenth name, and it stopped trading on 2026-08-18. The CSV keeps its old name.
+# docs/decisions/2026-09-21-owner-watchlist-and-comparison-rows.md
+source: the owner's Finviz watchlist (export of 2026-09-21)
+universe_size: 109
 benchmark: SPY
 machine_readable: config/watchlist_110.csv
 overrides: config/watchlist_overrides.yaml
@@ -8,6 +12,12 @@ notes:
   - This is an internal research watchlist, not an approved portfolio.
   - config/watchlist_110.csv is the source of truth for basket membership.
     config/sector_baskets.yaml is generated from it by scripts/sync_baskets.py.
+  - The owner's list also carries two ETFs, BTC (Grayscale Bitcoin Mini Trust)
+    and GLD (SPDR Gold). They are not sector members and are in no basket. The
+    daily tape shows them, with the dollar index, as comparison rows beside the
+    sectors (src/macro_comparisons.py).
+  - The filename keeps "110" for continuity only. universe_size above is the
+    declared count, and basket sizes are read from the CSV itself, never assumed.
   - Newer listings with incomplete history are enumerated in
     config/watchlist_overrides.yaml, not left as a general caveat. SPCX listed
     2026-06-12 and cannot supply month-horizon trailing metrics until 2026-09-11.

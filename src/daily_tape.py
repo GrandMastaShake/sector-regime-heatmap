@@ -29,7 +29,25 @@ that mixes cadences.
 
 Everything else is inherited from src/compute_metrics.py unchanged: zero-volume
 bars are rejected, extreme moves are flagged and retained, and a basket under
-MIN_CONSTITUENTS is reported failed rather than computed over survivors.
+MIN_CONSTITUENTS is reported failed rather than computed over survivors. Each
+basket is measured against its own size -- Real Estate holds nine names since
+2026-09-21, the others ten -- never against an assumed ten.
+
+Comparison rows
+---------------
+Beside the sectors, never among them: gold (GLD), the US dollar index (DXY,
+the panel's fx block) and bitcoin (BTC), each as its own return over the same
+windows and that return minus SPY's. src/macro_comparisons.py computes them
+into a separate top-level block. They carry no breadth, no volume
+confirmation, no rank and no score, and a missing value stays missing.
+
+A tape is a dated artifact
+--------------------------
+`main` never rewrites one. Recomputing a date whose tape already exists is a
+no-op when the result is identical -- the scheduled job relies on that when
+upstream has no new session -- and a refusal when it is not. Different bytes
+for a published date mean the code or the panel changed underneath it, and
+quietly replacing the record is exactly what the immutability rule forbids.
 """
 from __future__ import annotations
 
@@ -55,6 +73,7 @@ from compute_metrics import (  # noqa: E402
     reject_reason,
     series_at,
 )
+import macro_comparisons as mc  # noqa: E402
 
 # Sessions per horizon. "day" is one session; "week" is five, which is a
 # trading week rather than a calendar one. The weekly pipeline's week/month
@@ -174,10 +193,14 @@ def compute_tape(daily_dir: Path, baskets: dict, as_of: str | None = None) -> di
         "adjustment_basis": basis,
         "benchmark": BENCHMARK,
         "sectors": {},
+        # Filled below. Its own key, so nothing that walks `sectors` -- the
+        # ranking, the prior comparison, the chart -- can ever meet a row.
+        mc.BLOCK_KEY: None,
         "warnings": [],
     }
 
     per_horizon: dict[str, dict[str, dict]] = {}
+    bench_by_horizon: dict[str, float | None] = {}
     for horizon, back in HORIZON_SESSIONS.items():
         if len(sessions) <= back:
             result["warnings"].append(
@@ -187,6 +210,7 @@ def compute_tape(daily_dir: Path, baskets: dict, as_of: str | None = None) -> di
             continue
         bench = session_returns(sessions, [BENCHMARK], back)
         bench_return = bench["returns"].get(BENCHMARK, {}).get("return_pct")
+        bench_by_horizon[horizon] = bench_return
         if bench_return is None:
             result["warnings"].append(
                 BENCHMARK + " missing for the " + horizon
@@ -229,6 +253,10 @@ def compute_tape(daily_dir: Path, baskets: dict, as_of: str | None = None) -> di
         result["sectors"][sector] = {
             h: per_horizon[h][sector] for h in per_horizon
         }
+
+    # Same sessions, same windows, same SPY return as the sectors above.
+    result[mc.BLOCK_KEY] = mc.compute(sessions, HORIZON_SESSIONS,
+                                      bench_by_horizon, EXTREME_DAILY_MOVE_PCT)
     return result
 
 
@@ -248,9 +276,22 @@ def main(argv: list | None = None) -> int:
     res = compute_tape(a.panel, baskets, a.as_of)
 
     out = a.out or (ROOT / "data" / "tape" / (res["as_of"] + ".json"))
+    text = json.dumps(res, indent=2, ensure_ascii=True) + "\n"
+    if out.is_file():
+        # read_text translates newlines, so a Windows checkout's CRLF copy of
+        # an identical tape still compares equal.
+        if out.read_text(encoding="utf-8") == text:
+            print("Unchanged: " + str(out) + " already holds this tape.")
+            return 0
+        print("REFUSED: " + str(out) + " already exists and this run computes "
+              "something different for " + res["as_of"] + ".")
+        print("  A tape is a dated artifact and is never rewritten. The code or "
+              "the panel changed")
+        print("  underneath it; the published record stays as it was. The next "
+              "session gets a new tape.")
+        return 2
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(res, indent=2, ensure_ascii=True) + "\n",
-                   encoding="utf-8", newline="\n")
+    out.write_text(text, encoding="utf-8", newline="\n")
     print("Wrote " + str(out) + " (" + res["as_of"] + ", "
           + str(res["panel_sessions"]) + " sessions from " + res["panel_from"] + ")")
     for w in res["warnings"]:

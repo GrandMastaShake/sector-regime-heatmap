@@ -14,7 +14,7 @@ A sector rating requires broad, independent confirmation. A single large constit
 - Top-two contribution: contribution of the two largest effects; high concentration lowers confidence.
 
 ## Noise controls
-- Equal-weight the 10-name sector baskets for internal breadth and return measures.
+- Equal-weight each sector basket for internal breadth and return measures, over the basket's own size (ten names; nine in Real Estate since 2026-09-21).
 - Keep cap-weighted results separate if later added.
 - Flag anomalies, zero-volume records, stale quotes, missing tickers, and incomplete history.
 - Apply a risk penalty for concentration, signal disagreement, or contradictory macro evidence.

@@ -125,14 +125,17 @@ def main(argv: list[str] | None = None) -> int:
             + "-day limit. Import a snapshot for this week."
         )
 
-    thin = {s: b["week"]["constituents_used"] for s, b in res["sectors"].items()
+    # Each basket is reported against its own size (Real Estate holds nine
+    # since 2026-09-21); the floor of MIN_COVERAGE names does not move.
+    thin = {s: b["week"] for s, b in res["sectors"].items()
             if b["week"]["constituents_used"] < MIN_COVERAGE}
     if thin and not a.allow_thin:
         print()
         print("REFUSING to stage: " + str(len(thin)) + " sector(s) below "
-              + str(MIN_COVERAGE) + " of 10 constituents.")
+              + str(MIN_COVERAGE) + " usable constituents.")
         for s in sorted(thin):
-            print("  " + s + ": " + str(thin[s]) + "/10")
+            print("  " + s + ": " + str(thin[s]["constituents_used"]) + "/"
+                  + str(thin[s]["constituents_expected"]))
         print()
         print("Run the backfill in weekly-council-scan (BACKFILL_44.md), then retry.")
         print("Use --allow-thin only to inspect; the sector files will still say fail")
