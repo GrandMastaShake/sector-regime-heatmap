@@ -1,0 +1,115 @@
+{
+  "sector": "Materials",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 68.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 1.569,
+      "equal_weight_return_pct": 1.148,
+      "sector_return_vs_spy_pct": -0.12,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 68.2,
+      "top_two_contribution_pct": 34.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 0.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 0.0,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 0.0,
+      "median_return_pct": -4.844,
+      "equal_weight_return_pct": -6.79,
+      "sector_return_vs_spy_pct": -7.05,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 0.0,
+      "top_two_contribution_pct": 48.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/materials.md",
+        "source_file_sha": "b174802f7fbaa0eac70d0e291e307a94c4a6af18",
+        "lead_summary": "The trip wire snapped. DXY closed 101.10, 101.29 and 101.04 \u2014 three straight sessions above 101 and a weekly close over the line for the first time of this regime. The restriction on commodity longs that I lifted when the dollar broke 98 is back ON as of today's close (issue #115). And yet the week's most important materials fact is the one that refuses to obey the dollar: copper rose ~+2.5% to ~$6.78 with Grasberg, Kamoa-Kakula and Escondida all disrupted, a second straight week of decoupling. XLB itself bounced the way the map said it would \u2014 RSI 25.5 produced the reflex rally, led by the oil-relief row (ECL +3.7%, IFF +3.3%, PPG +2.9%) \u2014 and then died at the 200D exactly where the map said it would. Two weeks below the line. The dollar says the regime changed; copper says the deficit is real. Both are true until one isn't.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLB (week ending 2026-09-25)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}

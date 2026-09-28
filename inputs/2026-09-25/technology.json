@@ -1,0 +1,128 @@
+{
+  "sector": "Technology",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 90.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 89.1,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 90.0,
+      "median_return_pct": 5.902,
+      "equal_weight_return_pct": 7.431,
+      "sector_return_vs_spy_pct": 6.163,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 89.1,
+      "top_two_contribution_pct": 48.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 83.1,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 7.394,
+      "equal_weight_return_pct": 9.072,
+      "sector_return_vs_spy_pct": 8.812,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 83.1,
+      "top_two_contribution_pct": 47.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/tech.md",
+        "source_file_sha": "dd7db27e067b2f11febd87f39ddeab10579bbdea",
+        "lead_summary": "The 10-year Treasury closed at 5.18% on Thursday \u2014 a 19-year high \u2014 and tech closed the week at its high anyway. Monday was the tell: a record Nasdaq (27,122, +2.3%) with AMD crossing a $1 trillion market cap, the CPU-shortage trade went vertical (INTC +46% in September, CEO can supply only half of server demand), and the 10Y spent three straight sessions at or above 5.10% without a single distribution day in the complex. The bill: ORCL declared force majeure on its New Mexico AI data center over power, China slapped 80-99% duties on Japanese chip feedstock, and only 29% of the S&P traded above its 50-day. XLK $196.79 (+3.8% W/W), one percent from the June peak.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLK"
+        ]
+      },
+      {
+        "source_path": "wiki/semiconductors.md",
+        "source_file_sha": "6b8b7866f74a9d1a3abf89d70e02a6d7ae576418",
+        "lead_summary": "Semiconductors are the new oil. Every AI model, every data center, every autonomous car runs on silicon. When the chip cycle turns, the world feels it.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving SMH"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}

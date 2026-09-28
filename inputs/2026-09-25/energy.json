@@ -1,0 +1,115 @@
+{
+  "sector": "Energy",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 18.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -3.654,
+      "equal_weight_return_pct": -3.841,
+      "sector_return_vs_spy_pct": -5.109,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 18.2,
+      "top_two_contribution_pct": 43.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 42.7,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -5.474,
+      "equal_weight_return_pct": -4.217,
+      "sector_return_vs_spy_pct": -4.477,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 42.7,
+      "top_two_contribution_pct": 36.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/energy.md",
+        "source_file_sha": "51dc3d908528940839ba675707c94e9a9b47b6e9",
+        "lead_summary": "Diplacy did in five sessions what the Fed couldn't: it broke the breakout. WTI fell -$7.4 to $92.92 \u2014 through the $5 trigger line, Brent through $100 to $98.58 \u2014 after a three-hour U.S.-Iran meeting at UNGA opened the first real ceasefire window of the conflict (issue #116). XLE closed $62.04 (-3.5%), a weekly close below the $63.46 breakout line \u2014 failed breakout #2 by the letter of last week's map \u2014 saved from worse by the 50D ($61.66), which was tagged to the penny and held. The refiner mean-reversion ignited exactly where the warning said it would: MPC -7.4% from RSI 90, VLO -6.3%, PSX -6.4%. And the physical market files its dissent: VLCCs still earn $1.10M a day, the Houthis hold Mokha and Perim Island, France is deploying to Yanbu, and Aramco's October European cancellation stands. The price of oil is pricing peace. The market for moving oil is pricing war. One of them is wrong.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLE"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}

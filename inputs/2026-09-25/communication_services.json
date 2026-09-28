@@ -1,0 +1,115 @@
+{
+  "sector": "Communication Services",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 51.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": -0.28,
+      "equal_weight_return_pct": 1.357,
+      "sector_return_vs_spy_pct": 0.089,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 51.2,
+      "top_two_contribution_pct": 52.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 38.1,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -4.206,
+      "equal_weight_return_pct": -1.399,
+      "sector_return_vs_spy_pct": -1.659,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 38.1,
+      "top_two_contribution_pct": 46.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/communication-services.md",
+        "source_file_sha": "2f66fbca2c6905a840476e0eb547f348b837287d",
+        "lead_summary": "The barbell finally did what barbells do: it balanced. META +13.0% \u2014 a third of the fund's September gain arriving in five sessions on the Muse agent's momentum and Friday's AI tape \u2014 carried XLC to a +1.9% week and a 50-day reclaim, even while the distribution half completed its collapse: CHTR -11.9% for a THIRD straight week near -12%, CMCSA and TMUS at fresh 52-week-low closes, VZ's yield cushion thinning to 70bp against a 5.18% ten-year. The fund closed $112.96, two dollars under the 200-day, with the wildest internal divergence of any sector board: one engine at 52-week highs, the other at 52-week lows, in the same ETF. The October 2 Google final judgment and the late-October broadband prints will decide which half is the fund.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLC"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}

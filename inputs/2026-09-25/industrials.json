@@ -1,0 +1,115 @@
+{
+  "sector": "Industrials",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 70.0,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 32.4,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 70.0,
+      "median_return_pct": 2.253,
+      "equal_weight_return_pct": 2.668,
+      "sector_return_vs_spy_pct": 1.4,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 32.4,
+      "top_two_contribution_pct": 50.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 83.3,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 3.87,
+      "equal_weight_return_pct": 2.947,
+      "sector_return_vs_spy_pct": 2.687,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 83.3,
+      "top_two_contribution_pct": 34.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/industrials.md",
+        "source_file_sha": "9d007a224fc8ec8a73329c41056acc0601e93286",
+        "lead_summary": "The break confirmed \u2014 and nobody sold it. XLI closed a second straight week below the 200-day ($170.43 vs $171.95), yet the five sessions were a shrug, not a cascade: Wednesday's 5.11% 10Y close was ignored, Thursday's 5.18% cost one percent, and Friday recovered it all as yields backed off. Then the week's data split the sector's own story in two: August core capital goods orders printed +1.6% \u2014 a huge beat that says the capex cycle IS re-accelerating \u2014 while UPS (-5.2%) and FDX (-5.8%) printed the consumer-slowdown thesis in equity form. GE +4.0% led on the defense bid; ETN +3.6% kept the power pocket's leadership. Two weeks below the line, no follow-through, the best bear-trap setup of the year \u2014 with ISM on Oct 1 holding the verdict.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH (Sub-$5B)",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "WEEKLY NARRATIVE \u2014 The Break That Nobody Sold, the Data That Split in Two"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}

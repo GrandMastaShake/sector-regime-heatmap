@@ -1,0 +1,115 @@
+{
+  "sector": "Healthcare",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 80.5,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 2.83,
+      "equal_weight_return_pct": 1.946,
+      "sector_return_vs_spy_pct": 0.678,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 80.5,
+      "top_two_contribution_pct": 35.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 75.6,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 0.97,
+      "equal_weight_return_pct": 1.314,
+      "sector_return_vs_spy_pct": 1.054,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 75.6,
+      "top_two_contribution_pct": 42.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/healthcare.md",
+        "source_file_sha": "48718a95f525907ee8d5e41fbb25af122831345b",
+        "lead_summary": "Two weeks after the hike that was supposed to break it, the fortress has made its verdict absolute: the 10Y closed 5.11% Wednesday and 5.18% Thursday \u2014 a 19-year high \u2014 and XLV gained +1.3% anyway. Eli Lilly added an FDA approval to an all-time-high tape (Onswik, the once-weekly basal insulin, Thursday) and is now ~14.9% of the fund; Amgen ripped +7.6% as the Lp(a) class hope concentrated in olpasiran after Novartis's failure; TMO printed another new 52-week high. The wounds moved to the edges: ELV -3.6% as managed care kept de-rating, MDT -3.9% on nothing, SYK still pinned near its low. XLV $170.55, three percent from the August high, RSI 55 \u2014 the market's favorite place to hide from 5.18%.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLV"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}

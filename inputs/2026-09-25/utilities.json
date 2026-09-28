@@ -1,0 +1,115 @@
+{
+  "sector": "Utilities",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 18.0,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -3.565,
+      "equal_weight_return_pct": -2.515,
+      "sector_return_vs_spy_pct": -3.783,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 18.0,
+      "top_two_contribution_pct": 31.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 10.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -6.351,
+      "equal_weight_return_pct": -5.998,
+      "sector_return_vs_spy_pct": -6.258,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 10.2,
+      "top_two_contribution_pct": 28.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/utilities.md",
+        "source_file_sha": "b4c6c33f92dab741afc43283af5a15c12e364281",
+        "lead_summary": "The floor hunt reached the round number and went through it. XLU closed $39.51 (-3.7%) after trading as low as $39.13 \u2014 the first trip below $40 since 2024 \u2014 on the week the 10Y closed at 5.18%, a 19-year high, and the 30Y touched 5.40%. But the week's real story is the inversion: for six weeks the nuclear pair led the sector down, and this week it finally said no \u2014 CEG +3.4%, VST -1.4%, against a regulated complex that lost 3\u20135% across the board. Natural gas ripped ~10% to $3.25 on the AI-power bid, Oracle declared force majeure on a data center because it couldn't get power, and the market remembered what CEG and VST actually sell. The income case is still dead at -235bp. The scarcity case just came back from the dead.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLU"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}

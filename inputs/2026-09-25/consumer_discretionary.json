@@ -1,0 +1,115 @@
+{
+  "sector": "Consumer Discretionary",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 56.3,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -1.926,
+      "equal_weight_return_pct": -1.76,
+      "sector_return_vs_spy_pct": -3.028,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 56.3,
+      "top_two_contribution_pct": 41.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 30.5,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -10.238,
+      "equal_weight_return_pct": -8.316,
+      "sector_return_vs_spy_pct": -8.576,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 30.5,
+      "top_two_contribution_pct": 34.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-discretionary.md",
+        "source_file_sha": "589686eae4891ee659d150665b58c3478187c325",
+        "lead_summary": "Six straight red weeks, and for the second time in three the ETF refused to die at its gap. XLY closed $110.56 (-0.4%) after Thursday's 10Y-5.18% flush stopped 21 cents above the $109.41 support for the second test in three weeks \u2014 somebody defends that level on the worst afternoons in the market. The consumer file closed the week with a split decision: final Michigan sentiment 48.1 (a 4-month low, but above the 47.5 whisper) with inflation expectations jumping to 4.6% \u2014 the household is miserable AND pricing the Fed's next hike at the same time. Inside the tape, the rotation was the story: asset-light and trade-down names (MAR +4.4%, DIS +2.8%, TJX +2.5%, AEO +10.2%) ripped while rate hostages (MCD fresh closing low, LOW fresh closing low, CMCSA new low, F -3.8%) made new lows. The vibecession is stock-picking.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLY"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}

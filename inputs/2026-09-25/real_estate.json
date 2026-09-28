@@ -1,0 +1,115 @@
+{
+  "sector": "Real Estate",
+  "as_of_date": "2026-09-25",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 112,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 11.1,
+      "relative_momentum": 50.0,
+      "volume_confirmation": 7.5,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 11.1,
+      "median_return_pct": -1.327,
+      "equal_weight_return_pct": -1.35,
+      "sector_return_vs_spy_pct": -2.618,
+      "sector_rank_among_eleven": 6,
+      "up_volume_share_pct": 7.5,
+      "top_two_contribution_pct": 39.5,
+      "constituents_used": 9,
+      "constituents_expected": 9,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-18",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 0.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 0.0,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 0.0,
+      "median_return_pct": -5.437,
+      "equal_weight_return_pct": -6.063,
+      "sector_return_vs_spy_pct": -6.323,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 0.0,
+      "top_two_contribution_pct": 35.8,
+      "constituents_used": 9,
+      "constituents_expected": 9,
+      "coverage_pct": 100.0,
+      "window_from": "2026-08-28",
+      "window_to": "2026-09-25"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-09-28",
+    "extracts": [
+      {
+        "source_path": "wiki/real-estate.md",
+        "source_file_sha": "95e137e0c6956f50528da9f385fce3138964c88a",
+        "lead_summary": "The trapdoor rule fired. Three straight weekly closes below the 200-day, five consecutive red sessions, and Friday's $41.56 close is under the $42.50 line I drew as the trapdoor \u2014 the $40.00 magnet is officially live. This was the week the long end stopped helping: the 30Y, which eased post-FOMC last week, jumped 11bp in three days to 5.40%, the 10Y closed Thursday at 5.18% \u2014 a 19-year high \u2014 and the mortgage market crossed 7.03%. The tower complex broke: Crown Castle -7.1% to a new 52-week closing low, SBA -7.0%, as rate math met take-private-arb deflation. And the two cheapest traditional names stayed green again \u2014 WELL +1.1%, SPG flat, CTO +2.2% \u2014 the value bid is the only bid. The fund's 3.19% yield against a 5.18% ten-year is a -199bp carry gap. Nobody has traded this chair yet, and the chair hasn't spoken.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLRE (week ending 2026-09-25)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-09-28",
+    "source_commit_sha": "709a37a0f131519ea0436fd22ea987fc7c8fb551",
+    "provenance_verified": true
+  }
+}
