@@ -41,8 +41,8 @@
       "breadth": 20.0,
       "relative_momentum": 0.0,
       "volume_confirmation": 18.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 45,
+      "macro_catalyst": 40
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,25 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "WTI fell -7.84 pct to $92.44 and Brent through $100 after a three-hour U.S.-Iran meeting at UNGA opened the first real ceasefire window; XLE closed $62.04, a weekly close below the $63.46 breakout line -- failed breakout #2 (wiki/energy.md; macro/facts.json).",
+      "The physical market dissents from the price: VLCCs still earn $1.10M a day, the Houthis hold Mokha and Perim Island, and Aramco's October European cancellation stands; OPEC+ meets Oct 4 (wiki/energy.md; wiki/synthesis.md Section 5).",
+      "The 50-day ($61.66) was tagged to the penny twice and held (wiki/synthesis.md Section 2).",
+      "Week RF cut 60 -> 45 and MC 48 -> 40: the breakout failed and the cost-push pillar weakened."
+    ],
+    "risks": [
+      "Refiner mean-reversion ignited from RSI 90 (MPC -7.4 pct, VLO -6.3 pct, PSX -6.4 pct) and all three remain above target (wiki/energy.md; wiki/synthesis.md Section 1).",
+      "XLE's inverse correlation to SPY re-deepened to -0.356 while the sector fell and SPY rose (wiki/synthesis.md Section 2).",
+      "Falsifier (bearish): a verified truce takes crude to the mid-$80s and a close under $61.42 targets the 200-day $56.06. Falsifier (bullish): a failed truce puts WTI back over $100 and a weekly close over $63.46 un-fails the breakout (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 30.0,
       "relative_momentum": 60.0,
       "volume_confirmation": 42.7,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 55,
+      "macro_catalyst": 50
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +94,17 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "WTI fell -7.84 pct to $92.44 and Brent through $100 after a three-hour U.S.-Iran meeting at UNGA opened the first real ceasefire window; XLE closed $62.04, a weekly close below the $63.46 breakout line -- failed breakout #2 (wiki/energy.md; macro/facts.json).",
+      "The physical market dissents from the price: VLCCs still earn $1.10M a day, the Houthis hold Mokha and Perim Island, and Aramco's October European cancellation stands; OPEC+ meets Oct 4 (wiki/energy.md; wiki/synthesis.md Section 5).",
+      "The 50-day ($61.66) was tagged to the penny twice and held (wiki/synthesis.md Section 2).",
+      "Month RF cut 68 -> 55: physical tightness still argues against the price, so not cut further."
+    ],
+    "risks": [
+      "Refiner mean-reversion ignited from RSI 90 (MPC -7.4 pct, VLO -6.3 pct, PSX -6.4 pct) and all three remain above target (wiki/energy.md; wiki/synthesis.md Section 1).",
+      "XLE's inverse correlation to SPY re-deepened to -0.356 while the sector fell and SPY rose (wiki/synthesis.md Section 2).",
+      "Falsifier (bearish): a verified truce takes crude to the mid-$80s and a close under $61.42 targets the 200-day $56.06. Falsifier (bullish): a failed truce puts WTI back over $100 and a weekly close over $63.46 un-fails the breakout (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

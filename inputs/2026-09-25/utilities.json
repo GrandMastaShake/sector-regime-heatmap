@@ -41,8 +41,8 @@
       "breadth": 20.0,
       "relative_momentum": 10.0,
       "volume_confirmation": 18.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 22,
+      "macro_catalyst": 40
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLU closed $39.51 (-3.87 pct), its first trip below $40 since 2024 and a sixth straight down week, with the SEC yield 235bp below the 10Y (wiki/utilities.md; wiki/synthesis.md Sections 1-2; macro/facts.json).",
+      "The nuclear pair broke away from the rate tape: CEG +3.4 pct and VST -1.4 pct against a regulated complex down 3-5 pct, as natural gas rose ~10 pct to $3.25 and Oracle declared force majeure over power (wiki/utilities.md).",
+      "Week MC raised to 40 on the PCE relief binary."
+    ],
+    "risks": [
+      "The regulated complex remains an income trade with a -235bp carry (wiki/synthesis.md Section 1).",
+      "A cool PCE (core at or below +0.2 pct) or a 10Y weekly close under 4.90 pct is the relief trigger, with DTE at RSI 17.8 and XLU at 25.2 (wiki/synthesis.md Section 4).",
+      "Falsifier: a weekly close back over $40.66; below $39.13 targets the 2024 lows near $38 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 10.0,
       "relative_momentum": 40.0,
       "volume_confirmation": 10.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 28,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLU closed $39.51 (-3.87 pct), its first trip below $40 since 2024 and a sixth straight down week, with the SEC yield 235bp below the 10Y (wiki/utilities.md; wiki/synthesis.md Sections 1-2; macro/facts.json).",
+      "The nuclear pair broke away from the rate tape: CEG +3.4 pct and VST -1.4 pct against a regulated complex down 3-5 pct, as natural gas rose ~10 pct to $3.25 and Oracle declared force majeure over power (wiki/utilities.md).",
+      "Month RF raised 25 -> 28 on the scarcity case for existing power."
+    ],
+    "risks": [
+      "The regulated complex remains an income trade with a -235bp carry (wiki/synthesis.md Section 1).",
+      "A cool PCE (core at or below +0.2 pct) or a 10Y weekly close under 4.90 pct is the relief trigger, with DTE at RSI 17.8 and XLU at 25.2 (wiki/synthesis.md Section 4).",
+      "Falsifier: a weekly close back over $40.66; below $39.13 targets the 2024 lows near $38 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

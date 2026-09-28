@@ -1,0 +1,784 @@
+{
+  "generated_at_utc": "2026-09-28T12:44:58.745115+00:00",
+  "source_input": "data/inputs/2026-09-25_manual.json",
+  "as_of_date": "2026-09-25",
+  "run_type": "manual",
+  "weights": {
+    "day": {
+      "regime_fit": 0.2,
+      "breadth": 0.25,
+      "relative_momentum": 0.25,
+      "volume_confirmation": 0.2,
+      "macro_catalyst": 0.1,
+      "risk_penalty_max": 0.05
+    },
+    "week": {
+      "regime_fit": 0.35,
+      "breadth": 0.2,
+      "relative_momentum": 0.2,
+      "volume_confirmation": 0.15,
+      "macro_catalyst": 0.1,
+      "risk_penalty_max": 0.05
+    },
+    "month": {
+      "regime_fit": 0.45,
+      "breadth": 0.15,
+      "relative_momentum": 0.15,
+      "volume_confirmation": 0.1,
+      "macro_catalyst": 0.15,
+      "risk_penalty_max": 0.05
+    }
+  },
+  "bands": {
+    "favorable": 70,
+    "constructive": 55,
+    "neutral": 45,
+    "unfavorable": 30,
+    "defensive": 0
+  },
+  "regime": {
+    "label": "Live hiking cycle with term-premium expansion -- physical scarcity over duration; archetype-1 label retained in name only pending taxonomy review",
+    "confidence": "low",
+    "evidence": [
+      "Forward-test pre-registration intact: episode start SPY 634.09 (2026-03-27); close of 2026-09-25 is 771.35, +21.65 pct. Running peak 777.88 (2026-08-13), drawdown -0.84 pct. The -10 pct mechanical trigger (700.09) is 9.24 pct below spot (SPY from macro/facts.json; arithmetic by the operator).",
+      "The 10Y posted its first weekly close above 5.00 pct since July 2007 (5.184 pct, +18.6bp) and the move was term premium rather than inflation fear: the $70B 5-year tailed 3.1bp, the 7-year tailed again, and 10-year breakevens were flat at 2.34 pct while oil fell 7.84 pct (wiki/synthesis.md Section 3; macro/facts.json).",
+      "The data said no landing: S&P flash composite PMI 58.4 (consensus 55.2), core capital goods orders +1.6 pct, claims 197K, new home sales 684K; CME odds of an Oct 28 hike rose to ~73-76 pct (wiki/synthesis.md Section 3; wiki/economic-calendar.md).",
+      "The single dispersion rule held for another week -- scarcity beats duration -- with server CPUs, existing power, grid equipment, copper and natural gas bought and bond proxies, towers and branded food sold (wiki/synthesis.md Sections 3-4).",
+      "CLEAN EX-ANTE RUN: judgment proposed Sunday 2026-09-27 on the Friday 2026-09-25 close and approved by the owner Monday 2026-09-28 before the 09:30 ET open. Zero sessions of the week horizon had traded; core PCE (Sep 30), MU (Sep 30 AMC), ISM and NKE (Oct 1), payrolls and the GOOGL final judgment (Oct 2) were all still ahead. Gradeable as a forecast."
+    ],
+    "disconfirming_evidence": [
+      "THE PRE-REGISTERED RE-EXAMINATION TRIGGER HAS FIRED (2026-09-16: priced hike delivered, 10Y close above 5.00 pct). The archetype-1 label is retained in name only pending a taxonomy review against the 44-episode set, a research call rather than a weekly judgment. Carried forward from 2026-09-18, unchanged.",
+      "THE RATES OBJECTION IS SETTLED AGAINST THE LABEL AND STRENGTHENED. Archetype 1 requires stable-to-easing rates; the Fed is hiking (3.75-4.00 pct, 16 of 18 dots see another 2026 hike), the 10Y is 5.184 pct and October hike odds rose to ~73-76 pct (macro/facts.json policy; wiki/synthesis.md Section 3). Carried forward and strengthened.",
+      "THE COST-PUSH SHOCK -- MODIFIED, NOT RESOLVED. WTI fell -7.84 pct to $92.44 on a U.S.-Iran ceasefire window, but the physical market dissents: VLCCs at $1.10M a day, the Houthis hold Mokha and Perim Island, Aramco's October European cancellation stands (wiki/energy.md; macro/facts.json). And the oil relief never reached the discount rate -- the 10Y rose 19bp anyway (wiki/synthesis.md Section 3).",
+      "THE CONSUMER IS STILL DETERIORATING. Final UMich 48.1, a four-month low, with 1-year inflation expectations at 4.6 pct; mortgage rates crossed 7.03 pct; new home sales were bought with price cuts (median -5.8 pct YoY) (wiki/consumer-discretionary.md; wiki/real-estate.md; wiki/synthesis.md Section 3). Carried forward and strengthened.",
+      "THE RATE-SENSITIVE CONTRACTION HOLDS. Six of twelve ETFs are below both their 50-day and 200-day (XLI, XLB, XLU, XLP, XLRE, XLY); only 26.5 pct of S&P members are above their 50-day on a live count, 46.4 pct above their 200-day, 31 new lows vs 3 new highs Friday (wiki/synthesis.md Section 2; wiki/canary-watch.md MARKET BREADTH). Carried forward.",
+      "CONCENTRATION RISK IS THE LEADERSHIP, AND IT WIDENED. SPY +1.27 pct while RSP -0.56 pct: a -1.82 point gap on the week and -5.64 on the month, both wider than the prior cycle's -0.86 / -3.45 (wiki/synthesis.md Section 2). Carried forward and strengthened.",
+      "CREDIT TURNED (NEW; replaces the prior cycle's 'credit contained' supporting item). HY OAS rose 10bp to 280 and HY-IG crossed 200bp (201) in the week the 10Y broke out -- inside the cycle's range, but the direction changed (wiki/canary-watch.md CREDIT SPREADS; wiki/synthesis.md Contradiction 8).",
+      "THE LONG END IS NO LONGER MERELY POLICY-MANAGED. The prior cycle's item said the damage came from the dots, not term premium; this week the long end led on supply (5-year tail 3.1bp, 30Y to ~5.50 pct) despite Treasury's buybacks (wiki/synthesis.md Section 3; wiki/economic-calendar.md). Carried forward from 2026-08-21, now modified.",
+      "THE WEEK'S EVENT RISK IS CONCENTRATED: core PCE at 08:30 and Micron after the close on Wednesday Sep 30, on a board where the index is two sectors deep and SMH trades ~41x with a 2x beta (wiki/synthesis.md Section 4).",
+      "UPSTREAM FACTUAL DISPUTES OPEN: the WTI weekly change (-7.84 pct canonical vs -2.7 / -3.2 pct in eleven wikis descending from a $95.47 bar no contract reproduces), and data/market_state.json's rates block (2Y 4.47 pct, 2s10s 71bp vs facts.json 4.87 pct and +31bp) (wiki/synthesis.md header and Contradictions 3-4). Nothing in this payload reads market_state.json.",
+      "RESOLVED AND DROPPED FROM THE CARRY-FORWARD SET: (a) the Real Estate data-quality warn -- the basket now computes 9 of 9 constituents, status pass, in both horizons; (b) the market_state.json policy-block defect -- repaired upstream to 3.75-4.00 pct, 'Hike' (wiki/synthesis.md header); the rates-block defect above is a different defect."
+    ]
+  },
+  "scores": {
+    "Communication Services": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 52.4,
+        "rating": "neutral",
+        "confidence": "medium",
+        "components": {
+          "regime_fit": 45,
+          "breadth": 50.0,
+          "relative_momentum": 70.0,
+          "volume_confirmation": 51.2,
+          "macro_catalyst": 50
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "META +13.0 pct carried XLC +1.94 pct and a 50-day reclaim (~$111.00-$111.32); the fund stalled one dollar under its 200-day (~$113.96) (wiki/communication-services.md; wiki/synthesis.md Section 2).",
+          "The October 2 Google final judgment is inside the week horizon and the desk treats GOOGL ($343.92) as the add-on-strength name (wiki/communication-services.md; wiki/synthesis.md Section 5).",
+          "Week RF/MC raised to 45/50 on the 50-day reclaim and the Oct 2 judgment."
+        ],
+        "risks": [
+          "The distribution half is collapsing: CHTR -11.9 pct for a third straight week, CMCSA and TMUS at 52-week-low closes, VZ's yield cushion down to ~70bp against the 10Y (wiki/communication-services.md; wiki/synthesis.md Section 1).",
+          "META at RSI 71.4 carried the fund alone; broadband is untouchable until the late-October prints (wiki/synthesis.md Section 5).",
+          "Falsifier: a close under $111.00 (50-day) targets $110, then $105.38 (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 48.1,
+        "rating": "neutral",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 50,
+          "breadth": 20.0,
+          "relative_momentum": 70.0,
+          "volume_confirmation": 38.1,
+          "macro_catalyst": 55
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "META +13.0 pct carried XLC +1.94 pct and a 50-day reclaim (~$111.00-$111.32); the fund stalled one dollar under its 200-day (~$113.96) (wiki/communication-services.md; wiki/synthesis.md Section 2).",
+          "The October 2 Google final judgment is inside the week horizon and the desk treats GOOGL ($343.92) as the add-on-strength name (wiki/communication-services.md; wiki/synthesis.md Section 5).",
+          "Month MC 55 (from 58): broadband earnings risk sits late in the horizon."
+        ],
+        "risks": [
+          "The distribution half is collapsing: CHTR -11.9 pct for a third straight week, CMCSA and TMUS at 52-week-low closes, VZ's yield cushion down to ~70bp against the 10Y (wiki/communication-services.md; wiki/synthesis.md Section 1).",
+          "META at RSI 71.4 carried the fund alone; broadband is untouchable until the late-October prints (wiki/synthesis.md Section 5).",
+          "Falsifier: a close under $111.00 (50-day) targets $110, then $105.38 (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Consumer Discretionary": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 33.7,
+        "rating": "unfavorable",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 30,
+          "breadth": 30.0,
+          "relative_momentum": 20.0,
+          "volume_confirmation": 56.3,
+          "macro_catalyst": 48
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "Final Michigan sentiment 48.1, a four-month low, with 1-year inflation expectations up to 4.6 pct -- the highest since June (wiki/consumer-discretionary.md; wiki/synthesis.md Section 3).",
+          "Six straight red weeks; XLY $110.56 with rate-sensitive names (MCD, LOW) at fresh lows while asset-light and trade-down names rallied (wiki/consumer-discretionary.md; wiki/synthesis.md Section 5).",
+          "Week MC trimmed to 48: NKE is a binary inside the horizon."
+        ],
+        "risks": [
+          "XLY defended its $109.41 gap for the second time in three weeks, by 21 cents on the 5.18 pct day (wiki/synthesis.md Section 2).",
+          "NKE reports Thu Oct 1 after the close (average move +/-8.1 pct) (wiki/synthesis.md Section 5).",
+          "Falsifier: a close over $113.29 on volume targets $114.90-$116.70; a weekly close under $109.41 targets $105.45-$105.66 (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 27.1,
+        "rating": "defensive",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 30,
+          "breadth": 20.0,
+          "relative_momentum": 0.0,
+          "volume_confirmation": 30.5,
+          "macro_catalyst": 50
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "Final Michigan sentiment 48.1, a four-month low, with 1-year inflation expectations up to 4.6 pct -- the highest since June (wiki/consumer-discretionary.md; wiki/synthesis.md Section 3).",
+          "Six straight red weeks; XLY $110.56 with rate-sensitive names (MCD, LOW) at fresh lows while asset-light and trade-down names rallied (wiki/consumer-discretionary.md; wiki/synthesis.md Section 5).",
+          "Month RF 30, MC 50."
+        ],
+        "risks": [
+          "XLY defended its $109.41 gap for the second time in three weeks, by 21 cents on the 5.18 pct day (wiki/synthesis.md Section 2).",
+          "NKE reports Thu Oct 1 after the close (average move +/-8.1 pct) (wiki/synthesis.md Section 5).",
+          "Falsifier: a close over $113.29 on volume targets $114.90-$116.70; a weekly close under $109.41 targets $105.45-$105.66 (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Consumer Staples": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 37.5,
+        "rating": "unfavorable",
+        "confidence": "high",
+        "components": {
+          "regime_fit": 35,
+          "breadth": 30.0,
+          "relative_momentum": 40.0,
+          "volume_confirmation": 45.0,
+          "macro_catalyst": 45
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "GIS beat and sold off -7.1 pct on higher costs, and CPB and STZ followed to fresh lows; XLP closed $82.06, a fifth red week and a second week below the 200-day (wiki/consumer-staples.md; macro/facts.json).",
+          "The fund yield of ~2.59 pct sits 259bp below the 5.184 pct 10Y (wiki/synthesis.md Section 1), and XLP's correlation to SPY flipped negative while it fell, so it is no longer paying as a diversifier (wiki/synthesis.md Section 2).",
+          "Week MC cut 62 -> 45: the double gate resolved against the sector."
+        ],
+        "risks": [
+          "The yield row held (WMT +1.1 pct, KDP +3.3 pct, PM +1.0 pct) and COST beat and was paid +3.0 pct; the $81.70-$81.73 double bottom is intact (wiki/consumer-staples.md; wiki/synthesis.md Section 2).",
+          "A core PCE at or below +0.2 pct unwinds the October hike pricing and helps bond proxies (wiki/synthesis.md Section 4).",
+          "Falsifier: a daily close under $81.00 targets $74.06; a 200-day reclaim (~$83.6) is the repair. CAG/MKC report this week, PEP Oct 8 (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 38.0,
+        "rating": "unfavorable",
+        "confidence": "medium",
+        "components": {
+          "regime_fit": 36,
+          "breadth": 20.0,
+          "relative_momentum": 50.0,
+          "volume_confirmation": 41.0,
+          "macro_catalyst": 48
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "GIS beat and sold off -7.1 pct on higher costs, and CPB and STZ followed to fresh lows; XLP closed $82.06, a fifth red week and a second week below the 200-day (wiki/consumer-staples.md; macro/facts.json).",
+          "The fund yield of ~2.59 pct sits 259bp below the 5.184 pct 10Y (wiki/synthesis.md Section 1), and XLP's correlation to SPY flipped negative while it fell, so it is no longer paying as a diversifier (wiki/synthesis.md Section 2).",
+          "Month MC 48 ahead of PEP Oct 8."
+        ],
+        "risks": [
+          "The yield row held (WMT +1.1 pct, KDP +3.3 pct, PM +1.0 pct) and COST beat and was paid +3.0 pct; the $81.70-$81.73 double bottom is intact (wiki/consumer-staples.md; wiki/synthesis.md Section 2).",
+          "A core PCE at or below +0.2 pct unwinds the October hike pricing and helps bond proxies (wiki/synthesis.md Section 4).",
+          "Falsifier: a daily close under $81.00 targets $74.06; a 200-day reclaim (~$83.6) is the repair. CAG/MKC report this week, PEP Oct 8 (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Energy": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 26.5,
+        "rating": "defensive",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 45,
+          "breadth": 20.0,
+          "relative_momentum": 0.0,
+          "volume_confirmation": 18.2,
+          "macro_catalyst": 40
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "WTI fell -7.84 pct to $92.44 and Brent through $100 after a three-hour U.S.-Iran meeting at UNGA opened the first real ceasefire window; XLE closed $62.04, a weekly close below the $63.46 breakout line -- failed breakout #2 (wiki/energy.md; macro/facts.json).",
+          "The physical market dissents from the price: VLCCs still earn $1.10M a day, the Houthis hold Mokha and Perim Island, and Aramco's October European cancellation stands; OPEC+ meets Oct 4 (wiki/energy.md; wiki/synthesis.md Section 5).",
+          "The 50-day ($61.66) was tagged to the penny twice and held (wiki/synthesis.md Section 2).",
+          "Week RF cut 60 -> 45 and MC 48 -> 40: the breakout failed and the cost-push pillar weakened."
+        ],
+        "risks": [
+          "Refiner mean-reversion ignited from RSI 90 (MPC -7.4 pct, VLO -6.3 pct, PSX -6.4 pct) and all three remain above target (wiki/energy.md; wiki/synthesis.md Section 1).",
+          "XLE's inverse correlation to SPY re-deepened to -0.356 while the sector fell and SPY rose (wiki/synthesis.md Section 2).",
+          "Falsifier (bearish): a verified truce takes crude to the mid-$80s and a close under $61.42 targets the 200-day $56.06. Falsifier (bullish): a failed truce puts WTI back over $100 and a weekly close over $63.46 un-fails the breakout (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 50.0,
+        "rating": "neutral",
+        "confidence": "medium",
+        "components": {
+          "regime_fit": 55,
+          "breadth": 30.0,
+          "relative_momentum": 60.0,
+          "volume_confirmation": 42.7,
+          "macro_catalyst": 50
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "WTI fell -7.84 pct to $92.44 and Brent through $100 after a three-hour U.S.-Iran meeting at UNGA opened the first real ceasefire window; XLE closed $62.04, a weekly close below the $63.46 breakout line -- failed breakout #2 (wiki/energy.md; macro/facts.json).",
+          "The physical market dissents from the price: VLCCs still earn $1.10M a day, the Houthis hold Mokha and Perim Island, and Aramco's October European cancellation stands; OPEC+ meets Oct 4 (wiki/energy.md; wiki/synthesis.md Section 5).",
+          "The 50-day ($61.66) was tagged to the penny twice and held (wiki/synthesis.md Section 2).",
+          "Month RF cut 68 -> 55: physical tightness still argues against the price, so not cut further."
+        ],
+        "risks": [
+          "Refiner mean-reversion ignited from RSI 90 (MPC -7.4 pct, VLO -6.3 pct, PSX -6.4 pct) and all three remain above target (wiki/energy.md; wiki/synthesis.md Section 1).",
+          "XLE's inverse correlation to SPY re-deepened to -0.356 while the sector fell and SPY rose (wiki/synthesis.md Section 2).",
+          "Falsifier (bearish): a verified truce takes crude to the mid-$80s and a close under $61.42 targets the 200-day $56.06. Falsifier (bullish): a failed truce puts WTI back over $100 and a weekly close over $63.46 un-fails the breakout (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Financials": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 32.7,
+        "rating": "unfavorable",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 40,
+          "breadth": 30.0,
+          "relative_momentum": 30.0,
+          "volume_confirmation": 12.7,
+          "macro_catalyst": 48
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "XLF based at $54.50 after Tuesday's 70M-share distribution day, closing $54.84 with RSI 30.6 and BAC RSI 25.4 -- washed out, not broken (wiki/financials.md; wiki/synthesis.md Section 2).",
+          "10Y-3M is +111bp on the canonical series and XLF closed 84 cents above $54 -- half of the desk's own 'every credit event of the last 20 years' condition is already true (wiki/synthesis.md Section 4).",
+          "Week RF/MC trimmed to 40/48; JEF reports Monday after the close."
+        ],
+        "risks": [
+          "HY OAS turned up to 280bp (+10) with HY-IG at 201bp in the week the 10Y broke out (wiki/canary-watch.md CREDIT SPREADS); the desk's 'benign' reading rests on a stale ~273 figure (wiki/synthesis.md Contradiction 8).",
+          "Insurance finally cracked (PGR -3.7 pct, TRV -3.1 pct), removing the sector's shelter (wiki/financials.md).",
+          "Falsifier (bullish): a reclaim of $55.66-$55.90 is first proof and the 50-day $57.08 is repair; (bearish) a close under $54 with 10Y-3M above +100bp (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 31.8,
+        "rating": "unfavorable",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 42,
+          "breadth": 10.0,
+          "relative_momentum": 20.0,
+          "volume_confirmation": 8.7,
+          "macro_catalyst": 50
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "XLF based at $54.50 after Tuesday's 70M-share distribution day, closing $54.84 with RSI 30.6 and BAC RSI 25.4 -- washed out, not broken (wiki/financials.md; wiki/synthesis.md Section 2).",
+          "10Y-3M is +111bp on the canonical series and XLF closed 84 cents above $54 -- half of the desk's own 'every credit event of the last 20 years' condition is already true (wiki/synthesis.md Section 4).",
+          "Month RF cut 50 -> 42 on the credit turn."
+        ],
+        "risks": [
+          "HY OAS turned up to 280bp (+10) with HY-IG at 201bp in the week the 10Y broke out (wiki/canary-watch.md CREDIT SPREADS); the desk's 'benign' reading rests on a stale ~273 figure (wiki/synthesis.md Contradiction 8).",
+          "Insurance finally cracked (PGR -3.7 pct, TRV -3.1 pct), removing the sector's shelter (wiki/financials.md).",
+          "Falsifier (bullish): a reclaim of $55.66-$55.90 is first proof and the 50-day $57.08 is repair; (bearish) a close under $54 with 10Y-3M above +100bp (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Healthcare": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 70.6,
+        "rating": "favorable",
+        "confidence": "medium",
+        "components": {
+          "regime_fit": 62,
+          "breadth": 80.0,
+          "relative_momentum": 80.0,
+          "volume_confirmation": 80.5,
+          "macro_catalyst": 48
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "XLV gained +1.37 pct in the week the 10Y closed 5.184 pct and sits 3.4 pct under its all-time high after eight straight sessions above the 50-day ($167.53) (wiki/healthcare.md; macro/facts.json; wiki/synthesis.md Section 2).",
+          "LLY added an FDA approval (Onswik, once-weekly basal insulin) at all-time highs, AMGN +7.6 pct on Lp(a) hopes, TMO at a new 52-week high (wiki/healthcare.md).",
+          "Week unchanged RF 62; MC 48 on the Oct 1 formulary date."
+        ],
+        "risks": [
+          "LLY is ~14.9 pct of the fund, so the sector call is heavily one name; the Zepbound CVS formulary on Oct 1 is a single-name event (wiki/synthesis.md Section 5).",
+          "Managed care kept de-rating (ELV -3.6 pct) and MDT -3.9 pct on no news; AMGN is above its target after the move, a symmetric binary (wiki/healthcare.md; wiki/synthesis.md Section 1).",
+          "Falsifier: a close under the 50-day $167.53, then $164-165 (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 62.2,
+        "rating": "constructive",
+        "confidence": "medium",
+        "components": {
+          "regime_fit": 58,
+          "breadth": 60.0,
+          "relative_momentum": 80.0,
+          "volume_confirmation": 75.6,
+          "macro_catalyst": 50
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "XLV gained +1.37 pct in the week the 10Y closed 5.184 pct and sits 3.4 pct under its all-time high after eight straight sessions above the 50-day ($167.53) (wiki/healthcare.md; macro/facts.json; wiki/synthesis.md Section 2).",
+          "LLY added an FDA approval (Onswik, once-weekly basal insulin) at all-time highs, AMGN +7.6 pct on Lp(a) hopes, TMO at a new 52-week high (wiki/healthcare.md).",
+          "Month RF raised to 58: the defensive bid survived a 19-year-high 10Y."
+        ],
+        "risks": [
+          "LLY is ~14.9 pct of the fund, so the sector call is heavily one name; the Zepbound CVS formulary on Oct 1 is a single-name event (wiki/synthesis.md Section 5).",
+          "Managed care kept de-rating (ELV -3.6 pct) and MDT -3.9 pct on no news; AMGN is above its target after the move, a symmetric binary (wiki/healthcare.md; wiki/synthesis.md Section 1).",
+          "Falsifier: a close under the 50-day $167.53, then $164-165 (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Industrials": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 60.9,
+        "rating": "constructive",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 52,
+          "breadth": 70.0,
+          "relative_momentum": 90.0,
+          "volume_confirmation": 32.4,
+          "macro_catalyst": 58
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "August core capital goods orders printed +1.6 pct against +0.5 pct and the S&P flash manufacturing PMI 57.0 (composite 58.4), the capex cycle re-accelerating (wiki/industrials.md; wiki/synthesis.md Section 3).",
+          "XLI closed a second week below the 200-day ($170.43 vs $171.95) on below-average volume in all five sessions -- no distribution, the year's best bear-trap setup; GE +4.0 pct and ETN +3.6 pct led (wiki/industrials.md; wiki/synthesis.md Section 2).",
+          "Week MC 58: ISM Oct 1 is the named catalyst for a $171.95 reclaim."
+        ],
+        "risks": [
+          "UPS -5.2 pct and FDX -5.8 pct printed the consumer-slowdown thesis inside the same sector (wiki/industrials.md).",
+          "Strong growth data is read by the calendar, utilities and real-estate desks as the reason the 10Y broke out -- ISM on Oct 1 is where the bull and bear readings collide (wiki/synthesis.md Contradiction 1).",
+          "Falsifier: a close below $167.49 burns the bear-trap checklist and targets the low $160s; ISM under 52 fails it (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 63.2,
+        "rating": "constructive",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 52,
+          "breadth": 60.0,
+          "relative_momentum": 90.0,
+          "volume_confirmation": 83.3,
+          "macro_catalyst": 60
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "August core capital goods orders printed +1.6 pct against +0.5 pct and the S&P flash manufacturing PMI 57.0 (composite 58.4), the capex cycle re-accelerating (wiki/industrials.md; wiki/synthesis.md Section 3).",
+          "XLI closed a second week below the 200-day ($170.43 vs $171.95) on below-average volume in all five sessions -- no distribution, the year's best bear-trap setup; GE +4.0 pct and ETN +3.6 pct led (wiki/industrials.md; wiki/synthesis.md Section 2).",
+          "Month RF raised to 52 on the capex re-acceleration."
+        ],
+        "risks": [
+          "UPS -5.2 pct and FDX -5.8 pct printed the consumer-slowdown thesis inside the same sector (wiki/industrials.md).",
+          "Strong growth data is read by the calendar, utilities and real-estate desks as the reason the 10Y broke out -- ISM on Oct 1 is where the bull and bear readings collide (wiki/synthesis.md Contradiction 1).",
+          "Falsifier: a close below $167.49 burns the bear-trap checklist and targets the low $160s; ISM under 52 fails it (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Materials": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 50.7,
+        "rating": "neutral",
+        "confidence": "medium",
+        "components": {
+          "regime_fit": 35,
+          "breadth": 60.0,
+          "relative_momentum": 60.0,
+          "volume_confirmation": 68.2,
+          "macro_catalyst": 42
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "DXY closed 101.10, 101.29 and 101.04 -- three sessions above 101 and a weekly close over the line -- so the restriction on new commodity longs is back ON (wiki/materials.md, issue #115; macro/facts.json).",
+          "XLB's reflex rally from RSI 25.5 died at the 200-day ($50.64) and closed back below at $49.80 (wiki/materials.md; wiki/synthesis.md Section 2).",
+          "Week MC 42: the dollar rule is a mechanical headwind within the horizon."
+        ],
+        "risks": [
+          "Copper decoupled from the dollar for a second week (+2.48 pct to $6.779) on Grasberg, Kamoa-Kakula and Escondida disruptions (wiki/materials.md; macro/facts.json).",
+          "Coatings (PPG, ECL, IFF) rallied on input-cost relief from oil (wiki/materials.md).",
+          "Falsifier (bullish): an XLB close over $50.64 targets $51.7 and DXY under 99 re-opens commodity longs; (bearish) under $49.57 targets $47.00 (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 24.4,
+        "rating": "defensive",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 36,
+          "breadth": 0.0,
+          "relative_momentum": 10.0,
+          "volume_confirmation": 0.0,
+          "macro_catalyst": 45
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "DXY closed 101.10, 101.29 and 101.04 -- three sessions above 101 and a weekly close over the line -- so the restriction on new commodity longs is back ON (wiki/materials.md, issue #115; macro/facts.json).",
+          "XLB's reflex rally from RSI 25.5 died at the 200-day ($50.64) and closed back below at $49.80 (wiki/materials.md; wiki/synthesis.md Section 2).",
+          "Month unchanged at MC 45; RF 36."
+        ],
+        "risks": [
+          "Copper decoupled from the dollar for a second week (+2.48 pct to $6.779) on Grasberg, Kamoa-Kakula and Escondida disruptions (wiki/materials.md; macro/facts.json).",
+          "Coatings (PPG, ECL, IFF) rallied on input-cost relief from oil (wiki/materials.md).",
+          "Falsifier (bullish): an XLB close over $50.64 targets $51.7 and DXY under 99 re-opens commodity longs; (bearish) under $49.57 targets $47.00 (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Real Estate": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 25.5,
+        "rating": "defensive",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 22,
+          "breadth": 11.1,
+          "relative_momentum": 50.0,
+          "volume_confirmation": 7.5,
+          "macro_catalyst": 45
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "The trapdoor rule fired: a third weekly close below the 200-day and a close of $41.56 under the $42.50 line; $40.00 is now the magnet (wiki/real-estate.md; wiki/synthesis.md Section 2).",
+          "The 30Y rose to 5.40-5.50 pct, the 10Y closed 5.184 pct and mortgage rates crossed 7.03 pct; towers broke (CCI -7.1 pct to a new closing low, SBA -7.0 pct) (wiki/real-estate.md; wiki/synthesis.md Contradiction 10).",
+          "Week RF cut to 22 after the trapdoor; MC 45 on the PCE binary."
+        ],
+        "risks": [
+          "O printed capitulation volume at RSI 17.4 and XLRE sits at RSI 29.3; a core PCE at or below +0.2 pct is the relief trigger (wiki/synthesis.md Section 4).",
+          "XLRE's correlation to SPY jumped to 0.621, so it now trades as index rate beta (wiki/synthesis.md Section 2).",
+          "Falsifier: a reclaim of $43.19 (200-day); under $41.33 targets $40.00 within days (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 21.1,
+        "rating": "defensive",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 22,
+          "breadth": 0.0,
+          "relative_momentum": 30.0,
+          "volume_confirmation": 0.0,
+          "macro_catalyst": 45
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "The trapdoor rule fired: a third weekly close below the 200-day and a close of $41.56 under the $42.50 line; $40.00 is now the magnet (wiki/real-estate.md; wiki/synthesis.md Section 2).",
+          "The 30Y rose to 5.40-5.50 pct, the 10Y closed 5.184 pct and mortgage rates crossed 7.03 pct; towers broke (CCI -7.1 pct to a new closing low, SBA -7.0 pct) (wiki/real-estate.md; wiki/synthesis.md Contradiction 10).",
+          "Month RF 22, MC 45."
+        ],
+        "risks": [
+          "O printed capitulation volume at RSI 17.4 and XLRE sits at RSI 29.3; a core PCE at or below +0.2 pct is the relief trigger (wiki/synthesis.md Section 4).",
+          "XLRE's correlation to SPY jumped to 0.621, so it now trades as index rate beta (wiki/synthesis.md Section 2).",
+          "Falsifier: a reclaim of $43.19 (200-day); under $41.33 targets $40.00 within days (wiki/synthesis.md Section 5)."
+        ]
+      }
+    },
+    "Technology": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 78.3,
+        "rating": "favorable",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 65,
+          "breadth": 90.0,
+          "relative_momentum": 100.0,
+          "volume_confirmation": 89.1,
+          "macro_catalyst": 42
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "XLK closed the week at its high ($196.27, +3.5 pct) through the first weekly 10Y close above 5.00 pct since 2007 (5.184 pct), with AMD crossing a $1T market cap and the server-CPU shortage trade (INTC +46 pct in September) leading (wiki/tech.md; macro/facts.json).",
+          "SMH passed its breakout retest: cleared $580.81 Monday, closed above $600 Tuesday, and Thursday's bond-selloff low of $588.92 held above the line; close $606.56 (wiki/semiconductors.md; wiki/synthesis.md Section 2).",
+          "The one organizing rule held again -- scarcity pays, duration is sold -- with CPUs the scarce good this week (wiki/synthesis.md Sections 3-4).",
+          "Week MC trimmed to 42 because the PCE/MU pair is a two-sided binary inside the horizon."
+        ],
+        "risks": [
+          "Wednesday Sep 30 stacks core PCE at 08:30 and Micron after the close; the semis desk's breaking combination is a hot PCE plus a soft MU guide taking SMH through $580 (wiki/synthesis.md Section 4).",
+          "Only 26.5 pct of S&P members are above their 50-day and RSP trailed SPY by 1.82 points on the week, so leadership is two sectors deep; SMH ~41x and XLK ~34.7x now compete with a 5.184 pct risk-free rate (wiki/canary-watch.md; wiki/synthesis.md Section 1).",
+          "Falsifier: an XLK close under $190-$191.75 makes the breakout a bull trap; XLK -5 pct vs SPY is the leadership-break signal (wiki/synthesis.md Sections 2 and 5)."
+        ]
+      },
+      "month": {
+        "score": 70.6,
+        "rating": "favorable",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 60,
+          "breadth": 80.0,
+          "relative_momentum": 100.0,
+          "volume_confirmation": 83.1,
+          "macro_catalyst": 55
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "XLK closed the week at its high ($196.27, +3.5 pct) through the first weekly 10Y close above 5.00 pct since 2007 (5.184 pct), with AMD crossing a $1T market cap and the server-CPU shortage trade (INTC +46 pct in September) leading (wiki/tech.md; macro/facts.json).",
+          "SMH passed its breakout retest: cleared $580.81 Monday, closed above $600 Tuesday, and Thursday's bond-selloff low of $588.92 held above the line; close $606.56 (wiki/semiconductors.md; wiki/synthesis.md Section 2).",
+          "The one organizing rule held again -- scarcity pays, duration is sold -- with CPUs the scarce good this week (wiki/synthesis.md Sections 3-4).",
+          "Month MC trimmed from 62 to 55 on the higher cost of holding leadership against a 5.18 pct 10Y."
+        ],
+        "risks": [
+          "Wednesday Sep 30 stacks core PCE at 08:30 and Micron after the close; the semis desk's breaking combination is a hot PCE plus a soft MU guide taking SMH through $580 (wiki/synthesis.md Section 4).",
+          "Only 26.5 pct of S&P members are above their 50-day and RSP trailed SPY by 1.82 points on the week, so leadership is two sectors deep; SMH ~41x and XLK ~34.7x now compete with a 5.184 pct risk-free rate (wiki/canary-watch.md; wiki/synthesis.md Section 1).",
+          "Falsifier: an XLK close under $190-$191.75 makes the breakout a bull trap; XLK -5 pct vs SPY is the leadership-break signal (wiki/synthesis.md Sections 2 and 5)."
+        ]
+      }
+    },
+    "Utilities": {
+      "day": {
+        "score": null,
+        "rating": "unavailable",
+        "confidence": "none",
+        "components": {
+          "breadth": null,
+          "relative_momentum": null,
+          "volume_confirmation": null,
+          "regime_fit": null,
+          "macro_catalyst": null
+        },
+        "why": [],
+        "risks": [],
+        "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only."
+      },
+      "week": {
+        "score": 20.4,
+        "rating": "defensive",
+        "confidence": "medium",
+        "components": {
+          "regime_fit": 22,
+          "breadth": 20.0,
+          "relative_momentum": 10.0,
+          "volume_confirmation": 18.0,
+          "macro_catalyst": 40
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "XLU closed $39.51 (-3.87 pct), its first trip below $40 since 2024 and a sixth straight down week, with the SEC yield 235bp below the 10Y (wiki/utilities.md; wiki/synthesis.md Sections 1-2; macro/facts.json).",
+          "The nuclear pair broke away from the rate tape: CEG +3.4 pct and VST -1.4 pct against a regulated complex down 3-5 pct, as natural gas rose ~10 pct to $3.25 and Oracle declared force majeure over power (wiki/utilities.md).",
+          "Week MC raised to 40 on the PCE relief binary."
+        ],
+        "risks": [
+          "The regulated complex remains an income trade with a -235bp carry (wiki/synthesis.md Section 1).",
+          "A cool PCE (core at or below +0.2 pct) or a 10Y weekly close under 4.90 pct is the relief trigger, with DTE at RSI 17.8 and XLU at 25.2 (wiki/synthesis.md Section 4).",
+          "Falsifier: a weekly close back over $40.66; below $39.13 targets the 2024 lows near $38 (wiki/synthesis.md Section 5)."
+        ]
+      },
+      "month": {
+        "score": 27.9,
+        "rating": "defensive",
+        "confidence": "low",
+        "components": {
+          "regime_fit": 28,
+          "breadth": 10.0,
+          "relative_momentum": 40.0,
+          "volume_confirmation": 10.2,
+          "macro_catalyst": 45
+        },
+        "risk_penalty": 0.0,
+        "risk_penalty_capped": false,
+        "why": [
+          "XLU closed $39.51 (-3.87 pct), its first trip below $40 since 2024 and a sixth straight down week, with the SEC yield 235bp below the 10Y (wiki/utilities.md; wiki/synthesis.md Sections 1-2; macro/facts.json).",
+          "The nuclear pair broke away from the rate tape: CEG +3.4 pct and VST -1.4 pct against a regulated complex down 3-5 pct, as natural gas rose ~10 pct to $3.25 and Oracle declared force majeure over power (wiki/utilities.md).",
+          "Month RF raised 25 -> 28 on the scarcity case for existing power."
+        ],
+        "risks": [
+          "The regulated complex remains an income trade with a -235bp carry (wiki/synthesis.md Section 1).",
+          "A cool PCE (core at or below +0.2 pct) or a 10Y weekly close under 4.90 pct is the relief trigger, with DTE at RSI 17.8 and XLU at 25.2 (wiki/synthesis.md Section 4).",
+          "Falsifier: a weekly close back over $40.66; below $39.13 targets the 2024 lows near $38 (wiki/synthesis.md Section 5)."
+        ]
+      }
+    }
+  }
+}

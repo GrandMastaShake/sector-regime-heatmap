@@ -41,8 +41,8 @@
       "breadth": 70.0,
       "relative_momentum": 90.0,
       "volume_confirmation": 32.4,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 52,
+      "macro_catalyst": 58
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "August core capital goods orders printed +1.6 pct against +0.5 pct and the S&P flash manufacturing PMI 57.0 (composite 58.4), the capex cycle re-accelerating (wiki/industrials.md; wiki/synthesis.md Section 3).",
+      "XLI closed a second week below the 200-day ($170.43 vs $171.95) on below-average volume in all five sessions -- no distribution, the year's best bear-trap setup; GE +4.0 pct and ETN +3.6 pct led (wiki/industrials.md; wiki/synthesis.md Section 2).",
+      "Week MC 58: ISM Oct 1 is the named catalyst for a $171.95 reclaim."
+    ],
+    "risks": [
+      "UPS -5.2 pct and FDX -5.8 pct printed the consumer-slowdown thesis inside the same sector (wiki/industrials.md).",
+      "Strong growth data is read by the calendar, utilities and real-estate desks as the reason the 10Y broke out -- ISM on Oct 1 is where the bull and bear readings collide (wiki/synthesis.md Contradiction 1).",
+      "Falsifier: a close below $167.49 burns the bear-trap checklist and targets the low $160s; ISM under 52 fails it (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 60.0,
       "relative_momentum": 90.0,
       "volume_confirmation": 83.3,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 52,
+      "macro_catalyst": 60
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "August core capital goods orders printed +1.6 pct against +0.5 pct and the S&P flash manufacturing PMI 57.0 (composite 58.4), the capex cycle re-accelerating (wiki/industrials.md; wiki/synthesis.md Section 3).",
+      "XLI closed a second week below the 200-day ($170.43 vs $171.95) on below-average volume in all five sessions -- no distribution, the year's best bear-trap setup; GE +4.0 pct and ETN +3.6 pct led (wiki/industrials.md; wiki/synthesis.md Section 2).",
+      "Month RF raised to 52 on the capex re-acceleration."
+    ],
+    "risks": [
+      "UPS -5.2 pct and FDX -5.8 pct printed the consumer-slowdown thesis inside the same sector (wiki/industrials.md).",
+      "Strong growth data is read by the calendar, utilities and real-estate desks as the reason the 10Y broke out -- ISM on Oct 1 is where the bull and bear readings collide (wiki/synthesis.md Contradiction 1).",
+      "Falsifier: a close below $167.49 burns the bear-trap checklist and targets the low $160s; ISM under 52 fails it (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

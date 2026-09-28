@@ -41,8 +41,8 @@
       "breadth": 80.0,
       "relative_momentum": 80.0,
       "volume_confirmation": 80.5,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 62,
+      "macro_catalyst": 48
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLV gained +1.37 pct in the week the 10Y closed 5.184 pct and sits 3.4 pct under its all-time high after eight straight sessions above the 50-day ($167.53) (wiki/healthcare.md; macro/facts.json; wiki/synthesis.md Section 2).",
+      "LLY added an FDA approval (Onswik, once-weekly basal insulin) at all-time highs, AMGN +7.6 pct on Lp(a) hopes, TMO at a new 52-week high (wiki/healthcare.md).",
+      "Week unchanged RF 62; MC 48 on the Oct 1 formulary date."
+    ],
+    "risks": [
+      "LLY is ~14.9 pct of the fund, so the sector call is heavily one name; the Zepbound CVS formulary on Oct 1 is a single-name event (wiki/synthesis.md Section 5).",
+      "Managed care kept de-rating (ELV -3.6 pct) and MDT -3.9 pct on no news; AMGN is above its target after the move, a symmetric binary (wiki/healthcare.md; wiki/synthesis.md Section 1).",
+      "Falsifier: a close under the 50-day $167.53, then $164-165 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 60.0,
       "relative_momentum": 80.0,
       "volume_confirmation": 75.6,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 58,
+      "macro_catalyst": 50
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLV gained +1.37 pct in the week the 10Y closed 5.184 pct and sits 3.4 pct under its all-time high after eight straight sessions above the 50-day ($167.53) (wiki/healthcare.md; macro/facts.json; wiki/synthesis.md Section 2).",
+      "LLY added an FDA approval (Onswik, once-weekly basal insulin) at all-time highs, AMGN +7.6 pct on Lp(a) hopes, TMO at a new 52-week high (wiki/healthcare.md).",
+      "Month RF raised to 58: the defensive bid survived a 19-year-high 10Y."
+    ],
+    "risks": [
+      "LLY is ~14.9 pct of the fund, so the sector call is heavily one name; the Zepbound CVS formulary on Oct 1 is a single-name event (wiki/synthesis.md Section 5).",
+      "Managed care kept de-rating (ELV -3.6 pct) and MDT -3.9 pct on no news; AMGN is above its target after the move, a symmetric binary (wiki/healthcare.md; wiki/synthesis.md Section 1).",
+      "Falsifier: a close under the 50-day $167.53, then $164-165 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

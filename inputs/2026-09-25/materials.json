@@ -41,8 +41,8 @@
       "breadth": 60.0,
       "relative_momentum": 60.0,
       "volume_confirmation": 68.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 35,
+      "macro_catalyst": 42
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "DXY closed 101.10, 101.29 and 101.04 -- three sessions above 101 and a weekly close over the line -- so the restriction on new commodity longs is back ON (wiki/materials.md, issue #115; macro/facts.json).",
+      "XLB's reflex rally from RSI 25.5 died at the 200-day ($50.64) and closed back below at $49.80 (wiki/materials.md; wiki/synthesis.md Section 2).",
+      "Week MC 42: the dollar rule is a mechanical headwind within the horizon."
+    ],
+    "risks": [
+      "Copper decoupled from the dollar for a second week (+2.48 pct to $6.779) on Grasberg, Kamoa-Kakula and Escondida disruptions (wiki/materials.md; macro/facts.json).",
+      "Coatings (PPG, ECL, IFF) rallied on input-cost relief from oil (wiki/materials.md).",
+      "Falsifier (bullish): an XLB close over $50.64 targets $51.7 and DXY under 99 re-opens commodity longs; (bearish) under $49.57 targets $47.00 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 0.0,
       "relative_momentum": 10.0,
       "volume_confirmation": 0.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 36,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "DXY closed 101.10, 101.29 and 101.04 -- three sessions above 101 and a weekly close over the line -- so the restriction on new commodity longs is back ON (wiki/materials.md, issue #115; macro/facts.json).",
+      "XLB's reflex rally from RSI 25.5 died at the 200-day ($50.64) and closed back below at $49.80 (wiki/materials.md; wiki/synthesis.md Section 2).",
+      "Month unchanged at MC 45; RF 36."
+    ],
+    "risks": [
+      "Copper decoupled from the dollar for a second week (+2.48 pct to $6.779) on Grasberg, Kamoa-Kakula and Escondida disruptions (wiki/materials.md; macro/facts.json).",
+      "Coatings (PPG, ECL, IFF) rallied on input-cost relief from oil (wiki/materials.md).",
+      "Falsifier (bullish): an XLB close over $50.64 targets $51.7 and DXY under 99 re-opens commodity longs; (bearish) under $49.57 targets $47.00 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

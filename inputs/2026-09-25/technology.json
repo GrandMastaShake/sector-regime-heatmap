@@ -41,8 +41,8 @@
       "breadth": 90.0,
       "relative_momentum": 100.0,
       "volume_confirmation": 89.1,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 65,
+      "macro_catalyst": 42
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,25 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLK closed the week at its high ($196.27, +3.5 pct) through the first weekly 10Y close above 5.00 pct since 2007 (5.184 pct), with AMD crossing a $1T market cap and the server-CPU shortage trade (INTC +46 pct in September) leading (wiki/tech.md; macro/facts.json).",
+      "SMH passed its breakout retest: cleared $580.81 Monday, closed above $600 Tuesday, and Thursday's bond-selloff low of $588.92 held above the line; close $606.56 (wiki/semiconductors.md; wiki/synthesis.md Section 2).",
+      "The one organizing rule held again -- scarcity pays, duration is sold -- with CPUs the scarce good this week (wiki/synthesis.md Sections 3-4).",
+      "Week MC trimmed to 42 because the PCE/MU pair is a two-sided binary inside the horizon."
+    ],
+    "risks": [
+      "Wednesday Sep 30 stacks core PCE at 08:30 and Micron after the close; the semis desk's breaking combination is a hot PCE plus a soft MU guide taking SMH through $580 (wiki/synthesis.md Section 4).",
+      "Only 26.5 pct of S&P members are above their 50-day and RSP trailed SPY by 1.82 points on the week, so leadership is two sectors deep; SMH ~41x and XLK ~34.7x now compete with a 5.184 pct risk-free rate (wiki/canary-watch.md; wiki/synthesis.md Section 1).",
+      "Falsifier: an XLK close under $190-$191.75 makes the breakout a bull trap; XLK -5 pct vs SPY is the leadership-break signal (wiki/synthesis.md Sections 2 and 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 80.0,
       "relative_momentum": 100.0,
       "volume_confirmation": 83.1,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 60,
+      "macro_catalyst": 55
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +94,17 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLK closed the week at its high ($196.27, +3.5 pct) through the first weekly 10Y close above 5.00 pct since 2007 (5.184 pct), with AMD crossing a $1T market cap and the server-CPU shortage trade (INTC +46 pct in September) leading (wiki/tech.md; macro/facts.json).",
+      "SMH passed its breakout retest: cleared $580.81 Monday, closed above $600 Tuesday, and Thursday's bond-selloff low of $588.92 held above the line; close $606.56 (wiki/semiconductors.md; wiki/synthesis.md Section 2).",
+      "The one organizing rule held again -- scarcity pays, duration is sold -- with CPUs the scarce good this week (wiki/synthesis.md Sections 3-4).",
+      "Month MC trimmed from 62 to 55 on the higher cost of holding leadership against a 5.18 pct 10Y."
+    ],
+    "risks": [
+      "Wednesday Sep 30 stacks core PCE at 08:30 and Micron after the close; the semis desk's breaking combination is a hot PCE plus a soft MU guide taking SMH through $580 (wiki/synthesis.md Section 4).",
+      "Only 26.5 pct of S&P members are above their 50-day and RSP trailed SPY by 1.82 points on the week, so leadership is two sectors deep; SMH ~41x and XLK ~34.7x now compete with a 5.184 pct risk-free rate (wiki/canary-watch.md; wiki/synthesis.md Section 1).",
+      "Falsifier: an XLK close under $190-$191.75 makes the breakout a bull trap; XLK -5 pct vs SPY is the leadership-break signal (wiki/synthesis.md Sections 2 and 5)."
+    ]
   },
   "evidence": {
     "available": true,

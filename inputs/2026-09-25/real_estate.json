@@ -41,8 +41,8 @@
       "breadth": 11.1,
       "relative_momentum": 50.0,
       "volume_confirmation": 7.5,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 22,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The trapdoor rule fired: a third weekly close below the 200-day and a close of $41.56 under the $42.50 line; $40.00 is now the magnet (wiki/real-estate.md; wiki/synthesis.md Section 2).",
+      "The 30Y rose to 5.40-5.50 pct, the 10Y closed 5.184 pct and mortgage rates crossed 7.03 pct; towers broke (CCI -7.1 pct to a new closing low, SBA -7.0 pct) (wiki/real-estate.md; wiki/synthesis.md Contradiction 10).",
+      "Week RF cut to 22 after the trapdoor; MC 45 on the PCE binary."
+    ],
+    "risks": [
+      "O printed capitulation volume at RSI 17.4 and XLRE sits at RSI 29.3; a core PCE at or below +0.2 pct is the relief trigger (wiki/synthesis.md Section 4).",
+      "XLRE's correlation to SPY jumped to 0.621, so it now trades as index rate beta (wiki/synthesis.md Section 2).",
+      "Falsifier: a reclaim of $43.19 (200-day); under $41.33 targets $40.00 within days (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 0.0,
       "relative_momentum": 30.0,
       "volume_confirmation": 0.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 22,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The trapdoor rule fired: a third weekly close below the 200-day and a close of $41.56 under the $42.50 line; $40.00 is now the magnet (wiki/real-estate.md; wiki/synthesis.md Section 2).",
+      "The 30Y rose to 5.40-5.50 pct, the 10Y closed 5.184 pct and mortgage rates crossed 7.03 pct; towers broke (CCI -7.1 pct to a new closing low, SBA -7.0 pct) (wiki/real-estate.md; wiki/synthesis.md Contradiction 10).",
+      "Month RF 22, MC 45."
+    ],
+    "risks": [
+      "O printed capitulation volume at RSI 17.4 and XLRE sits at RSI 29.3; a core PCE at or below +0.2 pct is the relief trigger (wiki/synthesis.md Section 4).",
+      "XLRE's correlation to SPY jumped to 0.621, so it now trades as index rate beta (wiki/synthesis.md Section 2).",
+      "Falsifier: a reclaim of $43.19 (200-day); under $41.33 targets $40.00 within days (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

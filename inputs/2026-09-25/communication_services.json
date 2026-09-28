@@ -41,8 +41,8 @@
       "breadth": 50.0,
       "relative_momentum": 70.0,
       "volume_confirmation": 51.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 45,
+      "macro_catalyst": 50
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "META +13.0 pct carried XLC +1.94 pct and a 50-day reclaim (~$111.00-$111.32); the fund stalled one dollar under its 200-day (~$113.96) (wiki/communication-services.md; wiki/synthesis.md Section 2).",
+      "The October 2 Google final judgment is inside the week horizon and the desk treats GOOGL ($343.92) as the add-on-strength name (wiki/communication-services.md; wiki/synthesis.md Section 5).",
+      "Week RF/MC raised to 45/50 on the 50-day reclaim and the Oct 2 judgment."
+    ],
+    "risks": [
+      "The distribution half is collapsing: CHTR -11.9 pct for a third straight week, CMCSA and TMUS at 52-week-low closes, VZ's yield cushion down to ~70bp against the 10Y (wiki/communication-services.md; wiki/synthesis.md Section 1).",
+      "META at RSI 71.4 carried the fund alone; broadband is untouchable until the late-October prints (wiki/synthesis.md Section 5).",
+      "Falsifier: a close under $111.00 (50-day) targets $110, then $105.38 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 70.0,
       "volume_confirmation": 38.1,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 50,
+      "macro_catalyst": 55
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "META +13.0 pct carried XLC +1.94 pct and a 50-day reclaim (~$111.00-$111.32); the fund stalled one dollar under its 200-day (~$113.96) (wiki/communication-services.md; wiki/synthesis.md Section 2).",
+      "The October 2 Google final judgment is inside the week horizon and the desk treats GOOGL ($343.92) as the add-on-strength name (wiki/communication-services.md; wiki/synthesis.md Section 5).",
+      "Month MC 55 (from 58): broadband earnings risk sits late in the horizon."
+    ],
+    "risks": [
+      "The distribution half is collapsing: CHTR -11.9 pct for a third straight week, CMCSA and TMUS at 52-week-low closes, VZ's yield cushion down to ~70bp against the 10Y (wiki/communication-services.md; wiki/synthesis.md Section 1).",
+      "META at RSI 71.4 carried the fund alone; broadband is untouchable until the late-October prints (wiki/synthesis.md Section 5).",
+      "Falsifier: a close under $111.00 (50-day) targets $110, then $105.38 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

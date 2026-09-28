@@ -41,8 +41,8 @@
       "breadth": 30.0,
       "relative_momentum": 30.0,
       "volume_confirmation": 12.7,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 40,
+      "macro_catalyst": 48
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLF based at $54.50 after Tuesday's 70M-share distribution day, closing $54.84 with RSI 30.6 and BAC RSI 25.4 -- washed out, not broken (wiki/financials.md; wiki/synthesis.md Section 2).",
+      "10Y-3M is +111bp on the canonical series and XLF closed 84 cents above $54 -- half of the desk's own 'every credit event of the last 20 years' condition is already true (wiki/synthesis.md Section 4).",
+      "Week RF/MC trimmed to 40/48; JEF reports Monday after the close."
+    ],
+    "risks": [
+      "HY OAS turned up to 280bp (+10) with HY-IG at 201bp in the week the 10Y broke out (wiki/canary-watch.md CREDIT SPREADS); the desk's 'benign' reading rests on a stale ~273 figure (wiki/synthesis.md Contradiction 8).",
+      "Insurance finally cracked (PGR -3.7 pct, TRV -3.1 pct), removing the sector's shelter (wiki/financials.md).",
+      "Falsifier (bullish): a reclaim of $55.66-$55.90 is first proof and the 50-day $57.08 is repair; (bearish) a close under $54 with 10Y-3M above +100bp (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 10.0,
       "relative_momentum": 20.0,
       "volume_confirmation": 8.7,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 42,
+      "macro_catalyst": 50
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLF based at $54.50 after Tuesday's 70M-share distribution day, closing $54.84 with RSI 30.6 and BAC RSI 25.4 -- washed out, not broken (wiki/financials.md; wiki/synthesis.md Section 2).",
+      "10Y-3M is +111bp on the canonical series and XLF closed 84 cents above $54 -- half of the desk's own 'every credit event of the last 20 years' condition is already true (wiki/synthesis.md Section 4).",
+      "Month RF cut 50 -> 42 on the credit turn."
+    ],
+    "risks": [
+      "HY OAS turned up to 280bp (+10) with HY-IG at 201bp in the week the 10Y broke out (wiki/canary-watch.md CREDIT SPREADS); the desk's 'benign' reading rests on a stale ~273 figure (wiki/synthesis.md Contradiction 8).",
+      "Insurance finally cracked (PGR -3.7 pct, TRV -3.1 pct), removing the sector's shelter (wiki/financials.md).",
+      "Falsifier (bullish): a reclaim of $55.66-$55.90 is first proof and the 50-day $57.08 is repair; (bearish) a close under $54 with 10Y-3M above +100bp (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

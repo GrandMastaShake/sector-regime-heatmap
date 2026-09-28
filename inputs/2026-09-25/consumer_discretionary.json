@@ -41,8 +41,8 @@
       "breadth": 30.0,
       "relative_momentum": 20.0,
       "volume_confirmation": 56.3,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 30,
+      "macro_catalyst": 48
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Final Michigan sentiment 48.1, a four-month low, with 1-year inflation expectations up to 4.6 pct -- the highest since June (wiki/consumer-discretionary.md; wiki/synthesis.md Section 3).",
+      "Six straight red weeks; XLY $110.56 with rate-sensitive names (MCD, LOW) at fresh lows while asset-light and trade-down names rallied (wiki/consumer-discretionary.md; wiki/synthesis.md Section 5).",
+      "Week MC trimmed to 48: NKE is a binary inside the horizon."
+    ],
+    "risks": [
+      "XLY defended its $109.41 gap for the second time in three weeks, by 21 cents on the 5.18 pct day (wiki/synthesis.md Section 2).",
+      "NKE reports Thu Oct 1 after the close (average move +/-8.1 pct) (wiki/synthesis.md Section 5).",
+      "Falsifier: a close over $113.29 on volume targets $114.90-$116.70; a weekly close under $109.41 targets $105.45-$105.66 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 0.0,
       "volume_confirmation": 30.5,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 30,
+      "macro_catalyst": 50
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Final Michigan sentiment 48.1, a four-month low, with 1-year inflation expectations up to 4.6 pct -- the highest since June (wiki/consumer-discretionary.md; wiki/synthesis.md Section 3).",
+      "Six straight red weeks; XLY $110.56 with rate-sensitive names (MCD, LOW) at fresh lows while asset-light and trade-down names rallied (wiki/consumer-discretionary.md; wiki/synthesis.md Section 5).",
+      "Month RF 30, MC 50."
+    ],
+    "risks": [
+      "XLY defended its $109.41 gap for the second time in three weeks, by 21 cents on the 5.18 pct day (wiki/synthesis.md Section 2).",
+      "NKE reports Thu Oct 1 after the close (average move +/-8.1 pct) (wiki/synthesis.md Section 5).",
+      "Falsifier: a close over $113.29 on volume targets $114.90-$116.70; a weekly close under $109.41 targets $105.45-$105.66 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

@@ -1,0 +1,28 @@
+{
+  "as_of_date": "2026-09-25",
+  "run_type": "manual",
+  "regime": {
+    "label": "Live hiking cycle with term-premium expansion -- physical scarcity over duration; archetype-1 label retained in name only pending taxonomy review",
+    "confidence": "low",
+    "evidence": [
+      "Forward-test pre-registration intact: episode start SPY 634.09 (2026-03-27); close of 2026-09-25 is 771.35, +21.65 pct. Running peak 777.88 (2026-08-13), drawdown -0.84 pct. The -10 pct mechanical trigger (700.09) is 9.24 pct below spot (SPY from macro/facts.json; arithmetic by the operator).",
+      "The 10Y posted its first weekly close above 5.00 pct since July 2007 (5.184 pct, +18.6bp) and the move was term premium rather than inflation fear: the $70B 5-year tailed 3.1bp, the 7-year tailed again, and 10-year breakevens were flat at 2.34 pct while oil fell 7.84 pct (wiki/synthesis.md Section 3; macro/facts.json).",
+      "The data said no landing: S&P flash composite PMI 58.4 (consensus 55.2), core capital goods orders +1.6 pct, claims 197K, new home sales 684K; CME odds of an Oct 28 hike rose to ~73-76 pct (wiki/synthesis.md Section 3; wiki/economic-calendar.md).",
+      "The single dispersion rule held for another week -- scarcity beats duration -- with server CPUs, existing power, grid equipment, copper and natural gas bought and bond proxies, towers and branded food sold (wiki/synthesis.md Sections 3-4).",
+      "CLEAN EX-ANTE RUN: judgment proposed Sunday 2026-09-27 on the Friday 2026-09-25 close and approved by the owner Monday 2026-09-28 before the 09:30 ET open. Zero sessions of the week horizon had traded; core PCE (Sep 30), MU (Sep 30 AMC), ISM and NKE (Oct 1), payrolls and the GOOGL final judgment (Oct 2) were all still ahead. Gradeable as a forecast."
+    ],
+    "disconfirming_evidence": [
+      "THE PRE-REGISTERED RE-EXAMINATION TRIGGER HAS FIRED (2026-09-16: priced hike delivered, 10Y close above 5.00 pct). The archetype-1 label is retained in name only pending a taxonomy review against the 44-episode set, a research call rather than a weekly judgment. Carried forward from 2026-09-18, unchanged.",
+      "THE RATES OBJECTION IS SETTLED AGAINST THE LABEL AND STRENGTHENED. Archetype 1 requires stable-to-easing rates; the Fed is hiking (3.75-4.00 pct, 16 of 18 dots see another 2026 hike), the 10Y is 5.184 pct and October hike odds rose to ~73-76 pct (macro/facts.json policy; wiki/synthesis.md Section 3). Carried forward and strengthened.",
+      "THE COST-PUSH SHOCK -- MODIFIED, NOT RESOLVED. WTI fell -7.84 pct to $92.44 on a U.S.-Iran ceasefire window, but the physical market dissents: VLCCs at $1.10M a day, the Houthis hold Mokha and Perim Island, Aramco's October European cancellation stands (wiki/energy.md; macro/facts.json). And the oil relief never reached the discount rate -- the 10Y rose 19bp anyway (wiki/synthesis.md Section 3).",
+      "THE CONSUMER IS STILL DETERIORATING. Final UMich 48.1, a four-month low, with 1-year inflation expectations at 4.6 pct; mortgage rates crossed 7.03 pct; new home sales were bought with price cuts (median -5.8 pct YoY) (wiki/consumer-discretionary.md; wiki/real-estate.md; wiki/synthesis.md Section 3). Carried forward and strengthened.",
+      "THE RATE-SENSITIVE CONTRACTION HOLDS. Six of twelve ETFs are below both their 50-day and 200-day (XLI, XLB, XLU, XLP, XLRE, XLY); only 26.5 pct of S&P members are above their 50-day on a live count, 46.4 pct above their 200-day, 31 new lows vs 3 new highs Friday (wiki/synthesis.md Section 2; wiki/canary-watch.md MARKET BREADTH). Carried forward.",
+      "CONCENTRATION RISK IS THE LEADERSHIP, AND IT WIDENED. SPY +1.27 pct while RSP -0.56 pct: a -1.82 point gap on the week and -5.64 on the month, both wider than the prior cycle's -0.86 / -3.45 (wiki/synthesis.md Section 2). Carried forward and strengthened.",
+      "CREDIT TURNED (NEW; replaces the prior cycle's 'credit contained' supporting item). HY OAS rose 10bp to 280 and HY-IG crossed 200bp (201) in the week the 10Y broke out -- inside the cycle's range, but the direction changed (wiki/canary-watch.md CREDIT SPREADS; wiki/synthesis.md Contradiction 8).",
+      "THE LONG END IS NO LONGER MERELY POLICY-MANAGED. The prior cycle's item said the damage came from the dots, not term premium; this week the long end led on supply (5-year tail 3.1bp, 30Y to ~5.50 pct) despite Treasury's buybacks (wiki/synthesis.md Section 3; wiki/economic-calendar.md). Carried forward from 2026-08-21, now modified.",
+      "THE WEEK'S EVENT RISK IS CONCENTRATED: core PCE at 08:30 and Micron after the close on Wednesday Sep 30, on a board where the index is two sectors deep and SMH trades ~41x with a 2x beta (wiki/synthesis.md Section 4).",
+      "UPSTREAM FACTUAL DISPUTES OPEN: the WTI weekly change (-7.84 pct canonical vs -2.7 / -3.2 pct in eleven wikis descending from a $95.47 bar no contract reproduces), and data/market_state.json's rates block (2Y 4.47 pct, 2s10s 71bp vs facts.json 4.87 pct and +31bp) (wiki/synthesis.md header and Contradictions 3-4). Nothing in this payload reads market_state.json.",
+      "RESOLVED AND DROPPED FROM THE CARRY-FORWARD SET: (a) the Real Estate data-quality warn -- the basket now computes 9 of 9 constituents, status pass, in both horizons; (b) the market_state.json policy-block defect -- repaired upstream to 3.75-4.00 pct, 'Hike' (wiki/synthesis.md header); the rates-block defect above is a different defect."
+    ]
+  }
+}

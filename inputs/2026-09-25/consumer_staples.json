@@ -41,8 +41,8 @@
       "breadth": 30.0,
       "relative_momentum": 40.0,
       "volume_confirmation": 45.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 35,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-18",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "GIS beat and sold off -7.1 pct on higher costs, and CPB and STZ followed to fresh lows; XLP closed $82.06, a fifth red week and a second week below the 200-day (wiki/consumer-staples.md; macro/facts.json).",
+      "The fund yield of ~2.59 pct sits 259bp below the 5.184 pct 10Y (wiki/synthesis.md Section 1), and XLP's correlation to SPY flipped negative while it fell, so it is no longer paying as a diversifier (wiki/synthesis.md Section 2).",
+      "Week MC cut 62 -> 45: the double gate resolved against the sector."
+    ],
+    "risks": [
+      "The yield row held (WMT +1.1 pct, KDP +3.3 pct, PM +1.0 pct) and COST beat and was paid +3.0 pct; the $81.70-$81.73 double bottom is intact (wiki/consumer-staples.md; wiki/synthesis.md Section 2).",
+      "A core PCE at or below +0.2 pct unwinds the October hike pricing and helps bond proxies (wiki/synthesis.md Section 4).",
+      "Falsifier: a daily close under $81.00 targets $74.06; a 200-day reclaim (~$83.6) is the repair. CAG/MKC report this week, PEP Oct 8 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 50.0,
       "volume_confirmation": 41.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 36,
+      "macro_catalyst": 48
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-08-28",
       "window_to": "2026-09-25"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "GIS beat and sold off -7.1 pct on higher costs, and CPB and STZ followed to fresh lows; XLP closed $82.06, a fifth red week and a second week below the 200-day (wiki/consumer-staples.md; macro/facts.json).",
+      "The fund yield of ~2.59 pct sits 259bp below the 5.184 pct 10Y (wiki/synthesis.md Section 1), and XLP's correlation to SPY flipped negative while it fell, so it is no longer paying as a diversifier (wiki/synthesis.md Section 2).",
+      "Month MC 48 ahead of PEP Oct 8."
+    ],
+    "risks": [
+      "The yield row held (WMT +1.1 pct, KDP +3.3 pct, PM +1.0 pct) and COST beat and was paid +3.0 pct; the $81.70-$81.73 double bottom is intact (wiki/consumer-staples.md; wiki/synthesis.md Section 2).",
+      "A core PCE at or below +0.2 pct unwinds the October hike pricing and helps bond proxies (wiki/synthesis.md Section 4).",
+      "Falsifier: a daily close under $81.00 targets $74.06; a 200-day reclaim (~$83.6) is the repair. CAG/MKC report this week, PEP Oct 8 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,
