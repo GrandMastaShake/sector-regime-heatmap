@@ -41,8 +41,8 @@
       "breadth": 50.0,
       "relative_momentum": 80.0,
       "volume_confirmation": 71.4,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 32,
+      "macro_catalyst": 38
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLU closed $39.83 (+0.81 pct), the first up week in seven, after a new low at $39.03 reversed the same day on volume that more than doubled (52.6M a day vs 24.7M) (wiki/utilities.md; macro/facts.json).",
+      "The 10Y rose 9bp to a 24-year intraday high and XLU rose anyway -- the one loose end in the term-premium chain; stance raised defensive -> neutral (wiki/synthesis.md Sections 2-3 and 6).",
+      "Week RF raised 22 -> 32 and MC cut 40 -> 38: the tape earned the upgrade; three auctions this week test it."
+    ],
+    "risks": [
+      "The carry gap is -245bp, wider than ever, and XLU is seven weeks under its 200-day; Canary's read is that one week is not a turn (wiki/utilities.md; wiki/synthesis.md Sections 1-2 and 4).",
+      "FERC accepted and then suspended PJM's reliability backstop for five months; the scarcity pair lost its catalyst (CEG -2.2 pct) (wiki/utilities.md).",
+      "Falsifier: a close below $39.03 voids it. Bullish falsifier: a close above $40.21 -> $40.66-$40.81 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 0.0,
       "relative_momentum": 10.0,
       "volume_confirmation": 0.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 30,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The regulated wires are finally prices: EXC 13.4x forward, ES 13.1x, SRE 14.1x, DTE 14.9x, with the Street 17-28 pct above the tape (wiki/synthesis.md Section 1).",
+      "A sector that stops falling when its own bear case gets worse is telling the desk something; the month arithmetic is still the worst but one on the board (wiki/utilities.md).",
+      "Month RF raised 28 -> 30 and MC held at 45: a small credit for the reversal, no more until the 10Y closes a week lower."
+    ],
+    "risks": [
+      "The long end, not the Fed, sets prices: a 10-year auction tail > 2bp or a close above 5.342 pct targets 5.50 pct (wiki/synthesis.md Sections 4-5).",
+      "EIX at 8.3x and 6.5 pct is a courtroom, not a valuation (wiki/synthesis.md Section 1).",
+      "Falsifier: a close below $39.03 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

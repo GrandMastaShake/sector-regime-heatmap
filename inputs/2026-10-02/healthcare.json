@@ -41,8 +41,8 @@
       "breadth": 10.0,
       "relative_momentum": 0.0,
       "volume_confirmation": 3.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 42,
+      "macro_catalyst": 40
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLV fell 2.65 pct to $166.18 through its 50-day ($168.02) on two federal pricing actions in 48 hours: Section 232 tariffs on patented drugs (Sep 29) and CMS's GLOBE Part B reference-pricing rule (Sep 30) (wiki/healthcare.md; macro/facts.json).",
+      "All fourteen tracked top holdings fell (REGN -6.7 pct, JNJ -5.6 pct) in a growth-scare week: there was no defensive rotation (wiki/healthcare.md; wiki/synthesis.md Section 3).",
+      "Week RF cut 62 -> 42 and MC cut 48 -> 40: the prior cycle's sanctuary basis is falsified -- the variable was policy, not rates."
+    ],
+    "risks": [
+      "The sector is a dollar and a half above the September floor at RSI 42.6; a second test can hold (wiki/healthcare.md; wiki/synthesis.md Section 2).",
+      "XLV is still above its 200-day, and Cecil's list got cheap (REGN 12.0x, ABT 16.1x, UNH 16.4x) (wiki/synthesis.md Sections 1-2).",
+      "Falsifier: a close below $164.50 -> 200-day $155.50. Bullish falsifier: a reclaim of $168.02 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 40.0,
       "relative_momentum": 80.0,
       "volume_confirmation": 46.4,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 45,
+      "macro_catalyst": 50
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "JNJ (RSI 32.6) and UNH (widest gap to target on the board) report Tue Oct 13, inside the horizon; managed care was raised to neutral into UNH (wiki/synthesis.md Sections 3-4).",
+      "Big pharma was cut to neutral and Part B biologics to neutral-negative; the right dashboard is the Federal Register, not the 10-year (wiki/healthcare.md; wiki/synthesis.md Sections 3 and 6).",
+      "Month RF cut 58 -> 45 and MC held at 50: policy precedent replaced the defensive bid; the dated receipts keep the catalyst score level."
+    ],
+    "risks": [
+      "UNH's whisper ($4.60 vs $4.12) sets a bar an in-line print will miss; JNJ's consensus basis is unresolved ($2.48 vs $2.90) (wiki/synthesis.md Sections 4-5 and 7).",
+      "Dollar translation drag is named for LLY, MRK, ABBV and JNJ into Q3 prints (wiki/synthesis.md Section 6).",
+      "Falsifier: a close below $164.50 -> $155.50 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

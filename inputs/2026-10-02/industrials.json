@@ -41,8 +41,8 @@
       "breadth": 40.0,
       "relative_momentum": 70.0,
       "volume_confirmation": 78.7,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 52,
+      "macro_catalyst": 50
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "ISM manufacturing printed 54.5 with new orders 55.3, clearing the 52 gate; machinery and power were upgraded to overweight (CAT +2.9 pct, GEV +3.2 pct) (wiki/industrials.md; wiki/synthesis.md Section 3).",
+      "Thursday's $166.18 low reversed and Friday ran to $171.00, forty-eight cents short of the 200-day; XLI closed $169.95 (-0.28 pct) (wiki/industrials.md; macro/facts.json).",
+      "Week RF held at 52 and MC cut 58 -> 50: the ISM receipt is spent and the week's calendar is auctions, not industrial data."
+    ],
+    "risks": [
+      "Third straight week under the 200-day; aerospace and defense were sold (GE -5.4 pct, RTX at RSI 24, LMT -2.7 pct) -- the data says cycle, the leadership says narrow (wiki/industrials.md).",
+      "The only parts of XLI that work are an AI-infrastructure trade; a paused build takes the cyclical index with it (wiki/synthesis.md Section 6).",
+      "Falsifier: a close below $166.18 -> low $160s. Bullish falsifier: a close above $171.48 is a failed breakdown -> $176.46 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 50.0,
       "relative_momentum": 90.0,
       "volume_confirmation": 89.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 54,
+      "macro_catalyst": 55
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Output is strong: Dallas Fed production 29.5 (highest since July 2021), Chicago PMI 58.8, construction spending +0.9 pct against 0.0 pct expected (wiki/economic-calendar.md).",
+      "Micron's capex travels to data-center power generation (CAT, GEV, ETN), the consensus long inside the sector (wiki/synthesis.md Sections 4 and 6).",
+      "Month RF raised 52 -> 54 and MC cut 60 -> 55: the cycle evidence improved while the tape stayed under the 200-day."
+    ],
+    "risks": [
+      "ISM prices paid jumped to 77.9 and hiring has stopped (payrolls +29K): firms producing more, not hiring, paying more for inputs (wiki/synthesis.md Section 3; wiki/economic-calendar.md).",
+      "Aerospace and defense stand aside until Oct 20; DAL's estimate was cut $2.02 -> $1.88 in a week (wiki/synthesis.md Sections 4-5).",
+      "Falsifier: a close below $166.18, or CAT losing its 50-day ($823.45) (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

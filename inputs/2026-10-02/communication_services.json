@@ -41,8 +41,8 @@
       "breadth": 10.0,
       "relative_momentum": 10.0,
       "volume_confirmation": 2.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 35,
+      "macro_catalyst": 42
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The prior cycle's falsifier fired: XLC closed $110.32 (-2.34 pct), back under the 50-day it had reclaimed, after META fell 4.8 pct on Monday alone (wiki/communication-services.md; macro/facts.json).",
+      "Netflix made a new 52-week low at $67.06, Comcast and Charter new lows for a fourth week, AT&T -4.3 pct; platforms were cut to market-weight and telecom yield to underweight (wiki/communication-services.md; wiki/synthesis.md Section 3).",
+      "Week RF cut 45 -> 35 and MC cut 50 -> 42: the repair lasted one week and the Oct 2 judgment catalyst has passed."
+    ],
+    "risks": [
+      "WBD (4.7 pct of the fund) is expected to leave XLC on Oct 6; five names at lows report inside ten days (wiki/synthesis.md Sections 1-2 and 5).",
+      "T fell 4.3 pct in a week the hike was priced out: the long bond, not the Fed, prices the telecom sleeve (wiki/synthesis.md Section 6).",
+      "Falsifier: a close under $109.66 -> $105.38. Bullish falsifier: a close over $111.19 that is not just Alphabet (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 70.0,
       "volume_confirmation": 18.6,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 42,
+      "macro_catalyst": 50
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "META and GOOGL report Oct 28, inside the horizon; ad budgets are flagged as the next shoe with no cut found yet (wiki/synthesis.md Sections 6 and 8).",
+      "XLC lost its 50-day and sits below both moving averages; the barbell was one stock holding up the bar (wiki/communication-services.md; wiki/synthesis.md Section 2).",
+      "Month RF cut 50 -> 42 and MC cut 55 -> 50: the engine coughed and the distribution half has no floor yet."
+    ],
+    "risks": [
+      "A Goldman note on what AI capex must earn cost META 4.8 pct in a session; the capex wire is contested inside this sector (wiki/synthesis.md Section 6).",
+      "CHTR at 2.3x forward is a verdict, not a valuation; VZ's 6.2 pct clears the 10Y by ~90bp while T's 4.6 pct sits ~70bp under (wiki/synthesis.md Section 1).",
+      "Falsifier: a close under $109.66 -> $105.38 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

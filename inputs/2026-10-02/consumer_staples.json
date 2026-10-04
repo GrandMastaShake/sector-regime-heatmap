@@ -41,8 +41,8 @@
       "breadth": 10.0,
       "relative_momentum": 50.0,
       "volume_confirmation": 0.5,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 28,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLP closed $80.53 (-1.86 pct), a sixth straight red week and the lowest close since April 15, on above-average volume with no staples company reporting; seventeen of eighteen names fell (wiki/consumer-staples.md; macro/facts.json).",
+      "The 2.59 pct yield against the 10Y is a -269bp carry gap; stance cut defensive-lean -> neutral: a defensive that does not defend is a bond proxy with equity risk (wiki/consumer-staples.md; wiki/synthesis.md Sections 1 and 3).",
+      "Week RF cut 35 -> 28 and MC held at 45: the shelter was sold in the week it should have been bought; PepsiCo on Thursday is a live two-way catalyst."
+    ],
+    "risks": [
+      "PepsiCo reports Thu Oct 8 at RSI 26 and 14.1x with a 4.7 pct yield; a held guide could snap the group back (wiki/synthesis.md Sections 1 and 5).",
+      "CAG, MKC and GIS beat and were sold on falling volume; dollar translation drag is named for PEP, KO, PG, MDLZ and CL (wiki/synthesis.md Section 6).",
+      "Falsifier: a close below $80.13 has no named support until the low $70s. Bullish falsifier: a reclaim of $81.00 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 60.0,
       "volume_confirmation": 7.1,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 32,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLP is three weeks under its 200-day and below both moving averages; the market is charging the carry gap to the whole fund, expensive shelf included (WMT -3.4 pct) (wiki/consumer-staples.md; wiki/synthesis.md Section 2).",
+      "The consumer is trading down at the grocery store: volumes fall while confidence sits at a 12-year low (wiki/synthesis.md Section 6).",
+      "Month RF cut 36 -> 32 and MC cut 48 -> 45: the defensive premise failed its cleanest test."
+    ],
+    "risks": [
+      "GIS yields 7.6 pct and is 'a liquidation in installments'; a guide cut at PEP is no trade (wiki/synthesis.md Sections 1 and 5).",
+      "Relief requires a week in which the 10Y closes lower; three auctions land Oct 6-8 (wiki/synthesis.md Sections 3 and 8).",
+      "Falsifier: a close below $80.13 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

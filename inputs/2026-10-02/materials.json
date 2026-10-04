@@ -41,8 +41,8 @@
       "breadth": 10.0,
       "relative_momentum": 30.0,
       "volume_confirmation": 8.5,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 30,
+      "macro_catalyst": 40
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "DXY closed 101.93, a second weekly close above 101, and copper lost the $6.60 rail ($6.549 canonical); gold -3.68 pct; the commodity-long restriction stays ON (wiki/materials.md; macro/facts.json; wiki/synthesis.md Section 3).",
+      "XLB closed $48.86 (-1.89 pct) after trading to $47.81 on 25.6M shares; ISM 54.5 came in on the bulls' side and did not matter (wiki/materials.md).",
+      "Week RF cut 35 -> 30 and MC cut 42 -> 40: the dollar won the argument and the demand verdict bought nothing."
+    ],
+    "risks": [
+      "Shanghai reopens Thu Oct 8 and FCX closed above $71.54 while the metal fell: the stock disagrees with copper (wiki/synthesis.md Sections 2 and 5).",
+      "Upstream dispute: copper is $6.549 (-2.19 pct) in facts.json against ~$6.49 (-3.0 pct) in three wikis; the rail is broken on either number (wiki/synthesis.md Section 7).",
+      "Falsifier: a close below $47.81 -> $47.00 and likely overshoot. Bullish falsifier: a reclaim of $49.57 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 10.0,
       "relative_momentum": 30.0,
       "volume_confirmation": 8.5,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 33,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Mortgage rates at 7.28 pct put SHW, PPG, VMC, MLM and CRH at or near lows: no new positions in construction materials while the 30-year makes highs (wiki/synthesis.md Section 6).",
+      "XLB is three weeks under its 200-day and below both moving averages; DXY is seven hundredths under the Canary trigger at 102 (wiki/synthesis.md Sections 2 and 5-6).",
+      "Month RF cut 36 -> 33 and MC held at 45: rate and dollar headwinds both strengthened."
+    ],
+    "risks": [
+      "Corteva split in two on Oct 1; its '-85 pct' is a spin-off, not a crash, and distorts basket tables (wiki/materials.md).",
+      "A DXY close back below 99 re-opens commodity longs; ISM prices paid 77.9 is an input-price tailwind for producers (wiki/synthesis.md Sections 3 and 5).",
+      "Falsifier: a close below $47.81; bullish on a copper reclaim of $6.60 after Shanghai reopens (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

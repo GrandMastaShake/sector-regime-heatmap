@@ -41,8 +41,8 @@
       "breadth": 20.0,
       "relative_momentum": 60.0,
       "volume_confirmation": 14.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 28,
+      "macro_catalyst": 42
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "Conference Board confidence fell 6.7 points to 81.9, the lowest since 2014; payrolls +29K; the 30-year mortgage jumped to 7.28 pct; Nike guided fiscal 2027 revenue down high-single digits (wiki/consumer-discretionary.md; wiki/economic-calendar.md).",
+      "XLY closed $110.04 (-0.47 pct), a seventh straight red week, after four closes below $109.41; six of fifteen names set 52-week closing lows (wiki/consumer-discretionary.md; macro/facts.json).",
+      "Week RF cut 30 -> 28 and MC cut 48 -> 42: the stance stays bearish with the prior concession withdrawn."
+    ],
+    "risks": [
+      "XLY is not the consumer: AMZN + TSLA are 41.7 pct of it and Tesla's delivery beat reclaimed the gap on Friday (wiki/synthesis.md Sections 1 and 4).",
+      "Carnival printed a record and raised; TJX and MAR rose two weeks running; oil under $90 is a dollar away (wiki/synthesis.md Section 6).",
+      "Falsifier (bullish): a close above $111.10 -> $113.29. Bearish confirmation: a close below $107.99 -> $105.45 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 10.0,
       "relative_momentum": 0.0,
       "volume_confirmation": 21.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 28,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The consumer stress triangle -- confidence, jobs, mortgages -- tightened on all three sides; HD and LOW are at 52-week closing lows (wiki/synthesis.md Section 6).",
+      "A Fed that pauses because the consumer is slowing is not a bull case; caution moved one notch toward consumer cyclicals (wiki/synthesis.md Sections 7-8).",
+      "Month RF cut 30 -> 28 and MC cut 50 -> 45: the worst month arithmetic on the board with a deteriorating file."
+    ],
+    "risks": [
+      "UMich preliminary (Oct 9): sentiment under 46 is a new low; 1-year expectations at or above 4.8 pct is the de-anchoring line (wiki/economic-calendar.md).",
+      "Housing got cheap (LOW 13.9x, HD 17.7x, ~3 pct yields) and a week in which the 10Y closes lower would be bought (wiki/synthesis.md Section 1).",
+      "Falsifier (bullish): a close above $111.10 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

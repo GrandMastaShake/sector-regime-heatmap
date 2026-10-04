@@ -41,8 +41,8 @@
       "breadth": 10.0,
       "relative_momentum": 20.0,
       "volume_confirmation": 3.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 35,
+      "macro_catalyst": 40
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLF fell 2.46 pct to $53.49, pierced its 200-day on Thursday ($52.81 low) and closed $0.17 above it; RSI 27.5, all seventeen tracked names below their 50-day (wiki/financials.md; macro/facts.json).",
+      "The sector got a cool PCE, +29K payrolls, the hike priced out and a steeper curve, and could not bounce; Ophelia moved neutral -> cautious (wiki/financials.md; wiki/synthesis.md Section 3).",
+      "Week RF cut 40 -> 35 and MC cut 48 -> 40: the bank prints (Oct 13-15) are outside the week horizon and the 10-year auction marks the securities books."
+    ],
+    "risks": [
+      "The selling pattern (regionals holding, KRE beating XLF a third week) reads as rate shock rather than loan losses; RSI 27.5 on the 200-day is snap-back territory (wiki/synthesis.md Sections 2 and 4).",
+      "Credit is unmeasured: HY OAS is stale at 280 (Sep 24) and HYG fell for a fifth week (wiki/canary-watch.md CREDIT SPREADS).",
+      "Falsifier: a close below $52.81 -> $50.42-$51.58. Bullish falsifier: a close over $54.46 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 0.0,
       "relative_momentum": 20.0,
       "volume_confirmation": 0.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 40,
+      "macro_catalyst": 55
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "JPM, WFC, C and GS report Tue Oct 13 from RSI 27.5 on the 200-day -- the Council's single biggest opportunity if reserve lines are flat (wiki/synthesis.md Section 4).",
+      "Money centers trade 10-13x forward with 20-26 pct gaps to target; the curve steepened to +45bp 10Y-2Y (wiki/synthesis.md Section 1; macro/facts.json).",
+      "Month RF cut 42 -> 40 and MC raised 50 -> 55: the regime read worsened while the dated receipt moved inside the horizon."
+    ],
+    "risks": [
+      "A jobs number that kills a hike also raises the credit question; payments broke rank (V, MA, AXP -1.8 to -2.7 pct) (wiki/financials.md; wiki/synthesis.md Section 6).",
+      "Bank straddles into Oct 13-15 price 1.6-2.5x their realized norms; BAC at RSI 22 is below its 200-day (wiki/synthesis.md Sections 2 and 5).",
+      "Falsifier: a close below $52.81, or HY OAS above 300bp when FRED is reachable (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

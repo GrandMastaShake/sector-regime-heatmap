@@ -41,8 +41,8 @@
       "breadth": 22.2,
       "relative_momentum": 40.0,
       "volume_confirmation": 3.2,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 20,
+      "macro_catalyst": 35
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLRE closed $40.81 (-1.8 pct), the lowest close since April 1 and a fourth straight week under the 200-day, after trading $40.40 on Thursday (wiki/real-estate.md; macro/facts.json).",
+      "The PCE gate opened the right way and bought nothing: the 10Y touched 5.34 pct, the 30-year closed 5.63 pct and the 30-year mortgage jumped to 7.28 pct; carry gap -209bp (wiki/real-estate.md).",
+      "Week RF cut 22 -> 20 and MC cut 45 -> 35: relief now needs a week in which the 10Y closes lower, and this week brings 3-, 10- and 30-year supply."
+    ],
+    "risks": [
+      "RSI 25.7, a third week under 30: Marky stopped selling rallies with forty cents of target left and sees snap-back asymmetry (wiki/synthesis.md Sections 2 and 4).",
+      "Data centers decoupled upward (EQIX +1.8 pct, DLR flat) while towers made lows -- leaders turn before laggards (wiki/synthesis.md Sections 2 and 6).",
+      "Falsifier (bullish): a close above $41.33 -> $42.50. Bearish confirmation: a close below $40.40 -> $40.00, then $39.12 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 0.0,
       "relative_momentum": 40.0,
       "volume_confirmation": 0.0,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 20,
+      "macro_catalyst": 42
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "The Fed eased in expectation and the bond market tightened anyway: the frame that relief runs through PCE and the Fed was retired (wiki/real-estate.md; wiki/synthesis.md Section 3).",
+      "Single-name yields are crossing back above the Treasury (O 6.0 pct, CCI 6.4 pct) -- the beginning of a price, not yet a floor; Prologis reports Oct 15 (wiki/synthesis.md Sections 1 and 8).",
+      "Month RF cut 22 -> 20 and MC cut 45 -> 42: the most direct casualty of a supply-led long end."
+    ],
+    "risks": [
+      "A stop-through 10-year auction with a close below 5.20 pct gives bond proxies their first green light (wiki/synthesis.md Section 5).",
+      "Welltower, not Prologis, is the fund's largest holding at 11.4 pct and towers are the tail; composition was wrong on the page and is corrected (wiki/synthesis.md Section 1).",
+      "Falsifier (bullish): a close above $41.33 with the 10Y lower on the week (wiki/synthesis.md Sections 3 and 5)."
+    ]
   },
   "evidence": {
     "available": true,

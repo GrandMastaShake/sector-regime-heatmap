@@ -41,8 +41,8 @@
       "breadth": 60.0,
       "relative_momentum": 90.0,
       "volume_confirmation": 59.8,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 50,
+      "macro_catalyst": 40
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLE closed $62.82 (+1.26 pct) with WTI down to $91.11: Tuesday's $60.95 low undercut the 50-day and reversed, and refiners took back the prior week (MPC +7.3 pct, VLO +4.9 pct, PSX +3.5 pct) (wiki/energy.md; macro/facts.json).",
+      "Energy is the only sector with a negative correlation to SPY (-0.242) on a board where all twelve correlations rose (wiki/synthesis.md Section 2).",
+      "Week RF raised 45 -> 50 and MC held at 40: the breakdown did not follow the failed breakout, but the week's catalyst is unseen."
+    ],
+    "risks": [
+      "THE OPEC+ DECISION (Sunday Oct 4) IS NOT IN THE PINNED SNAPSHOT: a hold is priced, an increase is not (wiki/synthesis.md header and Section 8). This call is blind to it.",
+      "The G-7 agreed a 100M-barrel release with diesel front-loaded -- a government aiming at the refiners' margin while MPC, VLO and PSX trade above their mean targets (wiki/energy.md; wiki/synthesis.md Section 1).",
+      "Falsifier: a close under $60.95 -> 200-day $55.88. Bullish falsifier: a weekly close over $63.46 un-fails the breakout -> $65.93 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 20.0,
       "relative_momentum": 50.0,
       "volume_confirmation": 24.6,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 52,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLE is one of three ETFs above its 50-day and one of five above its 200-day; the range held at both edges (wiki/synthesis.md Section 2).",
+      "The diesel shortage is physical: a crack reported above $100/bbl, and the energy desk doubts 0.8 mb/d for four months closes a gap made by shipping, strikes and an export ban (wiki/energy.md; wiki/synthesis.md Section 6).",
+      "Month RF cut 55 -> 52 and MC cut 50 -> 45: the stance is hold-add-nothing and policy now targets the margin."
+    ],
+    "risks": [
+      "SLB -5.4 pct is the dissent inside the sector; the failed breakout below $63.46 still stands (wiki/energy.md).",
+      "If the G-7 release works, the refiner leg (15.8 pct of XLE) mean-reverts from near-record prices; VLO prints Oct 22 (wiki/synthesis.md Sections 1 and 5).",
+      "Falsifier: WTI below $88.06 with a close under $60.95; bullish above $96.54 (wiki/synthesis.md Section 5)."
+    ]
   },
   "evidence": {
     "available": true,

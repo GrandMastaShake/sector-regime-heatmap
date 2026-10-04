@@ -41,8 +41,8 @@
       "breadth": 60.0,
       "relative_momentum": 100.0,
       "volume_confirmation": 68.8,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 65,
+      "macro_catalyst": 45
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -59,16 +59,24 @@
       "window_from": "2026-09-25",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "XLK made a record close at $199.81 (+1.8 pct) through the June peak ($198.73) in the week the 10Y touched 5.34 pct, and the October hike was priced out (odds ~70 pct -> ~17 pct) (wiki/tech.md; macro/facts.json).",
+      "SMH closed $630.60, through the $609.66 double top on 57 pct more volume; Micron's capex bill went to its suppliers (AMAT +11.3 pct, LRCX +10.2 pct) (wiki/synthesis.md Section 2; wiki/semiconductors.md).",
+      "Week RF held at 65 and MC raised 42 -> 45: leadership confirmed, but nobody on the desk adds at these prices."
+    ],
+    "risks": [
+      "Leadership got more expensive against the bond: SMH ~43.1x trailing, roughly 295bp under the 10Y, 10.7 pct above its 50-day, into Wednesday's 10-year auction (wiki/synthesis.md Sections 1 and 4).",
+      "XLK sold its own payrolls gap (open $201.16, close under $200); Micron beat and closed the week -0.7 pct -- the forward number is the print (wiki/synthesis.md Sections 1-2).",
+      "Falsifier: an XLK close under $198.73 is a failed breakout -> $194.50; an SMH close below $609.66 -> $591.92 (wiki/synthesis.md Section 5)."
+    ]
   },
   "month": {
     "components": {
       "breadth": 90.0,
       "relative_momentum": 100.0,
       "volume_confirmation": 90.7,
-      "regime_fit": null,
-      "macro_catalyst": null
+      "regime_fit": 60,
+      "macro_catalyst": 52
     },
     "risk_penalty": 0.0,
     "metrics": {
@@ -85,8 +93,16 @@
       "window_from": "2026-09-04",
       "window_to": "2026-10-02"
     },
-    "why": [],
-    "risks": []
+    "why": [
+      "SMH is +13.97 points and XLK +8.24 points ahead of SPY on the month; the scarcity leadership is the only part of the board above both moving averages besides energy (wiki/synthesis.md Sections 2 and 4).",
+      "Micron guided $61.5B with FY27 capex above the mid-$40B range; TSMC reports Oct 15 and MSFT/META/GOOGL on Oct 28, inside the horizon (wiki/tech.md; wiki/synthesis.md Section 8).",
+      "Month RF held at 60 and MC trimmed 55 -> 52: the catalysts are dated but the bar is the forward number."
+    ],
+    "risks": [
+      "A failed long-bond auction with the Fed on hold lands on a 43x sector; next line on the 10Y is 5.50 pct (wiki/synthesis.md Section 4).",
+      "AMD, INTC and AAPL are still above mean target and LRCX has 7.9 pct left after a 10 pct week (wiki/synthesis.md Section 1).",
+      "Falsifier: XLK underperforming SPY by 5 points, or an SMH close below $609.66 (wiki/synthesis.md Sections 2 and 5)."
+    ]
   },
   "evidence": {
     "available": true,
