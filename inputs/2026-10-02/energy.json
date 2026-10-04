@@ -1,0 +1,115 @@
+{
+  "sector": "Energy",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 59.8,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 0.81,
+      "equal_weight_return_pct": 0.357,
+      "sector_return_vs_spy_pct": 0.579,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 59.8,
+      "top_two_contribution_pct": 40.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 50.0,
+      "volume_confirmation": 24.6,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -5.231,
+      "equal_weight_return_pct": -5.507,
+      "sector_return_vs_spy_pct": -5.435,
+      "sector_rank_among_eleven": 6,
+      "up_volume_share_pct": 24.6,
+      "top_two_contribution_pct": 38.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/energy.md",
+        "source_file_sha": "c6a7a85dafbe2a6c7ded124859fbd07c8d6de27b",
+        "lead_summary": "Crude went down and the sector went up, and the reason is in the product, not the barrel. WTI slipped to $91.11 (-$1.30) and the G-7 agreed on Friday to release 100 million barrels \u2014 with diesel front-loaded in the first twenty days, because diesel is the shortage. Refiners took back everything last week's diplomacy cost them: MPC +7.3% to within a dollar of its record, VLO +4.9%, PSX +3.5%. XLE closed $62.82 (+1.3%) after Tuesday's $60.95 low undercut the 50-day and reversed \u2014 still under the $63.46 breakout line, so the failed breakout stands, but the breakdown did not follow. SLB (-5.4%) is the dissent. OPEC+ meets tomorrow, after this page is written.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLE"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}

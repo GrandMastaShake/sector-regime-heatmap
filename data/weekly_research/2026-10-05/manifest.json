@@ -1,0 +1,236 @@
+{
+  "schema_version": 2,
+  "as_of_date": "2026-10-05",
+  "imported_at_utc": "2026-10-04T22:32:25.144309+00:00",
+  "source": {
+    "owner": "GrandMastaShake",
+    "repo": "weekly-council-scan",
+    "branch": "main",
+    "cadence": "weekly",
+    "role": "slow_moving_research_prior",
+    "required_provenance": [
+      "source_commit_sha",
+      "source_file_sha",
+      "source_path",
+      "imported_at_utc"
+    ]
+  },
+  "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+  "provenance_verified": true,
+  "files": [
+    {
+      "source_path": "wiki/tech.md",
+      "source_file_sha": "60b907d59248b75cfe1e276fab5f549a93293aef",
+      "content_sha256": "ca4ffb72ac22a6ced47ec5a86c284339d60dcf3ddddc235882737715b2218aa4",
+      "snapshot_path": "technology.json",
+      "role": "sector",
+      "sector": "Technology"
+    },
+    {
+      "source_path": "wiki/semiconductors.md",
+      "source_file_sha": "78f2a417e612401ee9e7307b7cc3c39d23e744d2",
+      "content_sha256": "3d5132dddeada723014b1f32a73202a5a91abc3fd11843089780f116a2df43c7",
+      "snapshot_path": "technology.json",
+      "role": "sector",
+      "sector": "Technology"
+    },
+    {
+      "source_path": "wiki/communication-services.md",
+      "source_file_sha": "65d42279d25629e72f8eaa8b8959f90d52c75560",
+      "content_sha256": "e083ca686950d4e127eb06c3e3d51390f0e7fe02d143e26df8c3d14e249a3ddb",
+      "snapshot_path": "communication_services.json",
+      "role": "sector",
+      "sector": "Communication Services"
+    },
+    {
+      "source_path": "wiki/consumer-discretionary.md",
+      "source_file_sha": "afb603974471c33c16cf6baf43d7f41aba134e7b",
+      "content_sha256": "fccb713fc52842d31f4cad56d1886ed0e2f0124b1a61719f52fd25f49cf41280",
+      "snapshot_path": "consumer_discretionary.json",
+      "role": "sector",
+      "sector": "Consumer Discretionary"
+    },
+    {
+      "source_path": "wiki/consumer-staples.md",
+      "source_file_sha": "5704572cb4b65cb715bee564496ddde4aa8965c6",
+      "content_sha256": "1c2d6cbdef74b71a95c82c7751fb1a39410e58a8b7561b6141c39678f1c16645",
+      "snapshot_path": "consumer_staples.json",
+      "role": "sector",
+      "sector": "Consumer Staples"
+    },
+    {
+      "source_path": "wiki/energy.md",
+      "source_file_sha": "c6a7a85dafbe2a6c7ded124859fbd07c8d6de27b",
+      "content_sha256": "ea9559c3bfc751eb537b81c491f2427e7e64f6c105cdf24d1be02cf394dea63a",
+      "snapshot_path": "energy.json",
+      "role": "sector",
+      "sector": "Energy"
+    },
+    {
+      "source_path": "wiki/financials.md",
+      "source_file_sha": "f2c2b335b7be35d632adcab63533de2c543a127c",
+      "content_sha256": "62aeb42b18b441a51de43d508e8ba6ff2bb24152a92f108ede8b053f188d778b",
+      "snapshot_path": "financials.json",
+      "role": "sector",
+      "sector": "Financials"
+    },
+    {
+      "source_path": "wiki/healthcare.md",
+      "source_file_sha": "1f91d796404c84fa993cebf45ef0e3dea0759628",
+      "content_sha256": "f8bf6fb58c40f5f5334b3119ca5c57d7b505d24d55727676688b72e8bf1c55fd",
+      "snapshot_path": "healthcare.json",
+      "role": "sector",
+      "sector": "Healthcare"
+    },
+    {
+      "source_path": "wiki/industrials.md",
+      "source_file_sha": "adee8771405187f51dbf3fa62d656d5453beb3c1",
+      "content_sha256": "24b52ce04d072075a6ad09aa48d1ca95305b99fcce6fff65b49c39f456471b59",
+      "snapshot_path": "industrials.json",
+      "role": "sector",
+      "sector": "Industrials"
+    },
+    {
+      "source_path": "wiki/materials.md",
+      "source_file_sha": "77823b34ac9da073e72535a1ef5dcf19d21df87d",
+      "content_sha256": "11a15c53417483b9ff67a5a700471215b619038ca2e928888c03bfee263d55e0",
+      "snapshot_path": "materials.json",
+      "role": "sector",
+      "sector": "Materials"
+    },
+    {
+      "source_path": "wiki/real-estate.md",
+      "source_file_sha": "e4ee4be849823840dd467b4a43d86fa4a5599eaf",
+      "content_sha256": "ba900b0b1c7b6a594109f89cad0df7818080fcef76ecbbb0e446c323f7c96efd",
+      "snapshot_path": "real_estate.json",
+      "role": "sector",
+      "sector": "Real Estate"
+    },
+    {
+      "source_path": "wiki/utilities.md",
+      "source_file_sha": "0939ddf8c5085a342a7f1351cd9ccd242e99cab0",
+      "content_sha256": "f67123860d0915bcb8c4427501aad756bb9e57fd49ac441e6c086d495682cbc4",
+      "snapshot_path": "utilities.json",
+      "role": "sector",
+      "sector": "Utilities"
+    },
+    {
+      "source_path": "wiki/synthesis.md",
+      "source_file_sha": "73222ed2fa07d500d551ff5542e1d38d48c9517b",
+      "content_sha256": "ee97053a5302a4be7ff5eca55f815411132a52811f2d9d56a207358585b7f992",
+      "snapshot_path": "cross_sector.json",
+      "role": "cross_sector",
+      "sector": null
+    },
+    {
+      "source_path": "wiki/canary-watch.md",
+      "source_file_sha": "4d92db60212f466f4537fc743feb4a56452ab074",
+      "content_sha256": "75f2d1650d098257aa05e18ffdd67d9a301b3f7bc38d0656855768b0d80fdb25",
+      "snapshot_path": "cross_sector.json",
+      "role": "cross_sector",
+      "sector": null
+    },
+    {
+      "source_path": "wiki/earnings-surveillance.md",
+      "source_file_sha": "2686bbc256da390d7572cbb1a07d4d35ac7e08c5",
+      "content_sha256": "f521d2920f61bd1cce059042eaa735a882e060552243d13db14d32620c523612",
+      "snapshot_path": "cross_sector.json",
+      "role": "cross_sector",
+      "sector": null
+    },
+    {
+      "source_path": "wiki/economic-calendar.md",
+      "source_file_sha": "7f425e3baea964e25963d6117adae8a1ac4c1e86",
+      "content_sha256": "c930c7f265eeab50ab21caeaf5667f800528c2fb8b387a7675c7c8c791d04fa8",
+      "snapshot_path": "cross_sector.json",
+      "role": "cross_sector",
+      "sector": null
+    }
+  ],
+  "sectors": [
+    {
+      "sector": "Technology",
+      "snapshot_path": "technology.json",
+      "source_paths": [
+        "wiki/tech.md",
+        "wiki/semiconductors.md"
+      ]
+    },
+    {
+      "sector": "Communication Services",
+      "snapshot_path": "communication_services.json",
+      "source_paths": [
+        "wiki/communication-services.md"
+      ]
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "snapshot_path": "consumer_discretionary.json",
+      "source_paths": [
+        "wiki/consumer-discretionary.md"
+      ]
+    },
+    {
+      "sector": "Consumer Staples",
+      "snapshot_path": "consumer_staples.json",
+      "source_paths": [
+        "wiki/consumer-staples.md"
+      ]
+    },
+    {
+      "sector": "Energy",
+      "snapshot_path": "energy.json",
+      "source_paths": [
+        "wiki/energy.md"
+      ]
+    },
+    {
+      "sector": "Financials",
+      "snapshot_path": "financials.json",
+      "source_paths": [
+        "wiki/financials.md"
+      ]
+    },
+    {
+      "sector": "Healthcare",
+      "snapshot_path": "healthcare.json",
+      "source_paths": [
+        "wiki/healthcare.md"
+      ]
+    },
+    {
+      "sector": "Industrials",
+      "snapshot_path": "industrials.json",
+      "source_paths": [
+        "wiki/industrials.md"
+      ]
+    },
+    {
+      "sector": "Materials",
+      "snapshot_path": "materials.json",
+      "source_paths": [
+        "wiki/materials.md"
+      ]
+    },
+    {
+      "sector": "Real Estate",
+      "snapshot_path": "real_estate.json",
+      "source_paths": [
+        "wiki/real-estate.md"
+      ]
+    },
+    {
+      "sector": "Utilities",
+      "snapshot_path": "utilities.json",
+      "source_paths": [
+        "wiki/utilities.md"
+      ]
+    }
+  ],
+  "cross_sector_sources": [
+    "wiki/synthesis.md",
+    "wiki/canary-watch.md",
+    "wiki/earnings-surveillance.md",
+    "wiki/economic-calendar.md"
+  ]
+}

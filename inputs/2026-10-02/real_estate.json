@@ -1,0 +1,115 @@
+{
+  "sector": "Real Estate",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 22.2,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 3.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 22.2,
+      "median_return_pct": -1.889,
+      "equal_weight_return_pct": -1.828,
+      "sector_return_vs_spy_pct": -1.606,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 3.2,
+      "top_two_contribution_pct": 38.3,
+      "constituents_used": 9,
+      "constituents_expected": 9,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 0.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 0.0,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 0.0,
+      "median_return_pct": -6.026,
+      "equal_weight_return_pct": -6.051,
+      "sector_return_vs_spy_pct": -5.98,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 0.0,
+      "top_two_contribution_pct": 41.4,
+      "constituents_used": 9,
+      "constituents_expected": 9,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/real-estate.md",
+        "source_file_sha": "e4ee4be849823840dd467b4a43d86fa4a5599eaf",
+        "lead_summary": "The magnet pulled. $41.33 gave way on Wednesday and Thursday traded $40.40 \u2014 forty cents from the $40.00 objective \u2014 before the week closed at $40.81 (-1.8%), the lowest close since April 1 and a fourth straight week under the 200-day. The gate I named, core PCE, opened the right way: 3.0%, and the October hike went from ~70% to ~17%. It bought this sector nothing, because the long end went the other way \u2014 the 10-year touched 5.34%, the highest since 2002, the 30-year closed at 5.63%, and Freddie Mac's 30-year mortgage jumped to 7.28%. I wrote that there was no third path that did not run through PCE and the Fed. There was: the Fed eases in expectation and the bond market tightens anyway. Carry gap -209bp. RSI 25.7.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLRE (week ending 2026-10-02)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}

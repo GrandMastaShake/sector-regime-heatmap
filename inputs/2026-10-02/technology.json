@@ -1,0 +1,128 @@
+{
+  "sector": "Technology",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 68.8,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 0.881,
+      "equal_weight_return_pct": 0.858,
+      "sector_return_vs_spy_pct": 1.08,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 68.8,
+      "top_two_contribution_pct": 46.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 90.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 90.7,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 90.0,
+      "median_return_pct": 9.25,
+      "equal_weight_return_pct": 12.406,
+      "sector_return_vs_spy_pct": 12.478,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 90.7,
+      "top_two_contribution_pct": 41.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/tech.md",
+        "source_file_sha": "60b907d59248b75cfe1e276fab5f549a93293aef",
+        "lead_summary": "The 10-year touched 5.34% on Thursday \u2014 the highest since 2002 \u2014 and XLK closed the week at an all-time high anyway. Micron printed $54.2B of revenue at an 87% gross margin, guided $61.5B, and the stock did nothing; the money went to the people who sell Micron its tools (AMAT +11.3%, LRCX +10.2%). Then Friday's payrolls came in at +29K, the October hike died (odds ~70% Monday, ~17% Friday), and the fund gapped through $200 \u2014 and closed a quarter under it. XLK $199.81 (+1.8% W/W), through the June peak, with the 30-year at 5.63%.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLK"
+        ]
+      },
+      {
+        "source_path": "wiki/semiconductors.md",
+        "source_file_sha": "78f2a417e612401ee9e7307b7cc3c39d23e744d2",
+        "lead_summary": "Semiconductors are the new oil. Every AI model, every data center, every autonomous car runs on silicon. When the chip cycle turns, the world feels it.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving SMH"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}

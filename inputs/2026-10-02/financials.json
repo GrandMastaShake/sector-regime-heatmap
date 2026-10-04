@@ -1,0 +1,115 @@
+{
+  "sector": "Financials",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 3.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -2.912,
+      "equal_weight_return_pct": -2.893,
+      "sector_return_vs_spy_pct": -2.671,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 3.2,
+      "top_two_contribution_pct": 33.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 0.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 0.0,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 0.0,
+      "median_return_pct": -6.453,
+      "equal_weight_return_pct": -8.298,
+      "sector_return_vs_spy_pct": -8.227,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 0.0,
+      "top_two_contribution_pct": 38.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/financials.md",
+        "source_file_sha": "f2c2b335b7be35d632adcab63533de2c543a127c",
+        "lead_summary": "The shelf did not hold. XLF lost $54.46 on Monday, sold on 53M and 56M shares Tuesday and Wednesday, pierced its 200-day on Thursday ($52.81 low) and closed the week $0.17 above it. The sector got the thing it was supposed to want \u2014 a cool PCE, a +29K payrolls print, the October hike priced out, the curve steeper by about 20bp \u2014 and it could not bounce, because a jobs number that kills a hike is also a jobs number that raises the credit question ten days before JPMorgan reports. XLF $53.49 (-2.5% W/W), RSI 27.5, all seventeen tracked names below their 50-day. BAC -5.2%, RSI 22.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLF"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}

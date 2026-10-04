@@ -1,0 +1,115 @@
+{
+  "sector": "Materials",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 8.5,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -2.423,
+      "equal_weight_return_pct": -2.153,
+      "sector_return_vs_spy_pct": -1.932,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 8.5,
+      "top_two_contribution_pct": 37.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 8.5,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -5.284,
+      "equal_weight_return_pct": -6.595,
+      "sector_return_vs_spy_pct": -6.524,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 8.5,
+      "top_two_contribution_pct": 46.5,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/materials.md",
+        "source_file_sha": "77823b34ac9da073e72535a1ef5dcf19d21df87d",
+        "lead_summary": "The dollar won the argument I said copper was having with it. DXY closed 101.93 \u2014 a second weekly close above 101, 0.17 from the year's high \u2014 and copper lost my $6.60 rail, finishing near $6.49 (-3.0%). Gold fell 3.7%, silver 6.6%. The restriction on commodity longs stays ON. XLB did what the map said a failed reclaim would do: it closed under $49.57 on Monday, traded to $47.81 on Thursday on 25.6M shares, and finished at $48.86 (-1.9%), with Thursday's $48.54 the lowest close since late March. And the demand verdict I was waiting for came in on the bulls' side \u2014 ISM 54.5 \u2014 and did not matter. One housekeeping fact outranks all of that for anyone reading the tables: Corteva split in two on October 1, and its '-85%' is a spin-off, not a crash.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLB (week ending 2026-10-02)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}

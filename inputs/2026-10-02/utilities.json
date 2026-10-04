@@ -1,0 +1,115 @@
+{
+  "sector": "Utilities",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 71.4,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": 0.276,
+      "equal_weight_return_pct": -0.323,
+      "sector_return_vs_spy_pct": -0.101,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 71.4,
+      "top_two_contribution_pct": 52.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 0.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 0.0,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 0.0,
+      "median_return_pct": -7.154,
+      "equal_weight_return_pct": -8.597,
+      "sector_return_vs_spy_pct": -8.526,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 0.0,
+      "top_two_contribution_pct": 31.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/utilities.md",
+        "source_file_sha": "0939ddf8c5085a342a7f1351cd9ccd242e99cab0",
+        "lead_summary": "The streak ended on the week the 10-year made its highest print since 2002. XLU closed $39.83 (+0.8%) \u2014 the first up week in seven \u2014 after setting a new low at $39.03 on Tuesday, on volume that more than doubled: 52.6M shares a day against 24.7M the week before. And the inversion I marked last week reversed. The regulated wires bounced (DTE +2.5%, PPL +2.4%, XEL +2.3%); the scarcity pair did not (CEG -2.2%), because on September 30 FERC accepted PJM's reliability backstop and then suspended it for five months, and natural gas gave back half of last week's jump. The carry gap is -245bp, wider than ever. A sector that stops falling when its own bear case gets worse is telling me something; one week does not tell me what.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLU"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}

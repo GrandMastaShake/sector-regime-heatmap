@@ -1,0 +1,115 @@
+{
+  "sector": "Communication Services",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 2.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -2.229,
+      "equal_weight_return_pct": -2.939,
+      "sector_return_vs_spy_pct": -2.717,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 2.2,
+      "top_two_contribution_pct": 43.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 18.6,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -3.976,
+      "equal_weight_return_pct": -3.604,
+      "sector_return_vs_spy_pct": -3.533,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 18.6,
+      "top_two_contribution_pct": 42.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/communication-services.md",
+        "source_file_sha": "65d42279d25629e72f8eaa8b8959f90d52c75560",
+        "lead_summary": "The engine coughed and there was nothing behind it. META gave back 3.1% \u2014 a 4.8% drop on Monday alone, on profit-taking after a +30% September, a report that OpenAI is building an always-on assistant, and a Goldman note on what AI capex has to earn \u2014 and with the fund's largest weight down, the other half's lows counted again. Netflix fell 5.7% to a new 52-week low at $67.06. Comcast and Charter made new lows for a fourth week. AT&T lost 4.3%. XLC closed $110.32 (-2.3%), back under the 50-day it reclaimed a week ago and through $110 on Thursday's close. The repair lasted one week. Last week I called the barbell balanced; it was one stock holding up the bar.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLC"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}

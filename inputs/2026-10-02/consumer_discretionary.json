@@ -1,0 +1,115 @@
+{
+  "sector": "Consumer Discretionary",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 14.0,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -1.291,
+      "equal_weight_return_pct": -1.316,
+      "sector_return_vs_spy_pct": -1.094,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 14.0,
+      "top_two_contribution_pct": 42.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 21.0,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -11.26,
+      "equal_weight_return_pct": -8.992,
+      "sector_return_vs_spy_pct": -8.921,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 21.0,
+      "top_two_contribution_pct": 32.5,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-discretionary.md",
+        "source_file_sha": "afb603974471c33c16cf6baf43d7f41aba134e7b",
+        "lead_summary": "The gap broke and then un-broke. XLY closed below $109.41 four days running \u2014 Thursday's $108.81 was the lowest close since July 23 \u2014 and then Tesla's delivery beat and a dead October hike put it back at $110.04 on Friday. Seven straight red weeks (-0.5%). The consumer file got worse where it counts: Conference Board confidence fell 6.7 points to 81.9, the lowest since 2014; payrolls added 29K; the 30-year mortgage jumped to 7.28%, its biggest weekly rise in four years; Nike guided fiscal 2027 revenue down high-single digits. Six of the fifteen names here set 52-week closing lows during the week. The ETF is being held up by two stocks that are 42% of it.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLY"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "available": true,
+  "snapshot": "2026-10-05",
+  "extracts": [
+    {
+      "source_path": "wiki/synthesis.md",
+      "source_file_sha": "73222ed2fa07d500d551ff5542e1d38d48c9517b",
+      "lead_summary": "",
+      "sections": [
+        "1. CECIL'S SYNTHESIS \u2014 Fundamentalist Lens",
+        "2. MARKY'S SYNTHESIS \u2014 Technician Lens",
+        "3. OPHELIA'S SYNTHESIS \u2014 Macro Lens",
+        "4. CONSENSUS SYNTHESIS",
+        "5. MONDAY WATCHLIST",
+        "6. CROSS-SECTOR CONNECTIONS \u2014 The Hidden Wires"
+      ]
+    },
+    {
+      "source_path": "wiki/canary-watch.md",
+      "source_file_sha": "4d92db60212f466f4537fc743feb4a56452ab074",
+      "lead_summary": "The canary does not predict the mine collapse. It simply dies first. Watch the canary.",
+      "sections": [
+        "VOLATILITY REGIME",
+        "YIELD CURVE",
+        "CREDIT SPREADS",
+        "MARKET BREADTH",
+        "SECTOR CORRELATION MATRIX",
+        "SECTOR ROTATION FLOW"
+      ]
+    },
+    {
+      "source_path": "wiki/earnings-surveillance.md",
+      "source_file_sha": "2686bbc256da390d7572cbb1a07d4d35ac7e08c5",
+      "lead_summary": "Earnings are the moment of truth. Everything else is just opinion.",
+      "sections": [
+        "THIS WEEK'S EARNINGS GAUNTLET (Oct 5 \u2013 Oct 9)",
+        "NEXT WEEK'S EARNINGS PREVIEW (Oct 12 \u2013 Oct 16)",
+        "THE BIG 3 (+4): STATUS AND FORWARD LOOK",
+        "SECTOR EARNINGS DENSITY",
+        "CONSENSUS VS WHISPER",
+        "HISTORICAL BEAT RATES"
+      ]
+    },
+    {
+      "source_path": "wiki/economic-calendar.md",
+      "source_file_sha": "7f425e3baea964e25963d6117adae8a1ac4c1e86",
+      "lead_summary": "The Fed doesn't care about your P/E ratios. The CPI does.",
+      "sections": [
+        "THIS WEEK IN REVIEW",
+        "NEXT WEEK'S GAUNTLET",
+        "REGIME RISK FLAGS",
+        "HISTORICAL SURPRISE LOG",
+        "FULL YEAR REFERENCE",
+        "COUNCIL READ"
+      ]
+    }
+  ]
+}

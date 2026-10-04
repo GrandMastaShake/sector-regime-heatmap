@@ -1,0 +1,115 @@
+{
+  "sector": "Healthcare",
+  "as_of_date": "2026-10-02",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 113,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 10.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 3.2,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 10.0,
+      "median_return_pct": -3.178,
+      "equal_weight_return_pct": -2.963,
+      "sector_return_vs_spy_pct": -2.741,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 3.2,
+      "top_two_contribution_pct": 36.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "month": {
+    "components": {
+      "breadth": 40.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 46.4,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 40.0,
+      "median_return_pct": -0.606,
+      "equal_weight_return_pct": -0.926,
+      "sector_return_vs_spy_pct": -0.855,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 46.4,
+      "top_two_contribution_pct": 32.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-04",
+      "window_to": "2026-10-02"
+    },
+    "why": [],
+    "risks": []
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-05",
+    "extracts": [
+      {
+        "source_path": "wiki/healthcare.md",
+        "source_file_sha": "1f91d796404c84fa993cebf45ef0e3dea0759628",
+        "lead_summary": "The sanctuary took a policy hit, not a rate hit. On Tuesday the Section 232 tariffs on patented drugs took effect; on Wednesday CMS finalized GLOBE, a model that ties Medicare Part B rebates to prices in 19 other countries \u2014 and XLV fell 1.4% on 12.1M shares, then another 1.3% Thursday, through its 50-day. This was the week the 10-year touched 5.34% and the hike got priced out, and neither mattered: the fund lost 2.6% while the S&P lost 0.2%. All fourteen tracked top holdings fell. Regeneron -6.7%, J&J -5.6% ten days before it opens earnings season. XLV $166.18, RSI 42.6, a dollar and a half above the September floor.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLV"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-05",
+    "source_commit_sha": "e70c87fcad911573f0a784ed125bd761d39bf361",
+    "provenance_verified": true
+  }
+}
