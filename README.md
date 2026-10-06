@@ -210,6 +210,8 @@ not offered, never a zero.
 
 > 📏 &nbsp;**22 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
+> 📅 &nbsp;**More weekdays than sessions.** The 1d window runs from the 2026-09-23 close to the 2026-10-05 close: 8 weekdays, 1 session, so at least 7 weekdays in it have no session in the panel. The 5d window runs from the 2026-09-16 close to the 2026-10-05 close: 13 weekdays, 5 sessions, so at least 8 weekdays in it have no session in the panel. A weekday without a session is a market holiday or a session the feed never wrote, and the panel cannot tell which.
+> 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
