@@ -206,47 +206,41 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-09-23** -- observation, not a forecast -- `data/tape/2026-09-23.json`
+**As of 2026-10-05** -- observation, not a forecast -- `data/tape/2026-10-05.json`
 
-> 📏 &nbsp;**21 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**22 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL
 ─────────────────────────────────────────────────────────────────
-Technology              ·······│███████     +8.51     80%     81%
-Industrials             ·······│███····     +3.14     80%     89%
-Healthcare              ·······│█······     +1.35     90%     88%
-Materials               ······█│·······     -1.36     60%     58%
-Utilities               ·····██│·······     -2.34     30%     25%
-Consumer Staples        ·····██│·······     -2.96     30%     43%
-Real Estate             ····███│·······     -3.31     22%      4%
-Financials              ····███│·······     -3.51     20%      7%
-Consumer Discretionary  ···████│·······     -4.42     20%     44%
-Communication Services  ···████│·······     -4.67     20%     32%
-Energy                  ··█████│·······     -6.53     10%      3%
+Technology              ·······│███████     +8.86     90%     94%
+Industrials             ·······│█······     +1.48     70%     92%
+Healthcare              ·······│·······     -0.63     70%     69%
+Financials              ····███│·······     -3.70     20%     10%
+Materials               ····███│·······     -3.76     40%     57%
+Utilities               ···████│·······     -4.55     30%     43%
+Energy                  ···████│·······     -4.97     30%     33%
+Consumer Discretionary  ··█████│·······     -5.71     30%     45%
+Communication Services  ··█████│·······     -6.58     20%     20%
+Real Estate             ··█████│·······     -6.81     11%      1%
+Consumer Staples        ·██████│·······     -7.03     10%      2%
 ```
 
 **Comparison rows -- not sectors.** Each instrument over the tape's own windows, and against SPY. No breadth, no volume confirmation, no score; never an input to a forecast, a payload or an evaluation.
 
 | Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |
 |---|---|---:|---:|---:|---:|
-| Gold | `series.GLD` SPDR Gold Shares | -1.80% | -1.08 | missing | missing |
-| US dollar | `fx.DXY` US Dollar Index | +0.57% | +1.29 | +1.53% | +0.15 |
-| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -1.92% | -1.20 | missing | missing |
+| Gold | `series.GLD` SPDR Gold Shares | -3.39% | -4.31 | missing | missing |
+| US dollar | `fx.DXY` US Dollar Index | missing | missing | missing | missing |
+| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | +1.39% | +0.48 | missing | missing |
 
 Returns in percent. *vs SPY* is in percentage points, the same subtraction as a sector's EXCESS.
 
-- **Gold**: absent from series at 2026-09-15.
-- **Bitcoin**: absent from series at 2026-09-15.
-
-<details>
-<summary><b>Panel warnings (1)</b></summary>
-
-- Technology/week: INOD moved 32.41 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
-
-</details>
+- **Gold**: absent from series at 2026-09-16.
+- **US dollar**: absent from fx at 2026-10-05 (the feed says: DX-Y.NYB: the bar dated 2026-10-05 is a quote until the exchange settlement is loaded, and is not read before 2026-10-06T13:00Z (now 2026-10-06T01:54Z)).
+- **Bitcoin**: absent from series at 2026-09-16.
 
 > This block records what traded. It scores nothing. The two judgment components have no daily source, and a daily artifact carrying them would be inventing them -- see `docs/decisions/2026-09-11-daily-observation-tape.md`.
 
