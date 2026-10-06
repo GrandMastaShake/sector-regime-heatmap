@@ -376,3 +376,201 @@ def test_undeclared_provenance_source_is_refused(tmp_path):
     _merge_into(weeks[-1], "SPY", "2026-08-26T04:08:06Z", source="stooq-priceonly")
     with pytest.raises(cm.PanelError, match="adjustment basis is undeclared"):
         cm.compute(panel(tmp_path, weeks), BASKETS, None)
+
+
+# --- Window contiguity. A horizon is a span of calendar weeks, not a count of
+#     files. Measured 2026-10-05 on the council panel cut at 2026-07-31 with
+#     2026-07-03 removed: the week to 2026-07-10 read 2026-06-26..2026-07-10
+#     and put Communication Services at +0.733 against SPY where the week was
+#     -1.276, on 10 of 10 constituents and with no warning; the month to
+#     2026-07-31 read five weeks. Upstream now holds a holiday week back until
+#     a later session proves the holiday, so a week can be owed for a while.
+FRIDAYS = ["2026-06-05", "2026-06-12", "2026-06-19", "2026-06-26", "2026-07-03",
+           "2026-07-10", "2026-07-17", "2026-07-24", "2026-07-31"]
+
+# The two Fridays in that run the market was closed, as upstream files them:
+# under the Friday, carrying the session the bars are from.
+HOLIDAY_NOTES = {"2026-06-19": "Friday holiday; bars from 2026-06-18",
+                 "2026-07-03": "Friday holiday; bars from 2026-07-02"}
+
+
+def rising(days, without=()):
+    """One week per day, every close a point above the week before it.
+
+    The level belongs to the date, not to the file's place in the panel, so
+    leaving a week out changes which weeks a window reads and nothing else.
+    """
+    return [week(d, flat(ALL, 100.0 + FRIDAYS.index(d)))
+            for d in days if d not in without]
+
+
+def test_the_gate_confirms_the_two_weeks_position_picks():
+    """On a panel with one file per week it returns the same two files the
+    positional read always took. It adds a refusal and moves nothing."""
+    weeks = rising(FRIDAYS)
+    for horizon, back in cm.HORIZON_WEEKS.items():
+        start, end = cm.horizon_window(weeks, back, horizon)
+        assert end is weeks[-1]
+        assert start is weeks[-1 - back]
+
+
+def test_a_contiguous_panel_is_read_as_it_always_was(tmp_path):
+    res = cm.compute(panel(tmp_path, rising(FRIDAYS), pad=False), BASKETS, None)
+    assert res["warnings"] == []
+    for sector in SECTORS:
+        wk, mo = res["sectors"][sector]["week"], res["sectors"][sector]["month"]
+        assert (wk["window_from"], wk["window_to"]) == ("2026-07-24", "2026-07-31")
+        assert (mo["window_from"], mo["window_to"]) == ("2026-07-03", "2026-07-31")
+        assert wk["equal_weight_return_pct"] == pytest.approx(
+            (108 / 107 - 1) * 100, abs=1e-3)
+        assert mo["equal_weight_return_pct"] == pytest.approx(
+            (108 / 104 - 1) * 100, abs=1e-3)
+
+
+def test_a_week_missing_before_the_end_week_refuses_the_week_horizon(tmp_path):
+    """The measured case: 2026-07-10 read with 2026-07-03 absent."""
+    days = [d for d in FRIDAYS if d <= "2026-07-10"]
+    p = panel(tmp_path, rising(days, without={"2026-07-03"}), pad=False)
+    with pytest.raises(cm.PanelError) as exc:
+        cm.compute(p, BASKETS, None)
+    msg = str(exc.value)
+    assert "The week window ending 2026-07-10" in msg
+    assert "at 2026-07-03" in msg                       # where it must start
+    assert "no weekly file for 2026-07-03" in msg       # the missing week, named
+    assert "2026-06-26, 14 days earlier" in msg         # what position reads
+
+
+@pytest.mark.parametrize("gone", ["2026-07-03", "2026-07-10", "2026-07-17"])
+def test_a_week_missing_inside_the_month_window_refuses_the_month_horizon(
+        tmp_path, gone):
+    """The month to 2026-07-31 runs from 2026-07-03. Whichever of its weeks
+    is absent -- its own start or one strictly inside -- position lands on
+    2026-06-26 and the window is five weeks long."""
+    weeks = rising(FRIDAYS, without={gone})
+
+    # The week horizon reads 07-24..07-31, which is whole.
+    start, end = cm.horizon_window(weeks, 1, "week")
+    assert (start["as_of"], end["as_of"]) == ("2026-07-24", "2026-07-31")
+
+    with pytest.raises(cm.PanelError) as exc:
+        cm.horizon_window(weeks, 4, "month")
+    msg = str(exc.value)
+    assert "The month window ending 2026-07-31" in msg
+    assert "28 days earlier, at 2026-07-03" in msg
+    assert "no weekly file for " + gone + "," in msg
+    assert "2026-06-26, 35 days earlier" in msg
+
+    # And the run as a whole is refused, not staged on the week alone.
+    with pytest.raises(cm.PanelError, match="month window ending 2026-07-31"):
+        cm.compute(panel(tmp_path, weeks, pad=False), BASKETS, None)
+
+
+@pytest.mark.parametrize("as_of", ["2026-07-03", "2026-07-10", "2026-07-17",
+                                   "2026-07-31"])
+def test_a_holiday_week_that_is_present_is_an_ordinary_week(tmp_path, as_of):
+    """A Friday the market was closed still has its file, named for the
+    Friday and saying which session its bars are from. Whether it ends a
+    window (07-03), starts the week (07-10), sits inside the month (07-17) or
+    starts the month (07-31), it reads exactly as a week with no note."""
+    noted = rising(FRIDAYS)
+    for w in noted:
+        if w["as_of"] in HOLIDAY_NOTES:
+            w["session_note"] = HOLIDAY_NOTES[w["as_of"]]
+    assert sum("session_note" in w for w in noted) == 2
+
+    (tmp_path / "noted").mkdir()
+    (tmp_path / "plain").mkdir()
+    with_note = cm.compute(panel(tmp_path / "noted", noted, pad=False),
+                           BASKETS, as_of)
+    without = cm.compute(panel(tmp_path / "plain", rising(FRIDAYS), pad=False),
+                         BASKETS, as_of)
+    assert with_note == without
+    assert with_note["warnings"] == []
+    week_block = with_note["sectors"]["Energy"]["week"]
+    assert week_block["window_to"] == as_of
+    assert week_block["constituents_used"] == len(SECTORS["Energy"])
+
+
+def test_a_holiday_week_filed_under_its_session_date_is_refused():
+    """The date is what is checked, not the note. The same week filed under
+    the Thursday it traded leaves the Friday without a file."""
+    weeks = rising([d for d in FRIDAYS if d <= "2026-07-10"])
+    holiday = next(w for w in weeks if w["as_of"] == "2026-07-03")
+    holiday["as_of"] = "2026-07-02"
+    holiday["session_note"] = HOLIDAY_NOTES["2026-07-03"]
+    with pytest.raises(cm.PanelError) as exc:
+        cm.horizon_window(weeks, 1, "week")
+    assert "no weekly file for 2026-07-03" in str(exc.value)
+    assert "2026-07-02, 8 days earlier" in str(exc.value)
+
+
+def test_both_weeks_owed_over_christmas_and_new_year_are_named(tmp_path):
+    """2026-12-25 and 2027-01-01 are Fridays running with no session. Until
+    upstream has written both, the week to 2027-01-08 is three weeks long;
+    once it has, the same panel reads as any other."""
+    days = ["2026-12-04", "2026-12-11", "2026-12-18", "2026-12-25",
+            "2027-01-01", "2027-01-08"]
+    owed = {"2026-12-25": "Friday holiday; bars from 2026-12-24",
+            "2027-01-01": "Friday holiday; bars from 2026-12-31"}
+    whole = [week(d, flat(ALL, 100.0 + i)) for i, d in enumerate(days)]
+    for w in whole:
+        if w["as_of"] in owed:
+            w["session_note"] = owed[w["as_of"]]
+
+    (tmp_path / "owed").mkdir()
+    holed = [w for w in whole if w["as_of"] not in owed]
+    with pytest.raises(cm.PanelError) as exc:
+        cm.compute(panel(tmp_path / "owed", holed, pad=False), BASKETS, None)
+    msg = str(exc.value)
+    assert "The week window ending 2027-01-08" in msg
+    assert "no weekly file for 2026-12-25, 2027-01-01," in msg
+    assert "2026-12-18, 21 days earlier" in msg
+    assert "those weeks" in msg
+
+    (tmp_path / "written").mkdir()
+    res = cm.compute(panel(tmp_path / "written", whole, pad=False), BASKETS, None)
+    assert res["sectors"]["Energy"]["week"]["window_from"] == "2027-01-01"
+    assert res["sectors"]["Energy"]["month"]["window_from"] == "2026-12-11"
+
+
+def test_a_hole_older_than_both_windows_is_not_this_runs_business(tmp_path):
+    """Scoped like the anchor gate: to the weeks a horizon reads. data/weekly
+    is an observation log, and a week missing months back moves no number."""
+    (tmp_path / "whole").mkdir()
+    (tmp_path / "holed").mkdir()
+    whole = cm.compute(panel(tmp_path / "whole", rising(FRIDAYS), pad=False),
+                       BASKETS, None)
+    holed = cm.compute(panel(tmp_path / "holed",
+                             rising(FRIDAYS, without={"2026-06-12"}), pad=False),
+                       BASKETS, None)
+    assert holed["sectors"] == whole["sectors"]
+    assert holed["warnings"] == whole["warnings"] == []
+    assert holed["panel_weeks"] == whole["panel_weeks"] - 1
+
+
+def test_files_closer_than_a_week_are_refused():
+    """The other direction: an extra file inside the window makes it short.
+    A duplicated week would otherwise read as a flat week for every name."""
+    weeks = rising(["2026-07-17", "2026-07-24", "2026-07-31"])
+    twin = json.loads(json.dumps(weeks[-1]))
+    with pytest.raises(cm.PanelError) as exc:
+        cm.horizon_window(weeks + [twin], 1, "week")
+    msg = str(exc.value)
+    assert "not a week apart (2026-07-31, 2026-07-31)" in msg
+    assert "0 days earlier" in msg
+    assert "duplicated or off-cycle" in msg
+
+
+def test_an_as_of_that_is_not_a_date_is_refused():
+    weeks = rising(["2026-07-24", "2026-07-31"])
+    weeks[0]["as_of"] = "24 Jul 2026"
+    with pytest.raises(cm.PanelError, match="not a YYYY-MM-DD date"):
+        cm.horizon_window(weeks, 1, "week")
+
+
+def test_the_refusal_names_the_window_by_its_length_when_no_horizon_is_given():
+    """src/evaluate.py reaches the gate through horizon_returns, which knows
+    how many weeks back it reads and not what the horizon is called."""
+    weeks = rising(FRIDAYS, without={"2026-07-03"})
+    with pytest.raises(cm.PanelError, match="The 4-week window ending 2026-07-31"):
+        cm.horizon_returns(weeks, ["SPY"], 4)

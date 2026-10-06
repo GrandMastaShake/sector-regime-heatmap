@@ -11,8 +11,8 @@ are left null for a human or an agent to fill with sourced reasoning. A partial
 sector file cannot be scored: src/heatmap.py rejects missing components, which
 is the intended handoff, not a bug.
 
-Two gates exist because violating either produces confident wrong numbers
-rather than obvious broken ones:
+Three gates exist because violating any of them produces confident wrong
+numbers rather than obvious broken ones:
 
 1. Adjustment basis. Total-return and price-only closes cannot be mixed in one
    basket. Dividend payers diverge from non-payers in proportion to accumulated
@@ -21,6 +21,13 @@ rather than obvious broken ones:
 
 2. Denominator honesty. A basket where constituents are missing is reported
    with its true denominator, never silently computed over the survivors.
+
+3. Window contiguity. A horizon is a span of calendar weeks, not a count of
+   files. The two agree only while the panel holds every week; with one absent
+   from its window the week horizon reads two weeks, or the month horizon
+   five, on full coverage and with no warning. The two ends of every window
+   are held to the calendar and the run is refused when they are not the right
+   distance apart.
 """
 from __future__ import annotations
 
@@ -39,6 +46,9 @@ BENCHMARK = "SPY"
 
 # Weekly bars per horizon. The day horizon is absent on purpose: it needs daily
 # bars, and the upstream feed commits Friday closes only.
+#
+# These are weeks on the calendar, not places in the panel. horizon_window
+# holds every window to exactly 7 days per bar and refuses the run otherwise.
 HORIZON_WEEKS = {"week": 1, "month": 4}
 
 # Which price sources produce which adjustment basis. An unlisted source is
@@ -258,14 +268,89 @@ def pct_change(new: float, old: float) -> float | None:
     return (new / old - 1.0) * 100.0
 
 
-def horizon_returns(weeks: list[dict], tickers: list[str], back: int) -> dict:
-    """Return per-ticker percent change over `back` weekly bars, plus coverage."""
+def week_date(week: dict) -> datetime.date:
+    """A weekly file's `as_of` as a calendar date."""
+    try:
+        return datetime.date.fromisoformat(week["as_of"])
+    except (TypeError, ValueError):
+        raise PanelError(
+            "Week " + repr(week["as_of"]) + " has an as_of that is not a "
+            "YYYY-MM-DD date, so the span of a window it starts or ends "
+            "cannot be measured."
+        ) from None
+
+
+def horizon_window(weeks: list[dict], back: int,
+                   horizon: str | None = None) -> tuple[dict, dict]:
+    """The two weeks a horizon reads, as (start, end), held to the calendar.
+
+    The start is the file `back` places behind the newest, and it must be
+    dated exactly `back` weeks before it. Position alone counts files, not
+    weeks: when the panel lacks a week, the file in that position is seven
+    days further off for every week absent, and the return over the longer
+    span comes out under the horizon's name with every constituent present
+    and nothing warned. Measured 2026-10-05 on the council panel cut at
+    2026-07-31 with 2026-07-03 removed: the week to 2026-07-10 read
+    2026-06-26..2026-07-10 and put Communication Services at +0.733 against
+    SPY where the week itself was -1.276, on 10 of 10 constituents; the month
+    to 2026-07-31 read five weeks.
+
+    The check is on the two ends because those are what a return reads, the
+    same scope the anchor gate takes. A hole older than the window is not
+    this horizon's business.
+
+    A week that is present is an ordinary week, whatever session it holds. A
+    Friday the market was closed is filed under that Friday with a
+    `session_note` naming the session its bars are from; the date is what is
+    checked here and the note is not read.
+    """
     if len(weeks) < back + 1:
         raise PanelError(
             "Panel has " + str(len(weeks)) + " weeks; need " + str(back + 1)
             + " for that horizon"
         )
     end, start = weeks[-1], weeks[-1 - back]
+    end_day, start_day = week_date(end), week_date(start)
+    span = (end_day - start_day).days
+    if span == 7 * back:
+        return start, end
+
+    step = datetime.timedelta(days=7)
+    label = horizon or (str(back) + "-week")
+    held = {w["as_of"] for w in weeks[-1 - back:]}
+    absent, day = [], end_day - step
+    while day > start_day:
+        if day.isoformat() not in held:
+            absent.append(day.isoformat())
+        day -= step
+    absent.reverse()
+    places = str(back) + (" place" if back == 1 else " places")
+    msg = ("The " + label + " window ending " + end["as_of"] + " must start "
+           + str(7 * back) + " days earlier, at "
+           + (end_day - back * step).isoformat() + ". ")
+    if absent:
+        msg += ("The panel has no weekly file for " + ", ".join(absent)
+                + ", so the file " + places + " before the end is "
+                + start["as_of"] + ", " + str(span) + " days earlier. ")
+    else:
+        msg += ("The panel's files there are not a week apart ("
+                + ", ".join(w["as_of"] for w in weeks[-1 - back:])
+                + "), so the file " + places + " before the end is "
+                + start["as_of"] + ", " + str(span) + " days earlier. ")
+    msg += ("A return over " + str(span) + " days is not a " + label
+            + " return and is refused rather than reported as one. ")
+    if absent:
+        msg += ("Upstream (weekly-council-scan) has to write "
+                + ("that week" if len(absent) == 1 else "those weeks")
+                + " before this window can be read.")
+    else:
+        msg += "Check the panel for a duplicated or off-cycle weekly file."
+    raise PanelError(msg)
+
+
+def horizon_returns(weeks: list[dict], tickers: list[str], back: int) -> dict:
+    """Return per-ticker percent change over `back` weekly bars, plus coverage."""
+    start, end = horizon_window(weeks, back)
     out, missing = {}, []
     for t in tickers:
         a, b = series_at(end, t), series_at(start, t)
@@ -361,7 +446,11 @@ def compute(panel_dir: Path, baskets: dict, as_of: str | None) -> dict:
     per_horizon: dict[str, dict[str, dict]] = {}
     for horizon, back in HORIZON_WEEKS.items():
         if len(weeks) > back:
-            anc = window_anchor(weeks[-1 - back], weeks[-1], horizon,
+            # Which two weeks, before anything is read from them: the anchor
+            # spread is a property of the pair, and of the wrong pair it is
+            # the wrong question.
+            start_week, end_week = horizon_window(weeks, back, horizon)
+            anc = window_anchor(start_week, end_week, horizon,
                                 scored_tickers)
             result["adjustment_anchor"][horizon] = anc
             if anc["warn"]:

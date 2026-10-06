@@ -102,6 +102,22 @@ def test_undeclared_price_source_is_refused(monkeypatch, tmp_path):
     assert run(monkeypatch, tmp_path, root, panel(tmp_path, weeks, pad=False)) == 2
 
 
+def test_a_panel_missing_a_week_is_refused_and_the_week_is_named(
+        monkeypatch, tmp_path, capsys):
+    """With 2026-08-14 absent the week to 2026-08-21 is a two-week return on
+    full coverage. Staging stops before writing anything and says which week
+    is owed."""
+    root = snap(tmp_path, "2026-08-24")
+    days = ["2026-07-17", "2026-07-24", "2026-07-31", "2026-08-07", "2026-08-21"]
+    weeks = [week(d, flat(ALL, 100.0 + i)) for i, d in enumerate(days)]
+    assert run(monkeypatch, tmp_path, root, panel(tmp_path, weeks, pad=False)) == 2
+    out = capsys.readouterr().out
+    assert "REFUSING to stage" in out
+    assert "The week window ending 2026-08-21" in out
+    assert "no weekly file for 2026-08-14" in out
+    assert not (tmp_path / "out").exists()
+
+
 def test_evidence_carries_provenance(monkeypatch, tmp_path):
     root = snap(tmp_path, "2026-08-24")
     d = root / "data/weekly_research/2026-08-24"
