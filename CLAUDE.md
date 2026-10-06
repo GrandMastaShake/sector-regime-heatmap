@@ -108,6 +108,15 @@ cycle, and `premarket.yml` / `after-close.yml` stay disabled.
   recompute is identical (the scheduled job does that when upstream has no new
   session) and refuses, exit 2, when it differs. A tape that predates the
   comparison rows shows every row as missing; nothing is backfilled.
+- **The tape's windows are read by position, and the weekly contiguity gate is
+  deliberately not applied to them.** `HORIZON_SESSIONS` counts sessions, 1
+  and 5, and sessions are not evenly spaced: five span 7 calendar days in a
+  plain week and 8 or 10 across Labor Day. There is no distance to hold the
+  two ends to, so `back` counts the session files the panel holds, and a
+  session the feed never wrote reads exactly like a holiday. Which weekdays
+  were sessions is the upstream witness's knowledge (`daily_observe.py
+  --audit`), not the panel's. The comparison rows take the same windows from
+  the same list and have no definition of their own.
 
 `docs/decisions/2026-09-11-daily-observation-tape.md` has the reasoning;
 `docs/decisions/2026-09-21-owner-watchlist-and-comparison-rows.md` adds the
@@ -125,6 +134,20 @@ comparison rows.
   Scoped to the two weeks a horizon actually reads, not the whole panel --
   `data/weekly` is an observation log and legitimately spans months of fetch
   dates. Warns past 35 days, refuses past 180.
+- **Window contiguity**. A horizon is a span of calendar weeks, not a count of
+  files. `horizon_window` takes a window's two ends by position and then holds
+  them to the calendar: exactly `7 * back` days apart, or `PanelError` -- the
+  whole run, naming the week the panel owes. This one never shipped: it was
+  measured 2026-10-05 on a copy of the council panel with 2026-07-03 removed.
+  The week to 2026-07-10 read 2026-06-26..2026-07-10 and put Communication
+  Services at +0.733 against SPY where the week itself was -1.276, on 10 of 10
+  constituents with no warning; the month to 2026-07-31 read five weeks.
+  Upstream now holds a Friday-holiday week back until a later session proves
+  the holiday (next: 2026-12-25 and 2027-01-01), so a week can be owed for a
+  while. A holiday week that is present -- filed under its Friday, with a
+  `session_note` -- is an ordinary week. `src/evaluate.py` reads its grading
+  windows through the same function. Scoped to the weeks a horizon reads, like
+  the anchor gate.
 - **Zero-volume bars**. A close printed behind zero volume is not a trade. AVB
   shipped one: close 65.9005 on 2026-08-21 against a real 184.06. Left in it
   computes -64.2% and moved Real Estate from rank 6 to rank 11 of 11. The
@@ -235,6 +258,17 @@ snapshot lands.
   tier derivation only, never scoring, but the ordering will go stale. They
   were not refreshed from the 2026-09-21 Finviz export: the owner kept every
   row but AVB's unchanged.
+- **Three published tape windows are one session longer than their label.**
+  Upstream lost the 2026-09-21 session (its own record: eight sessions lost
+  between 2026-09-21 and 2026-10-02). So `data/tape/2026-09-22.json` reads its
+  day window over 2026-09-18..2026-09-22, which is two sessions, and its week
+  window over six; `data/tape/2026-09-23.json` reads its week window over six
+  (2026-09-15..2026-09-23), and that is the tape the README renders as `5d`.
+  Published tapes are not rewritten and nothing is backfilled. No fix is
+  decided: no calendar rule separates this from Labor Day, whose 5-session
+  windows are also 8 days with one weekday unfiled.
+  `docs/decisions/2026-10-05-weekly-window-contiguity.md` has the table and
+  the options.
 - **The gold and bitcoin comparison rows read missing until the feed carries
   GLD and BTC.** The owner expects them in the panel's `series` from the
   2026-09-25 build. A 1-session value needs a bar on two sessions and a

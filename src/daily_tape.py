@@ -140,7 +140,18 @@ def check_cadence(sessions: list[dict]) -> str:
 
 
 def session_returns(sessions: list[dict], tickers: list[str], back: int) -> dict:
-    """Per-ticker percent change over `back` sessions, plus coverage."""
+    """Per-ticker percent change over `back` sessions, plus coverage.
+
+    The two ends are taken by position, on purpose, and are NOT held to the
+    calendar the way compute_metrics.horizon_window holds weekly files.
+    Sessions are not evenly spaced: five of them span 7 calendar days in a
+    plain week and 8 or 10 across Labor Day, so there is no distance to
+    require. `back` therefore counts the session FILES the panel holds, and
+    a session the feed never wrote reads exactly like a holiday: 2026-09-21
+    was one, and the 5-session windows across it are 8 days long as well.
+    Which weekdays were sessions is the upstream witness's knowledge
+    (daily_observe.py --audit), not something this panel carries.
+    """
     if len(sessions) < back + 1:
         raise PanelError(
             "Panel has " + str(len(sessions)) + " sessions; need "

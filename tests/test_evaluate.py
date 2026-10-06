@@ -94,6 +94,49 @@ def test_week_grades_once_its_friday_exists_but_month_still_waits(tmp_path):
     assert doc["horizons"]["month"]["graded"] is False
 
 
+# --- A grading window is a span of weeks, not a count of files, exactly as a
+#     scoring window is. With a week absent after the forecast date, counting
+#     forward lands a week late: the week horizon would be graded on a
+#     two-week outcome and the month on five. compute_metrics refuses the
+#     window, so nothing is graded and nothing is written.
+def test_a_week_missing_from_the_week_grading_window_is_refused(tmp_path):
+    p = panel(tmp_path, "2026-09-18")
+    (p / "2026-08-28.json").unlink()
+    f = write_forecast(tmp_path, forecast(scored({})))
+    with pytest.raises(ev.cm.PanelError) as exc:
+        ev.evaluate(f, p, BASKETS)
+    assert "no weekly file for 2026-08-28" in str(exc.value)
+    assert "2026-08-21, 14 days earlier" in str(exc.value)
+
+    out = tmp_path / "evals"
+    with pytest.raises(ev.cm.PanelError):
+        ev.main([str(f), "--panel", str(p), "--output-dir", str(out)])
+    assert not out.exists() or not list(out.glob("*.json"))
+
+
+def test_a_week_missing_from_the_month_grading_window_is_refused(tmp_path):
+    """The month from 2026-08-21 closes 2026-09-18. With 2026-09-04 absent,
+    four files on is 2026-09-25, and that is a five-week outcome."""
+    p = panel(tmp_path, "2026-09-18")
+    (p / "2026-09-25.json").write_text(
+        json.dumps(week("2026-09-25", {t: 100.0 for t in ALL})), encoding="utf-8")
+    (p / "2026-09-04.json").unlink()
+    with pytest.raises(ev.cm.PanelError) as exc:
+        ev.evaluate(write_forecast(tmp_path, forecast(scored({}))), p, BASKETS)
+    assert "no weekly file for 2026-09-04" in str(exc.value)
+    assert "2026-08-21, 35 days earlier" in str(exc.value)
+
+
+def test_a_hole_before_the_forecast_date_does_not_cost_the_grade(tmp_path):
+    p = panel(tmp_path, "2026-09-18")
+    (p / "2026-08-07.json").unlink()
+    doc = ev.evaluate(write_forecast(tmp_path, forecast(scored({}))), p, BASKETS)
+    assert doc["horizons"]["week"]["graded"] is True
+    assert doc["horizons"]["week"]["window_to"] == "2026-08-28"
+    assert doc["horizons"]["month"]["graded"] is True
+    assert doc["horizons"]["month"]["window_to"] == "2026-09-18"
+
+
 # --- Cycle 1 was written five days after the close it reads and says so. A
 #     grade computed from it would look like evidence and be nothing of the
 #     kind.

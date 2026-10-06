@@ -17,6 +17,7 @@ A sector rating requires broad, independent confirmation. A single large constit
 - Equal-weight each sector basket for internal breadth and return measures, over the basket's own size (ten names; nine in Real Estate since 2026-09-21).
 - Keep cap-weighted results separate if later added.
 - Flag anomalies, zero-volume records, stale quotes, missing tickers, and incomplete history.
+- A horizon is a span of calendar weeks: one for the week, four for the month. A window whose two ends are not exactly that far apart is refused, never computed over whichever files are there.
 - Apply a risk penalty for concentration, signal disagreement, or contradictory macro evidence.
 - Keep confidence separate from rating.
 
