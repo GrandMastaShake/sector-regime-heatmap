@@ -19,9 +19,17 @@ out of the chart on purpose: sharing its bar scale would let one volatile row
 flatten eleven sector bars, and sharing its columns would put them where a
 breadth and an up-volume figure are expected. A value the tape does not carry
 renders as `missing`, including every row of a tape that predates them.
+
+A window that holds more weekdays than the sessions it read gets one note
+above the chart, with both counts. That is all a tape can prove about its own
+windows: they are taken by position, so a session the panel never received
+looks exactly like a market holiday. The note says a weekday has no session
+and names both readings. It never picks one, and there is no exchange
+calendar here to pick with.
 """
 from __future__ import annotations
 
+import datetime
 import json
 import sys
 from pathlib import Path
@@ -72,6 +80,10 @@ def signed(value, places=2) -> str:
     if value is None:
         return "n/a"
     return format(value, "+." + str(places) + "f")
+
+
+def plural(n: int, noun: str) -> str:
+    return str(n) + " " + noun + ("" if n == 1 else "s")
 
 
 def render_chart(tape: dict, cmp_block: dict | None) -> list[str]:
@@ -176,6 +188,77 @@ def render_comparisons(tape: dict) -> list[str]:
     return lines
 
 
+def weekdays_in(window_from: str, window_to: str) -> int:
+    """Weekdays, Monday to Friday, after `window_from` and up to `window_to`.
+
+    A window reads one session's close against an earlier one's, so the days
+    that can hold its sessions are the ones after its first date, its last
+    date included. A session cannot fall on a weekend, so this is the most
+    sessions the window can hold.
+    """
+    start = datetime.date.fromisoformat(window_from)
+    end = datetime.date.fromisoformat(window_to)
+    return sum(1 for n in range(1, (end - start).days + 1)
+               if (start + datetime.timedelta(days=n)).weekday() < 5)
+
+
+def tape_windows(tape: dict) -> list[tuple[int, str, str]]:
+    """Each window the tape read, once: (sessions, window_from, window_to).
+
+    Read off the sector blocks, which every tape carries: the two ends are in
+    the block and the length is the horizon's. The comparison rows take the
+    same windows from the same session list and are not read a second time.
+    One entry per horizon the tape has, and none for a horizon the panel was
+    too short for.
+    """
+    found: list[tuple[int, str, str]] = []
+    for horizon, back in dt.HORIZON_SESSIONS.items():
+        for horizons in tape["sectors"].values():
+            block = horizons.get(horizon) or {}
+            window = (back, block.get("window_from"), block.get("window_to"))
+            if window[1] and window[2] and window not in found:
+                found.append(window)
+    return found
+
+
+def render_window_note(tape: dict) -> list[str]:
+    """One note, when a window holds more weekdays than the sessions it read.
+
+    The windows are taken by position (src/daily_tape.py), so a tape cannot
+    see a session its panel does not hold. What it can prove is narrower.
+    Weekdays equal to sessions: the window is whole, because every weekday in
+    it is a session on file. More weekdays than sessions: at least that many
+    weekdays in it have no session file, and nothing in the panel says
+    whether the market was closed or the feed never wrote the day. Labor Day
+    and the session lost on 2026-09-21 leave the same thing behind, a weekday
+    with no file.
+
+    So the note gives both counts and both readings and picks neither. It is
+    expected across every market holiday, in the same words. There is no
+    exchange calendar here to quiet it, on purpose: see
+    docs/decisions/2026-10-06-tape-window-weekday-note.md.
+    """
+    parts = []
+    for sessions, start, end in tape_windows(tape):
+        weekdays = weekdays_in(start, end)
+        if weekdays <= sessions:
+            continue
+        unfiled = weekdays - sessions
+        parts.append(
+            "The " + str(sessions) + "d window runs from the " + start
+            + " close to the " + end + " close: " + plural(weekdays, "weekday")
+            + ", " + plural(sessions, "session") + ", so at least "
+            + plural(unfiled, "weekday") + " in it "
+            + ("has" if unfiled == 1 else "have")
+            + " no session in the panel.")
+    if not parts:
+        return []
+    return ["> \U0001f4c5 &nbsp;**More weekdays than sessions.** "
+            + " ".join(parts) + " A weekday without a session is a market "
+            "holiday or a session the feed never wrote, and the panel cannot "
+            "tell which."]
+
+
 def render_regime_line(regime: dict, cmp_block: dict | None) -> list[str]:
     if regime.get("archetype") is None:
         return ["> ⚠️ &nbsp;**No declared regime.** " + (regime.get("reason") or "")
@@ -265,6 +348,8 @@ def build() -> str:
         + "three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; "
         + "no score, no `regime_fit`, no `macro_catalyst`",
     ]
+    for note in render_window_note(tape):
+        lines += ["> ", note]
     lines += ["> "] + render_regime_line(regime, cmp_block)
 
     lines += ["", "```"] + render_chart(tape, cmp_block) + ["```"]

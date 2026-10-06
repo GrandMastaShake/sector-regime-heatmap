@@ -117,10 +117,22 @@ cycle, and `premarket.yml` / `after-close.yml` stay disabled.
   were sessions is the upstream witness's knowledge (`daily_observe.py
   --audit`), not the panel's. The comparison rows take the same windows from
   the same list and have no definition of their own.
+- **The README says when a window holds more weekdays than sessions, and not
+  why.** `render_tape.py` counts the weekdays after `window_from` up to
+  `window_to` and, when there are more than the 1 or 5 sessions the window
+  read, puts both counts in one line above the chart. Equal counts prove the
+  window whole, because a session cannot fall on a weekend. More weekdays
+  means at least the difference have no session file, and that is all a tape
+  can prove: the line reads the same across Labor Day as across a lost
+  session, and names both without choosing. Expect it on every market
+  holiday. Do not quiet it with an exchange calendar, and do not move it into
+  the artifact: a new field changes the bytes of every tape, and a recompute
+  of a published date that differs is refused.
 
 `docs/decisions/2026-09-11-daily-observation-tape.md` has the reasoning;
 `docs/decisions/2026-09-21-owner-watchlist-and-comparison-rows.md` adds the
-comparison rows.
+comparison rows; `docs/decisions/2026-10-06-tape-window-weekday-note.md` adds
+the weekday note.
 
 ## The gates, and what each one caught
 
@@ -258,17 +270,27 @@ snapshot lands.
   tier derivation only, never scoring, but the ordering will go stale. They
   were not refreshed from the 2026-09-21 Finviz export: the owner kept every
   row but AVB's unchanged.
-- **Three published tape windows are one session longer than their label.**
-  Upstream lost the 2026-09-21 session (its own record: eight sessions lost
-  between 2026-09-21 and 2026-10-02). So `data/tape/2026-09-22.json` reads its
-  day window over 2026-09-18..2026-09-22, which is two sessions, and its week
-  window over six; `data/tape/2026-09-23.json` reads its week window over six
-  (2026-09-15..2026-09-23), and that is the tape the README renders as `5d`.
-  Published tapes are not rewritten and nothing is backfilled. No fix is
-  decided: no calendar rule separates this from Labor Day, whose 5-session
-  windows are also 8 days with one weekday unfiled.
-  `docs/decisions/2026-10-05-weekly-window-contiguity.md` has the table and
-  the options.
+- **Published tape windows across upstream's lost sessions are longer than
+  their label. The README now says so, without saying why.** Upstream lost
+  eight sessions between 2026-09-21 and 2026-10-02 (its own record) and the
+  daily panel has no file for any of them. Five windows as of 2026-10-06:
+  `data/tape/2026-09-22.json` reads its day window over two sessions
+  (2026-09-18..2026-09-22) and its week window over six;
+  `data/tape/2026-09-23.json` reads its week window over six; and
+  `data/tape/2026-10-05.json` reads its day window over eight
+  (2026-09-23..2026-10-05) and its week window over thirteen
+  (2026-09-16..2026-10-05). A week window reads across a gap on the first
+  five tapes after it, so with nothing further lost the next four tapes each
+  add one, unless upstream recovers the sessions first. Published tapes are
+  not rewritten and nothing is backfilled. Since 2026-10-06 the README block
+  gives the weekday and session counts for any such window (the daily tape,
+  above). That is a disclosure, not a fix: it cannot tell these windows from
+  Labor Day's, the artifact itself carries no flag, and nothing refuses.
+  Still undecided: upstream writing each daily file's previous session so the
+  tape can check the chain, or an exchange calendar here.
+  `docs/decisions/2026-10-05-weekly-window-contiguity.md` has the options;
+  `docs/decisions/2026-10-06-tape-window-weekday-note.md` has the table as it
+  stands and what the note can and cannot say.
 - **The gold and bitcoin comparison rows read missing until the feed carries
   GLD and BTC.** The owner expects them in the panel's `series` from the
   2026-09-25 build. A 1-session value needs a bar on two sessions and a
