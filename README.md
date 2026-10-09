@@ -206,58 +206,39 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-10-06** -- observation, not a forecast -- `data/tape/2026-10-06.json`
+**As of 2026-10-07** -- observation, not a forecast -- `data/tape/2026-10-07.json`
 
-> 📏 &nbsp;**31 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**32 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL
 ─────────────────────────────────────────────────────────────────
-Energy                  ·······│███····     +1.87    100%    100%
-Technology              ·······│███····     +1.79     80%     99%
-Utilities               ·······│·······     -0.23     86%     94%
-Industrials             ······█│·······     -0.61     75%     80%
-Materials               ······█│·······     -0.63     67%     67%
-Consumer Discretionary  ·····██│·······     -1.34     29%     48%
-Financials              ····███│·······     -2.21     57%     38%
-Consumer Staples        ···████│·······     -2.41     60%     61%
-Real Estate             ···████│·······     -2.69     25%      7%
-Communication Services  ··█████│·······     -3.37     43%     17%
-Healthcare              ███████│·······     -4.53     14%     27%
+Utilities               ·······│██████·     +2.56     70%     75%
+Energy                  ·······│██·····     +1.00     90%     71%
+Communication Services  ·····██│·······     -0.90     60%     63%
+Consumer Staples        ·····██│·······     -0.97     70%     61%
+Industrials             ·····██│·······     -1.03     60%     93%
+Financials              ····███│·······     -1.20     50%     18%
+Materials               ···████│·······     -1.66     50%     56%
+Technology              ···████│·······     -1.84     60%     83%
+Consumer Discretionary  ··█████│·······     -2.19     40%     58%
+Healthcare              ███████│·······     -2.89     33%     38%
+Real Estate             ███████│·······     -3.01     22%     10%
 ```
 
 **Comparison rows -- not sectors.** Each instrument over the tape's own windows, and against SPY. No breadth, no volume confirmation, no score; never an input to a forecast, a payload or an evaluation.
 
 | Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |
 |---|---|---:|---:|---:|---:|
-| Gold | `series.GLD` SPDR Gold Shares | +0.72% | +0.17 | -0.16% | -2.11 |
-| US dollar | `fx.DXY` US Dollar Index | missing | missing | missing | missing |
-| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | missing | missing | missing | missing |
+| Gold | `series.GLD` SPDR Gold Shares | -1.67% | -1.43 | -1.30% | -3.22 |
+| US dollar | `fx.DXY` US Dollar Index | +0.40% | +0.64 | missing | missing |
+| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -2.54% | -2.30 | -0.19% | -2.10 |
 
 Returns in percent. *vs SPY* is in percentage points, the same subtraction as a sector's EXCESS.
 
-- **US dollar**: absent from fx at 2026-10-06 (the feed says: DX-Y.NYB: the bar dated 2026-10-06 is a quote until the exchange settlement is loaded, and is not read before 2026-10-07T13:00Z (now 2026-10-07T01:01Z)).
-- **Bitcoin**: absent from series at 2026-10-06 (the feed says: no bar dated 2026-10-06 in window 2026-09-26..2026-10-07).
-
-<details>
-<summary><b>Panel warnings (12)</b></summary>
-
-- Communication Services/day has only 7 of 10 constituents; too thin to characterise the sector
-- Consumer Discretionary/day has only 7 of 10 constituents; too thin to characterise the sector
-- Financials/day has only 7 of 10 constituents; too thin to characterise the sector
-- Healthcare/day has only 7 of 10 constituents; too thin to characterise the sector
-- Technology/day has only 5 of 10 constituents; too thin to characterise the sector
-- Utilities/day has only 7 of 10 constituents; too thin to characterise the sector
-- Communication Services/week has only 7 of 10 constituents; too thin to characterise the sector
-- Consumer Discretionary/week has only 7 of 10 constituents; too thin to characterise the sector
-- Financials/week has only 7 of 10 constituents; too thin to characterise the sector
-- Healthcare/week has only 7 of 10 constituents; too thin to characterise the sector
-- Technology/week has only 5 of 10 constituents; too thin to characterise the sector
-- Utilities/week has only 7 of 10 constituents; too thin to characterise the sector
-
-</details>
+- **US dollar**: absent from fx at 2026-09-30.
 
 > This block records what traded. It scores nothing. The two judgment components have no daily source, and a daily artifact carrying them would be inventing them -- see `docs/decisions/2026-09-11-daily-observation-tape.md`.
 
