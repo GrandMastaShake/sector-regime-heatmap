@@ -1,0 +1,132 @@
+{
+  "sector": "Industrials",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 75.9,
+      "regime_fit": 45,
+      "macro_catalyst": 42
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -0.96,
+      "equal_weight_return_pct": -2.288,
+      "sector_return_vs_spy_pct": -3.448,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 75.9,
+      "top_two_contribution_pct": 52.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLI -0.41 pct to $169.25, the only non-tech sector down on the week and a fourth straight weekly close under its 200D ($171.87); Tuesday's $171.58 missed the reclaim by 29 cents, Wednesday's -2.2 pct was the FTC/USDA day, Thursday's $166.58 held the $166.18 line by 40 cents on 9.1M shares, and Friday's rally came on 3.9M, the lightest volume in the data -- 'a hold, not a reclaim' (wiki/industrials.md; macro/facts.json).",
+      "The regulator hit the two names that carried the cycle trade: the FTC and USDA opened a joint inquiry into agricultural-equipment markets Oct 7 (comments due Dec 7); DE -9.6 pct (another -4.8 pct Friday with no sourced reason), CAT -5.3 pct sitting on its 200D ($799.66) without being named; Ophelia split the call -- power/electrical (GEV, ETN, PH) overweight, ag and heavy machinery to market-weight (wiki/industrials.md; wiki/synthesis.md Wire 6).",
+      "The data still says cycle and the index is unconvinced: ISM services 54.9, backlogs the highest since July 2022, but prices paid 74.0 and export orders under 50 for the first time in eight months, with DXY 102.21 an export headwind for CAT and DE (wiki/industrials.md MACRO OVERLAY; wiki/economic-calendar.md).",
+      "Week RF cut 52 -> 45 and MC 50 -> 42: the week carries only AZZ (Tue AMC), FAST Wed, MAN/JBHT Thu outside the tracked list; the machinery names report from Oct 20 (wiki/industrials.md EARNINGS CALENDAR; wiki/earnings-surveillance.md SECTOR EARNINGS DENSITY)."
+    ],
+    "risks": [
+      "Bullish falsifier: a close over $171.87 turns four weeks under the 200D into a failed breakdown -> 50D $175.38; the inquiry proves narrow and DE/CAT retrace (wiki/industrials.md Marky).",
+      "Falsifier: $166.18 on a close -> low $160s; CAT loses its 200D; BA ($11 above its 52-week low) breaks it before Oct 27 (wiki/industrials.md RISK SCENARIOS).",
+      "The diesel loop: DAL's fuel bill +62 pct and a 22 pct cut to the year with 'no visible fuel relief' at UPS/FDX; ISM services prices at a four-year high reach factory margins (wiki/synthesis.md Wire 4; wiki/industrials.md)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 40.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 89.3,
+      "regime_fit": 48,
+      "macro_catalyst": 52
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 40.0,
+      "median_return_pct": -2.498,
+      "equal_weight_return_pct": -0.59,
+      "sector_return_vs_spy_pct": -2.458,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 89.3,
+      "top_two_contribution_pct": 36.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "Month arithmetic ranks third (relative momentum 80, up-volume 89.3 pct) even with breadth 40 -- the power chain (GEV +1.6 pct to $1,004.73, ETN held) is the leg of the AI loop that got paid this week via Google-Constellation, DOE-Vistra and Black Hills, and nat gas +6.1 pct (wiki/synthesis.md Wire 2; wiki/industrials.md).",
+      "The cycle data justifies machinery and the regulator took the price down anyway; CAT at $800.47 is 24.7x forward, 21.3 pct under target and 'the entry I would have wanted two weeks ago' -- Cecil holds and waits for Oct 29; RTX 23.6x with 23.7 pct to target is the value list after moving off RSI 24 (wiki/industrials.md Cecil).",
+      "Month RF cut 54 -> 48 and MC 55 -> 52: GE/RTX/MMM Oct 20 (the aerospace-and-defense verdict), UAL Oct 20, CSX Oct 21, HON/LMT/UNP Oct 22, ITW Oct 23, BA/UPS Oct 27, GEV/FDX Oct 28, CAT Oct 29, ETN/UBER Nov 3, PH Nov 5 -- the heaviest industrial calendar of the season (wiki/industrials.md EARNINGS CALENDAR; wiki/earnings-surveillance.md)."
+    ],
+    "risks": [
+      "The inquiry widens to dealers, repair rights and rivals beyond ag; comments run to Dec 7 and 'I do not buy DE or CAT into a comment period' (wiki/industrials.md).",
+      "DXY clears 102.24 into CAT's and DE's prints; the 10Y at 5.24 pct keeps capex financing at the cycle high; a second weak payrolls print Nov 6 (wiki/industrials.md MACRO OVERLAY).",
+      "GE at 33.9x forward under its 200D into Oct 20; HON 9 pct under its 200D; BA near its 52-week low -- aerospace and defense have had a month of selling that only paused this week with no company news (wiki/industrials.md)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/industrials.md",
+        "source_file_sha": "8f419ee884bf45edcad50d48ba9d8d0ec455dcd5",
+        "lead_summary": "The line held by forty cents and the 200-day held the index. XLI made a high close at $171.58 on Tuesday \u2014 $0.29 under its 200-day \u2014 then fell 2.2% on Wednesday as the FTC and USDA opened a joint public inquiry into agricultural-equipment markets: Deere ended the week -9.6%, Caterpillar -5.3%, the two names that had carried the cycle trade. The fund traded to $166.58 Thursday, 40 cents above the $166.18 line, and closed Friday at $169.25 (-0.4% W/W), a fourth straight weekly close under the 200-day, on the lightest volume of the week. Leadership is still narrow: GEV +1.6% to $1,004.73, UBER +5.0%, UPS +1.7%. Defense and aerospace were calm after a month of selling. The data (ISM services 54.9, prices index 74) says cycle; the index says it is unconvinced.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH (Sub-$5B)",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "WEEKLY NARRATIVE \u2014 The Regulator Hit the Cycle Trade"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

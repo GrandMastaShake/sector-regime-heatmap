@@ -1,0 +1,133 @@
+{
+  "sector": "Financials",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 70.0,
+      "relative_momentum": 50.0,
+      "volume_confirmation": 69.5,
+      "regime_fit": 40,
+      "macro_catalyst": 55
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 70.0,
+      "median_return_pct": 1.169,
+      "equal_weight_return_pct": 2.234,
+      "sector_return_vs_spy_pct": 1.074,
+      "sector_rank_among_eleven": 6,
+      "up_volume_share_pct": 69.5,
+      "top_two_contribution_pct": 48.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLF +2.32 pct to $54.73, ending four weekly losses and printing the $54.46 add trigger on the first try; the 200D ($53.33) held on every close since Oct 1; Thursday's 47.7M shares was money entering financials on the day tech sold off (wiki/financials.md; macro/facts.json).",
+      "The lift came from the names that were never oversold -- V +6.9 and MA +6.8 pct at records on a move nobody can source, PGR/CB/TRV/BRK.B -- while BAC (RSI 32), PNC (29.5), GS (35), MS (34), SCHW (35) did nothing and KRE fell 2.5 pct, reversing the prior three weeks' regional strength with no sourced reason (wiki/financials.md; wiki/synthesis.md Section 2 item 5).",
+      "Credit is measured and two-sided: HY OAS 315 (from the 324 peak), HY-IG 233 under the 250 trigger; CCC 1,252 a new 52-week high -- 'index in, bottom tier out'; the curve +49bp 10Y-2Y is steeper, +119 10Y-3M flatter from the bill end (wiki/canary-watch.md CREDIT SPREADS and YIELD CURVE; macro/facts.json).",
+      "Week RF raised 35 -> 40 and MC 40 -> 55: seven of nine tracked financials report in 72 hours (JPM/GS/WFC/C Tue, BAC/MS/BLK/PGR Wed, SCHW/USB/PNC Thu, TRV + MTB/RF/TFC/CFG Fri); GS's consensus was cut 12 pct in seven days ($15.01 -> $13.18) with the whisper a nickel over it; bank straddles are 1.3-2.1x realized norms (wiki/earnings-surveillance.md; wiki/synthesis.md Section 4)."
+    ],
+    "risks": [
+      "Provisions raised at two or more banks, or JPM/GS cutting NII guides, = the labor flag reaching credit; Cecil moves his HY-IG trigger to 240 and the fund goes back through the 200D at $53.33 on the open (wiki/economic-calendar.md NEXT WEEK'S GAUNTLET; wiki/canary-watch.md COUNCIL READ).",
+      "Falsifier: a close under $53.30 (Monday's low) -> 200D $53.33 -> $52.81 -> May-June base $50.42-51.58; bullish falsifier: $54.82 then the 50D $56.39 on clean reserve lines (wiki/financials.md).",
+      "V and MA are 14 pct of the fund and delivered most of the gain on a move the page could not source, in a week a reported White House endorsement of card-network competition legislation argued the opposite (wiki/financials.md WILD CARD; wiki/synthesis.md Wire 6).",
+      "Ophelia stays cautious 'with less urgency': if reserves are clean the bounce was positioning; FRED posts Friday's spreads Monday (wiki/financials.md COUNCIL READ)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 40.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 31.0,
+      "regime_fit": 42,
+      "macro_catalyst": 52
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 40.0,
+      "median_return_pct": -2.955,
+      "equal_weight_return_pct": -3.389,
+      "sector_return_vs_spy_pct": -5.257,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 31.0,
+      "top_two_contribution_pct": 42.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "The month arithmetic is the worst on the board bar two (-6.50 pts vs SPY, breadth 40, up-volume 31 pct); the regime -- stopped hiring, CCC widening, mortgage 7.40 pct, Trepp CMBS delinquency 8.02 pct -- is the one in which credit costs show up in Q3 reserve lines (wiki/canary-watch.md SECTOR ROTATION FLOW; wiki/real-estate.md MACRO OVERLAY).",
+      "Against it: a positively sloped curve at every tenor (+49 / +119bp) is the NII tailwind the sector lacked for two years, and the oversold banks trade 10-13x forward with 20-27 pct gaps to target (wiki/canary-watch.md YIELD CURVE; wiki/financials.md Cecil).",
+      "Month RF raised 40 -> 42 and MC cut 55 -> 52: most of the catalysts land in the week horizon; the month's remaining receipts are COF/SYF card charge-offs Oct 20 against a 46.3 sentiment print, CB Oct 20, AXP Oct 23, V Oct 27, MA Oct 29, BRK.B Nov 7 (wiki/earnings-surveillance.md; wiki/financials.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "A second weak payrolls print Nov 6 makes +29K a trend and the only leaders (payments, insurance) roll over; a CRE or private-credit mark becomes a number in a Q3 release (wiki/financials.md RISK SCENARIOS).",
+      "The card-competition bill proves real: V and MA +7 pct in a week fall back (wiki/financials.md).",
+      "The regionals' -2.5 pct in an up week is 'the tell I should have watched' and has no sourced reason; Mercer (#99) skipped a coupon with no signed support agreement (wiki/financials.md; wiki/materials.md)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/financials.md",
+        "source_file_sha": "2b9605d23f88c3399e98918d4a7fb5f563b128b4",
+        "lead_summary": "The shelf held, and the bounce came from the side nobody was watching. XLF ended its four-week losing streak with a +2.3% week to $54.73 \u2014 back over the $54.46 line I said to add on, level with its 20-day, 2.9% under its 50-day. Payments did the work (V +6.9% and MA +6.8%, both at records), with insurers and Berkshire behind them (PGR +3.4%, CB +3.1%, BRK.B +2.6%); the money centers barely moved (JPM +0.7%, BAC +1.1%) and the regionals fell (KRE -2.5%) \u2014 the reverse of the last three weeks. Twelve of the seventeen names tracked rose, four fell, one was flat. High-yield spreads came off their October 1 peak (3.15% Thursday, from 3.24%). JPMorgan, Wells Fargo, Citigroup and Goldman report Tuesday.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLF"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

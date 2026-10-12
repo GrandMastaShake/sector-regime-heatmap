@@ -1,0 +1,132 @@
+{
+  "sector": "Consumer Staples",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 90.0,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 97.7,
+      "regime_fit": 45,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 90.0,
+      "median_return_pct": 3.334,
+      "equal_weight_return_pct": 3.386,
+      "sector_return_vs_spy_pct": 2.225,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 97.7,
+      "top_two_contribution_pct": 39.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLP +3.60 pct to $83.43, first up week after seven down, reclaiming $81.00, the $81.70 double bottom (retested Wed) and the 200D ($82.81) in one Thursday; seventeen of nineteen tracked names rose; the 50D $83.64 is 21 cents overhead (wiki/consumer-staples.md; macro/facts.json).",
+      "The regime favors the shelter relatively: UMich 46.3 with current conditions at an all-time low, mortgage 7.40 pct, trade-down inside the store (WMT +6.8 pct, COST September comps +11.4 pct), and calendar-page Ophelia names 'staples with pricing power' as a holding a +0.6 pct headline CPI makes right (wiki/consumer-staples.md; wiki/economic-calendar.md COUNCIL READ; wiki/synthesis.md Wire 5).",
+      "The bid was a rotation, not a print: PEP beat and cut its profit guide the same day and ended flat; the staples page's 'wider credit spreads' attribution is not supported by FRED (HY narrowed 324 -> 315); Ophelia stays neutral -- 'a relative trade, not an absolute one' (wiki/consumer-staples.md; wiki/synthesis.md Section 7.A and 7.B.2).",
+      "Week RF raised 28 -> 45 and MC 45 -> 48: the fund is back above its Sep 11 level and the week's prints (CPI food-at-home Wed, retail sales Thu, ACI Tue) are two-sided; the favorable band is arithmetic-driven (breadth 90, up-volume 97.7 pct) (wiki/consumer-staples.md)."
+    ],
+    "risks": [
+      "XLP's 30-day correlation to SPY flipped positive -> negative (+0.095 -> -0.009), the strict-criterion alert (second flip in three weeks, issue opened): statistically a sector with no relationship to the index, not a hedge (wiki/canary-watch.md SECTOR CORRELATION MATRIX).",
+      "Falsifier: a daily close under $81.70 (Marky's stop); the Thursday rotation 'can reverse the day the AI names stabilize'; a rejection at the 50D with a close under the 20D $82.14 scales out (wiki/consumer-staples.md).",
+      "The carry gap is ~-250bp and DXY 102.21 is a fourth weekly gain into PM Oct 21, PG Oct 22, KO/MDLZ Oct 27 -- PEP already put a number on the stronger dollar (wiki/consumer-staples.md; wiki/synthesis.md Wire 7)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 48.6,
+      "regime_fit": 42,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": -0.058,
+      "equal_weight_return_pct": -0.87,
+      "sector_return_vs_spy_pct": -2.739,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 48.6,
+      "top_two_contribution_pct": 45.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "The sector closed above where it stood four weeks ago ($82.84 on Sep 11) and YTD leads XLY by ~14 pts (+9.5 vs -4.9 pct); month relative momentum 70 is the third-best on the board (wiki/consumer-staples.md; inputs/2026-10-09/consumer_staples.json metrics).",
+      "Branded food is the dissent: GIS 2 pct above its 52-week low at a 7.6 pct yield with sales falling in every U.S. unit, CPB -2.1 pct, KMB's lowered outlook; the trade-down is inside the store, not into the sector (wiki/consumer-staples.md; wiki/synthesis.md Section 1).",
+      "Month RF raised 32 -> 42 and MC held at 45: PM Oct 21, PG Oct 22, KO/MDLZ Oct 27, MO/HSY Oct 29, CL Oct 30 are the three largest staples prints in three days with DXY at 102 translation (wiki/consumer-staples.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "Guide cuts spread (PEP's cut becomes a pattern at PG, KO, MDLZ on FX and input costs): branded names -5 to -8 pct; the desk's probability 30 pct (wiki/consumer-staples.md RISK SCENARIOS).",
+      "Falsifier: breakdown below $80.13 (the prior week low); relief falsifier: 10Y under 5.10 pct with the 50D held turns Ophelia defensive-lean (wiki/consumer-staples.md).",
+      "A dollar rally past 102.5 costs the multinationals 2-3 pct extra; the restriction on commodity longs is a separate rule but the same dollar (wiki/consumer-staples.md; wiki/materials.md)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-staples.md",
+        "source_file_sha": "721b3ea9c4f5e478ce652190c141d6c72a0adc96",
+        "lead_summary": "The shelter got its bid, a week late. XLP rose 3.6% to $83.43 \u2014 its first up week after seven straight losses \u2014 reclaiming the $81.00 shelf, the $81.70 double bottom and the 200-day ($82.81) in a single Thursday. Seventeen of the nineteen names tracked here rose. Costco's September comp printed +11.4%, PepsiCo beat and then cut its profit guide, Philip Morris closed Friday at a 52-week high, and the 10-year gave back four basis points to 5.24%. I said PepsiCo on Thursday would decide whether $81.00 came back. $81.00 came back \u2014 on a rotation out of growth, not on PepsiCo's guide.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLP (week ending 2026-10-09)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

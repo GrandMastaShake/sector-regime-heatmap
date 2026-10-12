@@ -1,0 +1,133 @@
+{
+  "sector": "Materials",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 65.2,
+      "regime_fit": 32,
+      "macro_catalyst": 40
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": 0.42,
+      "equal_weight_return_pct": 0.505,
+      "sector_return_vs_spy_pct": -0.655,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 65.2,
+      "top_two_contribution_pct": 37.6,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLB +1.17 pct to $49.43 matched SPY (+0.01 pts) but did not close above a level that matters: rejected three times at $49.64-49.73 (20D), a fourth straight weekly close under the 200D ($50.36), $47.81 untested -- 'a hold of the low, not a reversal' (wiki/materials.md; macro/facts.json).",
+      "The restriction on new commodity longs (#115) stays ON: DXY 102.21, a third weekly close above 101, a fourth straight weekly gain, 0.03 under the 52-week closing high, and this leg rose with December hike odds -- the orthodox direction (wiki/materials.md; wiki/canary-watch.md CROSS-ASSET SIGNALS).",
+      "Construction materials made new lows under a 5.60 pct 30Y and a 7.40 pct mortgage: MLM at a one-year closing low, CRH 8 cents above its low, VMC $3.75 above; the row stays untouchable while the 30-year makes highs (wiki/materials.md; wiki/synthesis.md Section 4 item 5).",
+      "Week RF raised 30 -> 32 and MC held at 40: the only Monday input is copper's settlement against $6.60 (Friday-evening last trade $6.64, December $6.69 -- provisional); CPI Wed is the dollar's gate; AA and CMC Thu are the week's only prints (wiki/materials.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "Bullish falsifier: copper holds $6.60 at Monday's settlement with DXY at 102 -- 'the rule is being tested by the tape, not by me'; steel's rally (CLF +14.7, NUE +4.1, STLD +2.8 pct) converts ISM prices paid 77.9 into earnings Oct 19-26; a close over $50.36 with the 20D reclaimed ends the sub-200D streak (wiki/materials.md Ophelia and Marky).",
+      "Falsifier: DXY makes a new 52-week high and every commodity long pays again; a close under $47.81 completes the move to $47.00 (wiki/materials.md).",
+      "CLF closed above its $12.60 mean target into an Oct 19 print with an ~11 pct implied move -- 'a risk, not a signal' (wiki/materials.md; wiki/synthesis.md Section 1).",
+      "Data under the page moves: last week's gold -3.7 / silver -6.6 pct were continuous-contract artifacts (settled gold +1.4 pct to $4,191 GCV26); CTVA/VYLR history is unadjusted post-spin (wiki/materials.md WILD CARD; wiki/synthesis.md Section 7.A)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 40.3,
+      "regime_fit": 33,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -2.437,
+      "equal_weight_return_pct": -3.236,
+      "sector_return_vs_spy_pct": -5.104,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 40.3,
+      "top_two_contribution_pct": 43.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "Month arithmetic is weak (breadth 30, relative momentum 30, -5.10 pts vs SPY) and the regime is the dollar: the restriction re-opens only below 99.00 and the dollar is 102.21 (wiki/materials.md; macro/facts.json).",
+      "The commodity complex 'did not behave this week the way a restriction-justifying dollar should make it behave': gold settled +1.4 pct with the 10Y real yield flat (~2.91 pct), copper +2.3 pct, steel 3-15 pct -- the evidence against the rule is on the page and the rule survives (wiki/materials.md Ophelia Verdict; wiki/canary-watch.md CROSS-ASSET SIGNALS).",
+      "Month RF held at 33 and MC held at 45: CLF/STLD Oct 19, KALU Oct 21, NEM/DOW Oct 22, NUE Oct 26, FCX/SHW/ECL/PPG Oct 27, LIN/VMC/CRH Oct 29, MLM Nov 3, ALB Nov 4; CTVA/VYLR's first standalone prints moved to Nov 11, outside the window (wiki/materials.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "The 30Y keeps rising (mortgages 7.40 pct) -> MLM, CRH, VMC extend lows and FY guides are cut in late October (wiki/materials.md RISK SCENARIOS).",
+      "Mercer is not alone: a second SMID materials issuer misses a payment (#99); Mercer's noteholder talks have no signed support agreement found (wiki/materials.md SMALL/MID-CAP WATCH).",
+      "Bullish falsifier: China stimulus after Golden Week (Shanghai reopened Oct 8, no dated read found) or DXY back under 101 softens the restriction; MLM at a one-year closing low with a 33 pct gap to target is 'the first name I study when the 30-year stops rising' (wiki/materials.md)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/materials.md",
+        "source_file_sha": "42c8498741e1ee917bea0dedd8fed415ae8c5612",
+        "lead_summary": "The dollar did not give an inch and the sector bounced anyway. DXY closed 102.21 \u2014 a third weekly close above 101 and within three hundredths of the year's closing high \u2014 so the restriction on new commodity longs stays ON. XLB rose 1.2% to $49.43, a rebound from last week's low, on steel (CLF +14.7%, NUE +4.1%), a Corteva that is up 9% as two companies, and a gold price that settled higher, not lower. I have to correct my own page: the -3.7% gold I printed last week was a continuous-contract artifact; the October contract settled $4,133.70, and this week's $4,191 is +1.4%. The $6.60 copper rail I called broken is back \u2014 provisionally, on Friday-evening prints. Ophelia stays restricted; the tape is not asking her permission.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLB (week ending 2026-10-09)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

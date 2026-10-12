@@ -1,0 +1,133 @@
+{
+  "sector": "Real Estate",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 66.7,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 85.5,
+      "regime_fit": 25,
+      "macro_catalyst": 42
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 66.7,
+      "median_return_pct": 0.092,
+      "equal_weight_return_pct": 1.419,
+      "sector_return_vs_spy_pct": 0.259,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 85.5,
+      "top_two_contribution_pct": 74.8,
+      "constituents_used": 9,
+      "constituents_expected": 9,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLRE +1.96 pct to $41.61, first up week after seven down, closing over the $41.33 shelf after trading to $40.28 Thursday (28 cents from the $40.00 objective); the 20D $41.64 is three cents overhead and the 200D/trapdoor $42.50-42.57 is the target where Marky takes the position down (wiki/real-estate.md; macro/facts.json).",
+      "The week's engine was three tower stocks on a tenant that has not signed: AMT +12.4, SBAC +15.1, CCI +19.9 pct on SpaceX's reported $8B spectrum purchase -- roughly 0.7 of the fund's 2.0 points was AMT alone and the staged top-two contribution is 74.8 pct, the highest on the board; WELL, VTR and SPG fell; EQIX and DLR did nothing (wiki/real-estate.md; wiki/synthesis.md Wire 3; inputs/2026-10-09/real_estate.json metrics).",
+      "The fundamental case did not improve: the 30-year mortgage 7.40 pct (second weekly rise), Trepp CMBS delinquency 8.02 pct (multifamily 8.04, office 12.16), carry gap -171bp; Ophelia's relief condition (a lower weekly 10Y close) was met by three basis points -- 'not enough and not nothing'; stance avoid -> watch, no new duration (wiki/real-estate.md Ophelia; wiki/synthesis.md Section 4).",
+      "Week RF raised 20 -> 25 and MC 35 -> 42: CPI Wed is the direct test and Prologis Thu Oct 15 (company-confirmed) is the first REIT print into depressed positioning, 'where an in-line quarter is enough' (wiki/real-estate.md Marky; wiki/earnings-surveillance.md)."
+    ],
+    "risks": [
+      "The tower rally unwinds: spectrum is not a lease, approval can slip, carriers can respond; if it fades the fund gives back roughly a third of the week (wiki/real-estate.md RISK SCENARIOS and WILD CARD).",
+      "Falsifier: a close under $40.57 (Wednesday's low close) makes $40.28 and $40.00 live; the 10Y takes out 5.364 pct and the 30Y 5.63 pct (wiki/real-estate.md).",
+      "Bullish falsifier: a second lower weekly 10Y close -- Cecil buys O (6.0 pct, RSI 32) first, then WELL; Ophelia says 'the term premium turned'; a close over $42.57 ends the downtrend (wiki/real-estate.md Cecil; wiki/synthesis.md Section 5).",
+      "OWNER OPTION: the 74.8 pct top-two concentration is a quality concern the arithmetic does not see; prior cycles left coverage warnings at risk_penalty 0.0 and no cycle has applied a concentration penalty. A 0.02 penalty here would move the week score from 45.1 (neutral) to 43.1 (unfavorable). This proposal leaves it at 0.0 for consistency and flags the border."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 11.1,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 27.8,
+      "regime_fit": 25,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 11.1,
+      "median_return_pct": -2.641,
+      "equal_weight_return_pct": -3.494,
+      "sector_return_vs_spy_pct": -5.362,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 27.8,
+      "top_two_contribution_pct": 46.2,
+      "constituents_used": 9,
+      "constituents_expected": 9,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "Month arithmetic is the second-worst on the board (breadth 11.1, relative momentum 10, up-volume 27.8 pct, -5.36 pts vs SPY) and XLRE's correlation to SPY fell most of any sector (0.737 -> 0.569) -- it uncoupled by outperforming on a headline (wiki/canary-watch.md SECTOR CORRELATION MATRIX; inputs/2026-10-09/real_estate.json metrics).",
+      "Calendar-page Ophelia: REITs 'need a core print at or below +0.2 pct to hold'; the 10Y is 5.244 pct with 5.364 pct overhead and the Fed will hike again by year-end -- the regime is the one the sector has lost to for four weekly closes under its 200D (wiki/economic-calendar.md COUNCIL READ; wiki/real-estate.md TECHNICAL LEVELS).",
+      "Month RF raised 20 -> 25 and MC 42 -> 45: PLD Oct 15, GTY/CCI Oct 21, CBRE Oct 22, WELL/PSA Oct 26, AMT/VTR Oct 27, EQIX Oct 28, DLR Oct 29, O/SBAC Nov 2, SPG Nov 5; FOMC Oct 27-28; Trepp's October report in early November (wiki/real-estate.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "Labor weakness arrives as tenant weakness before it arrives as lower yields; a CRE default headline in the Q4 maturity stack at 7 pct+ refinancing costs; multifamily delinquency already above the overall rate (wiki/real-estate.md RISK SCENARIOS).",
+      "No data-center leasing announcement was found this month; EQIX and DLR were flat while the AI loop paid the utilities -- the one link in Wire 2 that did not fire (wiki/synthesis.md Wire 2; wiki/real-estate.md).",
+      "Bullish falsifier: 'a 3.53 pct yield 171bp under the risk-free rate, at an RSI that was 25.7 a week ago, is the position from which this asset class has produced its sharpest rallies -- and they begin without warning' (wiki/real-estate.md WILD CARD)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/real-estate.md",
+        "source_file_sha": "e61fb9790eccd9cb57ec2d42c9817588d43fdc5d",
+        "lead_summary": "The magnet let go. XLRE traded as low as $40.28 on Thursday \u2014 twelve cents under last week's low and twenty-eight cents from the $40.00 objective \u2014 and then closed Friday at $41.61 (+1.9% on the day, +2.0% on the week), over the $41.33 shelf I told you would be the first sign the move was done. It is the first up week after seven down. The reason was not the one I named: the 10-year closed 5.24%, three basis points lower, but the week's engine was a single Thursday-night headline \u2014 SpaceX buying $8 billion of 800 MHz spectrum \u2014 that sent American Tower +12.4%, SBA +15.1% and Crown Castle +19.9% in one session. The mortgage rate went the other way, to 7.40%. The towers do not make a sector low; I am watching whether anything else confirms it.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLRE (week ending 2026-10-09)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

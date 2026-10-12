@@ -1,0 +1,131 @@
+{
+  "sector": "Consumer Discretionary",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 93.8,
+      "regime_fit": 30,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 2.299,
+      "equal_weight_return_pct": 1.919,
+      "sector_return_vs_spy_pct": 0.758,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 93.8,
+      "top_two_contribution_pct": 36.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLY +2.55 pct to $112.85, its first up week after eight down, clearing $111.10, the 20D and the $109.41 gap; the long fired Tuesday and the coil top $113.29 is 44 cents overhead -- but the breakout was bought on below-average volume (6.4M vs a 6.8M 20D) and AMZN+TSLA (41 pct of the fund) supplied ~1.6 of the 2.55 points (wiki/consumer-discretionary.md; macro/facts.json).",
+      "Nothing in the consumer file improved: UMich 46.3 with current conditions at an all-time low 44.7 on the worst durable-goods buying conditions in the survey, the 30-year mortgage 7.40 pct (second weekly rise), five names (HD, LOW, MCD, LULU, CMCSA) at 52-week closing lows inside the up week; nobody upgraded -- 'a paused Fed is a consequence of a slowing consumer, not a cure' (wiki/consumer-discretionary.md Ophelia; wiki/synthesis.md Section 4 item 3 and Wire 5).",
+      "Week RF raised 28 -> 30 and MC 42 -> 45: retail sales Thu (cons +0.3 pct, control +0.3; Chicago Fed real-terms estimate -0.7 pct) is the one print that can reconcile the tape with the survey, and CPI Wed decides whether the hike odds the week removed come back (wiki/economic-calendar.md; wiki/consumer-discretionary.md)."
+    ],
+    "risks": [
+      "Bullish falsifier: retail sales hold up and a cool CPI pulls the 10Y and the mortgage rate down together; a close over $113.29 -> 50D $114.23 -> 200D $115.67, which together turn a bounce into a trend change (wiki/consumer-discretionary.md Marky).",
+      "Falsifier: a close under the 20D $110.75 -> $109.41 -> $107.99; retail sales < -0.1 pct fires the Retail flag; control group < 0.0 = real demand rolling over (wiki/consumer-discretionary.md; wiki/economic-calendar.md REGIME RISK FLAGS).",
+      "The index is not the consumer: the fund's weights snapshot moved against the prices and the 50D is still under the 200D (bearish cross intact) (wiki/consumer-discretionary.md WILD CARD)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 58.4,
+      "regime_fit": 30,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -5.755,
+      "equal_weight_return_pct": -3.753,
+      "sector_return_vs_spy_pct": -5.622,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 58.4,
+      "top_two_contribution_pct": 33.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "The month arithmetic is the worst on the board (rank 11, relative momentum 0, -5.62 pts vs SPY, breadth 30); YTD XLY -4.9 pct vs SPY +15.1 and XLP +9.5 (wiki/consumer-discretionary.md; inputs/2026-10-09/consumer_discretionary.json metrics).",
+      "The housing pair is a bounce into a worse number: HD 18.2x and LOW 14.3x off Monday's 52-week lows, 13-19 pct under their 200Ds with mortgages at 7.40 pct; BKNG 13.0x is Cecil's next buy and the print moved to Nov 3 (wiki/consumer-discretionary.md Cecil; wiki/synthesis.md Section 1).",
+      "Month RF raised 28 -> 30 and MC 45 -> 48: 41 pct of the fund reports inside the window -- GM Oct 20, TSLA Oct 21 (beat 3 of 8; last reaction -14.5 pct; straddle 7.5 pct below its realized norm; EPS basis unresolved $0.45 vs $0.22 GAAP), F Oct 28, AMZN Oct 29 (best of the seven this week), SBUX Oct 29, MAR Nov 2, BKNG Nov 3, MCD Nov 4 (wiki/earnings-surveillance.md; wiki/consumer-discretionary.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "COF/SYF card charge-offs Oct 20 and the Conference Board Oct 27 are the next hard consumer reads; CARG at RSI 30 is 'the consumer name on the list' (wiki/earnings-surveillance.md; wiki/communication-services.md).",
+      "Mortgage rates keep rising while the 10Y stays above 5 pct -> HD and LOW cut guides Nov 17-18 (outside the window but priced inside it) (wiki/consumer-discretionary.md RISK SCENARIOS).",
+      "Falsifier for the underweight: WTI under $90 gives travel and restaurants fuel relief (SBUX RSI 28.9, BKNG 36.6 the most oversold beneficiaries); TJX +4.6 and MAR +1.9 pct say the dispersion trade still works (wiki/consumer-discretionary.md)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-discretionary.md",
+        "source_file_sha": "a7af255450fb432276e8ef6e9184f175367002fa",
+        "lead_summary": "The streak ended and the data did not get the memo. XLY rose 2.55% to $112.85, its first up week after eight straight down weeks, and cleared the $111.10 line and the whole $109.41 gap on the way. Meanwhile the University of Michigan's preliminary October sentiment read 46.3 against 47.6\u201348 expected, with its current-conditions gauge at an all-time low of 44.7 on the worst durable-goods buying conditions in the survey; Freddie Mac's 30-year mortgage rose again to 7.40%, up again. Five of the fifteen names here set 52-week closing lows during the week. The rally was Amazon (+4.3%), Tesla (+3.3%), and a bounce in names that were already broken. Nothing in the consumer file improved.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLY"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

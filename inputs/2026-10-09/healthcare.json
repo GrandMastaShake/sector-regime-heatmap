@@ -1,0 +1,137 @@
+{
+  "sector": "Healthcare",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "warn",
+    "missing_tickers": [
+      "BLFS"
+    ],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": [
+      "week: 9 of 10",
+      "month: 9 of 10"
+    ]
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 88.9,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 96.1,
+      "regime_fit": 50,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 88.9,
+      "median_return_pct": 1.99,
+      "equal_weight_return_pct": 2.388,
+      "sector_return_vs_spy_pct": 1.228,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 96.1,
+      "top_two_contribution_pct": 51.3,
+      "constituents_used": 9,
+      "constituents_expected": 10,
+      "coverage_pct": 90.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLV +2.79 pct to $170.81: the $164.50-165.00 September floor held a second time Thursday (low $165.19 on 11.1M, the week's heaviest volume) and the fund reclaimed its stacked 20D/50D ($168.5); thirteen of fourteen names that fell last week rose; XLV regained its 50-day, taking the board's count to four of twelve (wiki/healthcare.md; wiki/synthesis.md Section 2).",
+      "The regime fit is low-beta and policy-driven: correlation to SPY 0.231, beta 0.52, and the Federal Register was quiet -- 'the damage was the news and not the numbers'; DXY crossed the 102 line and nothing happened (wiki/healthcare.md Ophelia; wiki/canary-watch.md SECTOR CORRELATION MATRIX).",
+      "Week RF raised 42 -> 50 and MC 40 -> 45: JNJ (10.4 pct of the fund) and UNH (5.4 pct) open earnings season Tuesday before the open with XLV 1.1 pts under its failed-breakout high $171.87; a clean morning puts $176.60 in play (wiki/healthcare.md; wiki/earnings-surveillance.md).",
+      "Data quality: BLFS is missing from the panel (9 of 10 constituents, status warn); the arithmetic is computed on nine names and risk_penalty is left at 0.0, consistent with the AVB-missing cycles in August-September (inputs/2026-10-09/healthcare.json data_quality)."
+    ],
+    "risks": [
+      "UNH's whisper ($4.60 vs $4.15 consensus) makes an in-line print a miss in the room; four of its last eight reaction days were -6 pct or worse; JNJ's +15.8 pct whisper gap is unconfirmed on a stock that moves 1.7 pct (wiki/earnings-surveillance.md CONSENSUS VS WHISPER).",
+      "A rally nobody can explain: no sourced cause for ELV +6.8, ISRG +8.2, ABBV +5.2 pct; Friday's +1.6 pct came on 7.0M shares, below average; the GLOBE-exposed biologics (REGN, MRK, VRTX) recovered least (wiki/healthcare.md WILD CARD).",
+      "Falsifier: a close under $165.00 -> 200D $155.91; managed-care prints confessing the cost trend (ISM services prices at their highest since 2022) reverse ELV/CI (wiki/healthcare.md RISK SCENARIOS)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 66.7,
+      "relative_momentum": 90.0,
+      "volume_confirmation": 79.4,
+      "regime_fit": 50,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 66.7,
+      "median_return_pct": 3.229,
+      "equal_weight_return_pct": 4.118,
+      "sector_return_vs_spy_pct": 2.249,
+      "sector_rank_among_eleven": 2,
+      "up_volume_share_pct": 79.4,
+      "top_two_contribution_pct": 53.2,
+      "constituents_used": 9,
+      "constituents_expected": 10,
+      "coverage_pct": 90.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "Month arithmetic is the second-best on the board (relative momentum 90, +2.25 pts vs SPY, up-volume 79.4 pct) on a sector that fell hardest on the Sep 30 GLOBE final rule and paid it back in a week with no new policy action (wiki/healthcare.md; inputs/2026-10-09/healthcare.json metrics).",
+      "Cecil's list survived the rally: UNH 16.8x with a 26.7 pct gap, REGN 12.1x, ABT 16.4x, PFE at 6.1 pct; big pharma neutral, biologics neutral-negative until the calls size GLOBE (wiki/healthcare.md; wiki/synthesis.md Section 1).",
+      "Month RF raised 45 -> 50, MC held at 50: ISRG Oct 20, TMO/ABT/ELV Oct 21, LLY Oct 29 (15.1 pct of the fund), MRK/BMY/GILD Oct 29, ABBV/REGN Oct 30, PFE/AMGN Nov 3, CVS Nov 4 -- the GLOBE commentary arrives on these calls (wiki/healthcare.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "GLOBE's precedent is final-rule Medicare policy (April 2027 start, ~5 pct of proposed scale); a larger scale or added category, or harsh Nov 30 negotiated prices, re-opens the sell-off (wiki/healthcare.md MACRO OVERLAY).",
+      "DXY above 102 lands on LLY, MRK, ABBV, JNJ translation Oct 13-30; concentration LLY ~15.1 pct + JNJ ~10.4 pct is a quarter of the fund; AMGN 4.7 pct over target on an unresolved binary (wiki/healthcare.md).",
+      "Small-cap biotech did not join: XBI -0.4 pct, under its 50D for a sixth week (wiki/healthcare.md SMALL/MID-CAP WATCH)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/healthcare.md",
+        "source_file_sha": "b65bdf17406fe0f7f0c4127f6f7bfa595aa2f80b",
+        "lead_summary": "The floor held on the second visit and the sector took back everything it lost to the pricing rules. XLV rose 2.8% to $170.81 \u2014 the week's low of $165.19 came Thursday, a few cents above the $164.50\u2013$165.00 September floor \u2014 and closed back over its 20-day and 50-day, which sit together at $168.5. Thirteen of the fourteen names that all fell last week rose this week (BMY was the exception). Managed care and medtech led (ELV +6.8%, ISRG +8.2%, CI +4.4%), AbbVie closed at a record ($276.47, +5.2%), Lilly reclaimed its 50-day, and J&J and UnitedHealth open earnings season Tuesday. I found no healthcare headline that explains the week; the policy news I carry from last week did not change, and the rally came without a sourced catalyst.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLV"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

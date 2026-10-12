@@ -1,0 +1,133 @@
+{
+  "sector": "Utilities",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 70.0,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 76.6,
+      "regime_fit": 42,
+      "macro_catalyst": 40
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 70.0,
+      "median_return_pct": 1.786,
+      "equal_weight_return_pct": 3.375,
+      "sector_return_vs_spy_pct": 2.215,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 76.6,
+      "top_two_contribution_pct": 61.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLU +3.97 pct to $41.41, the week's leader, through $40.21/$40.66 and the 20D on 52M shares Tuesday, then held three days including the session the 10Y printed 5.364 pct (the fund closed down one cent); the carry gap is still -217bp, the worst in the fund's life, and the 200D ($43.77) has eleven weekly closes under it (wiki/utilities.md; macro/facts.json).",
+      "The catalyst was growth, not defense: Google-Constellation 3,590 MW on 15-20 years with $4.3B of CEG-funded uprates, DOE's conditional $4.2B loan to Vistra, Black Hills-Google $1.8B -- all built so the hyperscaler pays, none through the suspended PJM backstop; CEG +15.8, VST +15.3 pct and the nuclear pair is now 10.2 pct of the fund (wiki/utilities.md; wiki/synthesis.md Wire 2).",
+      "The formal contradiction (issue filed): utilities-page Ophelia is constructive and set aside her 4.90 pct rule; calendar-page Ophelia says do not buy the dip in anything long-duration before Wednesday 8:30 and utilities need a core print at or below +0.2 pct to hold. This proposal sides with the calendar page for the week horizon and gives the contract leg partial credit (wiki/synthesis.md Section 7.B.1; wiki/economic-calendar.md COUNCIL READ).",
+      "Week RF raised 32 -> 42 and MC 38 -> 40: the decoupling from the 10Y is two weeks old and coincides with the biggest contract news of the year; 'a contract-driven decoupling says nothing about what the sector does on the next 10bp without a contract' (wiki/utilities.md; wiki/synthesis.md Section 2)."
+    ],
+    "risks": [
+      "CPI Wed is the direct test: a hot core sends the 10Y through 5.364 pct and the two-week decoupling turns out to have been one news day; falsifier is a close under $40.41 (gap low and 20D) -- the catalyst is being faded; $39.03 voids everything (wiki/utilities.md; wiki/synthesis.md Section 5).",
+      "The pair ran and wobbled: CEG and VST both put in highs Wednesday and closed 3-4 pct under them with a -5/-6 pct Thursday between; 10 pct of the fund is now a momentum position at 22.4x / 15.5x; Marky wants CEG > $280 and VST > $155 (wiki/utilities.md).",
+      "NEE and D (17.0 pct of the fund) are the two parties to a merger Virginia's Lt. Governor formally opposed Oct 7, with the AG asking to reset the review clock; they were the two weakest large caps (+0.7 / +0.5 pct) (wiki/utilities.md).",
+      "Bullish falsifier: a close over the 50D $42.01 (not closed above since July) -> $42.42-42.77; a soft CPI with a weekly 10Y close under 5.20 pct narrows the carry gap for the first time since August (wiki/utilities.md)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 29.0,
+      "regime_fit": 38,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -3.298,
+      "equal_weight_return_pct": -1.921,
+      "sector_return_vs_spy_pct": -3.79,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 29.0,
+      "top_two_contribution_pct": 32.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "Month arithmetic remains weak (breadth 20, up-volume 29 pct, -5.35 pts vs SPY over a month) and the regime -- a Fed that will hike again, 10Y at a cycle high, 3M bill 4.057 pct and rising -- is the one the sector has lost to for eleven weeks under its 200D (wiki/canary-watch.md; macro/facts.json; wiki/utilities.md).",
+      "Against it, the contract template is the one leg of the AI loop that got paid this week and the wires followed in a tidy 2-4 pct band (PPL, SRE, XEL, SO, AEP); Cecil bought DTE at $128.22 and names SRE 14.7x and EXC 13.7x next (wiki/utilities.md; wiki/synthesis.md Wire 2).",
+      "Month RF raised 30 -> 38 and MC 45 -> 48: dated items inside the window are NEE Oct 21 (Yahoo, unconfirmed), PCG Oct 22, FOMC Oct 27-28, AEP/NWE Oct 28, PJM's revised backstop filing by Oct 29, XEL/EIX/WEC/DTE Oct 29, D/EXC Oct 30 (wiki/utilities.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "PJM's Oct 29 filing and the governors' bloc demanding accountability on bills: if regulators decide the bilateral deals are themselves the problem, the template breaks; if cost allocation shifts to generators the scarcity premium is the target (wiki/utilities.md WILD CARD).",
+      "California: the Oct 8 Eaton Fire continuance hearing has no reported outcome; EIX at 8.5x is 'a name whose next catalyst I cannot read'; PCG reports Oct 22 (wiki/utilities.md).",
+      "Falsifier: the 30Y through 5.73 pct and the 10Y through 5.364 pct re-couple the regulated book to the bond; bullish falsifier: more hyperscaler-paid, curtailable deals follow Google's template (wiki/utilities.md RISK SCENARIOS)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/utilities.md",
+        "source_file_sha": "50ac5152f96da84147306be0211725bdb16f24a5",
+        "lead_summary": "Second up week, and this one had a reason. XLU closed $41.41 (+4.0%), its largest weekly gain in at least four months, and the 10-year closed 4bp lower at 5.24% after printing 5.36% on Wednesday \u2014 a 24-year high the sector ignored. The reason was Tuesday: Google signed Constellation for 890 MW of new nuclear uprates on a 20-year contract plus 2,700 MW of existing supply, the DOE offered Vistra up to $4.2B for its own uprates, and Black Hills took a $1.8B Google data-center deal in Wyoming. CEG +15.8%, VST +15.3%, and Vistra enters the top ten. The scarcity trade that FERC put on hold two weeks ago found a route around FERC \u2014 bilateral, hyperscaler-paid, outside the auction. The wires rose 2\u20134% behind it. Last week I said the relief started in the wires and not in CEG; this week CEG led by a mile, and the wires followed. I was early on the leadership call by exactly one week.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLU"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

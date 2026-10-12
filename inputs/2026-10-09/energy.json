@@ -1,0 +1,134 @@
+{
+  "sector": "Energy",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 100.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 100.0,
+      "regime_fit": 58,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 100.0,
+      "median_return_pct": 3.034,
+      "equal_weight_return_pct": 3.483,
+      "sector_return_vs_spy_pct": 2.323,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 100.0,
+      "top_two_contribution_pct": 36.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLE closed $65.08 (+3.60 pct), un-failing the Sep 25 breakout on a weekly close through $63.46 with a higher low ($62.05) and a higher high ($65.86); Thursday's +3.0 pct came on 51.3M shares, the heaviest session since September; the Sep 15 closing high $65.54 is 46 cents overhead (wiki/energy.md; macro/facts.json).",
+      "The structural file is re-sourced and did not improve: Hormuz crude flows ~30 pct under pre-war (Kpler; the calendar page carries a -78 pct three-day figure), at least 12 tankers hit since Sep 29, SPR 283.0M the lowest since 1982, distillate 12 pct under its five-year average, the HO-WTI crack $107 from $98; Brent $104.72 over the $100 line while WTI is $91.85 (wiki/energy.md; wiki/synthesis.md Section 7.B.3; macro/facts.json).",
+      "Energy is one of four ETFs above its 50-day and one of six above its 200-day, with a -0.171 correlation to SPY (eased from -0.242) -- it rose with the index this week rather than against it (wiki/synthesis.md Section 2; wiki/canary-watch.md SECTOR CORRELATION MATRIX).",
+      "Week RF raised 50 -> 58 and MC 40 -> 50: the breakout confirmed on the arithmetic the prior cycle asked for, and Monday's bond-market closure makes oil the only live input (WTI > $95 / < $88 gates); OPEC+ held Oct 4 as expected (wiki/economic-calendar.md; wiki/energy.md)."
+    ],
+    "risks": [
+      "The breakout rests on one sentence: Thursday's move followed a Truth Social pledge of no strikes on Iran before the midterms with the blockade kept; the energy desk files it as neither escalation nor de-escalation, and a mediator framework reverses it on the same volume (wiki/energy.md WILD CARD; wiki/synthesis.md Section 7.B.6).",
+      "EIA Thu Oct 15 (holiday-delayed) is the first distillate print that can show the G-7 diesel: a build compresses the $107 crack and the refiners (MPC/VLO/PSX, 14 pct of the fund, 4-10 pct above mean targets at records) give back the move before VLO prints Oct 22 (wiki/energy.md).",
+      "Falsifier: a weekly close under $63.46 is a second failed breakout at the same line and the desk goes from hold to reduce; next supports 50D $62.41 then $60.95. Bullish falsifier: a close over $65.54 puts the fund at all-time highs with nothing overhead (wiki/energy.md; wiki/synthesis.md Section 5).",
+      "The DXY commodity-long restriction (#115) stays ON at 102.21, 0.03 under the 52-week closing high (wiki/materials.md; macro/facts.json)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 20.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 27.0,
+      "regime_fit": 55,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 20.0,
+      "median_return_pct": -1.669,
+      "equal_weight_return_pct": -3.018,
+      "sector_return_vs_spy_pct": -4.887,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 27.0,
+      "top_two_contribution_pct": 49.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "Month arithmetic is poor (breadth 20, up-volume 27 pct) because the window spans the failed breakout and the $60.95 retest; the regime fit is the oil shock not yet in the core: ISM services prices paid 74.0, CPI headline consensus +0.6 pct, Brent-WTI spread $12.87 and rising, Aramco charging Europe +$3 for diesel it cannot make (wiki/economic-calendar.md; wiki/synthesis.md Wire 4; wiki/energy.md).",
+      "Calendar-page Ophelia names energy with a Brent premium as one of the two holdings a +0.6 pct headline CPI makes right; the desk's posture is hold-add-nothing with a reduce level, and the refiner estimates were raised in the week (VLO $18.84 -> $20.27, MPC $22.97 -> $24.67) (wiki/economic-calendar.md COUNCIL READ; wiki/energy.md).",
+      "Month RF raised 52 -> 55 and MC 45 -> 48: the dated receipts inside the window are VLO Oct 22, SLB Oct 23, PSX/KMI Oct 28, XOM/CVX Oct 30 (42 pct of the fund) and OPEC+ Nov 1 (wiki/energy.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "The G-7 100M-barrel release's diesel front-loading window ends ~Oct 22 with no delivery data found; if the barrels land, the margin that put three refiners at records mean-reverts (wiki/energy.md).",
+      "SLB (+0.4 pct, RSI 39, below its 200D, 18 pct under its record) is the activity-linked dissent; a capex-deferral message Oct 23 leads the E&Ps lower on 2027 guidance (wiki/energy.md).",
+      "Demand: UMich current conditions at an all-time low (44.7) has not yet reached product volumes; a real de-escalation (strait reopens, blockade traded) puts WTI in the mid-$80s in a session (wiki/energy.md RISK SCENARIOS; wiki/consumer-discretionary.md).",
+      "Fund-weight snapshot moved (integrateds 34.8 -> 42.1 pct, refiners 15.8 -> 14.0 pct) on Yahoo methodology, not a rebalance; read weights as ranges (wiki/synthesis.md Section 7.C)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/energy.md",
+        "source_file_sha": "66dfd21781acf6b08db4b840b6658dfc46a888c7",
+        "lead_summary": "The breakout un-failed. XLE closed $65.08 (+3.6%), its best week since mid-August, through the $63.46 line it lost three weeks ago and 46 cents from its September closing high. Crude did almost nothing \u2014 WTI settled $91.85, up 74 cents \u2014 and OPEC+ held, as expected. What moved was the product: the heating-oil bar closed at $4.74 a gallon, which is a $107 diesel crack against WTI, nine dollars wider than a week ago, and the three refiners closed Thursday at all-time highs. Then there is the sentence from Washington on Thursday: no strikes on Iran before the midterms, blockade stays. Twelve tankers have been hit near Hormuz since Sep 29 and flows through the strait are 30% under normal. A pledge not to escalate, in a strait that is being shot at, is not a de-escalation this desk can file. The fund treated it as one anyway, for a day.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLE"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

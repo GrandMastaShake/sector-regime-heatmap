@@ -1,0 +1,133 @@
+{
+  "sector": "Communication Services",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 70.0,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 60.0,
+      "regime_fit": 35,
+      "macro_catalyst": 38
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 70.0,
+      "median_return_pct": 3.371,
+      "equal_weight_return_pct": 2.459,
+      "sector_return_vs_spy_pct": 1.299,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 60.0,
+      "top_two_contribution_pct": 39.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLC +0.05 pct to $110.38 -- flat on the week after a -1.5 pct Friday erased a four-day climb; the fund has taken and lost its 50D ($111.57) twice in three weeks, each for one session and each to a different part of itself (Meta, then the carriers): 'no leadership, only rotation' (wiki/communication-services.md; macro/facts.json).",
+      "SpaceX's reported $8B purchase of Grain Management's 800 MHz spectrum (Thu night) took TMUS -13.3, T -9.8, VZ -8.7 pct on Friday on 3.7-4.3x normal volume, with CHTR -5.7 and CMCSA -2.6 pct at 52-week lows; 12.5 pct of the fund lost 9-13 pct on a press release -- 'not a defensive sector' (wiki/communication-services.md; wiki/synthesis.md Wire 3).",
+      "The ad cycle's leading indicator worsened a third week (UMich 46.3, current conditions 44.7) with no budget-cut announcement found; the sector's correlation to SPY fell to 0.369 and XLC is nineteen weekly closes under its 200D ($113.03) (wiki/communication-services.md MACRO OVERLAY; wiki/synthesis.md Section 2).",
+      "Week RF held at 35 and MC cut 42 -> 38: nothing in the fund reports this week, the FCC process has no date, and the only tradable observation is capitulation volume in the carriers, which Marky notes and does not trade (wiki/communication-services.md COUNCIL READ)."
+    ],
+    "risks": [
+      "Bullish falsifier: the spectrum sell-off is overdone (14 MHz, no towers, an FCC approval) and the carriers recover half of Friday within a month; VZ at 6.8 pct, 155bp over the 10Y, is the clearest single-name agreement on the board (Cecil bought at $41.65); a close over $112.08 that holds a second day -> 200D $113.03 (wiki/communication-services.md; wiki/synthesis.md Section 4 item 6).",
+      "Falsifier: a close under $109.66 -> $105.03, the 52-week closing low (wiki/communication-services.md).",
+      "META carries a Hunterbrook short report (Muse adoption) and three consensus bases ($6.74 / $6.25 / $6.39) into Oct 28; NFLX (Oct 20) has four of five negative reactions and a reported 5 pct workforce cut (wiki/earnings-surveillance.md; wiki/communication-services.md).",
+      "Fund weights moved 35.3 -> 43.1 pct for the platforms on Yahoo's snapshot; WBD's slot is now Skydance (SKYD, ~$80B debt, Fitch BB) at a stale weight (wiki/communication-services.md; wiki/synthesis.md Section 7.C)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 50.0,
+      "volume_confirmation": 34.4,
+      "regime_fit": 40,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": -0.418,
+      "equal_weight_return_pct": -1.975,
+      "sector_return_vs_spy_pct": -3.844,
+      "sector_rank_among_eleven": 6,
+      "up_volume_share_pct": 34.4,
+      "top_two_contribution_pct": 60.5,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "Month arithmetic is middling (rank 6, -3.84 pts vs SPY, up-volume 34.4 pct, top-two contribution 60.5 pct) and the platforms did the work: GOOGL +2.4 pct reclaimed its 50D for a second week while the yield sleeve de-rated (wiki/communication-services.md; inputs/2026-10-09/communication_services.json metrics).",
+      "Ophelia's weights moved toward the sleeve, not away: telecom yield underweight -> market-weight ('a press release is a different risk from a bond yield'), platforms market-weight, broadband zero, entertainment avoid until NFLX prints (wiki/communication-services.md Ophelia Verdict).",
+      "Month RF cut 42 -> 40 and MC 50 -> 48: NFLX Oct 20, T Oct 21 (first carrier read on Starlink Mobile), CMCSA Oct 22, VZ Oct 26, META/GOOGL/TMUS Oct 28 on FOMC day, APP/MGNI Nov 4, CHTR Nov 6 (moved from Oct 30) (wiki/communication-services.md EARNINGS CALENDAR)."
+    ],
+    "risks": [
+      "The FCC moves quickly on the Grain transfer and a fourth carrier becomes a 2027 fact; AT&T guides to defend price Oct 21 and the sleeve's dividends get questioned, not just its growth (wiki/communication-services.md RISK SCENARIOS).",
+      "An ad-budget cut announcement finally follows a sentiment index at 46; the Google ad-tech remedy's signature date is still unknown (wiki/communication-services.md).",
+      "The stock that fell most (TMUS) is the one that sold the spectrum and partners with the buyer -- 'the market has not decided what it is afraid of' (wiki/communication-services.md WILD CARD)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/communication-services.md",
+        "source_file_sha": "b2d9cb146b71fd47b67e88c47597118582951674",
+        "lead_summary": "A flat week that was anything but. XLC closed $110.38 (+0.05%) \u2014 six cents from where it started \u2014 after SpaceX agreed on Thursday night to pay a reported $8 billion for a nationwide low-band spectrum portfolio and said it intends to be a major mobile carrier. On Friday T-Mobile fell 13.3%, AT&T 9.8%, Verizon 8.7%, Charter 5.7%, Comcast 2.6%; three of the five closed at 52-week lows and the carriers traded four times their normal volume. The fund gave up 1.5% that day and still finished the week even, because Alphabet rose 2.4%, Netflix 4.8%, Disney 5.7% and Take-Two 5.3% over the four days before. The barbell I keep describing just had one end sawn off. A sector where a Thursday-night press release can take 9\u201313% out of three dividend stocks is not a defensive sector, and the yield sleeve I had at underweight is now the thing I was underweight for.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLC"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "sector": "Technology",
+  "as_of_date": "2026-10-09",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 114,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 40.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 33.5,
+      "regime_fit": 48,
+      "macro_catalyst": 40
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 40.0,
+      "median_return_pct": -3.034,
+      "equal_weight_return_pct": -1.658,
+      "sector_return_vs_spy_pct": -2.819,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 33.5,
+      "top_two_contribution_pct": 38.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-02",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLK set a record close $202.00 Tuesday and lost $200 Thursday on the week's heaviest volume (9.1M); Friday's bounce to $198.78 came on the lightest (5.6M) and never retook $200; -0.52 pct W/W ended a six-week run and the fund lagged SPY by 1.68 pts (wiki/tech.md; wiki/canary-watch.md SECTOR ROTATION FLOW; macro/facts.json).",
+      "The AI trade's risk moved from the discount rate to the funding of demand: the FT's OpenAI revenue shortfall (~$20B under estimates) and the WSJ's Broadcom $50B+ financing landed Thursday; SMH -4.32 pct, first close under $609.66 on 11.2M shares (80 pct above its 20-day average); LRCX -8.2, AMAT -6.1, INTC -12.3 pct; all three desks want TSMC's Thursday guide and ASML's Wednesday orders before touching equipment (wiki/semiconductors.md; wiki/synthesis.md Section 4 and Wire 1).",
+      "The sector split rather than exited: MSFT +3.4, PLTR +10.8, CSCO +5.5 pct with no sourced cause; XLK remains above its 20D ($194.46), 50D ($188.90) and 200D, one of four ETFs above its 50-day; posture 'hold the complex, do not add into $200' (wiki/tech.md; wiki/synthesis.md Section 2).",
+      "Week RF cut 65 -> 48 and MC 45 -> 40: the leadership break is confirmed in semis and the board adds SMH $600 to its watch; the calendar-page instruction is 'do not buy the dip in anything long-duration or AI-funding-dependent before Wednesday at 8:30' (wiki/canary-watch.md COUNCIL READ; wiki/economic-calendar.md)."
+    ],
+    "risks": [
+      "Falsifier for the caution: XLK takes back $200 on volume and SMH reclaims $609.66 after $600.32 holds Mon-Tue; TSMC's Q4 guide and 2027 capex raise confirm equipment demand did not break on a funding story (wiki/semiconductors.md; wiki/tech.md).",
+      "A hot core CPI (> +0.3 pct) locks December and tests 5.364 pct on the 10Y -- a 1.45-beta, 32-35x fund with NVDA+AAPL at 29 pct of it; a second leg of the funding story (Oracle, AVGO) hits the platforms that were bought because the chips were sold (wiki/tech.md WILD CARD; wiki/economic-calendar.md).",
+      "Levels: close under $196.48 -> 20D $194.46 -> $190-191.75; SMH under $600.32 -> $591.92 -> $578-581 (50D plus breakout line) (wiki/synthesis.md Section 5).",
+      "Trailing P/E reads 32.5x vs 35.4x last week (SMH 32.2x vs 43.1x) on a data-basis change, not a re-rating; the pages keep the valuation argument on the old figures (wiki/synthesis.md Section 7.C)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 80.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 88.7,
+      "regime_fit": 52,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 80.0,
+      "median_return_pct": 10.815,
+      "equal_weight_return_pct": 11.657,
+      "sector_return_vs_spy_pct": 9.788,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 88.7,
+      "top_two_contribution_pct": 40.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-11",
+      "window_to": "2026-10-09"
+    },
+    "why": [
+      "XLK is still the month's leader by every arithmetic the panel computes (+9.8 pts vs SPY, breadth 80, up-volume 88.7 pct) and the only two ETFs ahead of SPY over a month are SMH (+4.94 pts) and XLK (+4.58) (wiki/canary-watch.md SECTOR ROTATION FLOW).",
+      "Nothing in the demand numbers got worse: TSMC's Q3 revenue (~US$46.7B) beat the top of its own guide by ~$1B, TrendForce Q4 DRAM +10-15 pct, equipment orders from the Micron capex plan stand; what changed is who pays, and 'it works as long as the lenders keep lending at a 5.6 pct long bond' (wiki/semiconductors.md Cecil; wiki/synthesis.md Section 4).",
+      "Month RF cut 60 -> 52 and MC 52 -> 50: the window carries LRCX Oct 21, TXN Oct 21, MSFT Oct 28 (FOMC day), INTC Oct 29, AAPL Nov 2, AMD Nov 3 -- the first top-ten receipts since the leadership break (wiki/tech.md EARNINGS CALENDAR; wiki/earnings-surveillance.md)."
+    ],
+    "risks": [
+      "Concentration: one factor no longer drives the tape but the index is still two sectors deep over a month; if the rotation of this week continues, the average stock improves while the cap-weighted index stalls (wiki/canary-watch.md MARKET BREADTH).",
+      "DXY 102.21 with Q3 translation to come (MSFT/AAPL); the 30Y at 5.60 pct against Ophelia's 5.75 pct line; a December hike priced as a schedule rather than a risk (wiki/tech.md MACRO OVERLAY; wiki/economic-calendar.md).",
+      "Falsifier: a close under the 50D ($188.90) with SMH under $578; bullish falsifier: $203.25 taken on volume with equipment (AMAT > $540, LRCX toward $347) recovering (wiki/tech.md; wiki/semiconductors.md)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-12",
+    "extracts": [
+      {
+        "source_path": "wiki/tech.md",
+        "source_file_sha": "2382d688bff77772a5c52b4b9f99e9e9ce32ec27",
+        "lead_summary": "XLK printed a record close on Tuesday ($202.00, intraday $203.25), then lost it on a chip selloff Thursday and finished the week at $198.78 (-0.5% W/W), ending a six-week run \u2014 under the $200 line it failed to hold last Friday. The week was a split screen. Semiconductors (SMH -4.3%) paid back the Micron-capex trade: LRCX -8.2%, AMAT -6.1%, INTC -12.3% on the week, MU -4.3%. Platforms and software took the money: MSFT +3.4% to within 0.5% of its 52-week high, PLTR +10.8% to a new 52-week closing high, CSCO +5.5%. The 10-year closed 5.24% after topping 5.36% Wednesday; the S&P 500 gained 0.6% Friday to 7,811.54, just short of its record, and the Nasdaq Composite closed at 27,366.17.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLK"
+        ]
+      },
+      {
+        "source_path": "wiki/semiconductors.md",
+        "source_file_sha": "18ddeabebe8b16a57e03b70fafb77e3cd7932476",
+        "lead_summary": "Semiconductors are the new oil. Every AI model, every data center, every autonomous car runs on silicon. When the chip cycle turns, the world feels it.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving SMH"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-12",
+    "source_commit_sha": "d1ba76f515e14dbce3137edf970779611952695b",
+    "provenance_verified": true
+  }
+}
