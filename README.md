@@ -18,165 +18,185 @@ a return against SPY.
 
 ## 📊 Dashboard
 
-**As of 2026-10-02** -- manual run -- `data/forecasts/2026-10-02_manual.json`
+**As of 2026-10-09** -- manual run -- `data/forecasts/2026-10-09_manual.json`
 
-> 🧭 &nbsp;**Regime** &nbsp; Hiking cycle on pause, bear steepening -- the long end, not the Fed, sets prices; leadership two sectors deep; archetype-1 label retained in name only pending taxonomy review
+> 🧭 &nbsp;**Regime** &nbsp; Hiking cycle, December priced -- the long end's break stalled at a cycle high (5.364 pct) but did not reverse; a labor market that has stopped hiring and an oil shock not yet in the core; leadership rotating out of the two AI carriers into defensives and energy with the index at a record, each new leader one headline deep; archetype-1 label retained in name only pending taxonomy review
 > 
-> **Confidence** &nbsp; ●○○ low &nbsp;&nbsp;•&nbsp;&nbsp; ✅ 5 supporting &nbsp;&nbsp;•&nbsp;&nbsp; ⚠️ 14 disconfirming
+> **Confidence** &nbsp; ●○○ low &nbsp;&nbsp;•&nbsp;&nbsp; ✅ 9 supporting &nbsp;&nbsp;•&nbsp;&nbsp; ⚠️ 17 disconfirming
 
 <details>
-<summary><b>⚠️ What would make this regime read wrong (14)</b></summary>
+<summary><b>⚠️ What would make this regime read wrong (17)</b></summary>
 
 - THE PRE-REGISTERED RE-EXAMINATION TRIGGER HAS FIRED (2026-09-16: priced hike delivered, 10Y close above 5.00 pct). The archetype-1 label is retained in name only pending a taxonomy review against the 44-episode set, a research call rather than a weekly judgment. Carried forward from 2026-09-18, unchanged.
-- THE RATES OBJECTION -- MODIFIED, NOT RELIEVED. Archetype 1 requires stable-to-easing rates. The Fed is now paused in expectation (October-hike odds ~16-18 pct; Williams: 'no need for urgency') but the funds rate is 3.75-4.00 pct with 16 of 18 dots seeing another 2026 hike, and the 10Y is higher at 5.277 pct, a second weekly close above 5.00 pct (macro/facts.json; wiki/synthesis.md Section 3). Carried forward and modified.
-- THE CONSUMER IS STILL DETERIORATING. Conference Board confidence 81.9, the lowest since 2014, with Expectations 63.6; the 30-year mortgage at 7.28 pct, its biggest weekly rise in four years; Nike guided fiscal 2027 revenue down high-single digits (wiki/consumer-discretionary.md; wiki/economic-calendar.md). Carried forward and strengthened.
-- THE RATE-SENSITIVE CONTRACTION HOLDS AND WIDENED. Seven of twelve ETFs are below both their 50-day and 200-day (XLC, XLI, XLB, XLP, XLRE, XLU, XLY), up from six; only 24.7 pct of S&P members are above their 50-day and 42.3 pct above their 200-day; new lows beat new highs every day, 40 to 3 on Thursday (wiki/synthesis.md Section 2; wiki/canary-watch.md MARKET BREADTH). Carried forward and strengthened.
-- CONCENTRATION RISK IS THE LEADERSHIP. RSP has closed lower every Friday since Aug 14 and lagged SPY by 0.43 points on the week and 4.65 on the month; SMH is +13.97 and XLK +8.24 points ahead of SPY on the month (wiki/canary-watch.md; wiki/synthesis.md Sections 2 and 4). Carried forward.
-- CREDIT TURNED -- NOW UNVERIFIED. FRED was unreachable: HY OAS (280), HY-IG (201) and the 10Y breakeven (2.34 pct) are the Sep 24-25 prints, carried stale and absent from facts.json. The only fresh read is HYG $76.91 (-1.22 pct, fifth straight red week) and LQD $101.83 (wiki/canary-watch.md CREDIT SPREADS; macro/facts.json). Carried forward and modified.
-- THE LONG END IS SUPPLY-LED. The 10Y rose on cool inflation and stalled hiring; the 3-year (Oct 6), 10-year (Oct 7, with FOMC minutes an hour later) and 30-year (Oct 8) auctions all land in the week horizon. A 10-year tail above 2bp or a close above 5.342 pct targets 5.50 pct (wiki/synthesis.md Sections 4 and 8; wiki/economic-calendar.md). Carried forward and strengthened.
-- THE COST-PUSH SHOCK -- MODIFIED, NOT RESOLVED. WTI $91.11 and the G-7 agreed a 100M-barrel release with diesel front-loaded, but the energy desk doubts it closes a gap made by shipping, strikes and an export ban, and ISM prices paid jumped to 77.9 (wiki/energy.md; wiki/synthesis.md Section 6; macro/facts.json). Carried forward.
-- THE LABOR FLAG FIRED (NEW). Payrolls +29K hit the '< 50K = regime-change candidate' line; three regime flags are up from two (NFP fired, 10Y through 5.25 pct on a weekly close, CPI carried into Oct 14) and Council Review issue #127 is open (wiki/synthesis.md Section 3; wiki/economic-calendar.md).
-- THERE WAS NO DEFENSIVE ROTATION (NEW). In the week the labor market cracked and confidence hit a 12-year low, XLP fell 1.86 pct and XLV 2.65 pct; only utilities held (wiki/synthesis.md Section 3; macro/facts.json).
-- ONE FACTOR DRIVES THE TAPE (NEW). All twelve sector correlations to SPY rose; only XLE is negative (-0.242). The long bond is the factor and there is no diversifier (wiki/synthesis.md Sections 2 and 4).
-- THE WEEK'S EVENT RISK IS CONCENTRATED: the 10-year auction at 13:00 and FOMC minutes at 14:00 on Wednesday Oct 7, on a board where the index is two sectors deep and SMH trades ~43x, 10.7 pct above its 50-day (wiki/synthesis.md Section 4).
-- UPSTREAM FACTUAL DISPUTES OPEN: copper ($6.549, -2.19 pct canonical vs ~$6.49, -3.0 pct in three wikis); data/market_state.json's rates block for a third week (2Y 4.63 pct, 2s10s 65bp vs facts.json 4.83 pct and +45bp); the DXY streak (ninth vs third weekly gain) (wiki/synthesis.md header and Section 7). Nothing in this payload reads market_state.json.
-- RESOLVED AND DROPPED FROM THE CARRY-FORWARD SET: (a) the WTI weekly-change dispute -- pages now agree on $91.11; (b) the prior week's event items (core PCE Sep 30, Micron Sep 30) have printed and are in the evidence above.
+- THE RATES OBJECTION -- STRENGTHENED ON THE FED LEG, MODIFIED ON THE LONG END. Archetype 1 requires stable-to-easing rates. Last week the Fed was 'paused in expectation'; this week the minutes and Waller put a December hike back into the price (October ~20 pct, 3M bill 4.057 pct and rising), the funds rate is 3.75-4.00 pct with the stance 'Hike', and the 10Y printed new cycle highs (5.311 pct close, 5.364 pct intraday) before finishing 5.244 pct, a third weekly close above 5.00 pct (macro/facts.json; wiki/economic-calendar.md; wiki/canary-watch.md). Carried forward and modified.
+- THE CONSUMER IS STILL DETERIORATING -- STRENGTHENED. UMich 46.3 with current conditions 44.7, an all-time low, on the worst durable-goods buying conditions in the survey; the 30-year mortgage 7.40 pct, a second weekly rise; PepsiCo cut its profit guide; Delta cut its year by a fifth on fuel; five XLY names (HD, LOW, MCD, LULU, CMCSA) set 52-week closing lows inside a +2.55 pct week (wiki/consumer-discretionary.md; wiki/economic-calendar.md; wiki/earnings-surveillance.md). Carried forward and strengthened.
+- THE RATE-SENSITIVE CONTRACTION HOLDS, IMPROVED BUT STILL RED. Six of twelve ETFs are below both their 50-day and 200-day (XLC, XLI, XLB, XLRE, XLU, XLY), from seven -- XLP took back its 200-day Thursday; S&P 500 members above the 50-day 35.0 pct, still under the 40 pct red line for a third week; the improvement came from the average stock rising while SMH and XLK fell: 'rotation, not expansion' (wiki/synthesis.md Section 2; wiki/canary-watch.md MARKET BREADTH). Carried forward and modified.
+- CONCENTRATION RISK IS THE LEADERSHIP -- NO LONGER BEING ADDED TO, NOT UNDONE. RSP beat SPY for the first time since mid-August (+0.42 pts) but lags by 2.80 pts over a month; SMH (+4.94 pts) and XLK (+4.58) are still the only two ETFs ahead of SPY over a month and both were in outflow this week; NVDA+AAPL are 29 pct of XLK, AMZN+TSLA 41 pct of XLY, the platforms 35-43 pct of XLC (wiki/canary-watch.md SECTOR ROTATION FLOW; wiki/tech.md; wiki/consumer-discretionary.md; wiki/communication-services.md). Carried forward and modified.
+- CREDIT -- NOW VERIFIED, AND THE COMPOSITION IS WORSE. Last week's stale-data caveat is resolved (FRED via a second path). The index tightened (HY 315, HY-IG 233 under the 250 trigger) while the CCC tier widened 37bp to a 52-week high of 1,252: 'index in, bottom tier out, is how every real credit cycle I have watched began. It is not yet a signal; it is a composition.' Mercer (#99) skipped a coupon with no signed support agreement found (wiki/canary-watch.md CREDIT SPREADS; wiki/materials.md). Carried forward and modified.
+- THE LONG END IS SUPPLY-LED -- THE AUCTION LEG RESOLVED, THE LEVEL DID NOT. The 3-, 10- and 30-year sales cleared (10-year record cover; 30-year 5.618 pct, highest since 2000) and term premium 'stalled, did not extend'; there is no coupon auction in the week horizon, so a 10Y move comes from CPI, the Fed Chair and oil. Next lines 5.364 pct then 5.50 pct (wiki/economic-calendar.md; wiki/synthesis.md Section 8). Carried forward and modified.
+- THE COST-PUSH SHOCK -- STRENGTHENED. WTI $91.85 with Brent $104.72 (a $12.87 Hormuz premium, from $11.14); the HO-WTI diesel crack $107 from $98; ISM services prices paid 74.0; SPR 283M, the lowest since 1982; distillate 12 pct under its five-year average; Hormuz crude flows down 30 pct (energy page) or 78 pct in three days (calendar page), both attributed to Kpler and unreconciled; the G-7 release has no delivery data; CPI headline consensus +0.6 pct is already above the CPI flag's line (wiki/energy.md; wiki/synthesis.md Wire 4 and Section 7.B.3; macro/facts.json). Carried forward and strengthened.
+- THE LABOR FLAG -- CARRIED. Payrolls +29K (no re-test until Nov 6); claims 197K for a fourth week under 200K and the 4-beat streak flag fired (firms not laying off and not hiring); three regime flags up, unchanged in number and changed in composition (NFP carried, 10Y a third weekly close above 5.00 pct, CPI carried); Council Review #127 open (wiki/economic-calendar.md REGIME RISK FLAGS and HISTORICAL SURPRISE LOG). Carried forward.
+- THE DEFENSIVE BID ARRIVED, ONE HEADLINE DEEP (replaces last week's 'there was no defensive rotation'). XLU +4.0, XLP +3.6, XLV +2.8, XLRE +2.0 pct on Thursday -- but utilities rose on a growth catalyst (Google-Constellation, DOE-Vistra, Black Hills-Google), staples on a rotation the day PEP cut, healthcare on no sourced cause, real estate on three tower stocks and a spectrum deal; 'four sectors rose together and the pages agree on only one thing: none of it was the carry gap' (wiki/synthesis.md Section 3 and 7.B.4). New.
+- ONE FACTOR NO LONGER DRIVES THE TAPE -- MODIFIED. Eight of twelve correlations to SPY fell and dispersion returned; XLP flipped positive -> negative (+0.095 -> -0.009), the strict-criterion alert, second flip in three weeks, issue opened; XLE -0.171 eased and rose with the index; SMH reads -0.144 on the feed's 4-week window and 0.672 on Canary's 30-day window -- different measures, both carried (wiki/canary-watch.md SECTOR CORRELATION MATRIX; wiki/synthesis.md Section 7.A). Carried forward and modified.
+- THE WEEK'S EVENT RISK IS CONCENTRATED ON WEDNESDAY: September CPI 08:30 ET (headline +0.6 pct, core +0.2 pct; the headline consensus is already above the flag line so only the core can clear it) lands between the JPM/GS/WFC/C prints Tuesday and BAC/MS/BLK Wednesday, with ASML the same morning; Thursday carries TSMC, PPI, retail sales, claims and the Fed Chair; the bond market is closed Monday so yields cannot confirm Monday's equity move and oil is the only live input (WTI > $95 / < $88) (wiki/economic-calendar.md NEXT WEEK'S GAUNTLET; wiki/synthesis.md Section 8). Updated.
+- THE FORMAL CONTRADICTION ON RATE-SENSITIVES (NEW, issue filed by the Synthesis): utilities-page Ophelia is constructive and set aside her 4.90 pct rule for the regulated book; calendar-page Ophelia instructs 'do not buy the dip in anything long-duration before Wednesday at 8:30' and says utilities and REITs need a core print at or below +0.2 pct to hold. This proposal sides with the calendar page for the week horizon (XLU, XLRE, XLP regime_fit below neutral) and gives the contract leg partial credit (wiki/synthesis.md Section 7.B.1).
+- THE AI FUNDING LOOP (NEW). The leadership's risk moved from yields to whether the largest buyer can pay: OpenAI's revenue ~$20B under estimates, Broadcom raising $50B+ so OpenAI can buy Broadcom's chips, Oracle in talks on its own financing -- 'it works as long as the lenders keep lending at a 5.6 pct long bond'; the second OpenAI-linked scare in two weeks (wiki/semiconductors.md; wiki/synthesis.md Wire 1).
+- THE TAPE AND THE SURVEY DISAGREE (NEW). XLY +2.55 pct and XLP +3.6 pct in the week the consumer survey printed its worst-ever buying conditions; the pages 'will not pretend those agree' and retail sales Thursday (cons +0.3 pct; Chicago Fed real-terms estimate -0.7 pct) is where it reconciles (wiki/synthesis.md Section 4 item 3 and 7.B.5; wiki/economic-calendar.md).
+- UPSTREAM FACTUAL DISPUTES OPEN: Hormuz flows (two Kpler numbers); the 2Y basis (FRED Thu 4.75 vs Treasury Fri 4.80 -> 10Y-2Y +49 vs +44); the 3M bill basis (^IRX 4.057 vs CMT 4.25 -> 10Y-3M +119 vs +99); gold contract (GCV26 $4,191 settled vs GC=F $4,216); SMH/XLK trailing P/E data-basis artifact (43x -> 32x); fund-weight snapshot shifts (XLC platforms 35 -> 43 pct, XLE integrateds 35 -> 42 pct, XLU VST into the top ten); October hike odds 16-20 pct by source; copper $6.64 is a Friday-evening last trade, not a settlement. Last week's market_state.json rates-block dispute was not re-raised on the pages this run and is not verified resolved; last week's copper and DXY-streak disputes are resolved (pages agree) (wiki/synthesis.md Section 7.A and 7.C; wiki/materials.md).
+- RESOLVED AND DROPPED FROM THE CARRY-FORWARD SET: (a) the OPEC+ Oct 4 blind spot -- the meeting held November targets as expected and is in the pinned snapshot; (b) last week's event items (3-, 10- and 30-year auctions, FOMC minutes, ISM Services, UMich, PepsiCo, Micron) have printed and are in the evidence above; (c) the credit stale-data caveat (FRED reachable via a second path); (d) the DXY streak dispute (fourth straight weekly gain on every page).
 
 </details>
 
-🥇 **Technology** 69.6 leads the week &nbsp;&nbsp;•&nbsp;&nbsp; 🔻 **Communication Services** 20.8 trails it
+🥇 **Energy** 80.3 leads the week &nbsp;&nbsp;•&nbsp;&nbsp; 🔻 **Technology** 35.8 trails it
 
 ```
 SECTOR                   WEEK                     MONTH
 ────────────────────────────────────────────────────────────────────────
-Technology                69.6 con ███████░░░     72.4 fav ███████░░░
-Energy                    60.5 con ██████░░░░     43.1 unf ████░░░░░░
-Industrials               57.0 con ██████░░░░     62.5 con ██████░░░░
-Utilities                 51.7 neu █████░░░░░     21.8 def ██░░░░░░░░
-Consumer Discretionary    32.1 unf ███░░░░░░░     22.9 def ██░░░░░░░░
-Consumer Staples          26.4 def ███░░░░░░░     33.9 unf ███░░░░░░░
-Materials                 23.8 def ██░░░░░░░░     28.4 def ███░░░░░░░
-Real Estate               23.4 def ██░░░░░░░░     21.3 def ██░░░░░░░░
-Financials                22.7 def ██░░░░░░░░     29.2 def ███░░░░░░░
-Healthcare                21.2 def ██░░░░░░░░     50.4 neu █████░░░░░
-Communication Services    20.8 def ██░░░░░░░░     41.8 unf ████░░░░░░
+Energy                    80.3 fav ████████░░     43.6 unf ████░░░░░░
+Consumer Staples          71.2 fav ███████░░░     48.5 neu █████░░░░░
+Healthcare                66.2 con ███████░░░     61.4 con ██████░░░░
+Utilities                 60.2 con ██████░░░░     39.2 unf ████░░░░░░
+Financials                53.9 neu █████░░░░░     38.8 unf ████░░░░░░
+Consumer Discretionary    53.1 neu █████░░░░░     31.0 unf ███░░░░░░░
+Communication Services    53.0 neu █████░░░░░     43.6 unf ████░░░░░░
+Real Estate               45.1 neu █████░░░░░     23.9 def ██░░░░░░░░
+Materials                 39.0 unf ████░░░░░░     34.6 unf ███░░░░░░░
+Industrials               37.3 unf ████░░░░░░     56.3 con ██████░░░░
+Technology                35.8 unf ████░░░░░░     66.8 con ███████░░░
 ```
 
 | | Sector | Week | Month | Trend | Confidence |
 |---|---|---:|---:|:---:|:---:|
-| 🔵 | **Technology** | 69.6 constructive | 72.4 favorable | ▬ flat | ●○○ low |
-| 🔵 | **Energy** | 60.5 constructive | 43.1 unfavorable | ▼ -17.4 | ●○○ low |
-| 🔵 | **Industrials** | 57.0 constructive | 62.5 constructive | ▲ +5.5 | ●○○ low |
-| ⚪ | **Utilities** | 51.7 neutral | 21.8 defensive | ▼ -29.9 | ●○○ low |
-| 🟠 | **Consumer Discretionary** | 32.1 unfavorable | 22.9 defensive | ▼ -9.2 | ●○○ low |
-| 🔴 | **Consumer Staples** | 26.4 defensive | 33.9 unfavorable | ▲ +7.5 | ●○○ low |
-| 🔴 | **Materials** | 23.8 defensive | 28.4 defensive | ▬ flat | ●●○ medium |
-| 🔴 | **Real Estate** | 23.4 defensive | 21.3 defensive | ▬ flat | ●○○ low |
-| 🔴 | **Financials** | 22.7 defensive | 29.2 defensive | ▲ +6.5 | ●○○ low |
-| 🔴 | **Healthcare** | 21.2 defensive | 50.4 neutral | ▲ +29.2 | ●○○ low |
-| 🔴 | **Communication Services** | 20.8 defensive | 41.8 unfavorable | ▲ +21.0 | ●○○ low |
+| 🟢 | **Energy** | 80.3 favorable | 43.6 unfavorable | ▼ -36.7 | ●○○ low |
+| 🟢 | **Consumer Staples** | 71.2 favorable | 48.5 neutral | ▼ -22.7 | ●○○ low |
+| 🔵 | **Healthcare** | 66.2 constructive | 61.4 constructive | ▬ flat | ●○○ low |
+| 🔵 | **Utilities** | 60.2 constructive | 39.2 unfavorable | ▼ -21.0 | ●○○ low |
+| ⚪ | **Financials** | 53.9 neutral | 38.8 unfavorable | ▼ -15.1 | ●●○ medium |
+| ⚪ | **Consumer Discretionary** | 53.1 neutral | 31.0 unfavorable | ▼ -22.1 | ●○○ low |
+| ⚪ | **Communication Services** | 53.0 neutral | 43.6 unfavorable | ▼ -9.4 | ●○○ low |
+| ⚪ | **Real Estate** | 45.1 neutral | 23.9 defensive | ▼ -21.2 | ●○○ low |
+| 🟠 | **Materials** | 39.0 unfavorable | 34.6 unfavorable | ▬ flat | ●○○ low |
+| 🟠 | **Industrials** | 37.3 unfavorable | 56.3 constructive | ▲ +19.0 | ●○○ low |
+| 🟠 | **Technology** | 35.8 unfavorable | 66.8 constructive | ▲ +31.0 | ●○○ low |
 
 <details>
 <summary><b>Why each sector reads the way it does</b></summary>
 
-#### 🔵 Technology — week 69.6 constructive, month 72.4 favorable
+#### 🟢 Energy — week 80.3 favorable, month 43.6 unfavorable
 
-- XLK made a record close at $199.81 (+1.8 pct) through the June peak ($198.73) in the week the 10Y touched 5.34 pct, and the October hike was priced out (odds ~70 pct -> ~17 pct) (wiki/tech.md; macro/facts.json).
-- SMH closed $630.60, through the $609.66 double top on 57 pct more volume; Micron's capex bill went to its suppliers (AMAT +11.3 pct, LRCX +10.2 pct) (wiki/synthesis.md Section 2; wiki/semiconductors.md).
-- Week RF held at 65 and MC raised 42 -> 45: leadership confirmed, but nobody on the desk adds at these prices.
-- ⚠️ **Risk:** Leadership got more expensive against the bond: SMH ~43.1x trailing, roughly 295bp under the 10Y, 10.7 pct above its 50-day, into Wednesday's 10-year auction (wiki/synthesis.md Sections 1 and 4).
-- ⚠️ **Risk:** XLK sold its own payrolls gap (open $201.16, close under $200); Micron beat and closed the week -0.7 pct -- the forward number is the print (wiki/synthesis.md Sections 1-2).
-- ⚠️ **Risk:** Falsifier: an XLK close under $198.73 is a failed breakout -> $194.50; an SMH close below $609.66 -> $591.92 (wiki/synthesis.md Section 5).
+- XLE closed $65.08 (+3.60 pct), un-failing the Sep 25 breakout on a weekly close through $63.46 with a higher low ($62.05) and a higher high ($65.86); Thursday's +3.0 pct came on 51.3M shares, the heaviest session since September; the Sep 15 closing high $65.54 is 46 cents overhead (wiki/energy.md; macro/facts.json).
+- The structural file is re-sourced and did not improve: Hormuz crude flows ~30 pct under pre-war (Kpler; the calendar page carries a -78 pct three-day figure), at least 12 tankers hit since Sep 29, SPR 283.0M the lowest since 1982, distillate 12 pct under its five-year average, the HO-WTI crack $107 from $98; Brent $104.72 over the $100 line while WTI is $91.85 (wiki/energy.md; wiki/synthesis.md Section 7.B.3; macro/facts.json).
+- Energy is one of four ETFs above its 50-day and one of six above its 200-day, with a -0.171 correlation to SPY (eased from -0.242) -- it rose with the index this week rather than against it (wiki/synthesis.md Section 2; wiki/canary-watch.md SECTOR CORRELATION MATRIX).
+- Week RF raised 50 -> 58 and MC 40 -> 50: the breakout confirmed on the arithmetic the prior cycle asked for, and Monday's bond-market closure makes oil the only live input (WTI > $95 / < $88 gates); OPEC+ held Oct 4 as expected (wiki/economic-calendar.md; wiki/energy.md).
+- ⚠️ **Risk:** The breakout rests on one sentence: Thursday's move followed a Truth Social pledge of no strikes on Iran before the midterms with the blockade kept; the energy desk files it as neither escalation nor de-escalation, and a mediator framework reverses it on the same volume (wiki/energy.md WILD CARD; wiki/synthesis.md Section 7.B.6).
+- ⚠️ **Risk:** EIA Thu Oct 15 (holiday-delayed) is the first distillate print that can show the G-7 diesel: a build compresses the $107 crack and the refiners (MPC/VLO/PSX, 14 pct of the fund, 4-10 pct above mean targets at records) give back the move before VLO prints Oct 22 (wiki/energy.md).
+- ⚠️ **Risk:** Falsifier: a weekly close under $63.46 is a second failed breakout at the same line and the desk goes from hold to reduce; next supports 50D $62.41 then $60.95. Bullish falsifier: a close over $65.54 puts the fund at all-time highs with nothing overhead (wiki/energy.md; wiki/synthesis.md Section 5).
+- ⚠️ **Risk:** The DXY commodity-long restriction (#115) stays ON at 102.21, 0.03 under the 52-week closing high (wiki/materials.md; macro/facts.json).
 
-#### 🔵 Energy — week 60.5 constructive, month 43.1 unfavorable
+#### 🟢 Consumer Staples — week 71.2 favorable, month 48.5 neutral
 
-- XLE closed $62.82 (+1.26 pct) with WTI down to $91.11: Tuesday's $60.95 low undercut the 50-day and reversed, and refiners took back the prior week (MPC +7.3 pct, VLO +4.9 pct, PSX +3.5 pct) (wiki/energy.md; macro/facts.json).
-- Energy is the only sector with a negative correlation to SPY (-0.242) on a board where all twelve correlations rose (wiki/synthesis.md Section 2).
-- Week RF raised 45 -> 50 and MC held at 40: the breakdown did not follow the failed breakout, but the week's catalyst is unseen.
-- ⚠️ **Risk:** THE OPEC+ DECISION (Sunday Oct 4) IS NOT IN THE PINNED SNAPSHOT: a hold is priced, an increase is not (wiki/synthesis.md header and Section 8). This call is blind to it.
-- ⚠️ **Risk:** The G-7 agreed a 100M-barrel release with diesel front-loaded -- a government aiming at the refiners' margin while MPC, VLO and PSX trade above their mean targets (wiki/energy.md; wiki/synthesis.md Section 1).
-- ⚠️ **Risk:** Falsifier: a close under $60.95 -> 200-day $55.88. Bullish falsifier: a weekly close over $63.46 un-fails the breakout -> $65.93 (wiki/synthesis.md Section 5).
+- XLP +3.60 pct to $83.43, first up week after seven down, reclaiming $81.00, the $81.70 double bottom (retested Wed) and the 200D ($82.81) in one Thursday; seventeen of nineteen tracked names rose; the 50D $83.64 is 21 cents overhead (wiki/consumer-staples.md; macro/facts.json).
+- The regime favors the shelter relatively: UMich 46.3 with current conditions at an all-time low, mortgage 7.40 pct, trade-down inside the store (WMT +6.8 pct, COST September comps +11.4 pct), and calendar-page Ophelia names 'staples with pricing power' as a holding a +0.6 pct headline CPI makes right (wiki/consumer-staples.md; wiki/economic-calendar.md COUNCIL READ; wiki/synthesis.md Wire 5).
+- The bid was a rotation, not a print: PEP beat and cut its profit guide the same day and ended flat; the staples page's 'wider credit spreads' attribution is not supported by FRED (HY narrowed 324 -> 315); Ophelia stays neutral -- 'a relative trade, not an absolute one' (wiki/consumer-staples.md; wiki/synthesis.md Section 7.A and 7.B.2).
+- Week RF raised 28 -> 45 and MC 45 -> 48: the fund is back above its Sep 11 level and the week's prints (CPI food-at-home Wed, retail sales Thu, ACI Tue) are two-sided; the favorable band is arithmetic-driven (breadth 90, up-volume 97.7 pct) (wiki/consumer-staples.md).
+- ⚠️ **Risk:** XLP's 30-day correlation to SPY flipped positive -> negative (+0.095 -> -0.009), the strict-criterion alert (second flip in three weeks, issue opened): statistically a sector with no relationship to the index, not a hedge (wiki/canary-watch.md SECTOR CORRELATION MATRIX).
+- ⚠️ **Risk:** Falsifier: a daily close under $81.70 (Marky's stop); the Thursday rotation 'can reverse the day the AI names stabilize'; a rejection at the 50D with a close under the 20D $82.14 scales out (wiki/consumer-staples.md).
+- ⚠️ **Risk:** The carry gap is ~-250bp and DXY 102.21 is a fourth weekly gain into PM Oct 21, PG Oct 22, KO/MDLZ Oct 27 -- PEP already put a number on the stronger dollar (wiki/consumer-staples.md; wiki/synthesis.md Wire 7).
 
-#### 🔵 Industrials — week 57.0 constructive, month 62.5 constructive
+#### 🔵 Healthcare — week 66.2 constructive, month 61.4 constructive
 
-- ISM manufacturing printed 54.5 with new orders 55.3, clearing the 52 gate; machinery and power were upgraded to overweight (CAT +2.9 pct, GEV +3.2 pct) (wiki/industrials.md; wiki/synthesis.md Section 3).
-- Thursday's $166.18 low reversed and Friday ran to $171.00, forty-eight cents short of the 200-day; XLI closed $169.95 (-0.28 pct) (wiki/industrials.md; macro/facts.json).
-- Week RF held at 52 and MC cut 58 -> 50: the ISM receipt is spent and the week's calendar is auctions, not industrial data.
-- ⚠️ **Risk:** Third straight week under the 200-day; aerospace and defense were sold (GE -5.4 pct, RTX at RSI 24, LMT -2.7 pct) -- the data says cycle, the leadership says narrow (wiki/industrials.md).
-- ⚠️ **Risk:** The only parts of XLI that work are an AI-infrastructure trade; a paused build takes the cyclical index with it (wiki/synthesis.md Section 6).
-- ⚠️ **Risk:** Falsifier: a close below $166.18 -> low $160s. Bullish falsifier: a close above $171.48 is a failed breakdown -> $176.46 (wiki/synthesis.md Section 5).
+- XLV +2.79 pct to $170.81: the $164.50-165.00 September floor held a second time Thursday (low $165.19 on 11.1M, the week's heaviest volume) and the fund reclaimed its stacked 20D/50D ($168.5); thirteen of fourteen names that fell last week rose; XLV regained its 50-day, taking the board's count to four of twelve (wiki/healthcare.md; wiki/synthesis.md Section 2).
+- The regime fit is low-beta and policy-driven: correlation to SPY 0.231, beta 0.52, and the Federal Register was quiet -- 'the damage was the news and not the numbers'; DXY crossed the 102 line and nothing happened (wiki/healthcare.md Ophelia; wiki/canary-watch.md SECTOR CORRELATION MATRIX).
+- Week RF raised 42 -> 50 and MC 40 -> 45: JNJ (10.4 pct of the fund) and UNH (5.4 pct) open earnings season Tuesday before the open with XLV 1.1 pts under its failed-breakout high $171.87; a clean morning puts $176.60 in play (wiki/healthcare.md; wiki/earnings-surveillance.md).
+- Data quality: BLFS is missing from the panel (9 of 10 constituents, status warn); the arithmetic is computed on nine names and risk_penalty is left at 0.0, consistent with the AVB-missing cycles in August-September (inputs/2026-10-09/healthcare.json data_quality).
+- ⚠️ **Risk:** UNH's whisper ($4.60 vs $4.15 consensus) makes an in-line print a miss in the room; four of its last eight reaction days were -6 pct or worse; JNJ's +15.8 pct whisper gap is unconfirmed on a stock that moves 1.7 pct (wiki/earnings-surveillance.md CONSENSUS VS WHISPER).
+- ⚠️ **Risk:** A rally nobody can explain: no sourced cause for ELV +6.8, ISRG +8.2, ABBV +5.2 pct; Friday's +1.6 pct came on 7.0M shares, below average; the GLOBE-exposed biologics (REGN, MRK, VRTX) recovered least (wiki/healthcare.md WILD CARD).
+- ⚠️ **Risk:** Falsifier: a close under $165.00 -> 200D $155.91; managed-care prints confessing the cost trend (ISM services prices at their highest since 2022) reverse ELV/CI (wiki/healthcare.md RISK SCENARIOS).
 
-#### ⚪ Utilities — week 51.7 neutral, month 21.8 defensive
+#### 🔵 Utilities — week 60.2 constructive, month 39.2 unfavorable
 
-- XLU closed $39.83 (+0.81 pct), the first up week in seven, after a new low at $39.03 reversed the same day on volume that more than doubled (52.6M a day vs 24.7M) (wiki/utilities.md; macro/facts.json).
-- The 10Y rose 9bp to a 24-year intraday high and XLU rose anyway -- the one loose end in the term-premium chain; stance raised defensive -> neutral (wiki/synthesis.md Sections 2-3 and 6).
-- Week RF raised 22 -> 32 and MC cut 40 -> 38: the tape earned the upgrade; three auctions this week test it.
-- ⚠️ **Risk:** The carry gap is -245bp, wider than ever, and XLU is seven weeks under its 200-day; Canary's read is that one week is not a turn (wiki/utilities.md; wiki/synthesis.md Sections 1-2 and 4).
-- ⚠️ **Risk:** FERC accepted and then suspended PJM's reliability backstop for five months; the scarcity pair lost its catalyst (CEG -2.2 pct) (wiki/utilities.md).
-- ⚠️ **Risk:** Falsifier: a close below $39.03 voids it. Bullish falsifier: a close above $40.21 -> $40.66-$40.81 (wiki/synthesis.md Section 5).
+- XLU +3.97 pct to $41.41, the week's leader, through $40.21/$40.66 and the 20D on 52M shares Tuesday, then held three days including the session the 10Y printed 5.364 pct (the fund closed down one cent); the carry gap is still -217bp, the worst in the fund's life, and the 200D ($43.77) has eleven weekly closes under it (wiki/utilities.md; macro/facts.json).
+- The catalyst was growth, not defense: Google-Constellation 3,590 MW on 15-20 years with $4.3B of CEG-funded uprates, DOE's conditional $4.2B loan to Vistra, Black Hills-Google $1.8B -- all built so the hyperscaler pays, none through the suspended PJM backstop; CEG +15.8, VST +15.3 pct and the nuclear pair is now 10.2 pct of the fund (wiki/utilities.md; wiki/synthesis.md Wire 2).
+- The formal contradiction (issue filed): utilities-page Ophelia is constructive and set aside her 4.90 pct rule; calendar-page Ophelia says do not buy the dip in anything long-duration before Wednesday 8:30 and utilities need a core print at or below +0.2 pct to hold. This proposal sides with the calendar page for the week horizon and gives the contract leg partial credit (wiki/synthesis.md Section 7.B.1; wiki/economic-calendar.md COUNCIL READ).
+- Week RF raised 32 -> 42 and MC 38 -> 40: the decoupling from the 10Y is two weeks old and coincides with the biggest contract news of the year; 'a contract-driven decoupling says nothing about what the sector does on the next 10bp without a contract' (wiki/utilities.md; wiki/synthesis.md Section 2).
+- ⚠️ **Risk:** CPI Wed is the direct test: a hot core sends the 10Y through 5.364 pct and the two-week decoupling turns out to have been one news day; falsifier is a close under $40.41 (gap low and 20D) -- the catalyst is being faded; $39.03 voids everything (wiki/utilities.md; wiki/synthesis.md Section 5).
+- ⚠️ **Risk:** The pair ran and wobbled: CEG and VST both put in highs Wednesday and closed 3-4 pct under them with a -5/-6 pct Thursday between; 10 pct of the fund is now a momentum position at 22.4x / 15.5x; Marky wants CEG > $280 and VST > $155 (wiki/utilities.md).
+- ⚠️ **Risk:** NEE and D (17.0 pct of the fund) are the two parties to a merger Virginia's Lt. Governor formally opposed Oct 7, with the AG asking to reset the review clock; they were the two weakest large caps (+0.7 / +0.5 pct) (wiki/utilities.md).
+- ⚠️ **Risk:** Bullish falsifier: a close over the 50D $42.01 (not closed above since July) -> $42.42-42.77; a soft CPI with a weekly 10Y close under 5.20 pct narrows the carry gap for the first time since August (wiki/utilities.md).
 
-#### 🟠 Consumer Discretionary — week 32.1 unfavorable, month 22.9 defensive
+#### ⚪ Financials — week 53.9 neutral, month 38.8 unfavorable
 
-- Conference Board confidence fell 6.7 points to 81.9, the lowest since 2014; payrolls +29K; the 30-year mortgage jumped to 7.28 pct; Nike guided fiscal 2027 revenue down high-single digits (wiki/consumer-discretionary.md; wiki/economic-calendar.md).
-- XLY closed $110.04 (-0.47 pct), a seventh straight red week, after four closes below $109.41; six of fifteen names set 52-week closing lows (wiki/consumer-discretionary.md; macro/facts.json).
-- Week RF cut 30 -> 28 and MC cut 48 -> 42: the stance stays bearish with the prior concession withdrawn.
-- ⚠️ **Risk:** XLY is not the consumer: AMZN + TSLA are 41.7 pct of it and Tesla's delivery beat reclaimed the gap on Friday (wiki/synthesis.md Sections 1 and 4).
-- ⚠️ **Risk:** Carnival printed a record and raised; TJX and MAR rose two weeks running; oil under $90 is a dollar away (wiki/synthesis.md Section 6).
-- ⚠️ **Risk:** Falsifier (bullish): a close above $111.10 -> $113.29. Bearish confirmation: a close below $107.99 -> $105.45 (wiki/synthesis.md Section 5).
+- XLF +2.32 pct to $54.73, ending four weekly losses and printing the $54.46 add trigger on the first try; the 200D ($53.33) held on every close since Oct 1; Thursday's 47.7M shares was money entering financials on the day tech sold off (wiki/financials.md; macro/facts.json).
+- The lift came from the names that were never oversold -- V +6.9 and MA +6.8 pct at records on a move nobody can source, PGR/CB/TRV/BRK.B -- while BAC (RSI 32), PNC (29.5), GS (35), MS (34), SCHW (35) did nothing and KRE fell 2.5 pct, reversing the prior three weeks' regional strength with no sourced reason (wiki/financials.md; wiki/synthesis.md Section 2 item 5).
+- Credit is measured and two-sided: HY OAS 315 (from the 324 peak), HY-IG 233 under the 250 trigger; CCC 1,252 a new 52-week high -- 'index in, bottom tier out'; the curve +49bp 10Y-2Y is steeper, +119 10Y-3M flatter from the bill end (wiki/canary-watch.md CREDIT SPREADS and YIELD CURVE; macro/facts.json).
+- Week RF raised 35 -> 40 and MC 40 -> 55: seven of nine tracked financials report in 72 hours (JPM/GS/WFC/C Tue, BAC/MS/BLK/PGR Wed, SCHW/USB/PNC Thu, TRV + MTB/RF/TFC/CFG Fri); GS's consensus was cut 12 pct in seven days ($15.01 -> $13.18) with the whisper a nickel over it; bank straddles are 1.3-2.1x realized norms (wiki/earnings-surveillance.md; wiki/synthesis.md Section 4).
+- ⚠️ **Risk:** Provisions raised at two or more banks, or JPM/GS cutting NII guides, = the labor flag reaching credit; Cecil moves his HY-IG trigger to 240 and the fund goes back through the 200D at $53.33 on the open (wiki/economic-calendar.md NEXT WEEK'S GAUNTLET; wiki/canary-watch.md COUNCIL READ).
+- ⚠️ **Risk:** Falsifier: a close under $53.30 (Monday's low) -> 200D $53.33 -> $52.81 -> May-June base $50.42-51.58; bullish falsifier: $54.82 then the 50D $56.39 on clean reserve lines (wiki/financials.md).
+- ⚠️ **Risk:** V and MA are 14 pct of the fund and delivered most of the gain on a move the page could not source, in a week a reported White House endorsement of card-network competition legislation argued the opposite (wiki/financials.md WILD CARD; wiki/synthesis.md Wire 6).
+- ⚠️ **Risk:** Ophelia stays cautious 'with less urgency': if reserves are clean the bounce was positioning; FRED posts Friday's spreads Monday (wiki/financials.md COUNCIL READ).
 
-#### 🔴 Consumer Staples — week 26.4 defensive, month 33.9 unfavorable
+#### ⚪ Consumer Discretionary — week 53.1 neutral, month 31.0 unfavorable
 
-- XLP closed $80.53 (-1.86 pct), a sixth straight red week and the lowest close since April 15, on above-average volume with no staples company reporting; seventeen of eighteen names fell (wiki/consumer-staples.md; macro/facts.json).
-- The 2.59 pct yield against the 10Y is a -269bp carry gap; stance cut defensive-lean -> neutral: a defensive that does not defend is a bond proxy with equity risk (wiki/consumer-staples.md; wiki/synthesis.md Sections 1 and 3).
-- Week RF cut 35 -> 28 and MC held at 45: the shelter was sold in the week it should have been bought; PepsiCo on Thursday is a live two-way catalyst.
-- ⚠️ **Risk:** PepsiCo reports Thu Oct 8 at RSI 26 and 14.1x with a 4.7 pct yield; a held guide could snap the group back (wiki/synthesis.md Sections 1 and 5).
-- ⚠️ **Risk:** CAG, MKC and GIS beat and were sold on falling volume; dollar translation drag is named for PEP, KO, PG, MDLZ and CL (wiki/synthesis.md Section 6).
-- ⚠️ **Risk:** Falsifier: a close below $80.13 has no named support until the low $70s. Bullish falsifier: a reclaim of $81.00 (wiki/synthesis.md Section 5).
+- XLY +2.55 pct to $112.85, its first up week after eight down, clearing $111.10, the 20D and the $109.41 gap; the long fired Tuesday and the coil top $113.29 is 44 cents overhead -- but the breakout was bought on below-average volume (6.4M vs a 6.8M 20D) and AMZN+TSLA (41 pct of the fund) supplied ~1.6 of the 2.55 points (wiki/consumer-discretionary.md; macro/facts.json).
+- Nothing in the consumer file improved: UMich 46.3 with current conditions at an all-time low 44.7 on the worst durable-goods buying conditions in the survey, the 30-year mortgage 7.40 pct (second weekly rise), five names (HD, LOW, MCD, LULU, CMCSA) at 52-week closing lows inside the up week; nobody upgraded -- 'a paused Fed is a consequence of a slowing consumer, not a cure' (wiki/consumer-discretionary.md Ophelia; wiki/synthesis.md Section 4 item 3 and Wire 5).
+- Week RF raised 28 -> 30 and MC 42 -> 45: retail sales Thu (cons +0.3 pct, control +0.3; Chicago Fed real-terms estimate -0.7 pct) is the one print that can reconcile the tape with the survey, and CPI Wed decides whether the hike odds the week removed come back (wiki/economic-calendar.md; wiki/consumer-discretionary.md).
+- ⚠️ **Risk:** Bullish falsifier: retail sales hold up and a cool CPI pulls the 10Y and the mortgage rate down together; a close over $113.29 -> 50D $114.23 -> 200D $115.67, which together turn a bounce into a trend change (wiki/consumer-discretionary.md Marky).
+- ⚠️ **Risk:** Falsifier: a close under the 20D $110.75 -> $109.41 -> $107.99; retail sales < -0.1 pct fires the Retail flag; control group < 0.0 = real demand rolling over (wiki/consumer-discretionary.md; wiki/economic-calendar.md REGIME RISK FLAGS).
+- ⚠️ **Risk:** The index is not the consumer: the fund's weights snapshot moved against the prices and the 50D is still under the 200D (bearish cross intact) (wiki/consumer-discretionary.md WILD CARD).
 
-#### 🔴 Materials — week 23.8 defensive, month 28.4 defensive
+#### ⚪ Communication Services — week 53.0 neutral, month 43.6 unfavorable
 
-- DXY closed 101.93, a second weekly close above 101, and copper lost the $6.60 rail ($6.549 canonical); gold -3.68 pct; the commodity-long restriction stays ON (wiki/materials.md; macro/facts.json; wiki/synthesis.md Section 3).
-- XLB closed $48.86 (-1.89 pct) after trading to $47.81 on 25.6M shares; ISM 54.5 came in on the bulls' side and did not matter (wiki/materials.md).
-- Week RF cut 35 -> 30 and MC cut 42 -> 40: the dollar won the argument and the demand verdict bought nothing.
-- ⚠️ **Risk:** Shanghai reopens Thu Oct 8 and FCX closed above $71.54 while the metal fell: the stock disagrees with copper (wiki/synthesis.md Sections 2 and 5).
-- ⚠️ **Risk:** Upstream dispute: copper is $6.549 (-2.19 pct) in facts.json against ~$6.49 (-3.0 pct) in three wikis; the rail is broken on either number (wiki/synthesis.md Section 7).
-- ⚠️ **Risk:** Falsifier: a close below $47.81 -> $47.00 and likely overshoot. Bullish falsifier: a reclaim of $49.57 (wiki/synthesis.md Section 5).
+- XLC +0.05 pct to $110.38 -- flat on the week after a -1.5 pct Friday erased a four-day climb; the fund has taken and lost its 50D ($111.57) twice in three weeks, each for one session and each to a different part of itself (Meta, then the carriers): 'no leadership, only rotation' (wiki/communication-services.md; macro/facts.json).
+- SpaceX's reported $8B purchase of Grain Management's 800 MHz spectrum (Thu night) took TMUS -13.3, T -9.8, VZ -8.7 pct on Friday on 3.7-4.3x normal volume, with CHTR -5.7 and CMCSA -2.6 pct at 52-week lows; 12.5 pct of the fund lost 9-13 pct on a press release -- 'not a defensive sector' (wiki/communication-services.md; wiki/synthesis.md Wire 3).
+- The ad cycle's leading indicator worsened a third week (UMich 46.3, current conditions 44.7) with no budget-cut announcement found; the sector's correlation to SPY fell to 0.369 and XLC is nineteen weekly closes under its 200D ($113.03) (wiki/communication-services.md MACRO OVERLAY; wiki/synthesis.md Section 2).
+- Week RF held at 35 and MC cut 42 -> 38: nothing in the fund reports this week, the FCC process has no date, and the only tradable observation is capitulation volume in the carriers, which Marky notes and does not trade (wiki/communication-services.md COUNCIL READ).
+- ⚠️ **Risk:** Bullish falsifier: the spectrum sell-off is overdone (14 MHz, no towers, an FCC approval) and the carriers recover half of Friday within a month; VZ at 6.8 pct, 155bp over the 10Y, is the clearest single-name agreement on the board (Cecil bought at $41.65); a close over $112.08 that holds a second day -> 200D $113.03 (wiki/communication-services.md; wiki/synthesis.md Section 4 item 6).
+- ⚠️ **Risk:** Falsifier: a close under $109.66 -> $105.03, the 52-week closing low (wiki/communication-services.md).
+- ⚠️ **Risk:** META carries a Hunterbrook short report (Muse adoption) and three consensus bases ($6.74 / $6.25 / $6.39) into Oct 28; NFLX (Oct 20) has four of five negative reactions and a reported 5 pct workforce cut (wiki/earnings-surveillance.md; wiki/communication-services.md).
+- ⚠️ **Risk:** Fund weights moved 35.3 -> 43.1 pct for the platforms on Yahoo's snapshot; WBD's slot is now Skydance (SKYD, ~$80B debt, Fitch BB) at a stale weight (wiki/communication-services.md; wiki/synthesis.md Section 7.C).
 
-#### 🔴 Real Estate — week 23.4 defensive, month 21.3 defensive
+#### ⚪ Real Estate — week 45.1 neutral, month 23.9 defensive
 
-- XLRE closed $40.81 (-1.8 pct), the lowest close since April 1 and a fourth straight week under the 200-day, after trading $40.40 on Thursday (wiki/real-estate.md; macro/facts.json).
-- The PCE gate opened the right way and bought nothing: the 10Y touched 5.34 pct, the 30-year closed 5.63 pct and the 30-year mortgage jumped to 7.28 pct; carry gap -209bp (wiki/real-estate.md).
-- Week RF cut 22 -> 20 and MC cut 45 -> 35: relief now needs a week in which the 10Y closes lower, and this week brings 3-, 10- and 30-year supply.
-- ⚠️ **Risk:** RSI 25.7, a third week under 30: Marky stopped selling rallies with forty cents of target left and sees snap-back asymmetry (wiki/synthesis.md Sections 2 and 4).
-- ⚠️ **Risk:** Data centers decoupled upward (EQIX +1.8 pct, DLR flat) while towers made lows -- leaders turn before laggards (wiki/synthesis.md Sections 2 and 6).
-- ⚠️ **Risk:** Falsifier (bullish): a close above $41.33 -> $42.50. Bearish confirmation: a close below $40.40 -> $40.00, then $39.12 (wiki/synthesis.md Section 5).
+- XLRE +1.96 pct to $41.61, first up week after seven down, closing over the $41.33 shelf after trading to $40.28 Thursday (28 cents from the $40.00 objective); the 20D $41.64 is three cents overhead and the 200D/trapdoor $42.50-42.57 is the target where Marky takes the position down (wiki/real-estate.md; macro/facts.json).
+- The week's engine was three tower stocks on a tenant that has not signed: AMT +12.4, SBAC +15.1, CCI +19.9 pct on SpaceX's reported $8B spectrum purchase -- roughly 0.7 of the fund's 2.0 points was AMT alone and the staged top-two contribution is 74.8 pct, the highest on the board; WELL, VTR and SPG fell; EQIX and DLR did nothing (wiki/real-estate.md; wiki/synthesis.md Wire 3; inputs/2026-10-09/real_estate.json metrics).
+- The fundamental case did not improve: the 30-year mortgage 7.40 pct (second weekly rise), Trepp CMBS delinquency 8.02 pct (multifamily 8.04, office 12.16), carry gap -171bp; Ophelia's relief condition (a lower weekly 10Y close) was met by three basis points -- 'not enough and not nothing'; stance avoid -> watch, no new duration (wiki/real-estate.md Ophelia; wiki/synthesis.md Section 4).
+- Week RF raised 20 -> 25 and MC 35 -> 42: CPI Wed is the direct test and Prologis Thu Oct 15 (company-confirmed) is the first REIT print into depressed positioning, 'where an in-line quarter is enough' (wiki/real-estate.md Marky; wiki/earnings-surveillance.md).
+- ⚠️ **Risk:** The tower rally unwinds: spectrum is not a lease, approval can slip, carriers can respond; if it fades the fund gives back roughly a third of the week (wiki/real-estate.md RISK SCENARIOS and WILD CARD).
+- ⚠️ **Risk:** Falsifier: a close under $40.57 (Wednesday's low close) makes $40.28 and $40.00 live; the 10Y takes out 5.364 pct and the 30Y 5.63 pct (wiki/real-estate.md).
+- ⚠️ **Risk:** Bullish falsifier: a second lower weekly 10Y close -- Cecil buys O (6.0 pct, RSI 32) first, then WELL; Ophelia says 'the term premium turned'; a close over $42.57 ends the downtrend (wiki/real-estate.md Cecil; wiki/synthesis.md Section 5).
+- ⚠️ **Risk:** OWNER OPTION: the 74.8 pct top-two concentration is a quality concern the arithmetic does not see; prior cycles left coverage warnings at risk_penalty 0.0 and no cycle has applied a concentration penalty. A 0.02 penalty here would move the week score from 45.1 (neutral) to 43.1 (unfavorable). This proposal leaves it at 0.0 for consistency and flags the border.
 
-#### 🔴 Financials — week 22.7 defensive, month 29.2 defensive
+#### 🟠 Materials — week 39.0 unfavorable, month 34.6 unfavorable
 
-- XLF fell 2.46 pct to $53.49, pierced its 200-day on Thursday ($52.81 low) and closed $0.17 above it; RSI 27.5, all seventeen tracked names below their 50-day (wiki/financials.md; macro/facts.json).
-- The sector got a cool PCE, +29K payrolls, the hike priced out and a steeper curve, and could not bounce; Ophelia moved neutral -> cautious (wiki/financials.md; wiki/synthesis.md Section 3).
-- Week RF cut 40 -> 35 and MC cut 48 -> 40: the bank prints (Oct 13-15) are outside the week horizon and the 10-year auction marks the securities books.
-- ⚠️ **Risk:** The selling pattern (regionals holding, KRE beating XLF a third week) reads as rate shock rather than loan losses; RSI 27.5 on the 200-day is snap-back territory (wiki/synthesis.md Sections 2 and 4).
-- ⚠️ **Risk:** Credit is unmeasured: HY OAS is stale at 280 (Sep 24) and HYG fell for a fifth week (wiki/canary-watch.md CREDIT SPREADS).
-- ⚠️ **Risk:** Falsifier: a close below $52.81 -> $50.42-$51.58. Bullish falsifier: a close over $54.46 (wiki/synthesis.md Section 5).
+- XLB +1.17 pct to $49.43 matched SPY (+0.01 pts) but did not close above a level that matters: rejected three times at $49.64-49.73 (20D), a fourth straight weekly close under the 200D ($50.36), $47.81 untested -- 'a hold of the low, not a reversal' (wiki/materials.md; macro/facts.json).
+- The restriction on new commodity longs (#115) stays ON: DXY 102.21, a third weekly close above 101, a fourth straight weekly gain, 0.03 under the 52-week closing high, and this leg rose with December hike odds -- the orthodox direction (wiki/materials.md; wiki/canary-watch.md CROSS-ASSET SIGNALS).
+- Construction materials made new lows under a 5.60 pct 30Y and a 7.40 pct mortgage: MLM at a one-year closing low, CRH 8 cents above its low, VMC $3.75 above; the row stays untouchable while the 30-year makes highs (wiki/materials.md; wiki/synthesis.md Section 4 item 5).
+- Week RF raised 30 -> 32 and MC held at 40: the only Monday input is copper's settlement against $6.60 (Friday-evening last trade $6.64, December $6.69 -- provisional); CPI Wed is the dollar's gate; AA and CMC Thu are the week's only prints (wiki/materials.md EARNINGS CALENDAR).
+- ⚠️ **Risk:** Bullish falsifier: copper holds $6.60 at Monday's settlement with DXY at 102 -- 'the rule is being tested by the tape, not by me'; steel's rally (CLF +14.7, NUE +4.1, STLD +2.8 pct) converts ISM prices paid 77.9 into earnings Oct 19-26; a close over $50.36 with the 20D reclaimed ends the sub-200D streak (wiki/materials.md Ophelia and Marky).
+- ⚠️ **Risk:** Falsifier: DXY makes a new 52-week high and every commodity long pays again; a close under $47.81 completes the move to $47.00 (wiki/materials.md).
+- ⚠️ **Risk:** CLF closed above its $12.60 mean target into an Oct 19 print with an ~11 pct implied move -- 'a risk, not a signal' (wiki/materials.md; wiki/synthesis.md Section 1).
+- ⚠️ **Risk:** Data under the page moves: last week's gold -3.7 / silver -6.6 pct were continuous-contract artifacts (settled gold +1.4 pct to $4,191 GCV26); CTVA/VYLR history is unadjusted post-spin (wiki/materials.md WILD CARD; wiki/synthesis.md Section 7.A).
 
-#### 🔴 Healthcare — week 21.2 defensive, month 50.4 neutral
+#### 🟠 Industrials — week 37.3 unfavorable, month 56.3 constructive
 
-- XLV fell 2.65 pct to $166.18 through its 50-day ($168.02) on two federal pricing actions in 48 hours: Section 232 tariffs on patented drugs (Sep 29) and CMS's GLOBE Part B reference-pricing rule (Sep 30) (wiki/healthcare.md; macro/facts.json).
-- All fourteen tracked top holdings fell (REGN -6.7 pct, JNJ -5.6 pct) in a growth-scare week: there was no defensive rotation (wiki/healthcare.md; wiki/synthesis.md Section 3).
-- Week RF cut 62 -> 42 and MC cut 48 -> 40: the prior cycle's sanctuary basis is falsified -- the variable was policy, not rates.
-- ⚠️ **Risk:** The sector is a dollar and a half above the September floor at RSI 42.6; a second test can hold (wiki/healthcare.md; wiki/synthesis.md Section 2).
-- ⚠️ **Risk:** XLV is still above its 200-day, and Cecil's list got cheap (REGN 12.0x, ABT 16.1x, UNH 16.4x) (wiki/synthesis.md Sections 1-2).
-- ⚠️ **Risk:** Falsifier: a close below $164.50 -> 200-day $155.50. Bullish falsifier: a reclaim of $168.02 (wiki/synthesis.md Section 5).
+- XLI -0.41 pct to $169.25, the only non-tech sector down on the week and a fourth straight weekly close under its 200D ($171.87); Tuesday's $171.58 missed the reclaim by 29 cents, Wednesday's -2.2 pct was the FTC/USDA day, Thursday's $166.58 held the $166.18 line by 40 cents on 9.1M shares, and Friday's rally came on 3.9M, the lightest volume in the data -- 'a hold, not a reclaim' (wiki/industrials.md; macro/facts.json).
+- The regulator hit the two names that carried the cycle trade: the FTC and USDA opened a joint inquiry into agricultural-equipment markets Oct 7 (comments due Dec 7); DE -9.6 pct (another -4.8 pct Friday with no sourced reason), CAT -5.3 pct sitting on its 200D ($799.66) without being named; Ophelia split the call -- power/electrical (GEV, ETN, PH) overweight, ag and heavy machinery to market-weight (wiki/industrials.md; wiki/synthesis.md Wire 6).
+- The data still says cycle and the index is unconvinced: ISM services 54.9, backlogs the highest since July 2022, but prices paid 74.0 and export orders under 50 for the first time in eight months, with DXY 102.21 an export headwind for CAT and DE (wiki/industrials.md MACRO OVERLAY; wiki/economic-calendar.md).
+- Week RF cut 52 -> 45 and MC 50 -> 42: the week carries only AZZ (Tue AMC), FAST Wed, MAN/JBHT Thu outside the tracked list; the machinery names report from Oct 20 (wiki/industrials.md EARNINGS CALENDAR; wiki/earnings-surveillance.md SECTOR EARNINGS DENSITY).
+- ⚠️ **Risk:** Bullish falsifier: a close over $171.87 turns four weeks under the 200D into a failed breakdown -> 50D $175.38; the inquiry proves narrow and DE/CAT retrace (wiki/industrials.md Marky).
+- ⚠️ **Risk:** Falsifier: $166.18 on a close -> low $160s; CAT loses its 200D; BA ($11 above its 52-week low) breaks it before Oct 27 (wiki/industrials.md RISK SCENARIOS).
+- ⚠️ **Risk:** The diesel loop: DAL's fuel bill +62 pct and a 22 pct cut to the year with 'no visible fuel relief' at UPS/FDX; ISM services prices at a four-year high reach factory margins (wiki/synthesis.md Wire 4; wiki/industrials.md).
 
-#### 🔴 Communication Services — week 20.8 defensive, month 41.8 unfavorable
+#### 🟠 Technology — week 35.8 unfavorable, month 66.8 constructive
 
-- The prior cycle's falsifier fired: XLC closed $110.32 (-2.34 pct), back under the 50-day it had reclaimed, after META fell 4.8 pct on Monday alone (wiki/communication-services.md; macro/facts.json).
-- Netflix made a new 52-week low at $67.06, Comcast and Charter new lows for a fourth week, AT&T -4.3 pct; platforms were cut to market-weight and telecom yield to underweight (wiki/communication-services.md; wiki/synthesis.md Section 3).
-- Week RF cut 45 -> 35 and MC cut 50 -> 42: the repair lasted one week and the Oct 2 judgment catalyst has passed.
-- ⚠️ **Risk:** WBD (4.7 pct of the fund) is expected to leave XLC on Oct 6; five names at lows report inside ten days (wiki/synthesis.md Sections 1-2 and 5).
-- ⚠️ **Risk:** T fell 4.3 pct in a week the hike was priced out: the long bond, not the Fed, prices the telecom sleeve (wiki/synthesis.md Section 6).
-- ⚠️ **Risk:** Falsifier: a close under $109.66 -> $105.38. Bullish falsifier: a close over $111.19 that is not just Alphabet (wiki/synthesis.md Section 5).
+- XLK set a record close $202.00 Tuesday and lost $200 Thursday on the week's heaviest volume (9.1M); Friday's bounce to $198.78 came on the lightest (5.6M) and never retook $200; -0.52 pct W/W ended a six-week run and the fund lagged SPY by 1.68 pts (wiki/tech.md; wiki/canary-watch.md SECTOR ROTATION FLOW; macro/facts.json).
+- The AI trade's risk moved from the discount rate to the funding of demand: the FT's OpenAI revenue shortfall (~$20B under estimates) and the WSJ's Broadcom $50B+ financing landed Thursday; SMH -4.32 pct, first close under $609.66 on 11.2M shares (80 pct above its 20-day average); LRCX -8.2, AMAT -6.1, INTC -12.3 pct; all three desks want TSMC's Thursday guide and ASML's Wednesday orders before touching equipment (wiki/semiconductors.md; wiki/synthesis.md Section 4 and Wire 1).
+- The sector split rather than exited: MSFT +3.4, PLTR +10.8, CSCO +5.5 pct with no sourced cause; XLK remains above its 20D ($194.46), 50D ($188.90) and 200D, one of four ETFs above its 50-day; posture 'hold the complex, do not add into $200' (wiki/tech.md; wiki/synthesis.md Section 2).
+- Week RF cut 65 -> 48 and MC 45 -> 40: the leadership break is confirmed in semis and the board adds SMH $600 to its watch; the calendar-page instruction is 'do not buy the dip in anything long-duration or AI-funding-dependent before Wednesday at 8:30' (wiki/canary-watch.md COUNCIL READ; wiki/economic-calendar.md).
+- ⚠️ **Risk:** Falsifier for the caution: XLK takes back $200 on volume and SMH reclaims $609.66 after $600.32 holds Mon-Tue; TSMC's Q4 guide and 2027 capex raise confirm equipment demand did not break on a funding story (wiki/semiconductors.md; wiki/tech.md).
+- ⚠️ **Risk:** A hot core CPI (> +0.3 pct) locks December and tests 5.364 pct on the 10Y -- a 1.45-beta, 32-35x fund with NVDA+AAPL at 29 pct of it; a second leg of the funding story (Oracle, AVGO) hits the platforms that were bought because the chips were sold (wiki/tech.md WILD CARD; wiki/economic-calendar.md).
+- ⚠️ **Risk:** Levels: close under $196.48 -> 20D $194.46 -> $190-191.75; SMH under $600.32 -> $591.92 -> $578-581 (50D plus breakout line) (wiki/synthesis.md Section 5).
+- ⚠️ **Risk:** Trailing P/E reads 32.5x vs 35.4x last week (SMH 32.2x vs 43.1x) on a data-basis change, not a re-rating; the pages keep the valuation argument on the old figures (wiki/synthesis.md Section 7.C).
 
 </details>
 
@@ -190,11 +210,11 @@ not offered, never a zero.
 
 | | |
 |---|---|
-| Forecast artifacts | 5 |
+| Forecast artifacts | 6 |
 | After-close evaluations | 0 |
-| Manual runs before automation | 5 of 10 |
+| Manual runs before automation | 6 of 10 |
 | Scheduled jobs | none enabled |
-| Weekly research snapshot | 2026-10-05, upstream `e70c87f`, 16 files, provenance verified |
+| Weekly research snapshot | 2026-10-12, upstream `d1ba76f`, 16 files, provenance verified |
 
 ### Standing data-quality constraints
 
