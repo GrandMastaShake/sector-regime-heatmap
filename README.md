@@ -226,39 +226,39 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-10-09** -- observation, not a forecast -- `data/tape/2026-10-09.json`
+**As of 2026-10-12** -- observation, not a forecast -- `data/tape/2026-10-12.json`
 
-> 📏 &nbsp;**34 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**35 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL
 ─────────────────────────────────────────────────────────────────
-Energy                  ·······│█████··     +2.32    100%    100%
-Consumer Staples        ·······│█████··     +2.23     90%     98%
-Utilities               ·······│█████··     +2.21     70%     77%
-Communication Services  ·······│███····     +1.35     70%     60%
-Healthcare              ·······│███····     +1.23     89%     96%
-Financials              ·······│██·····     +1.07     70%     70%
-Consumer Discretionary  ·······│██·····     +0.76     80%     94%
-Real Estate             ·······│█······     +0.26     67%     86%
-Materials               ······█│·······     -0.66     50%     65%
-Technology              ·██████│·······     -2.82     40%     34%
-Industrials             ███████│·······     -3.43     30%     76%
+Consumer Staples        ·······│██████·     +4.60     90%     98%
+Energy                  ·······│████···     +2.85     80%     78%
+Real Estate             ·······│███····     +2.44     89%     99%
+Utilities               ·······│███····     +2.26     90%     74%
+Communication Services  ·······│██·····     +1.66     70%     85%
+Healthcare              ·······│█······     +0.65     67%     70%
+Consumer Discretionary  ·······│█······     +0.40     60%     66%
+Financials              ·······│·······     +0.05     60%     24%
+Materials               ·····██│·······     -1.41     60%     59%
+Industrials             ··█████│·······     -3.84     30%      9%
+Technology              ███████│·······     -5.00     30%     25%
 ```
 
 **Comparison rows -- not sectors.** Each instrument over the tape's own windows, and against SPY. No breadth, no volume confirmation, no score; never an input to a forecast, a payload or an evaluation.
 
 | Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |
 |---|---|---:|---:|---:|---:|
-| Gold | `series.GLD` SPDR Gold Shares | +1.57% | +0.97 | +1.17% | +0.01 |
-| US dollar | `fx.DXY` US Dollar Index | +0.07% | -0.53 | missing | missing |
-| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | +0.66% | +0.07 | -2.39% | -3.55 |
+| Gold | `series.GLD` SPDR Gold Shares | -0.63% | -0.57 | +0.69% | +0.26 |
+| US dollar | `fx.DXY` US Dollar Index | +0.36% | +0.42 | missing | missing |
+| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | +0.60% | +0.67 | -3.48% | -3.90 |
 
 Returns in percent. *vs SPY* is in percentage points, the same subtraction as a sector's EXCESS.
 
-- **US dollar**: absent from fx at 2026-10-02.
+- **US dollar**: absent from fx at 2026-10-05 (the feed says: DX-Y.NYB: the bar dated 2026-10-05 is a quote until the exchange settlement is loaded, and is not read before 2026-10-06T13:00Z (now 2026-10-06T01:54Z)).
 
 > This block records what traded. It scores nothing. The two judgment components have no daily source, and a daily artifact carrying them would be inventing them -- see `docs/decisions/2026-09-11-daily-observation-tape.md`.
 
