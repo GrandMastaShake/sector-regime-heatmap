@@ -1,0 +1,128 @@
+{
+  "sector": "Communication Services",
+  "as_of_date": "2026-10-23",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 116,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 17.8,
+      "regime_fit": 30,
+      "macro_catalyst": 40
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": 0.472,
+      "equal_weight_return_pct": -0.722,
+      "sector_return_vs_spy_pct": -0.292,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 17.8,
+      "top_two_contribution_pct": 34.0,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-16",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLC -4.36 pct to $105.51, its lowest close since Jul 23 and 48 cents over the 52-week closing low; Wednesday's $108.97 broke the $109.66 floor on the week's heaviest volume (wiki/communication-services.md; wiki/synthesis.md Section 2; macro/facts.json).",
+      "Both ends of the barbell fell: Meta -9.4 pct on capex passing operating cash flow (FCF -$2.1B), Netflix -6.6 pct on a Q4 guide and ad cut, and the SpaceX ~80,000-tower report took AT&T -10.7 pct on the week and TMUS to a two-year low (wiki/communication-services.md; wiki/synthesis.md Wire 1 and Wire 4).",
+      "Week RF cut 35 -> 30 and MC 38 -> 40: GOOGL and TMUS report Wed Oct 28 and VZ Mon, a binary set on a fund whose platforms are graded on cash, not budgets (wiki/earnings-surveillance.md; wiki/synthesis.md Section 4)."
+    ],
+    "risks": [
+      "Alphabet showing capex covered by cash flow answers the 'who pays' question on an oversold fund 48 cents above its low; Marky's short covers a third at $105.03 and a close over $109.66 invalidates the call (wiki/synthesis.md Section 4 and Section 5).",
+      "A SpaceX denial or VZ/TMUS commentary that no tower deal exists reverses Friday's carrier selling (wiki/synthesis.md Section 7.B.5)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 40.0,
+      "volume_confirmation": 18.6,
+      "regime_fit": 35,
+      "macro_catalyst": 42
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": -1.307,
+      "equal_weight_return_pct": -0.592,
+      "sector_return_vs_spy_pct": 0.884,
+      "sector_rank_among_eleven": 7,
+      "up_volume_share_pct": 18.6,
+      "top_two_contribution_pct": 37.3,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLC is 6.50 pts behind SPY over a month and below both its 50-day and 200-day; correlation to SPY 0.440 on Canary's 30-day window (wiki/synthesis.md Section 3; wiki/canary-watch.md SECTOR CORRELATION MATRIX).",
+      "Ophelia moved platforms and telecom to underweight until cash covers capex; the ad forecast cut at Netflix and the SpaceX entry into towers both hit the fund's two halves (wiki/communication-services.md; wiki/synthesis.md Section 7.B.2)."
+    ],
+    "risks": [
+      "The fund is concentrated (platforms ~43 pct, weights approximate): one hyperscaler print that shows cash flow can re-rate it within the month (wiki/synthesis.md Section 7.C; wiki/communication-services.md).",
+      "Cecil buys TMUS at 10.2x with 62 pct to target; a clean Oct 28 print would make the telecom selloff the value entry he calls it (wiki/synthesis.md Section 1)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-26",
+    "extracts": [
+      {
+        "source_path": "wiki/communication-services.md",
+        "source_file_sha": "a77946990ee3cb493ac66ea397710c9d2020b0be",
+        "lead_summary": "The coil broke, and it broke down. XLC closed $105.51, -4.4%, its lowest close since July 23 and 48 cents above the 52-week closing low. Both ends of the barbell fell in the same week. The platforms fell on their own prints: Meta beat on revenue and still lost 7% Thursday on a $9.9B legal charge and capex that outran operating cash flow; Netflix beat on earnings, guided Q4 below and cut its ad forecast, and lost 5% Wednesday. Alphabet fell 6% without reporting. Then on Friday Bloomberg reported SpaceX in talks for about 80,000 tower sites, and the carriers fell again: AT&T -8.0% on the day, -10.7% on the week after a beat-and-raise; T-Mobile to its lowest close in two years. Comcast and Disney rose. The hedge stopped hedging.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLC"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-26",
+    "source_commit_sha": "0ba7ceb4ad2a05eb8286351265645b7ae67a29d9",
+    "provenance_verified": true
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "sector": "Utilities",
+  "as_of_date": "2026-10-23",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 116,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 30.0,
+      "volume_confirmation": 62.2,
+      "regime_fit": 45,
+      "macro_catalyst": 42
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 1.53,
+      "equal_weight_return_pct": -0.546,
+      "sector_return_vs_spy_pct": -0.117,
+      "sector_rank_among_eleven": 8,
+      "up_volume_share_pct": 62.2,
+      "top_two_contribution_pct": 36.1,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-16",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLU +0.83 pct to $42.56, a fourth up week; Thursday's $42.87 was its best close since Sep 8; ConEd made a 52-week closing high, DUK and NEE +2.9 pct (wiki/utilities.md).",
+      "The AI half sold: Meta's capex update took VST -9.8 pct and CEG -5.7 pct in a day, CEG to its lowest close since Jul 20 -- 'the bond half paid for both' (wiki/utilities.md; wiki/synthesis.md Wire 1).",
+      "Week RF raised 42 -> 45, MC held at 42: the 10Y is 9bp from Ophelia's 4.90 pct condition, but the calendar desk forbids extending duration into FOMC and PCE (wiki/synthesis.md Section 7.B.1; macro/facts.json)."
+    ],
+    "risks": [
+      "Hold plus explicit December language puts the 10Y back over 5.00 pct and takes the duration adds off (wiki/synthesis.md Section 5).",
+      "XLU is 13 weeks under its 200-day ($43.77) and correlation 0.024 is the next flip; a close under $41.28 invalidates (wiki/canary-watch.md; wiki/synthesis.md Section 5)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 70.0,
+      "relative_momentum": 50.0,
+      "volume_confirmation": 77.8,
+      "regime_fit": 42,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 70.0,
+      "median_return_pct": 7.657,
+      "equal_weight_return_pct": 1.341,
+      "sector_return_vs_spy_pct": 2.817,
+      "sector_rank_among_eleven": 6,
+      "up_volume_share_pct": 77.8,
+      "top_two_contribution_pct": 44.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLU is 9.07 pts ahead of SPY over a month; the carry gap narrowed to -192bp (wiki/synthesis.md Section 1 and Section 3).",
+      "Utilities' month depends on two factors pulling opposite ways: rates (helping) and AI-power demand (being sold); VST reports Nov 6, CEG Nov 9 (wiki/utilities.md; wiki/synthesis.md Section 5)."
+    ],
+    "risks": [
+      "ED is 7 pct over its target and Cecil trims it: the regulated half is crowded (wiki/synthesis.md Section 1).",
+      "A hyperscaler that shows cash flow re-rates VST and CEG from their lows and the AI half leads the month (wiki/synthesis.md Section 4)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-26",
+    "extracts": [
+      {
+        "source_path": "wiki/utilities.md",
+        "source_file_sha": "16a1f922b8674ab2e6eabbe9d3a87f110bfb2dd1",
+        "lead_summary": "Fourth up week, and the same split, wider. XLU closed $42.56 (+0.8%); Thursday's $42.87 was its best close since September 8. The 10-year closed under 5% for the first time since September 22 \u2014 4.95% Thursday, 4.99% Friday \u2014 and October hike odds fell from about 28% to about 7%. The wires took it: ConEd to a 52-week closing high, Duke and NextEra +2.9%. The pair took the other side of the same trade. Meta raised its capex guidance Wednesday night, AI-infrastructure names sold Thursday, and Vistra fell 9.8% in a day, Constellation 5.7%. Constellation closed $253.45, its lowest close since July 20 and $14 under the gap its Google contract opened. NextEra beat. PG&E missed its consensus by a cent and fell 3.5% on the week. The fund is half bond, half AI, and this week the bond half paid for both.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLU"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-26",
+    "source_commit_sha": "0ba7ceb4ad2a05eb8286351265645b7ae67a29d9",
+    "provenance_verified": true
+  }
+}

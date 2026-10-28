@@ -1,0 +1,128 @@
+{
+  "sector": "Industrials",
+  "as_of_date": "2026-10-23",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 116,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 91.7,
+      "regime_fit": 35,
+      "macro_catalyst": 42
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 0.834,
+      "equal_weight_return_pct": -0.832,
+      "sector_return_vs_spy_pct": -0.402,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 91.7,
+      "top_two_contribution_pct": 35.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-16",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLI -1.87 pct to $164.62, under the $166.18 October line, its lowest close since Apr 7 and a sixth weekly close under the 200-day; the 50-day ($172.00) crossed under the 200-day ($172.41) (wiki/industrials.md; wiki/synthesis.md Section 2).",
+      "The AI-power chain was sold on beats: GE -9.0 pct after raising, GEV -11.5 pct, CAT -6.0, PH -8.6, ETN -6.4 pct (wiki/industrials.md; wiki/synthesis.md Wire 1).",
+      "Week RF cut 45 -> 35, MC held at 42: GEV Wed and CAT Thu report into a market that grades spending on cash; Philly Fed new orders 4.3 against a 53-month-high PMI (wiki/synthesis.md Section 7.B.4)."
+    ],
+    "risks": [
+      "A hyperscaler print that shows cash flow lifts GEV and CAT from multi-month lows; back in over $168.89 on a close (wiki/synthesis.md Section 4 and Section 5).",
+      "LMT +9.4 pct on a record $292B backlog and CSX +4.3 pct show the non-AI half is being paid (wiki/industrials.md)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 10.0,
+      "volume_confirmation": 12.2,
+      "regime_fit": 40,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -9.545,
+      "equal_weight_return_pct": -8.571,
+      "sector_return_vs_spy_pct": -7.095,
+      "sector_rank_among_eleven": 10,
+      "up_volume_share_pct": 12.2,
+      "top_two_contribution_pct": 42.9,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLI is 7.10 pts behind SPY over a month on the panel, rank 10 of 11, with month breadth 30 (inputs arithmetic; wiki/synthesis.md Section 3).",
+      "Correlation to SPY rose to 0.603, joining the growth bloc -- the sector now trades with AI capex (wiki/canary-watch.md SECTOR CORRELATION MATRIX)."
+    ],
+    "risks": [
+      "Cecil holds CAT at 21.1x with a 38 pct gap and started GE: a value bid under the sellers (wiki/synthesis.md Section 1).",
+      "The flash PMI manufacturing print at a 53-month high argues the economy is not the problem (wiki/economic-calendar.md)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-26",
+    "extracts": [
+      {
+        "source_path": "wiki/industrials.md",
+        "source_file_sha": "37e0bd45940c6acef8ae7b6bab31fbea4def8a54",
+        "lead_summary": "The line broke on a close. XLI fell 1.9% to $164.62, under the $166.18 October low that had held on every close for two weeks \u2014 its lowest close since Apr 7 and a sixth weekly close under the 200-day. The prints were good and the stocks were sold anyway. GE Aerospace beat, raised its 2026 EPS guide to $8.00\u20138.10 and fell 9.0% on the week on free cash flow and a slower 2027 services outlook. GE Vernova fell 10.6% Thursday after Meta's capex update revived AI-financing worries, and -11.5% on the week. CAT -6.0% to its lowest close since March, Parker -8.6%, Eaton -6.4%. Lockheed beat, raised and posted a record $292B backlog: +9.4%. CSX beat on record revenue: +4.3%. Nine of seventeen names rose; the five that fell hardest carry the weight.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH (Sub-$5B)",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "WEEKLY NARRATIVE \u2014 Good Prints, a Broken Line"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-26",
+    "source_commit_sha": "0ba7ceb4ad2a05eb8286351265645b7ae67a29d9",
+    "provenance_verified": true
+  }
+}

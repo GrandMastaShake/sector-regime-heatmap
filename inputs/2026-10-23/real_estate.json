@@ -1,0 +1,128 @@
+{
+  "sector": "Real Estate",
+  "as_of_date": "2026-10-23",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 116,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 88.9,
+      "relative_momentum": 80.0,
+      "volume_confirmation": 98.1,
+      "regime_fit": 35,
+      "macro_catalyst": 42
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 88.9,
+      "median_return_pct": 1.444,
+      "equal_weight_return_pct": 1.221,
+      "sector_return_vs_spy_pct": 1.651,
+      "sector_rank_among_eleven": 3,
+      "up_volume_share_pct": 98.1,
+      "top_two_contribution_pct": 40.7,
+      "constituents_used": 9,
+      "constituents_expected": 9,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-16",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "The 10Y made a third lower weekly close and the first under 5 pct (4.988), and Freddie's 30-year moved to 7.32 pct -- but XLRE closed $42.57, 13 cents under its 200-day for a sixth week (wiki/real-estate.md; macro/facts.json).",
+      "The calendar and Canary desks forbid extending duration into the FOMC and PCE; this proposal sides with them for the week horizon, as it did on 2026-10-09 (wiki/economic-calendar.md; wiki/synthesis.md Section 7.B.1).",
+      "Week RF raised 25 -> 35, MC held at 42: AMT Tue, EQIX Wed, DLR Thu report; data centers sit at their lowest closes since February and March (wiki/real-estate.md; wiki/synthesis.md Wire 1)."
+    ],
+    "risks": [
+      "A weekly close over $42.70 rebuys the half per Marky; a dovish FOMC plus core PCE <= +0.3 pct makes the rate turn the trend the real-estate desk called (wiki/synthesis.md Section 5; wiki/real-estate.md).",
+      "The SpaceX tower report could be confirmed by AMT Tue, re-opening Friday's tower gap (wiki/synthesis.md Wire 4)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 77.8,
+      "relative_momentum": 70.0,
+      "volume_confirmation": 88.8,
+      "regime_fit": 38,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 77.8,
+      "median_return_pct": 2.431,
+      "equal_weight_return_pct": 2.115,
+      "sector_return_vs_spy_pct": 3.59,
+      "sector_rank_among_eleven": 4,
+      "up_volume_share_pct": 88.8,
+      "top_two_contribution_pct": 49.2,
+      "constituents_used": 9,
+      "constituents_expected": 9,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "The carry gap narrowed a third week to -146bp; the rate is moving the desk's way but the tape is not (wiki/synthesis.md Section 1; wiki/real-estate.md).",
+      "Housing broke (starts 1.221M, single-family permits lowest since Mar 2023): the proxies trade the bond while the borrower is stuck (wiki/synthesis.md Wire 2)."
+    ],
+    "risks": [
+      "The panel's month arithmetic is strong (breadth 78, momentum 70, volume 89); judgment below neutral is the call most exposed to a sustained rate decline (inputs arithmetic).",
+      "The 10Y rally was borrowed from equity stress, 1.2bp under 5.00 pct; if it holds after PCE the duration contradiction resolves in real estate's favor (wiki/synthesis.md Section 4)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-26",
+    "extracts": [
+      {
+        "source_path": "wiki/real-estate.md",
+        "source_file_sha": "8228b5a907998e2b62dfd55c73f8206a44843cf3",
+        "lead_summary": "The 10-year did the thing I said would make it a trend: a third lower weekly close, and this one under 5%, at 4.99%. Freddie's mortgage rate finally followed, a little, to 7.32%. And the fund still closed under its 200-day, for a sixth straight week, by 13 cents. Friday it gapped to $43.21 on a Bloomberg report that SpaceX is in talks to lease at least 80,000 U.S. cell sites; Crown Castle opened up 15% and American Tower 10%. By the close the towers had given back half of it and XLRE was at $42.57, +0.97% on the week. The data centers fell again on Thursday, to their lowest closes since February and March. CBRE beat and dropped to a 52-week low. The rate is moving my way; the tape still is not.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLRE (week ending 2026-10-23)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-26",
+    "source_commit_sha": "0ba7ceb4ad2a05eb8286351265645b7ae67a29d9",
+    "provenance_verified": true
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "sector": "Materials",
+  "as_of_date": "2026-10-23",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 116,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 18.7,
+      "regime_fit": 35,
+      "macro_catalyst": 42
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": 0.215,
+      "equal_weight_return_pct": -1.203,
+      "sector_return_vs_spy_pct": -0.773,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 18.7,
+      "top_two_contribution_pct": 47.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-16",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "Same split, second week: Dow +9.0 pct on a beat and the gases rose, but KALU -26.7 pct, NEM -8.2 pct and FCX -6.3 pct; XLB +0.77 pct to $51.31 (wiki/materials.md).",
+      "The commodity restriction (#115) stays on with DXY flat at 101.81; gold's spot month fell under $4,000 ($3,991.10) with copper under the $6.60 rail -- a second deleveraging week (wiki/synthesis.md Wire 6; macro/facts.json).",
+      "Week RF held near the prior 32 at 35, MC 40 -> 42: FCX/SHW/PPG report Tue and LIN Thu (wiki/synthesis.md Section 5)."
+    ],
+    "risks": [
+      "XLB regained its 50-day and Marky is long with an add over $51.71 toward $53.42; the chemicals half could carry the fund (wiki/synthesis.md Section 2 and Section 5).",
+      "A DXY weekly settle under 99 lifts the restriction (wiki/synthesis.md Section 5)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 20.0,
+      "volume_confirmation": 22.0,
+      "regime_fit": 35,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 2.827,
+      "equal_weight_return_pct": -2.893,
+      "sector_return_vs_spy_pct": -1.417,
+      "sector_rank_among_eleven": 9,
+      "up_volume_share_pct": 22.0,
+      "top_two_contribution_pct": 43.2,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "Month relative momentum 20 and volume confirmation 22 on the panel; metals and gold falling with real yields is a deleveraging signature (inputs arithmetic; wiki/canary-watch.md).",
+      "NEM raised cost guidance in a week gold fell 4 pct; ALB at 8.7x is on Cecil's trap list (wiki/synthesis.md Section 1)."
+    ],
+    "risks": [
+      "A close under the 200-day $50.62 is the long's stop; above it the chemicals recovery is intact (wiki/synthesis.md Section 5).",
+      "A dovish Fed that weakens the dollar reverses the metals inside the month (wiki/canary-watch.md DXY)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-26",
+    "extracts": [
+      {
+        "source_path": "wiki/materials.md",
+        "source_file_sha": "dced2caacd99c55e3c80ca6b6603be1ced0dac2f",
+        "lead_summary": "Same split, second week. The chemicals printed and the metals broke. Dow beat at $0.71 operating EPS and rose 9.0% to its best close since June; IFF closed at a 52-week high; Linde, Air Products and PPG all rose. On the other side, Kaiser missed by more than 50 cents and lost a quarter of its value in a day, Newmont fell 8.2% with gold down 4% on Friday-evening reads, and Freeport dropped 6.3% on a Thursday I cannot explain. XLB added 0.77% to $51.31, closed over its 50-day on Tuesday, and set its best close since Sep 8 on Thursday. The dollar read 101.75 tonight. The restriction on new commodity longs stays ON, and for a second week it kept us out of the names that fell.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLB (week ending 2026-10-23)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-26",
+    "source_commit_sha": "0ba7ceb4ad2a05eb8286351265645b7ae67a29d9",
+    "provenance_verified": true
+  }
+}

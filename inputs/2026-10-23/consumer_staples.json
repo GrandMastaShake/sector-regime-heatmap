@@ -1,0 +1,128 @@
+{
+  "sector": "Consumer Staples",
+  "as_of_date": "2026-10-23",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 116,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 60.0,
+      "relative_momentum": 60.0,
+      "volume_confirmation": 56.9,
+      "regime_fit": 50,
+      "macro_catalyst": 48
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 60.0,
+      "median_return_pct": 0.979,
+      "equal_weight_return_pct": 0.975,
+      "sector_return_vs_spy_pct": 1.405,
+      "sector_rank_among_eleven": 5,
+      "up_volume_share_pct": 56.9,
+      "top_two_contribution_pct": 41.8,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-16",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "PG grew organic sales 4 pct with 2.4 pts of volume and rose 5.6 pct; XLP made a 52-week closing high Thursday at $89.99 (wiki/consumer-staples.md; wiki/synthesis.md Section 4 item 3).",
+      "XLP's correlation to SPY is -0.371, the most negative on the board -- the book's hedge into FOMC and PCE (wiki/canary-watch.md SECTOR CORRELATION MATRIX).",
+      "Week RF raised 45 -> 50, MC held at 48: KO reports Tue; the carry gap narrowed to -226bp against a 10Y of 4.988 pct (wiki/synthesis.md Section 1; macro/facts.json)."
+    ],
+    "risks": [
+      "Crowded shelter: KO, MO and KVUE at or above targets and the fund faded 1.9 pct Friday on 19.9M shares; under $87.11 tightens, $86.06 stops (wiki/synthesis.md Section 1 and Section 5).",
+      "A hot core PCE (>= +0.4 pct) reverses the bond rally and the carry gap widens again (wiki/economic-calendar.md NEXT WEEK'S GAUNTLET)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 90.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 98.4,
+      "regime_fit": 48,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 90.0,
+      "median_return_pct": 7.311,
+      "equal_weight_return_pct": 8.834,
+      "sector_return_vs_spy_pct": 10.309,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 98.4,
+      "top_two_contribution_pct": 42.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLP is 8.97 pts ahead of SPY over a month, ranked first on the panel's month window; the defensive bid now has a print behind it (wiki/synthesis.md Section 3 and Section 4).",
+      "Pricing-power staples are on the Council's keep list through FOMC and PCE (wiki/synthesis.md Section 8)."
+    ],
+    "risks": [
+      "PG warned of rising costs and PM gapped 6 pct lower on its print: oil above $100 is a margin input (wiki/consumer-staples.md; wiki/synthesis.md Wire 3).",
+      "The desk does not buy the leaders at their targets; mean reversion of an overbought defensive trade is the month risk (wiki/consumer-staples.md)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-26",
+    "extracts": [
+      {
+        "source_path": "wiki/consumer-staples.md",
+        "source_file_sha": "660f7410b36e9dd123767e0fed40abbfaeb389a9",
+        "lead_summary": "Last week the bid was flow. This week a company earned some of it. Procter & Gamble grew organic sales 4%, with 2.4 points of volume and every category and region up, and the stock rose 5.6% on Thursday to a 52-week closing high. XLP closed that day at $89.99, a new 52-week closing high and the top of the day's range, then gave back 1.9% on Friday to finish +0.73% at $88.26. Philip Morris gapped 6% lower on its print and closed nearly flat. The carry gap narrowed to -226bp as the 10Y slipped under 5%. I still do not buy the leaders at their targets, but I have to say plainly that the first quarter I asked for came in better than I expected.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLP (week ending 2026-10-23)"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-26",
+    "source_commit_sha": "0ba7ceb4ad2a05eb8286351265645b7ae67a29d9",
+    "provenance_verified": true
+  }
+}

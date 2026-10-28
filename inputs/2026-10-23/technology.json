@@ -1,0 +1,141 @@
+{
+  "sector": "Technology",
+  "as_of_date": "2026-10-23",
+  "data_quality": {
+    "status": "pass",
+    "missing_tickers": [],
+    "stale_tickers": [],
+    "anomalies": [],
+    "coverage_notes": []
+  },
+  "provenance": {
+    "price_panel_weeks": 116,
+    "adjustment_basis": "total_return",
+    "computed_components": [
+      "breadth",
+      "relative_momentum",
+      "volume_confirmation"
+    ],
+    "judgment_components": [
+      "regime_fit",
+      "macro_catalyst"
+    ],
+    "note": "Arithmetic components are derived from the price panel. Judgment components are null and must be supplied with sourced reasoning before this file can be scored."
+  },
+  "day": {
+    "components": {
+      "breadth": null,
+      "relative_momentum": null,
+      "volume_confirmation": null,
+      "regime_fit": null,
+      "macro_catalyst": null
+    },
+    "risk_penalty": 0.0,
+    "metrics": {},
+    "unavailable": "The day horizon needs daily bars; the upstream feed commits Friday closes only.",
+    "why": [],
+    "risks": []
+  },
+  "week": {
+    "components": {
+      "breadth": 50.0,
+      "relative_momentum": 100.0,
+      "volume_confirmation": 24.8,
+      "regime_fit": 40,
+      "macro_catalyst": 45
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 50.0,
+      "median_return_pct": -0.025,
+      "equal_weight_return_pct": 2.378,
+      "sector_return_vs_spy_pct": 2.808,
+      "sector_rank_among_eleven": 1,
+      "up_volume_share_pct": 24.8,
+      "top_two_contribution_pct": 42.7,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-10-16",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLK -0.13 pct to $183.23 hides a -3.3 pct Thursday; it failed under its 50-day a second time and closed Thursday under the $182.82 line (wiki/tech.md; wiki/synthesis.md Section 2).",
+      "Lam printed a record quarter and fell 11.8 pct; SOX -6.72 pct with all 30 members down; SMH -2.33 pct to $527.20, 2.3 pct above a 200-day ($515.44) not tested since spring (wiki/tech.md; wiki/semiconductors.md; macro/facts.json).",
+      "Week RF cut 48 -> 40, MC 40 -> 45: MSFT (Wed AMC) and INTC (Thu AMC) are the binary; all three desks add nothing to the AI chain before Wednesday evening (wiki/synthesis.md Section 4 item 1)."
+    ],
+    "risks": [
+      "The single biggest opportunity: a hyperscaler that shows the cash on an oversold complex (LRCX and KLAC RSI 24-25); SMH map $548.46 then $556.70-558.84 (wiki/synthesis.md Section 4).",
+      "AAPL set a two-year closing high and PLTR rose 5.8 pct: the platforms that sell the product are being bought (wiki/tech.md)."
+    ]
+  },
+  "month": {
+    "components": {
+      "breadth": 30.0,
+      "relative_momentum": 0.0,
+      "volume_confirmation": 18.9,
+      "regime_fit": 45,
+      "macro_catalyst": 50
+    },
+    "risk_penalty": 0.0,
+    "metrics": {
+      "positive_return_breadth_pct": 30.0,
+      "median_return_pct": -7.009,
+      "equal_weight_return_pct": -10.37,
+      "sector_return_vs_spy_pct": -8.895,
+      "sector_rank_among_eleven": 11,
+      "up_volume_share_pct": 18.9,
+      "top_two_contribution_pct": 49.4,
+      "constituents_used": 10,
+      "constituents_expected": 10,
+      "coverage_pct": 100.0,
+      "window_from": "2026-09-25",
+      "window_to": "2026-10-23"
+    },
+    "why": [
+      "XLK is 4.96 pts and SMH 11.27 pts behind SPY over a month; month breadth 30 and relative momentum 0 on the panel (wiki/synthesis.md Section 3; inputs arithmetic).",
+      "The market is punishing spending: Meta's capex passed cash flow and the grade travelled down the chain into credit (HY-IG 251) (wiki/synthesis.md Wire 1)."
+    ],
+    "risks": [
+      "A close under $515 on SMH sends it to $504.22 and XLK under $181.50 to $172.50; the month call is unfavorable already, so the risk is to the upside (wiki/synthesis.md Section 5).",
+      "MSFT at 22.1x is Cecil's core add and AAPL reports Nov 2; two clean prints inside the month reverse the rotation (wiki/synthesis.md Section 1 and Section 7.C)."
+    ]
+  },
+  "evidence": {
+    "available": true,
+    "snapshot": "2026-10-26",
+    "extracts": [
+      {
+        "source_path": "wiki/tech.md",
+        "source_file_sha": "6ab8b671bcc1614c146ed45d4399ed5fea14a1a4",
+        "lead_summary": "XLK closed the week at $183.23, down 0.13%, which hides a 3.3% Thursday that took it to $182.34, under last Friday's low close. Lam Research reported a record quarter Wednesday night (revenue $8.22B, +54% y/y, a 40.2% operating margin) and fell 11.8% Thursday on a December guide of $8.6B \u00b1$400M that the market read as a ceiling; AMAT fell 8.2% in sympathy. The same morning Meta raised its capex forecast and the AI trade sold: SMH -6.0% on the day, -2.3% on the week to its lowest close since Jul 29. Eight of the top ten fell. AAPL set a two-year closing high of $348.22 Thursday and PLTR rose 5.8%. The 10-year closed under 5.00% Thursday and Friday for the first time since Sep 22, October hike odds collapsed to under 10%, and the fund still could not hold its 50D. VIX 19.45.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving XLK"
+        ]
+      },
+      {
+        "source_path": "wiki/semiconductors.md",
+        "source_file_sha": "bd7dec28719f0b81dd09b3c46d5bf0015f782e02",
+        "lead_summary": "Semiconductors are the new oil. Every AI model, every data center, every autonomous car runs on silicon. When the chip cycle turns, the world feels it.",
+        "sections": [
+          "ETF SNAPSHOT",
+          "TOP HOLDINGS & MOMENTUM",
+          "SMALL/MID-CAP WATCH",
+          "TECHNICAL LEVELS",
+          "MACRO OVERLAY",
+          "THE WEEKLY NARRATIVE \u2014 What's Actually Moving SMH"
+        ]
+      }
+    ]
+  },
+  "research_snapshot": {
+    "as_of": "2026-10-26",
+    "source_commit_sha": "0ba7ceb4ad2a05eb8286351265645b7ae67a29d9",
+    "provenance_verified": true
+  }
+}

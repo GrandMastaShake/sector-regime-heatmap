@@ -1,0 +1,47 @@
+{
+  "as_of_date": "2026-10-23",
+  "run_type": "manual",
+  "regime": {
+    "label": "Hiking cycle, December priced (~84 pct) -- the 10Y closed under 5.00 pct (4.988) on equity stress, not cooling inflation; the market is punishing AI spending down the chain into credit (HY-IG through 250 on one print) while breadth healed; oil over $100 on the December contract into PCE; leadership in energy and the defensives; archetype-1 label retained in name only pending taxonomy review",
+    "confidence": "low",
+    "evidence": [
+      "Forward-test pre-registration intact: episode start SPY 634.09 (2026-03-27); close of 2026-10-23 is 759.97, +19.85 pct; against the last recorded running peak 779.09 (2026-10-06, carried from the 2026-10-09 forecast; the Oct 12-22 daily closes are not in the pinned snapshot, so a higher interim peak cannot be excluded) the drawdown is -2.45 pct; the -10 pct mechanical trigger (701.18) is 7.74 pct below spot (SPY from macro/facts.json; arithmetic by the operator).",
+      "Policy unchanged and priced: fed funds 3.75-4.00 pct, stance Hike; FOMC Oct 27-28 with a hold priced (October hike ~10 pct), December ~84 pct; Q3 GDP and September PCE Thu Oct 29 (core cons +0.3 pct M/M, 3.1 pct Y/Y) (macro/facts.json policy; wiki/economic-calendar.md).",
+      "The 10Y fell 11bp to 4.988 pct, its first weekly close under 5.00 pct in five weeks, 19bp of it on Thursday's SOX -6.7 pct day; breakeven ~2.34 pct, so real yield; 10Y-2Y +34bp, 10Y-3M +96bp; the 20-year auction cleared at a record 5.469 pct (macro/facts.json rates; wiki/synthesis.md Section 3 and Wire 2).",
+      "The data stayed hot: claims 194K (sixth week under 200K), flash PMI composite 57.6 with manufacturing at a 53-month high and output prices fastest since Aug 2022, UMich 48.0 above every estimate (wiki/economic-calendar.md; wiki/synthesis.md Section 8).",
+      "Breadth healed: 58.0 pct of S&P 500 members above the 50-day (45.0 pct last week, 25.5 pct a month ago), 55.8 pct above the 200-day; RSP ahead of SPY a third week; Canary breadth signal cleared to green (wiki/canary-watch.md MARKET BREADTH; wiki/synthesis.md Section 2).",
+      "Spending is being sold: Meta's Q3 capex passed operating cash flow (FCF -$2.1B) and the chain fell the same Thursday -- LRCX -12.8, KLAC -12.2, GEV -10.6, VST -9.8 pct, EQIX/DLR at multi-month lows, CoreWeave CDS at a record (wiki/synthesis.md Wire 1; wiki/semiconductors.md).",
+      "Rotation: eight of twelve sectors beat SPY; XLE +1.60 pct to a 52-week closing high, XLV +1.45, XLRE +0.97, XLU +0.83; XLC -4.36, SMH -2.33, XLI -1.87 pct; over a month XLE +11.69, XLU +9.07, XLP +8.97 pts vs SPY and SMH -11.27, XLC -6.50, XLK -4.96 (macro/facts.json sector_etf; wiki/synthesis.md Section 3).",
+      "Canary Watch verdict HIGH CAUTION, ninth straight week of caution and second at this level; two of four strict criteria met (HY-IG 251, XLV correlation flip); VIX 19.45 with 20.31 and 20.66 intraday, VIX/VIX3M 0.950, VVIX 109.70 (wiki/canary-watch.md TRIGGER BOARD; macro/facts.json volatility).",
+      "Cycle 7 follows a skipped week: there is no 2026-10-16 forecast, so the carry-forward set below is taken from 2026-10-09, two weeks old, and re-checked against the 2026-10-26 snapshot (data/forecasts/2026-10-09_manual.json).",
+      "NOT A CLEAN EX-ANTE RUN FOR THE WEEK HORIZON: judgment proposed Sun 2026-10-25 ~17:30 ET from the Fri 2026-10-23 close; owner approved as drafted Wed 2026-10-28 ~16:20 ET, after the Mon, Tue and Wed sessions and the Oct 28 FOMC decision. The values were not revised after any session, but approval followed three of five week-horizon sessions, so the week horizon is declared ungradeable in the grading block. The month horizon (through 2026-11-20) remains gradeable with this disclosure: three of about twenty sessions had traded at approval."
+    ],
+    "disconfirming_evidence": [
+      "THE PRE-REGISTERED RE-EXAMINATION TRIGGER HAS FIRED (2026-09-16: priced hike delivered, 10Y close above 5.00 pct). The archetype-1 label is retained in name only pending a taxonomy review against the 44-episode set, a research call rather than a weekly judgment. Carried forward from 2026-09-18, unchanged.",
+      "THE RATES OBJECTION -- MODIFIED. Archetype 1 requires stable-to-easing rates. The Fed is hiking with December ~84 pct priced; the 10Y slipped under 5.00 pct (4.988) but on a growth scare from equity and credit stress, not falling inflation, and is above the 4.75 pct stress line a ninth week (macro/facts.json; wiki/synthesis.md Section 8). Carried forward and modified.",
+      "THE CONSUMER IS STILL DETERIORATING -- MODIFIED. Housing broke (starts 1.221M, single-family permits lowest since Mar 2023, NAHB 29); GM -9.6 pct on a guide naming energy costs; AXP cut 5 pct of jobs -- against UMich 48.0 beating every estimate and claims 194K (wiki/economic-calendar.md; wiki/synthesis.md Wire 5). Carried forward and modified.",
+      "CREDIT -- THE TRIGGER CROSSED ON ONE PRINT. HY-IG 251bp (Thu Oct 22), HY OAS 340 a cycle peak, CCC 1,340 a 52-week high (+62bp W/W); Friday's print posts Monday and a second >= 250 confirms; Cecil's rule takes Council high yield to zero until < 240 (wiki/canary-watch.md CREDIT SPREADS; wiki/synthesis.md Section 1). Carried forward and strengthened.",
+      "BREADTH AND CREDIT DISAGREE (replaces 'the rate-sensitive contraction holds'). Breadth cleared yellow the same week credit crossed red: 'breadth healed and credit broke -- those two do not usually last together' (wiki/canary-watch.md Overall Assessment; wiki/synthesis.md Section 7.B.3). New.",
+      "CONCENTRATION RISK -- MODIFIED. The growth bloc tightened (XLK 0.836, SMH 0.765, XLY 0.727, XLI 0.603 to SPY) while three sectors trade against the index (XLP -0.371, XLE -0.263, XLV -0.071): 'the index is a growth bet' (wiki/canary-watch.md SECTOR CORRELATION MATRIX and fragilities). Carried forward and modified.",
+      "THE COST-PUSH SHOCK -- STRENGTHENED. December WTI settled $103.27, its first settle over $100, on unverified IRGC tanker and mine claims (#175); the oil > $100 sustained flag is one close from firing; flash PMI output prices fastest since Aug 2022; GM, PG and CSX name energy costs. Kpler had flows near 14 mb/d, better than the prior week (wiki/energy.md; wiki/synthesis.md Wire 3; macro/facts.json). Carried forward and strengthened.",
+      "THE LABOR FLAG -- CARRIED. Payrolls +29K with no re-test until Nov 6; two regime flags up (NFP, CPI M/M); the 10Y > 5.00 pct flag cleared (wiki/economic-calendar.md REGIME RISK FLAGS). Carried forward and modified.",
+      "THE AI FUNDING LOOP -- STRENGTHENED. The question moved from whether the buyer spends to whether the buyer's cash covers it: Meta held its budget and fell 9.4 pct; the grade travelled into credit the same Thursday (wiki/synthesis.md Wire 1 and Section 7.B.2). Carried forward and strengthened.",
+      "THE FORMAL CONTRADICTION ON DURATION -- WIDENED (#173 refiled). Real-estate and utilities Ophelia allow new duration; calendar and Canary Ophelia forbid extending it before FOMC and PCE. This proposal again sides with the calendar page for the week horizon (XLRE, XLU regime_fit below neutral) (wiki/synthesis.md Section 7.B.1). Carried forward.",
+      "THE WEEK'S EVENT RISK IS 19 HOURS: FOMC Wed 2:00 PM, MSFT/GOOGL after the close, Q3 GDP and core PCE Thu 8:30 AM; a hold with December language, a hyperscaler sold on capex and core PCE >= +0.4 pct together take SMH under its 200-day and confirm the credit trigger (wiki/synthesis.md Section 4 and Section 8). Updated.",
+      "VOLATILITY CUSHION IS THIN (NEW). VIX/VIX3M above 0.89 for two weeks, 0.950 now, VVIX 110; Marky hedges the book on a VIX close > 20 with VIX/VIX3M > 1.00 (wiki/canary-watch.md fragilities; wiki/synthesis.md Section 2).",
+      "GOLD FALLING WITH REAL YIELDS (NEW). Gold's spot month under $4,000 ($3,991.10, -4.05 pct) while real yields fell and DXY was flat: a second deleveraging week (wiki/synthesis.md Wire 6; macro/facts.json).",
+      "UPSTREAM FACTUAL DISPUTES OPEN: 10Y basis (4.988 ^TNX vs 5.00 par); 2Y and 2s10s (+34 canonical vs +31 pages vs +30 feed); 3M basis (4.032 ^IRX vs 4.22 CMT); WTI (CLZ26 $103.27 settle vs $103.44 evening quote); gold ($3,991.10 vs $4,010); Fed odds (Oct 7-10 pct, Dec 71-84 pct by source); correlation windows (XLU 0.024 Canary vs 0.529 feed); Apple's date (use Nov 2); FedEx Oct 28 unverified; fund weights unchanged three weeks (approximate) (wiki/synthesis.md Section 7.A and 7.C).",
+      "RESOLVED AND DROPPED FROM THE CARRY-FORWARD SET: (a) the 2026-10-09 week's event items (bank prints, CPI, ASML, TSMC, PPI, retail sales, the Fed Chair) have printed and are outside this snapshot's scope; (b) the 'defensive bid one headline deep' item -- PG, ISRG, DHR, ELV and NEE gave it prints; (c) 'the tape and the survey disagree' -- UMich beat; (d) the 10Y > 5.00 pct flag cleared."
+    ]
+  },
+  "grading": {
+    "week": {
+      "gradeable": false,
+      "reason": "Approved Wed 2026-10-28 ~16:20 ET after three of five week-horizon sessions (Oct 26-28) and the Oct 28 FOMC decision had traded; not an ex-ante forecast for this horizon."
+    },
+    "month": {
+      "gradeable": true,
+      "reason": "Values proposed Sun 2026-10-25 from the Fri 2026-10-23 close and approved unchanged; three of about twenty month-horizon sessions had traded at approval. Gradeable with that disclosure."
+    }
+  }
+}
