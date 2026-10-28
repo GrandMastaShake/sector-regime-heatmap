@@ -19,3 +19,4 @@ failed.
 | Date | Newest week | Series min/max | Anchor spread (d) | SPY drawdown | Forecasts/evals | Fails |
 |---|---|---|---|---|---|---|
 | 2026-10-27 | 2026-10-23 | 334/338 | 0 | -2.39% | 6/0 | 1 (evaluation coverage) |
+| 2026-10-28 | 2026-10-23 | 334/338 | 7 (across both weeks) | -2.39% | 6/0 | 1 (evaluation coverage) |
