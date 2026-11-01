@@ -23,3 +23,4 @@ failed.
 | 2026-10-29 | 2026-10-23 | 334/338 | 7.6 (across both weeks) | -2.39% | 7/0 | 1 (evaluation coverage) |
 | 2026-10-30 | 2026-10-23 | 334/338 | 7.6 (across both weeks) | -2.39% | 7/0 | 1 (evaluation coverage) |
 | 2026-10-31 | 2026-10-23 | 334/338 | 7.6 (across both weeks) | -2.39% | 7/0 | 1 (evaluation coverage) |
+| 2026-11-01 | 2026-10-30 | 334/338 | 5.7 (across both weeks) | -2.93% | 7/0 | 1 (evaluation coverage) |
