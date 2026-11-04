@@ -196,44 +196,44 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-10-30** -- observation, not a forecast -- `data/tape/2026-10-30.json`
+**As of 2026-11-02** -- observation, not a forecast -- `data/tape/2026-11-02.json`
 
-> 📏 &nbsp;**49 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**50 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL
 ─────────────────────────────────────────────────────────────────
-Healthcare              ·······│█████··     +4.68     67%     56%
-Consumer Discretionary  ·······│████···     +3.97     70%     45%
-Materials               ·······│██·····     +2.21     60%     28%
-Energy                  ·······│██·····     +2.17     80%     84%
-Real Estate             ·······│██·····     +2.14     67%     80%
-Utilities               ·······│██·····     +1.67     80%     75%
-Consumer Staples        ·······│██·····     +1.57     80%     96%
-Financials              ·······│█······     +1.31     70%     71%
-Industrials             ·······│█······     +0.67     60%     26%
-Communication Services  ··█████│·······     -5.26     30%     12%
-Technology              ███████│·······     -7.05      0%      0%
+Consumer Discretionary  ·······│█████··     +6.84     90%     66%
+Consumer Staples        ·······│████···     +5.67    100%    100%
+Materials               ·······│████···     +5.40     70%     44%
+Healthcare              ·······│███····     +4.53     56%     44%
+Real Estate             ·······│███····     +4.08     78%     89%
+Financials              ·······│██·····     +3.07     70%     72%
+Utilities               ·······│██·····     +2.79     80%     78%
+Industrials             ·······│·······     +0.62     50%     19%
+Energy                  ·······│·······     -0.50     20%      9%
+Communication Services  ·····██│·······     -2.21     40%     20%
+Technology              ███████│·······    -10.14      0%      0%
 ```
 
 **Comparison rows -- not sectors.** Each instrument over the tape's own windows, and against SPY. No breadth, no volume confirmation, no score; never an input to a forecast, a payload or an evaluation.
 
 | Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |
 |---|---|---:|---:|---:|---:|
-| Gold | `series.GLD` SPDR Gold Shares | -3.47% | -1.70 | -2.95% | -2.40 |
-| US dollar | `fx.DXY` US Dollar Index | -0.16% | +1.62 | +0.07% | +0.63 |
-| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -4.91% | -3.13 | -5.49% | -4.93 |
+| Gold | `series.GLD` SPDR Gold Shares | +1.65% | +2.13 | -1.68% | +0.06 |
+| US dollar | `fx.DXY` US Dollar Index | -0.13% | +0.35 | -0.21% | +1.53 |
+| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -0.21% | +0.27 | -4.08% | -2.35 |
 
 Returns in percent. *vs SPY* is in percentage points, the same subtraction as a sector's EXCESS.
 
 <details>
 <summary><b>Panel warnings (3)</b></summary>
 
-- Communication Services/day: RDDT moved -29.22 pct -- move beyond 25.0 pct over 1 session(s); check for an unhandled corporate action
-- Communication Services/week: RDDT moved -36.41 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
-- Technology/week: INOD moved -26.23 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Communication Services/week: RDDT moved -34.29 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Consumer Discretionary/week: CVNA moved 27.19 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Technology/week: INOD moved -31.03 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
 
 </details>
 
