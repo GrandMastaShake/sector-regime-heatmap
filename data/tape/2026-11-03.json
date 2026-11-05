@@ -1,0 +1,620 @@
+{
+  "as_of": "2026-11-03",
+  "artifact_type": "daily_tape",
+  "is_forecast": false,
+  "note": "Observation only. Three arithmetic components over daily bars. No score, no regime_fit, no macro_catalyst -- those are judgment and have no daily source.",
+  "panel_sessions": 51,
+  "panel_from": "2026-08-24",
+  "adjustment_basis": "total_return",
+  "benchmark": "SPY",
+  "sectors": {
+    "Communication Services": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 80.0,
+        "median_return_pct": 1.202,
+        "equal_weight_return_pct": 0.354,
+        "sector_return_vs_spy_pct": 0.055,
+        "up_volume_share_pct": 83.9,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 51.2,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 4,
+        "_components": {
+          "breadth": 80.0,
+          "relative_momentum": 70.0,
+          "volume_confirmation": 83.9
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [
+          {
+            "ticker": "RDDT",
+            "return_pct": -29.54,
+            "reason": "move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action"
+          }
+        ],
+        "positive_return_breadth_pct": 60.0,
+        "median_return_pct": 0.787,
+        "equal_weight_return_pct": -2.595,
+        "sector_return_vs_spy_pct": -0.606,
+        "up_volume_share_pct": 78.2,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 58.6,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 10,
+        "_components": {
+          "breadth": 60.0,
+          "relative_momentum": 10.0,
+          "volume_confirmation": 78.2
+        }
+      }
+    },
+    "Consumer Discretionary": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 20.0,
+        "median_return_pct": -1.082,
+        "equal_weight_return_pct": -0.783,
+        "sector_return_vs_spy_pct": -1.082,
+        "up_volume_share_pct": 42.6,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 32.0,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 9,
+        "_components": {
+          "breadth": 20.0,
+          "relative_momentum": 20.0,
+          "volume_confirmation": 42.6
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 70.0,
+        "median_return_pct": 2.293,
+        "equal_weight_return_pct": 3.584,
+        "sector_return_vs_spy_pct": 5.573,
+        "up_volume_share_pct": 43.7,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 58.1,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 2,
+        "_components": {
+          "breadth": 70.0,
+          "relative_momentum": 90.0,
+          "volume_confirmation": 43.7
+        }
+      }
+    },
+    "Consumer Staples": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 10.0,
+        "median_return_pct": -1.532,
+        "equal_weight_return_pct": -1.339,
+        "sector_return_vs_spy_pct": -1.638,
+        "up_volume_share_pct": 1.3,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 32.4,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 10,
+        "_components": {
+          "breadth": 10.0,
+          "relative_momentum": 10.0,
+          "volume_confirmation": 1.3
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 100.0,
+        "median_return_pct": 3.616,
+        "equal_weight_return_pct": 3.816,
+        "sector_return_vs_spy_pct": 5.805,
+        "up_volume_share_pct": 100.0,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 31.0,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 1,
+        "_components": {
+          "breadth": 100.0,
+          "relative_momentum": 100.0,
+          "volume_confirmation": 100.0
+        }
+      }
+    },
+    "Energy": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 30.0,
+        "median_return_pct": -0.721,
+        "equal_weight_return_pct": -0.213,
+        "sector_return_vs_spy_pct": -0.512,
+        "up_volume_share_pct": 27.6,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 31.6,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 7,
+        "_components": {
+          "breadth": 30.0,
+          "relative_momentum": 40.0,
+          "volume_confirmation": 27.6
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 30.0,
+        "median_return_pct": -1.774,
+        "equal_weight_return_pct": -1.934,
+        "sector_return_vs_spy_pct": 0.055,
+        "up_volume_share_pct": 13.0,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 46.9,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 9,
+        "_components": {
+          "breadth": 30.0,
+          "relative_momentum": 20.0,
+          "volume_confirmation": 13.0
+        }
+      }
+    },
+    "Financials": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 40.0,
+        "median_return_pct": -0.396,
+        "equal_weight_return_pct": 0.101,
+        "sector_return_vs_spy_pct": -0.198,
+        "up_volume_share_pct": 79.1,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 54.4,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 6,
+        "_components": {
+          "breadth": 40.0,
+          "relative_momentum": 50.0,
+          "volume_confirmation": 79.1
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 60.0,
+        "median_return_pct": 1.104,
+        "equal_weight_return_pct": -0.389,
+        "sector_return_vs_spy_pct": 1.6,
+        "up_volume_share_pct": 69.2,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 50.5,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 5,
+        "_components": {
+          "breadth": 60.0,
+          "relative_momentum": 60.0,
+          "volume_confirmation": 69.2
+        }
+      }
+    },
+    "Healthcare": {
+      "day": {
+        "constituents_used": 9,
+        "constituents_expected": 10,
+        "coverage_pct": 90.0,
+        "missing": [
+          {
+            "ticker": "BLFS",
+            "reason": "absent from series at 2026-11-03"
+          }
+        ],
+        "anomalies": [],
+        "positive_return_breadth_pct": 55.6,
+        "median_return_pct": 0.888,
+        "equal_weight_return_pct": 0.165,
+        "sector_return_vs_spy_pct": -0.134,
+        "up_volume_share_pct": 55.2,
+        "volume_names_used": 9,
+        "top_two_contribution_pct": 48.6,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 5,
+        "_components": {
+          "breadth": 55.6,
+          "relative_momentum": 60.0,
+          "volume_confirmation": 55.2
+        }
+      },
+      "week": {
+        "constituents_used": 9,
+        "constituents_expected": 10,
+        "coverage_pct": 90.0,
+        "missing": [
+          {
+            "ticker": "BLFS",
+            "reason": "absent from series at 2026-11-03"
+          }
+        ],
+        "anomalies": [],
+        "positive_return_breadth_pct": 44.4,
+        "median_return_pct": -0.953,
+        "equal_weight_return_pct": 1.941,
+        "sector_return_vs_spy_pct": 3.93,
+        "up_volume_share_pct": 27.6,
+        "volume_names_used": 9,
+        "top_two_contribution_pct": 63.2,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 4,
+        "_components": {
+          "breadth": 44.4,
+          "relative_momentum": 70.0,
+          "volume_confirmation": 27.6
+        }
+      }
+    },
+    "Industrials": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 70.0,
+        "median_return_pct": 1.615,
+        "equal_weight_return_pct": 1.757,
+        "sector_return_vs_spy_pct": 1.458,
+        "up_volume_share_pct": 88.4,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 50.4,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 1,
+        "_components": {
+          "breadth": 70.0,
+          "relative_momentum": 100.0,
+          "volume_confirmation": 88.4
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 50.0,
+        "median_return_pct": -0.507,
+        "equal_weight_return_pct": -1.639,
+        "sector_return_vs_spy_pct": 0.35,
+        "up_volume_share_pct": 11.6,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 38.3,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 8,
+        "_components": {
+          "breadth": 50.0,
+          "relative_momentum": 30.0,
+          "volume_confirmation": 11.6
+        }
+      }
+    },
+    "Materials": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 0.0,
+        "median_return_pct": -1.508,
+        "equal_weight_return_pct": -1.604,
+        "sector_return_vs_spy_pct": -1.904,
+        "up_volume_share_pct": 0.0,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 32.2,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 11,
+        "_components": {
+          "breadth": 0.0,
+          "relative_momentum": 0.0,
+          "volume_confirmation": 0.0
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 60.0,
+        "median_return_pct": 0.791,
+        "equal_weight_return_pct": -0.582,
+        "sector_return_vs_spy_pct": 1.407,
+        "up_volume_share_pct": 28.3,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 34.6,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 7,
+        "_components": {
+          "breadth": 60.0,
+          "relative_momentum": 40.0,
+          "volume_confirmation": 28.3
+        }
+      }
+    },
+    "Real Estate": {
+      "day": {
+        "constituents_used": 9,
+        "constituents_expected": 9,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 44.4,
+        "median_return_pct": -0.139,
+        "equal_weight_return_pct": -0.405,
+        "sector_return_vs_spy_pct": -0.704,
+        "up_volume_share_pct": 18.9,
+        "volume_names_used": 9,
+        "top_two_contribution_pct": 57.1,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 8,
+        "_components": {
+          "breadth": 44.4,
+          "relative_momentum": 30.0,
+          "volume_confirmation": 18.9
+        }
+      },
+      "week": {
+        "constituents_used": 9,
+        "constituents_expected": 9,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 88.9,
+        "median_return_pct": 2.064,
+        "equal_weight_return_pct": 2.614,
+        "sector_return_vs_spy_pct": 4.603,
+        "up_volume_share_pct": 92.0,
+        "volume_names_used": 9,
+        "top_two_contribution_pct": 41.9,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 3,
+        "_components": {
+          "breadth": 88.9,
+          "relative_momentum": 80.0,
+          "volume_confirmation": 92.0
+        }
+      }
+    },
+    "Technology": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 90.0,
+        "median_return_pct": 1.476,
+        "equal_weight_return_pct": 1.548,
+        "sector_return_vs_spy_pct": 1.248,
+        "up_volume_share_pct": 79.8,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 40.2,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 2,
+        "_components": {
+          "breadth": 90.0,
+          "relative_momentum": 90.0,
+          "volume_confirmation": 79.8
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 0.0,
+        "median_return_pct": -9.8,
+        "equal_weight_return_pct": -10.366,
+        "sector_return_vs_spy_pct": -8.377,
+        "up_volume_share_pct": 0.0,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 33.9,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 11,
+        "_components": {
+          "breadth": 0.0,
+          "relative_momentum": 0.0,
+          "volume_confirmation": 0.0
+        }
+      }
+    },
+    "Utilities": {
+      "day": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 30.0,
+        "median_return_pct": -0.594,
+        "equal_weight_return_pct": 0.366,
+        "sector_return_vs_spy_pct": 0.067,
+        "up_volume_share_pct": 18.0,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 45.9,
+        "window_from": "2026-11-02",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 3,
+        "_components": {
+          "breadth": 30.0,
+          "relative_momentum": 80.0,
+          "volume_confirmation": 18.0
+        }
+      },
+      "week": {
+        "constituents_used": 10,
+        "constituents_expected": 10,
+        "coverage_pct": 100.0,
+        "missing": [],
+        "anomalies": [],
+        "positive_return_breadth_pct": 80.0,
+        "median_return_pct": 1.554,
+        "equal_weight_return_pct": -0.395,
+        "sector_return_vs_spy_pct": 1.594,
+        "up_volume_share_pct": 69.5,
+        "volume_names_used": 10,
+        "top_two_contribution_pct": 55.8,
+        "window_from": "2026-10-27",
+        "window_to": "2026-11-03",
+        "sector_rank_among_eleven": 6,
+        "_components": {
+          "breadth": 80.0,
+          "relative_momentum": 50.0,
+          "volume_confirmation": 69.5
+        }
+      }
+    }
+  },
+  "macro_comparisons": {
+    "is_sector": false,
+    "note": "Comparison rows, not sectors. Each is one instrument's return over the tape's windows and that return minus SPY's. No breadth, no volume confirmation, no rank, no score. Never an input to a forecast, an input payload or an evaluation.",
+    "benchmark": "SPY",
+    "rows": {
+      "GLD": {
+        "label": "Gold",
+        "name": "SPDR Gold Shares",
+        "source": "series.GLD",
+        "day": {
+          "sessions": 1,
+          "window_from": "2026-11-02",
+          "window_to": "2026-11-03",
+          "close_from": 361.65,
+          "close_to": 359.26,
+          "return_pct": -0.661,
+          "return_vs_spy_pct": -0.96,
+          "missing": []
+        },
+        "week": {
+          "sessions": 5,
+          "window_from": "2026-10-27",
+          "window_to": "2026-11-03",
+          "close_from": 372.28,
+          "close_to": 359.26,
+          "return_pct": -3.497,
+          "return_vs_spy_pct": -1.508,
+          "missing": []
+        }
+      },
+      "DXY": {
+        "label": "US dollar",
+        "name": "US Dollar Index",
+        "source": "fx.DXY",
+        "day": {
+          "sessions": 1,
+          "window_from": "2026-11-02",
+          "window_to": "2026-11-03",
+          "close_from": 101.75,
+          "close_to": 101.87,
+          "return_pct": 0.118,
+          "return_vs_spy_pct": -0.181,
+          "missing": []
+        },
+        "week": {
+          "sessions": 5,
+          "window_from": "2026-10-27",
+          "window_to": "2026-11-03",
+          "close_from": 102.32,
+          "close_to": 101.87,
+          "return_pct": -0.44,
+          "return_vs_spy_pct": 1.549,
+          "missing": []
+        }
+      },
+      "BTC": {
+        "label": "Bitcoin",
+        "name": "Grayscale Bitcoin Mini Trust ETF",
+        "source": "series.BTC",
+        "day": {
+          "sessions": 1,
+          "window_from": "2026-11-02",
+          "window_to": "2026-11-03",
+          "close_from": 33.85,
+          "close_to": 34.38,
+          "return_pct": 1.566,
+          "return_vs_spy_pct": 1.267,
+          "missing": []
+        },
+        "week": {
+          "sessions": 5,
+          "window_from": "2026-10-27",
+          "window_to": "2026-11-03",
+          "close_from": 35.66,
+          "close_to": 34.38,
+          "return_pct": -3.589,
+          "return_vs_spy_pct": -1.6,
+          "missing": []
+        }
+      }
+    },
+    "warnings": []
+  },
+  "warnings": [
+    "Communication Services/week: RDDT moved -29.54 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action"
+  ]
+}
