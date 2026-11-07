@@ -196,44 +196,47 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-11-04** -- observation, not a forecast -- `data/tape/2026-11-04.json`
+**As of 2026-11-05** -- observation, not a forecast -- `data/tape/2026-11-05.json`
 
-> 📏 &nbsp;**52 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**53 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL
 ─────────────────────────────────────────────────────────────────
-Consumer Discretionary  ·······│███████    +10.70     90%     80%
-Consumer Staples        ·······│█████··     +8.63    100%    100%
-Real Estate             ·······│█████··     +7.30    100%    100%
-Communication Services  ·······│██·····     +3.71     80%     89%
-Financials              ·······│██·····     +3.70     80%     85%
-Healthcare              ·······│██·····     +3.61     78%     72%
-Materials               ·······│██·····     +2.98     60%     43%
-Utilities               ·······│·······     +0.20     60%     52%
-Industrials             ····███│·······     -5.47     40%     13%
-Energy                  ···████│·······     -5.96     10%      7%
-Technology              ███████│·······    -11.25      0%      0%
+Consumer Staples        ·······│██████·     +9.97     90%     93%
+Real Estate             ·······│████···     +7.50     78%     96%
+Consumer Discretionary  ·······│████···     +7.50     80%     68%
+Communication Services  ·······│███····     +4.50     60%     65%
+Materials               ·······│██·····     +2.91     60%     36%
+Healthcare              ·······│█······     +2.04     33%     16%
+Financials              ·······│█······     +1.49     40%     25%
+Utilities               ·······│·······     +0.89     60%     43%
+Energy                  ····███│·······     -5.59     10%      6%
+Industrials             ···████│·······     -6.96     20%      3%
+Technology              ███████│·······    -12.42      0%      0%
 ```
 
 **Comparison rows -- not sectors.** Each instrument over the tape's own windows, and against SPY. No breadth, no volume confirmation, no score; never an input to a forecast, a payload or an evaluation.
 
 | Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |
 |---|---|---:|---:|---:|---:|
-| Gold | `series.GLD` SPDR Gold Shares | +3.68% | +2.03 | -0.27% | +0.44 |
-| US dollar | `fx.DXY` US Dollar Index | -0.35% | -2.00 | -0.67% | +0.05 |
-| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | +2.94% | +1.29 | -1.78% | -1.06 |
+| Gold | `series.GLD` SPDR Gold Shares | +0.81% | +5.21 | +1.88% | +6.60 |
+| US dollar | `fx.DXY` US Dollar Index | +0.04% | +4.45 | -0.48% | +4.25 |
+| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -4.97% | -0.56 | -5.72% | -0.99 |
 
 Returns in percent. *vs SPY* is in percentage points, the same subtraction as a sector's EXCESS.
 
 <details>
-<summary><b>Panel warnings (3)</b></summary>
+<summary><b>Panel warnings (6)</b></summary>
 
-- Consumer Discretionary/week: CVNA moved 31.35 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
-- Industrials/week: MOD moved -31.34 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
-- Technology/week: DDOG moved -32.22 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Communication Services/week: RDDT moved -27.62 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Energy/week: SM moved -25.14 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Industrials/week: MOD moved -34.15 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Technology/week: AMD moved -28.6 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Technology/week: DDOG moved -34.32 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Utilities/week: OKLO moved -28.38 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
 
 </details>
 
