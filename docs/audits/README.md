@@ -35,3 +35,4 @@ failed.
 | 2026-11-11 | 2026-11-06 | 334/338 | 7.0 (across both weeks) | -5.56% (ALERT) | 7/0 | 1 (evaluation coverage) |
 | 2026-11-12 | 2026-11-06 | 334/338 | 7.0 (across both weeks) | -5.56% (ALERT) | 7/0 | 1 (evaluation coverage) |
 | 2026-11-13 | 2026-11-06 | 334/338 | 7.0 (across both weeks) | -5.56% (ALERT) | 7/0 | 1 (evaluation coverage) |
+| 2026-11-14 | 2026-11-06 | 334/338 | 7.0 (across both weeks) | -5.56% (ALERT) | 7/0 | 1 (evaluation coverage) |
