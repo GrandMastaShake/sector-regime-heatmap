@@ -196,42 +196,44 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-11-11** -- observation, not a forecast -- `data/tape/2026-11-11.json`
+**As of 2026-11-12** -- observation, not a forecast -- `data/tape/2026-11-12.json`
 
-> 📏 &nbsp;**57 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**58 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL
 ─────────────────────────────────────────────────────────────────
-Industrials             ·······│███████     +5.85     80%     94%
-Utilities               ·······│████···     +3.71     50%     56%
-Communication Services  ·······│███····     +2.25     50%     34%
-Energy                  ·······│█······     +0.64     50%     39%
-Real Estate             ·······│·······     +0.16     33%     28%
-Consumer Staples        ·······│·······     +0.00     40%     52%
-Materials               ·······│·······     -0.20     40%     47%
-Consumer Discretionary  ······█│·······     -0.69     30%     63%
-Technology              ·····██│·······     -1.40     40%     21%
-Financials              ····███│·······     -2.73     10%      1%
-Healthcare              ···████│·······     -2.94     44%     24%
+Industrials             ·······│███████     +7.38    100%    100%
+Technology              ·······│███····     +2.94     70%     16%
+Utilities               ·······│██·····     +2.00     50%     63%
+Energy                  ·······│█······     +0.66     90%     94%
+Communication Services  ······█│·······     -1.14     60%     47%
+Consumer Discretionary  ·····██│·······     -1.82     50%     65%
+Materials               ·····██│·······     -2.24     50%     67%
+Real Estate             ····███│·······     -3.26     22%      6%
+Consumer Staples        ···████│·······     -3.70     40%     41%
+Financials              ···████│·······     -4.38     40%     10%
+Healthcare              ··█████│·······     -5.13     67%     52%
 ```
 
 **Comparison rows -- not sectors.** Each instrument over the tape's own windows, and against SPY. No breadth, no volume confirmation, no score; never an input to a forecast, a payload or an evaluation.
 
 | Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |
 |---|---|---:|---:|---:|---:|
-| Gold | `series.GLD` SPDR Gold Shares | -1.13% | -2.45 | -1.97% | -1.05 |
-| US dollar | `fx.DXY` US Dollar Index | +0.67% | -0.65 | +1.38% | +2.29 |
-| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | +1.20% | -0.12 | -6.84% | -5.92 |
+| Gold | `series.GLD` SPDR Gold Shares | -2.81% | -2.46 | -5.49% | -8.78 |
+| US dollar | `fx.DXY` US Dollar Index | +0.25% | +0.61 | +1.59% | -1.70 |
+| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -4.40% | -4.04 | -6.27% | -9.56 |
 
 Returns in percent. *vs SPY* is in percentage points, the same subtraction as a sector's EXCESS.
 
 <details>
-<summary><b>Panel warnings (1)</b></summary>
+<summary><b>Panel warnings (3)</b></summary>
 
-- Industrials/week: RKLB moved 26.31 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Industrials/week: RKLB moved 39.31 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Technology/week: AMD moved 44.73 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Utilities/week: OKLO moved 27.34 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
 
 </details>
 
