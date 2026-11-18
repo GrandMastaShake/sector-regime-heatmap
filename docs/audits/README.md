@@ -39,3 +39,4 @@ failed.
 | 2026-11-15 | 2026-11-13 | 333/338 | 7.0 (across both weeks) | -3.11% | 7/0 | 1 (evaluation coverage) |
 | 2026-11-16 | 2026-11-13 | 333/338 | 7.0 (across both weeks) | -3.11% | 7/0 | 1 (evaluation coverage) |
 | 2026-11-17 | 2026-11-13 | 333/338 | 7.0 (across both weeks) | -3.11% | 7/0 | 1 (evaluation coverage) |
+| 2026-11-18 | 2026-11-13 | 333/338 | 7.0 (across both weeks) | -3.11% | 7/0 | 1 (evaluation coverage) |
