@@ -196,45 +196,45 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-11-17** -- observation, not a forecast -- `data/tape/2026-11-17.json`
+**As of 2026-11-18** -- observation, not a forecast -- `data/tape/2026-11-18.json`
 
-> 📏 &nbsp;**61 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**62 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL
 ─────────────────────────────────────────────────────────────────
-Consumer Staples        ·······│███····     +2.75     60%     85%
-Industrials             ·······│█······     +1.38     20%      9%
-Energy                  ·······│█······     +1.10     60%     60%
-Utilities               ·······│·······     -0.19     20%     37%
-Real Estate             ·······│·······     -0.33      0%      0%
-Communication Services  ······█│·······     -0.70     10%      5%
-Healthcare              ······█│·······     -1.19     11%      2%
-Consumer Discretionary  ······█│·······     -1.52     10%     14%
-Materials               ·····██│·······     -1.91      0%      0%
-Financials              ····███│·······     -2.76     10%      2%
-Technology              ███████│·······     -7.50      0%      0%
+Consumer Staples        ·······│████···     +4.68     60%     69%
+Industrials             ·······│██·····     +1.83     20%     70%
+Real Estate             ·······│█······     +1.48      0%      0%
+Consumer Discretionary  ·······│█······     +1.30     10%     35%
+Utilities               ·······│█······     +0.53     10%      3%
+Communication Services  ·······│·······     +0.11     20%     25%
+Materials               ·····██│·······     -1.79      0%      0%
+Energy                  ·····██│·······     -2.50      0%      0%
+Financials              ····███│·······     -2.90      0%      0%
+Healthcare              ····███│·······     -3.12      0%      0%
+Technology              ███████│·······     -7.30     10%      2%
 ```
 
 **Comparison rows -- not sectors.** Each instrument over the tape's own windows, and against SPY. No breadth, no volume confirmation, no score; never an input to a forecast, a payload or an evaluation.
 
 | Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |
 |---|---|---:|---:|---:|---:|
-| Gold | `series.GLD` SPDR Gold Shares | -0.13% | +0.89 | -4.57% | -2.24 |
+| Gold | `series.GLD` SPDR Gold Shares | -3.20% | -2.90 | -6.57% | -2.67 |
 | US dollar | `fx.DXY` US Dollar Index | missing | missing | missing | missing |
-| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -1.67% | -0.66 | -13.26% | -10.93 |
+| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -2.27% | -1.96 | -16.23% | -12.33 |
 
 Returns in percent. *vs SPY* is in percentage points, the same subtraction as a sector's EXCESS.
 
-- **US dollar**: absent from fx at 2026-11-17 (the feed says: DX-Y.NYB: the bar dated 2026-11-17 is a quote until the exchange settlement is loaded, and is not read before 2026-11-18T13:00Z (now 2026-11-18T03:08Z)).
+- **US dollar**: absent from fx at 2026-11-18 (the feed says: DX-Y.NYB: the bar dated 2026-11-18 is a quote until the exchange settlement is loaded, and is not read before 2026-11-19T13:00Z (now 2026-11-19T02:49Z)).
 
 <details>
 <summary><b>Panel warnings (2)</b></summary>
 
-- Industrials/week: MOD moved 25.87 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
-- Technology/week: RGTI moved -30.37 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Industrials/week: MOD moved 29.26 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Technology/week: RGTI moved -25.02 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
 
 </details>
 
