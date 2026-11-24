@@ -196,47 +196,44 @@ not offered, never a zero.
 
 ## 📈 Daily tape
 
-**As of 2026-11-20** -- observation, not a forecast -- `data/tape/2026-11-20.json`
+**As of 2026-11-23** -- observation, not a forecast -- `data/tape/2026-11-23.json`
 
-> 📏 &nbsp;**64 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
+> 📏 &nbsp;**65 sessions** from 2026-08-24 &nbsp;&nbsp;•&nbsp;&nbsp; three arithmetic components over daily bars &nbsp;&nbsp;•&nbsp;&nbsp; no score, no `regime_fit`, no `macro_catalyst`
 > 
 > ⚠️ &nbsp;**No declared regime.** the declared regime label carries no 'archetype N'; refusing to infer one from price action The tape below is arithmetic only.
 
 ```
 SECTOR                     5d vs SPY       EXCESS   BRDTH   UPVOL
 ─────────────────────────────────────────────────────────────────
-Consumer Staples        ·······│██████·     +7.68     20%      1%
-Real Estate             ·······│████···     +4.86      0%      0%
-Communication Services  ·······│██·····     +2.15      0%      0%
-Utilities               ·······│█······     +1.71      0%      0%
-Consumer Discretionary  ·······│·······     +0.42     10%      3%
-Materials               ·······│·······     -0.46      0%      0%
-Healthcare              ······█│·······     -0.83      0%      0%
-Industrials             ······█│·······     -1.50      0%      0%
-Energy                  ······█│·······     -1.53      0%      0%
-Financials              ·····██│·······     -2.34      0%      0%
-Technology              ███████│·······     -8.76     10%      1%
+Consumer Staples        ·······│█······     +0.45     30%     27%
+Communication Services  ·······│█······     +0.36     20%     13%
+Real Estate             ·······│·······     +0.29     22%     24%
+Industrials             ·······│·······     -0.06     20%      4%
+Materials               ······█│·······     -0.66     10%      2%
+Technology              ·····██│·······     -1.51     10%     76%
+Utilities               ····███│·······     -1.65      0%      0%
+Consumer Discretionary  ····███│·······     -2.06     20%     30%
+Healthcare              ···████│·······     -2.67     22%      9%
+Financials              ·██████│·······     -3.82      0%      0%
+Energy                  ███████│·······     -4.46      0%      0%
 ```
 
 **Comparison rows -- not sectors.** Each instrument over the tape's own windows, and against SPY. No breadth, no volume confirmation, no score; never an input to a forecast, a payload or an evaluation.
 
 | Comparison | Reads | 1d | 1d vs SPY | 5d | 5d vs SPY |
 |---|---|---:|---:|---:|---:|
-| Gold | `series.GLD` SPDR Gold Shares | -3.67% | -0.03 | -9.17% | -0.61 |
+| Gold | `series.GLD` SPDR Gold Shares | +3.14% | -1.56 | -5.64% | -3.25 |
 | US dollar | `fx.DXY` US Dollar Index | missing | missing | missing | missing |
-| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | -5.91% | -2.27 | -15.22% | -6.67 |
+| Bitcoin | `series.BTC` Grayscale Bitcoin Mini Trust ETF | +4.89% | +0.18 | -5.92% | -3.53 |
 
 Returns in percent. *vs SPY* is in percentage points, the same subtraction as a sector's EXCESS.
 
-- **US dollar**: absent from fx at 2026-11-20 (the feed says: DX-Y.NYB: the bar dated 2026-11-20 is a quote until the exchange settlement is loaded, and is not read before 2026-11-21T13:00Z (now 2026-11-21T02:50Z)).
+- **US dollar**: absent from fx at 2026-11-23 (the feed says: DX-Y.NYB: the bar dated 2026-11-23 is a quote until the exchange settlement is loaded, and is not read before 2026-11-24T13:00Z (now 2026-11-24T05:32Z)).
 
 <details>
-<summary><b>Panel warnings (4)</b></summary>
+<summary><b>Panel warnings (1)</b></summary>
 
-- Healthcare/week: HIMS moved -26.0 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
-- Industrials/week: RKLB moved -26.18 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
-- Technology/week: RGTI moved -25.57 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
-- Technology/week: SOUN moved -25.21 pct -- move beyond 25.0 pct over 5 session(s); check for an unhandled corporate action
+- Technology/day: NVDA moved 31.48 pct -- move beyond 25.0 pct over 1 session(s); check for an unhandled corporate action
 
 </details>
 
