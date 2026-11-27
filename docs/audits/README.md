@@ -48,3 +48,4 @@ failed.
 | 2026-11-24 | 2026-11-20 | 333/338 | 7.0 (across both weeks) | -11.40% (URGENT: trigger fired) | 7/0 | 2 (SPY trigger, evaluation coverage) |
 | 2026-11-25 | 2026-11-20 | 333/338 | 7.0 (across both weeks) | -11.40% (URGENT: trigger fired) | 7/0 | 2 (SPY trigger, evaluation coverage) |
 | 2026-11-26 | 2026-11-20 | 333/338 | 7.0 (across both weeks) | -11.40% (URGENT: trigger fired) | 7/0 | 2 (SPY trigger, evaluation coverage) |
+| 2026-11-27 | 2026-11-20 | 333/338 | 7.0 (across both weeks) | -11.40% (URGENT: trigger fired) | 7/0 | 2 (SPY trigger, evaluation coverage) |
